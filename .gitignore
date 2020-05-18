@@ -131,3 +131,8 @@ hs_err_pid*
 *.log
 db-create-all.sql
 db-drop-all.sql
+
+# Ignore Gradle build output directory
+build
+/gradlew
+/gradlew.bat
