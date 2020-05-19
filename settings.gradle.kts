@@ -7,4 +7,6 @@
  * in the user manual at https://docs.gradle.org/6.4.1/userguide/multi_project_builds.html
  */
 
-rootProject.name = "may-leetcoding-challenge"
+rootProject.name = "leetcode"
+
+include("may-leetcoding-challenge")
