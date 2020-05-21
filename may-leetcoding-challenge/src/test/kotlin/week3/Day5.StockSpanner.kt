@@ -8,12 +8,12 @@ class StockSpannerTest {
     @Test
     fun test1() {
         val spanner = StockSpanner()
-        assertEquals(spanner.next(100), 1)
-        assertEquals(spanner.next(80), 1)
-        assertEquals(spanner.next(60), 1)
-        assertEquals(spanner.next(70), 2)
-        assertEquals(spanner.next(60), 1)
-        assertEquals(spanner.next(75), 4)
-        assertEquals(spanner.next(85), 6)
+        assertEquals(1, spanner.next(100))
+        assertEquals(1, spanner.next(80))
+        assertEquals(1, spanner.next(60))
+        assertEquals(2, spanner.next(70))
+        assertEquals(1, spanner.next(60))
+        assertEquals(4, spanner.next(75))
+        assertEquals(6, spanner.next(85))
     }
 }

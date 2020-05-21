@@ -7,11 +7,11 @@ class AnagramsTest {
 
     @Test
     fun test1() {
-        assertEquals(Anagrams.findAnagrams("cbaebabacd", "abc"), listOf(0, 6))
+        assertEquals(listOf(0, 6), Anagrams.findAnagrams("cbaebabacd", "abc"))
     }
 
     @Test
     fun test2() {
-        assertEquals(Anagrams.findAnagrams("abab", "ab"), listOf(0, 1, 2))
+        assertEquals(listOf(0, 1, 2), Anagrams.findAnagrams("abab", "ab"))
     }
 }

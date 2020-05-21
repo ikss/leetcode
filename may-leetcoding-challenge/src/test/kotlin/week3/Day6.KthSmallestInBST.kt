@@ -14,7 +14,7 @@ class KthSmallestInBSTTest {
             }
             right = TreeNode(4)
         }
-        assertEquals(KthSmallestInBST.kthSmallest(root, 1), 1)
+        assertEquals(1, KthSmallestInBST.kthSmallest(root, 1))
     }
 
     @Test
@@ -28,6 +28,6 @@ class KthSmallestInBSTTest {
             }
             right = TreeNode(6)
         }
-        assertEquals(KthSmallestInBST.kthSmallest(root, 3), 3)
+        assertEquals(3, KthSmallestInBST.kthSmallest(root, 3))
     }
 }
