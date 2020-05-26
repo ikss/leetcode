@@ -16,6 +16,7 @@ dependencies {
     // Use the Kotlin JDK 8 standard library.
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-    // Use the Kotlin JUnit integration.
+    // Tests
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
 }
