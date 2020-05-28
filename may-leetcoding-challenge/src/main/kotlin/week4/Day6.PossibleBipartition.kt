@@ -7,7 +7,6 @@ object PossibleBipartition {
     var color = mutableMapOf<Int, Int>()
 
     fun possibleBipartition(N: Int, dislikes: Array<IntArray>): Boolean {
-        println(dislikes.contentDeepToString())
         graph = Array(N + 1) { ArrayList<Int>() }
         for (edge in dislikes) {
             graph[edge[0]].add(edge[1])
