@@ -1,7 +1,7 @@
 package week3
 
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
 
 object CountSubmatricesTest {
 

@@ -1,8 +1,8 @@
 package week3
 
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import week3.KthSmallestInBST.TreeNode
-import kotlin.test.assertEquals
 
 class KthSmallestInBSTTest {
 

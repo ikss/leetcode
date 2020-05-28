@@ -1,7 +1,7 @@
 package week4
 
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
 
 object ContiguousArrayTest {
 
