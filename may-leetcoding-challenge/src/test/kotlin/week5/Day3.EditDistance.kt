@@ -17,4 +17,18 @@ object EditDistanceTest {
         val word2 = "execution"
         assertEquals(5, EditDistance.minDistance(word1, word2))
     }
+
+    @Test
+    fun `test1 optimized one array`() {
+        val word1 = "horse"
+        val word2 = "ros"
+        assertEquals(3, EditDistance.minDistanceOneArrar(word1, word2))
+    }
+
+    @Test
+    fun `test2 optimized one array`() {
+        val word1 = "intention"
+        val word2 = "execution"
+        assertEquals(5, EditDistance.minDistanceOneArrar(word1, word2))
+    }
 }

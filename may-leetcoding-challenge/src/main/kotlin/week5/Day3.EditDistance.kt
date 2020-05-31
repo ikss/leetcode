@@ -3,7 +3,7 @@ package week5
 object EditDistance {
 
     /**
-     * Min distance (Levenstein) implementation with O(m*n) space and O (m*n) time complexity
+     * Min distance (Levenshtein) implementation with O(m*n) space and O (m*n) time complexity
      */
     fun minDistance(word1: String, word2: String): Int {
         val l1 = word1.length
@@ -26,4 +26,29 @@ object EditDistance {
         return dp[l1][l2]
     }
 
+    /**
+     * Min distance (Levenshtein) implementation with O(n) space and O (m*n) time complexity
+     */
+    fun minDistanceOneArrar(word1: String, word2: String): Int {
+        val l1 = word1.length
+        val l2 = word2.length
+        if (l1 == 0) return l2
+        if (l2 == 0) return l1
+
+        val dp = IntArray(l2 + 1) { it }
+        for (i in 1..l1) {
+            var prev = i
+            for (j in 1..l2) {
+                val cur = if (word1[i - 1] == word2[j - 1]) {
+                    dp[j - 1]
+                } else {
+                    minOf(dp[j - 1], prev, dp[j]) + 1
+                }
+                dp[j - 1] = prev
+                prev = cur
+            }
+            dp[l2] = prev
+        }
+        return dp[l2]
+    }
 }
