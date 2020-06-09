@@ -29,7 +29,7 @@ object EditDistance {
     /**
      * Min distance (Levenshtein) implementation with O(n) space and O (m*n) time complexity
      */
-    fun minDistanceOneArrar(word1: String, word2: String): Int {
+    fun minDistanceOneArray(word1: String, word2: String): Int {
         val l1 = word1.length
         val l2 = word2.length
         if (l1 == 0) return l2
