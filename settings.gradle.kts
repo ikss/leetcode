@@ -10,3 +10,4 @@
 rootProject.name = "leetcode"
 
 include("may-leetcoding-challenge")
+include("tasks")
