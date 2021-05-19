@@ -1,6 +1,6 @@
 package collections.linked_lists.medium
 
-class ListNode(var `val`: Int) {
+class ListNode(var value: Int) {
     var next: ListNode? = null
 
     override fun equals(other: Any?): Boolean {
@@ -12,7 +12,7 @@ class ListNode(var `val`: Int) {
         var l: ListNode? = this
         var r: ListNode? = other
         while (l != null && r != null) {
-            if (l.`val` != r.`val`) return false
+            if (l.value != r.value) return false
             l = l.next
             r = r.next
         }
@@ -20,13 +20,13 @@ class ListNode(var `val`: Int) {
     }
 
     override fun hashCode(): Int {
-        var result = `val`
+        var result = value
         result = 31 * result + (next?.hashCode() ?: 0)
         return result
     }
 
     override fun toString(): String {
-        return "ListNode(`val`=$`val`, next=$next)"
+        return "ListNode(`val`=$value, next=$next)"
     }
 }
 
@@ -38,8 +38,8 @@ class AddTwoNumbers {
         var curr = result
         var carry = 0
         while (p != null || q != null) {
-            val x = p?.`val` ?: 0
-            val y = q?.`val` ?: 0
+            val x = p?.value ?: 0
+            val y = q?.value ?: 0
             val sum = x + y + carry
             carry = sum / 10
             curr.next = ListNode(sum % 10)

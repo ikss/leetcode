@@ -6,7 +6,7 @@
 
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "1.3.71"
+    id("org.jetbrains.kotlin.jvm") version "1.5.0"
 }
 
 dependencies {
@@ -18,5 +18,11 @@ dependencies {
 
     // Tests
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.4.2")
+
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
