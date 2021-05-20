@@ -1,36 +1,15 @@
 package collections.linked_lists.medium
 
-class ListNode(var value: Int) {
-    var next: ListNode? = null
+import collections.linked_lists.util.ListNode
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as ListNode
-
-        var l: ListNode? = this
-        var r: ListNode? = other
-        while (l != null && r != null) {
-            if (l.value != r.value) return false
-            l = l.next
-            r = r.next
-        }
-        return l == r
-    }
-
-    override fun hashCode(): Int {
-        var result = value
-        result = 31 * result + (next?.hashCode() ?: 0)
-        return result
-    }
-
-    override fun toString(): String {
-        return "ListNode(`val`=$value, next=$next)"
-    }
-}
-
-class AddTwoNumbers {
+/**
+ * You are given two non-empty linked lists representing two non-negative integers.
+ * The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+ * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+ *
+ * URL: [https://leetcode.com/problems/add-two-numbers/]
+ */
+object AddTwoNumbers {
     fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
         val result = ListNode(0)
         var p = l1
