@@ -21,7 +21,7 @@ class AddTwoNumbersTest {
         val l2 = ListNode(5)
         val expected = ListNode(0).apply { next = ListNode(1) }
         val actual = AddTwoNumbers.addTwoNumbers(l1, l2)
-        assertEquals(actual, expected)
+        assertEquals(expected, actual)
     }
 
     @Test
@@ -30,6 +30,6 @@ class AddTwoNumbersTest {
         val l2 = ListNode(5).apply { next = ListNode(6).apply { next = ListNode(4) } }
         val expected = ListNode(7).apply { next = ListNode(0).apply { next = ListNode(8) } }
         val actual = AddTwoNumbers.addTwoNumbers(l1, l2)
-        assertEquals(actual, expected)
+        assertEquals(expected, actual)
     }
 }

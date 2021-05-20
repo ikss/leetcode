@@ -10,11 +10,11 @@ class ReverseLinkedListTest {
 
     @Test
     fun testReverseLoop() {
-        assertEquals(ReverseLinkedList.reverseLoop(initial), excepted)
+        assertEquals(excepted, ReverseLinkedList.reverseLoop(initial))
     }
 
     @Test
     fun testReverseRecursive() {
-        assertEquals(ReverseLinkedList.reverseRecursive(initial), excepted)
+        assertEquals(excepted, ReverseLinkedList.reverseRecursive(initial))
     }
 }
