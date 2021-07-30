@@ -3,7 +3,6 @@ package strings.medium
 /**
  * Given a string s, return the longest palindromic substring in s.
  *
- *
  * URL: [https://leetcode.com/problems/longest-palindromic-substring/]
  */
 object LongestPalindromicSubstring {
