@@ -35,8 +35,8 @@ class PalindromeNumberTest {
 
     @Test
     fun test5() {
-        val int = Integer.MAX_VALUE
-        val excepted = 0
-        assertEquals(excepted, ReverseInteger.reverse(int))
+        val number = Integer.MAX_VALUE
+        val excepted = false
+        assertEquals(excepted, PalindromeNumber.isPalindrome(number))
     }
 }
