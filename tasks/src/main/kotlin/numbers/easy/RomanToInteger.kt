@@ -3,7 +3,7 @@ package numbers.easy
 /**
  * Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
  *
- * URL: [https://leetcode.com/problems/roman-to-integer/]
+ * [URL](https://leetcode.com/problems/roman-to-integer/)
  */
 object RomanToInteger {
     fun romanToInt(num: String): Int {

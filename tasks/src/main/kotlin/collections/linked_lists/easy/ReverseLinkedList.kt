@@ -5,7 +5,7 @@ import collections.linked_lists.util.ListNode
 /**
  * Given the head of a singly linked list, reverse the list, and return the reversed list.
  *
- * URL: [https://leetcode.com/problems/reverse-linked-list/]
+ * [URL](https://leetcode.com/problems/reverse-linked-list/)
  */
 object ReverseLinkedList {
     fun reverseLoop(head: ListNode?): ListNode? {

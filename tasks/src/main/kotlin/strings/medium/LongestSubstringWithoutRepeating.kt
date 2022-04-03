@@ -3,7 +3,7 @@ package strings.medium
 /**
  * Given a string s, find the length of the longest substring without repeating characters.
  *
- * URL: [https://leetcode.com/problems/longest-substring-without-repeating-characters/]
+ * [URL](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
  */
 object LongestSubstringWithoutRepeating {
 

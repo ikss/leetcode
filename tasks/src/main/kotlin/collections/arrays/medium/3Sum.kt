@@ -5,7 +5,7 @@ package collections.arrays.medium
  * such that the sum is closest to target.
  * Return the sum of the three integers. You may assume that each input would have exactly one solution.
  *
- * URL: [https://leetcode.com/problems/3sum-closest/]
+ * [URL](https://leetcode.com/problems/3sum-closest/)
  */
 object `3Sum` {
     fun threeSum(nums: IntArray): List<List<Int>> {

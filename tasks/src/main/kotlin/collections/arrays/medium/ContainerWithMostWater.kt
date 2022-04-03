@@ -5,7 +5,7 @@ package collections.arrays.medium
  * n vertical lines are drawn such that the two endpoints of the line i is at (i, ai) and (i, 0).
  * Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.
  *
- * URL: [https://leetcode.com/problems/container-with-most-water/]
+ * [URL](https://leetcode.com/problems/container-with-most-water/)
  */
 object ContainerWithMostWater {
     fun maxArea(height: IntArray): Int {

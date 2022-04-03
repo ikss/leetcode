@@ -5,7 +5,7 @@ package strings.medium
  * return all possible letter combinations that the number could represent.
  * Return the answer in any order.
  *
- * URL: [https://leetcode.com/problems/letter-combinations-of-a-phone-number/]
+ * [URL](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
  */
 object LetterCombinationsOfPhoneNumber {
 

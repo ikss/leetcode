@@ -6,7 +6,7 @@ import java.math.BigInteger
  * Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer
  * (similar to C/C++'s atoi function).
  *
- * URL: [https://leetcode.com/problems/string-to-integer-atoi/]
+ * [URL](https://leetcode.com/problems/string-to-integer-atoi/)
  */
 object StringToInteger {
     fun myAtoi(s: String): Int {

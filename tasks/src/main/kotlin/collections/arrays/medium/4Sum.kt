@@ -8,7 +8,7 @@ import java.util.*
  * * a, b, c, and d are distinct.
  * * nums(a) + nums(b) + nums(c) + nums(d) == target
  *
- * URL: [https://leetcode.com/problems/4sum/]
+ * [URL](https://leetcode.com/problems/4sum/)
  */
 object `4Sum` {
     fun fourSum(nums: IntArray, target: Int): List<List<Int>> {

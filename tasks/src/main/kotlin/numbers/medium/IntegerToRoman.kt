@@ -5,7 +5,7 @@ import java.lang.StringBuilder
 /**
  * Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
  *
- * URL: [https://leetcode.com/problems/integer-to-roman/]
+ * [URL](https://leetcode.com/problems/integer-to-roman/)
  */
 object IntegerToRoman {
     fun intToRoman(num: Int): String {

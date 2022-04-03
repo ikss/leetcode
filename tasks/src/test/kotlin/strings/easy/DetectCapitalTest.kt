@@ -3,7 +3,7 @@ package strings.easy
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
-internal class DetectCapitalTest {
+class DetectCapitalTest {
 
     @Test
     fun test1() {
