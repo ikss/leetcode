@@ -8,21 +8,21 @@ class ZigZagConversionTest {
     @Test
     fun test1() {
         val s = "PAYPALISHIRING"
-        val excepted = "PAHNAPLSIIGYIR"
-        assertEquals(excepted, ZigZagConversion.convert(s, 3))
+        val expected = "PAHNAPLSIIGYIR"
+        assertEquals(expected, ZigZagConversion.convert(s, 3))
     }
 
     @Test
     fun test2() {
         val s = "PAYPALISHIRING"
-        val excepted = "PINALSIGYAHRPI"
-        assertEquals(excepted, ZigZagConversion.convert(s, 4))
+        val expected = "PINALSIGYAHRPI"
+        assertEquals(expected, ZigZagConversion.convert(s, 4))
     }
 
     @Test
     fun test3() {
         val s = "PAYPALISHIRING"
-        val excepted = "PAYPALISHIRING"
-        assertEquals(excepted, ZigZagConversion.convert(s, 1))
+        val expected = "PAYPALISHIRING"
+        assertEquals(expected, ZigZagConversion.convert(s, 1))
     }
 }

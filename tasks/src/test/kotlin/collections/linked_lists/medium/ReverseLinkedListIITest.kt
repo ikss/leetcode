@@ -6,13 +6,13 @@ import kotlin.test.assertEquals
 
 class ReverseLinkedListIITest {
     private val initial = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
-    private val excepted = ListNode(1, ListNode(4, ListNode(3, ListNode(2, ListNode(5)))))
+    private val expected = ListNode(1, ListNode(4, ListNode(3, ListNode(2, ListNode(5)))))
 
     @Test
     fun testReverseRecursive() {
         val start = 2
         val end = 4
-        assertEquals(excepted, ReverseLinkedListII.reverseBetweenRecursive(initial, start, end))
+        assertEquals(expected, ReverseLinkedListII.reverseBetweenRecursive(initial, start, end))
     }
 
     @Test

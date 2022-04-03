@@ -8,35 +8,35 @@ class LetterCombinationsOfPhoneNumberTest {
     @Test
     fun test1() {
         val digits = "23"
-        val excepted = listOf("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf")
-        assertEquals(excepted, LetterCombinationsOfPhoneNumber.letterCombinationsOfPhoneNumber(digits))
+        val expected = listOf("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf")
+        assertEquals(expected, LetterCombinationsOfPhoneNumber.letterCombinationsOfPhoneNumber(digits))
     }
 
     @Test
     fun test2() {
         val digits = ""
-        val excepted = emptyList<String>()
-        assertEquals(excepted, LetterCombinationsOfPhoneNumber.letterCombinationsOfPhoneNumber(digits))
+        val expected = emptyList<String>()
+        assertEquals(expected, LetterCombinationsOfPhoneNumber.letterCombinationsOfPhoneNumber(digits))
     }
 
     @Test
     fun test3() {
         val digits = "7"
-        val excepted = listOf("p", "q", "r", "s")
-        assertEquals(excepted, LetterCombinationsOfPhoneNumber.letterCombinationsOfPhoneNumber(digits))
+        val expected = listOf("p", "q", "r", "s")
+        assertEquals(expected, LetterCombinationsOfPhoneNumber.letterCombinationsOfPhoneNumber(digits))
     }
 
     @Test
     fun test4() {
         val digits = "2"
-        val excepted = listOf("a", "b", "c")
-        assertEquals(excepted, LetterCombinationsOfPhoneNumber.letterCombinationsOfPhoneNumber(digits))
+        val expected = listOf("a", "b", "c")
+        assertEquals(expected, LetterCombinationsOfPhoneNumber.letterCombinationsOfPhoneNumber(digits))
     }
 
     @Test
     fun test5() {
         val digits = "234"
-        val excepted = listOf(
+        val expected = listOf(
             "adg",
             "adh",
             "adi",
@@ -65,6 +65,6 @@ class LetterCombinationsOfPhoneNumberTest {
             "cfh",
             "cfi"
         )
-        assertEquals(excepted, LetterCombinationsOfPhoneNumber.letterCombinationsOfPhoneNumber(digits))
+        assertEquals(expected, LetterCombinationsOfPhoneNumber.letterCombinationsOfPhoneNumber(digits))
     }
 }
