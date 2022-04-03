@@ -1,7 +1,6 @@
-package collections.linked_lists.easy
+package strings.easy
 
 import org.junit.jupiter.api.Test
-import strings.easy.LongestCommonPrefix
 import kotlin.test.assertEquals
 
 class LongestCommonPrefixTest {
