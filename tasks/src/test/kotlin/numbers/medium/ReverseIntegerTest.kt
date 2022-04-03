@@ -1,6 +1,5 @@
 package numbers.medium
 
-import numbers.medium.ReverseInteger
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 

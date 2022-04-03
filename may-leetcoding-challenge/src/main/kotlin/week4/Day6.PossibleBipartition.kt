@@ -1,7 +1,5 @@
 package week4
 
-import java.util.*
-
 object PossibleBipartition {
     private lateinit var graph: Array<ArrayList<Int>>
     var color = mutableMapOf<Int, Int>()

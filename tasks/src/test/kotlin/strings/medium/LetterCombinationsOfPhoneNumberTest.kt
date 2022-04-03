@@ -36,7 +36,35 @@ class LetterCombinationsOfPhoneNumberTest {
     @Test
     fun test5() {
         val digits = "234"
-        val excepted = listOf("adg", "adh", "adi", "aeg", "aeh", "aei", "afg", "afh", "afi", "bdg", "bdh", "bdi", "beg", "beh", "bei", "bfg", "bfh", "bfi", "cdg", "cdh", "cdi", "ceg", "ceh", "cei", "cfg", "cfh", "cfi")
+        val excepted = listOf(
+            "adg",
+            "adh",
+            "adi",
+            "aeg",
+            "aeh",
+            "aei",
+            "afg",
+            "afh",
+            "afi",
+            "bdg",
+            "bdh",
+            "bdi",
+            "beg",
+            "beh",
+            "bei",
+            "bfg",
+            "bfh",
+            "bfi",
+            "cdg",
+            "cdh",
+            "cdi",
+            "ceg",
+            "ceh",
+            "cei",
+            "cfg",
+            "cfh",
+            "cfi"
+        )
         assertEquals(excepted, LetterCombinationsOfPhoneNumber.letterCombinationsOfPhoneNumber(digits))
     }
 }

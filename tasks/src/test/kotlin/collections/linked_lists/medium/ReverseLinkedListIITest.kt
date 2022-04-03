@@ -19,6 +19,9 @@ class ReverseLinkedListIITest {
     fun testReverseLoop() {
         val start = 1
         val end = 2
-        assertEquals(ListNode(2, ListNode(1)), ReverseLinkedListII.reverseBetweenLoop(ListNode(1, ListNode(2)), start, end))
+        assertEquals(
+            ListNode(2, ListNode(1)),
+            ReverseLinkedListII.reverseBetweenLoop(ListNode(1, ListNode(2)), start, end)
+        )
     }
 }
