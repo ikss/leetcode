@@ -13,7 +13,7 @@ import kotlin.random.Random
  *
  * [URL](https://leetcode.com/problems/shuffle-an-array/)
  */
-class Solution(nums: IntArray) {
+class ShuffleAnArray(nums: IntArray) {
     private val oldNums = nums.copyOf()
     fun reset(): IntArray {
         return oldNums
