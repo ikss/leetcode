@@ -1,6 +1,6 @@
 package collections.linked_lists.medium
 
-import collections.linked_lists.util.ListNode
+import data_structures.ListNode
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 

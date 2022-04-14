@@ -6,20 +6,15 @@
 
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "1.5.0"
+    id("org.jetbrains.kotlin.jvm")
 }
 
 dependencies {
-    // Align versions of all Kotlin components
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
-
-    // Use the Kotlin JDK 8 standard library.
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation(project(":shared"))
 
     // Tests
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
-
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
 }
 

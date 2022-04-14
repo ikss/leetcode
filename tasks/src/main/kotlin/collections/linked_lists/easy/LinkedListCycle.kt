@@ -1,6 +1,6 @@
 package collections.linked_lists.easy
 
-import collections.linked_lists.util.ListNode
+import data_structures.ListNode
 
 /**
  * Given head, the head of a linked list, determine if the linked list has a cycle in it.

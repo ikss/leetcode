@@ -9,5 +9,4 @@
 
 rootProject.name = "leetcode"
 
-include("may-leetcoding-challenge")
-include("tasks")
+include("may-leetcoding-challenge", "tasks", "shared")

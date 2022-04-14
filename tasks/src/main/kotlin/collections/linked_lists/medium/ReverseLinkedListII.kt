@@ -1,6 +1,6 @@
 package collections.linked_lists.medium
 
-import collections.linked_lists.util.ListNode
+import data_structures.ListNode
 
 /**
  * Given the head of a singly linked list and two integers left and right where left <= right,

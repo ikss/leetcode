@@ -1,6 +1,6 @@
 package collections.linked_lists.easy
 
-import collections.linked_lists.util.ListNode
+import data_structures.ListNode
 
 /**
  * Write a function to delete a node in a singly-linked list. You will not be given access to the head of the list,

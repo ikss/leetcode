@@ -1,6 +1,6 @@
 package collections.linked_lists.easy
 
-import collections.linked_lists.util.ListNode
+import data_structures.ListNode
 
 /**
  * Given the head of a singly linked list, reverse the list, and return the reversed list.

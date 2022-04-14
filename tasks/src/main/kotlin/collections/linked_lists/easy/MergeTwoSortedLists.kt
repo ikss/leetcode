@@ -1,6 +1,6 @@
 package collections.linked_lists.easy
 
-import collections.linked_lists.util.ListNode
+import data_structures.ListNode
 
 /**
  * You are given the heads of two sorted linked lists list1 and list2.

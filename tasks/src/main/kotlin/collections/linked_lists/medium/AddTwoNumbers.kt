@@ -1,6 +1,6 @@
 package collections.linked_lists.medium
 
-import collections.linked_lists.util.ListNode
+import data_structures.ListNode
 
 /**
  * You are given two non-empty linked lists representing two non-negative integers.

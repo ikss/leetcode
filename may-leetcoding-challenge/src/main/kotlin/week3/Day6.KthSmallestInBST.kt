@@ -1,5 +1,7 @@
 package week3
 
+import data_structures.TreeNode
+
 object KthSmallestInBST {
     fun kthSmallest(root: TreeNode?, k: Int): Int {
         if (root == null) return 0
@@ -16,8 +18,4 @@ object KthSmallestInBST {
         return count(root.left) + count(root.right) + 1
     }
 
-    class TreeNode(var `val`: Int) {
-        var left: TreeNode? = null
-        var right: TreeNode? = null
-    }
 }
