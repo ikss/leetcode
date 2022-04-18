@@ -8,7 +8,7 @@ data class ListNode(var `val`: Int, var next: ListNode? = null) {
 }
 
 object ListBuilder {
-    fun build(vararg values: Int?): ListNode? {
+    fun build(vararg values: Int): ListNode? {
         if (values.isEmpty()) return null
         return build(values.toList())
     }

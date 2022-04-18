@@ -1,13 +1,13 @@
 package collections.linked_lists.easy
 
-import data_structures.ListNode
+import data_structures.ListBuilder
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
 class MergeTwoSortedListsTest {
-    private val list1 = ListNode(1, ListNode(2, ListNode(4)))
-    private val list2 = ListNode(1, ListNode(3, ListNode(4)))
-    private val expected = ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(4))))))
+    private val list1 = ListBuilder.build(1, 2, 4)
+    private val list2 = ListBuilder.build(1, 3, 4)
+    private val expected = ListBuilder.build(1, 1, 2, 3, 4, 4)
 
     @Test
     fun testMergeLists1() {

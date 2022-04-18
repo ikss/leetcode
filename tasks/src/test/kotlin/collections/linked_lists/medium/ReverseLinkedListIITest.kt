@@ -1,12 +1,12 @@
 package collections.linked_lists.medium
 
-import data_structures.ListNode
+import data_structures.ListBuilder
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
 class ReverseLinkedListIITest {
-    private val initial = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
-    private val expected = ListNode(1, ListNode(4, ListNode(3, ListNode(2, ListNode(5)))))
+    private val initial = ListBuilder.build(1, 2, 3, 4, 5)
+    private val expected = ListBuilder.build(1, 4, 3, 2, 5)
 
     @Test
     fun testReverseRecursive() {
@@ -20,8 +20,8 @@ class ReverseLinkedListIITest {
         val start = 1
         val end = 2
         assertEquals(
-            ListNode(2, ListNode(1)),
-            ReverseLinkedListII.reverseBetweenLoop(ListNode(1, ListNode(2)), start, end)
+            ListBuilder.build(2, 1),
+            ReverseLinkedListII.reverseBetweenLoop(ListBuilder.build(1, 2), start, end)
         )
     }
 }

@@ -1,5 +1,6 @@
 package collections.linked_lists.easy
 
+import data_structures.ListBuilder
 import data_structures.ListNode
 import org.junit.jupiter.api.Test
 import kotlin.test.assertFalse
@@ -17,7 +18,7 @@ class LinkedListCycleTest {
 
     @Test
     fun test2() {
-        val list = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
+        val list = ListBuilder.build(1, 2, 3, 4)
         assertFalse(LinkedListCycle.hasCycle(list))
     }
 }

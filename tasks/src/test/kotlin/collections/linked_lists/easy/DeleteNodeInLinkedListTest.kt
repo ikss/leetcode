@@ -1,6 +1,6 @@
 package collections.linked_lists.easy
 
-import data_structures.ListNode
+import data_structures.ListBuilder
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
@@ -8,9 +8,9 @@ class DeleteNodeInLinkedListTest {
 
     @Test
     fun test1() {
-        val initial = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
-        val expected = ListNode(1, ListNode(2, ListNode(4)))
-        val toDelete = initial.next!!.next
+        val initial = ListBuilder.build(1, 2, 3, 4)
+        val expected = ListBuilder.build(1, 2, 4)
+        val toDelete = initial!!.next!!.next
         DeleteNodeInLinkedList.deleteNode(toDelete)
         assertEquals(expected, initial)
     }

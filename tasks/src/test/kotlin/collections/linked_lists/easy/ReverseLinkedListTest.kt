@@ -1,12 +1,12 @@
 package collections.linked_lists.easy
 
-import data_structures.ListNode
+import data_structures.ListBuilder
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
 class ReverseLinkedListTest {
-    private val initial = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
-    private val expected = ListNode(4, ListNode(3, ListNode(2, ListNode(1))))
+    private val initial = ListBuilder.build(1, 2, 3, 4)
+    private val expected = ListBuilder.build(4, 3, 2, 1)
 
     @Test
     fun testReverseLoop() {
