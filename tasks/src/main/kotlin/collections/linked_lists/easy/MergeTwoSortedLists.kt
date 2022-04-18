@@ -11,34 +11,28 @@ import data_structures.ListNode
  */
 object MergeTwoSortedLists {
     fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
-        if (list1 == null) return list2
-        if (list2 == null) return list1
-
-        var val1 = list1
-        var val2 = list2
-        lateinit var head: ListNode
-        var current: ListNode?
-
-        if (val1.`val` <= val2.`val`) {
-            head = val1
-            val1 = val1.next
-        } else {
-            head = val2
-            val2 = val2.next
+        if (list1 == null) {
+            return list2
+        } else if (list2 == null) {
+            return list1
         }
-        current = head
-        while (val1 != null && val2 != null) {
-            if (val1.`val` <= val2.`val`) {
-                current!!.next = val1
-                val1 = val1.next
+        val head = ListNode(0)
+        var current = head
+        var l1 = list1
+        var l2 = list2
+        while (l1 != null && l2 != null) {
+            if (l1.`val` < l2.`val`) {
+                current.next = l1
+                current = current.next!!
+                l1 = l1.next
             } else {
-                current!!.next = val2
-                val2 = val2.next
+                current.next = l2
+                current = current.next!!
+                l2 = l2.next
             }
-            current = current.next
         }
-        current!!.next = val1 ?: val2
-        return head
+        current.next = l2 ?: l1
+        return head.next
     }
 
     fun mergeTwoListsRecursive(list1: ListNode?, list2: ListNode?): ListNode? {
