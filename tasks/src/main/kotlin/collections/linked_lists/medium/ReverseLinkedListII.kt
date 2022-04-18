@@ -45,9 +45,9 @@ object ReverseLinkedListII {
 
         // Until the boolean stop is false, swap data between the two pointers
         if (!stop) {
-            val t = left.value
-            left.value = rightNode.value
-            rightNode.value = t
+            val t = left.`val`
+            left.`val` = rightNode.`val`
+            rightNode.`val` = t
             left = left.next!!
         }
     }

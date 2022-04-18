@@ -17,8 +17,8 @@ object AddTwoNumbers {
         var curr = result
         var carry = 0
         while (p != null || q != null) {
-            val x = p?.value ?: 0
-            val y = q?.value ?: 0
+            val x = p?.`val` ?: 0
+            val y = q?.`val` ?: 0
             val sum = x + y + carry
             carry = sum / 10
             curr.next = ListNode(sum % 10)

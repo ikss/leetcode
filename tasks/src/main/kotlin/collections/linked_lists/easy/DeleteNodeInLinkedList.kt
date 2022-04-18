@@ -12,7 +12,7 @@ import data_structures.ListNode
 object DeleteNodeInLinkedList {
     fun deleteNode(node: ListNode?) {
         node?.next ?: return
-        node.value = node.next!!.value
+        node.`val` = node.next!!.`val`
         node.next = node.next!!.next
     }
 }

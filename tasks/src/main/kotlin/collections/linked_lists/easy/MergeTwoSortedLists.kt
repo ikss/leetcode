@@ -19,7 +19,7 @@ object MergeTwoSortedLists {
         lateinit var head: ListNode
         var current: ListNode?
 
-        if (val1.value <= val2.value) {
+        if (val1.`val` <= val2.`val`) {
             head = val1
             val1 = val1.next
         } else {
@@ -28,7 +28,7 @@ object MergeTwoSortedLists {
         }
         current = head
         while (val1 != null && val2 != null) {
-            if (val1.value <= val2.value) {
+            if (val1.`val` <= val2.`val`) {
                 current!!.next = val1
                 val1 = val1.next
             } else {
@@ -44,7 +44,7 @@ object MergeTwoSortedLists {
     fun mergeTwoListsRecursive(list1: ListNode?, list2: ListNode?): ListNode? {
         if (list1 == null) return list2
         if (list2 == null) return list1
-        if (list1.value <= list2.value) {
+        if (list1.`val` <= list2.`val`) {
             list1.next = mergeTwoLists(list1.next, list2)
             return list1
         }
