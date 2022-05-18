@@ -1,4 +1,4 @@
-package week1
+package collections.arrays.easy
 
 import interfaces.VersionControl
 
