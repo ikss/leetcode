@@ -2,9 +2,9 @@ package collections.linked_lists.easy
 
 import data_structures.ListBuilder
 import data_structures.ListNode
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
 
 class PalindromeLinkedListTest {
 
