@@ -20,7 +20,7 @@ class MaximumSubarrayTest {
 
     @Test
     fun test3() {
-        val nums = intArrayOf(5,4,-1,7,8)
+        val nums = intArrayOf(5, 4, -1, 7, 8)
         val expected = 23
         assertEquals(expected, MaximumSubarray.maxSubArray(nums))
     }

@@ -1,6 +1,5 @@
 package collections.other_data_structures.medium
 
-import collections.other_data_structures.medium.BinaryTreeLevelOrderTraversal
 import data_structures.TreeBuilder
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals

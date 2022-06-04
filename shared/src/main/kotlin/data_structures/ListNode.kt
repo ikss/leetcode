@@ -12,6 +12,7 @@ object ListBuilder {
         if (values.isEmpty()) return null
         return build(values.toList())
     }
+
     fun build(values: List<Int?>?): ListNode? {
         if (values.isNullOrEmpty()) return null
         return build(values, 0)
