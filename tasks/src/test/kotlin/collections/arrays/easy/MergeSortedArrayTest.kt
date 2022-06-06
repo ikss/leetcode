@@ -1,7 +1,7 @@
 package collections.arrays.easy
 
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import kotlin.test.assertTrue
 
 class MergeSortedArrayTest {
     @Test

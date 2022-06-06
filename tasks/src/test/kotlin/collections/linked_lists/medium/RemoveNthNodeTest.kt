@@ -2,8 +2,8 @@ package collections.linked_lists.medium
 
 import data_structures.ListBuilder
 import data_structures.ListNode
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
 
 class RemoveNthNodeTest {
 

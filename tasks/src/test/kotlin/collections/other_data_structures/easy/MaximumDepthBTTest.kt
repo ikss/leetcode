@@ -1,8 +1,8 @@
 package collections.other_data_structures.easy
 
 import data_structures.TreeBuilder
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
 
 class MaximumDepthBTTest {
 

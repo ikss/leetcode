@@ -1,8 +1,8 @@
 package collections.linked_lists.easy
 
 import data_structures.ListBuilder
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
 
 class DeleteNodeInLinkedListTest {
 

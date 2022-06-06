@@ -1,7 +1,7 @@
 package week5
 
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
+import org.junit.jupiter.api.Assertions.assertEquals
 
 object CourseScheduleTest {
     @Test
