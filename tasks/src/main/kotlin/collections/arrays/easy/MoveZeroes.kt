@@ -8,7 +8,7 @@ package collections.arrays.easy
  * [URL](https://leetcode.com/problems/move-zeroes/)
  */
 object MoveZeroes {
-    fun moveZeroes(nums: IntArray): Unit {
+    fun moveZeroes(nums: IntArray) {
         var realIndex = 0
         for (i in nums.indices) {
             if (nums[i] != 0) {
