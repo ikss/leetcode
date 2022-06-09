@@ -1,5 +1,6 @@
 package strings.medium
 
+
 /**
  * Given a string s, find the length of the longest substring without repeating characters.
  *
@@ -28,5 +29,18 @@ object LongestSubstringWithoutRepeating {
         }
 
         return len
+    }
+
+    fun lengthOfLongestSubstringWOSet(s: String): Int {
+        var result = 0
+        val cache = IntArray(256)
+        var left = 0
+        for (right in s.indices) {
+            val char = s[right].code
+            left = Math.max(left, cache[char])
+            cache[char] = right + 1
+            result = Math.max(result, right - left + 1)
+        }
+        return result
     }
 }
