@@ -1,0 +1,37 @@
+package collections.arrays.medium
+
+/**
+ * You are given an integer array nums and an integer x. In one operation, you can either remove the leftmost
+ * or the rightmost element from the array nums and subtract its value from x.
+ * Note that this modifies the array for future operations.
+ *
+ * Return the minimum number of operations to reduce x to exactly 0 if it is possible, otherwise, return -1.
+ *
+ * [URL](https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/)
+ */
+object MinimumOperationsToReduceToZero {
+    fun minOperations(nums: IntArray, x: Int): Int {
+        var target = -x
+        for (num in nums) target += num
+
+        if (target == 0) {  // since all elements are positive, we have to take all of them
+            return nums.size
+        }
+
+        val map = mutableMapOf(0 to -1)
+        var sum = 0
+        var res = Int.MIN_VALUE
+
+        for (i in nums.indices) {
+            sum += nums[i]
+            if (map.containsKey(sum - target)) {
+                res = Math.max(res, i - map[sum - target]!!)
+            }
+
+            // no need to check containsKey since sum is unique
+            map[sum] = i
+        }
+
+        return if (res == Integer.MIN_VALUE) -1 else nums.size - res
+    }
+}
