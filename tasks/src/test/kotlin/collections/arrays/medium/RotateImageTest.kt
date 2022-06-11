@@ -17,6 +17,7 @@ class RotateImageTest {
             intArrayOf(9, 6, 3),
         )
         RotateImage.rotate(matrix)
+
         assertTrue(expected.contentDeepEquals(matrix))
     }
 
@@ -35,6 +36,7 @@ class RotateImageTest {
             intArrayOf(16, 7, 10, 11)
         )
         RotateImage.rotate(matrix)
+
         assertTrue(expected.contentDeepEquals(matrix))
     }
 

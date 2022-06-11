@@ -9,6 +9,7 @@ class LongestCommonPrefixTest {
     fun test1() {
         val strs = arrayOf("flower", "flow", "flight")
         val expected = "fl"
+
         assertEquals(expected, LongestCommonPrefix.longestCommonPrefix(strs))
     }
 
@@ -16,6 +17,7 @@ class LongestCommonPrefixTest {
     fun test2() {
         val strs = arrayOf("dog", "racecar", "car")
         val expected = ""
+
         assertEquals(expected, LongestCommonPrefix.longestCommonPrefix(strs))
     }
 
@@ -23,6 +25,7 @@ class LongestCommonPrefixTest {
     fun test3() {
         val strs = arrayOf("flower", "", "flight")
         val expected = ""
+
         assertEquals(expected, LongestCommonPrefix.longestCommonPrefix(strs))
     }
 }

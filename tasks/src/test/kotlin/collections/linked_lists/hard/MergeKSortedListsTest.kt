@@ -14,6 +14,7 @@ class MergeKSortedListsTest {
             ListBuilder.build(2, 6)
         )
         val expected = ListBuilder.build(1, 1, 2, 3, 4, 4, 5, 6)
+
         assertEquals(expected, MergeKSortedLists.mergeKLists(initial))
     }
 
@@ -21,6 +22,7 @@ class MergeKSortedListsTest {
     fun test2() {
         val initial = emptyArray<ListNode?>()
         val expected = null
+
         assertEquals(expected, MergeKSortedLists.mergeKLists(initial))
     }
 
@@ -28,6 +30,7 @@ class MergeKSortedListsTest {
     fun test3() {
         val initial = arrayOf<ListNode?>(null)
         val expected = null
+
         assertEquals(expected, MergeKSortedLists.mergeKLists(initial))
     }
 }

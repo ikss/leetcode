@@ -10,6 +10,7 @@ class HammingDistanceTest {
         val x = 4
         val y = 2
         val expected = 2
+
         assertEquals(expected, HammingDistance.hammingDistance(x, y))
     }
 
@@ -18,6 +19,7 @@ class HammingDistanceTest {
         val x = 3
         val y = 1
         val expected = 1
+
         assertEquals(expected, HammingDistance.hammingDistance(x, y))
     }
 
@@ -26,6 +28,7 @@ class HammingDistanceTest {
         val x = 35
         val y = 35
         val expected = 0
+
         assertEquals(expected, HammingDistance.hammingDistance(x, y))
     }
 }

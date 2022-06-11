@@ -9,6 +9,7 @@ class MedianTwoSortedArraysTest {
     fun `example 1 test`() {
         val nums1 = intArrayOf(1, 3)
         val nums2 = intArrayOf(2)
+
         assertEquals(2.0, MedianTwoSortedArrays.findMedianSortedArrays(nums1, nums2))
     }
 
@@ -16,6 +17,7 @@ class MedianTwoSortedArraysTest {
     fun `example 2 test`() {
         val nums1 = intArrayOf(1, 2)
         val nums2 = intArrayOf(3, 4)
+
         assertEquals(2.5, MedianTwoSortedArrays.findMedianSortedArrays(nums1, nums2))
     }
 
@@ -23,6 +25,7 @@ class MedianTwoSortedArraysTest {
     fun `example 3 test`() {
         val nums1 = intArrayOf(0, 0)
         val nums2 = intArrayOf(0, 0)
+
         assertEquals(0.0, MedianTwoSortedArrays.findMedianSortedArrays(nums1, nums2))
     }
 
@@ -30,6 +33,7 @@ class MedianTwoSortedArraysTest {
     fun `example 4 test`() {
         val nums1 = intArrayOf()
         val nums2 = intArrayOf(1)
+
         assertEquals(1.0, MedianTwoSortedArrays.findMedianSortedArrays(nums1, nums2))
     }
 

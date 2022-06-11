@@ -10,6 +10,7 @@ class FirstBadVersionTest {
         val checker = object : FirstBadVersion() {
             override fun isBadVersion(version: Int): Boolean = version >= 4
         }
+
         assertEquals(4, checker.firstBadVersion(5))
     }
 
@@ -18,6 +19,7 @@ class FirstBadVersionTest {
         val checker = object : FirstBadVersion() {
             override fun isBadVersion(version: Int): Boolean = version >= 1
         }
+
         assertEquals(1, checker.firstBadVersion(1000))
     }
 }

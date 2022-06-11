@@ -25,6 +25,7 @@ class FizzBuzzTest {
             "14",
             "FizzBuzz"
         )
+
         assertEquals(expected, FizzBuzz.fizzBuzz(number))
     }
 }

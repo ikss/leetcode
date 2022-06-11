@@ -10,11 +10,13 @@ class ReverseLinkedListTest {
 
     @Test
     fun testReverseLoop() {
+
         assertEquals(expected, ReverseLinkedList.reverseLoop(initial))
     }
 
     @Test
     fun testReverseRecursive() {
+
         assertEquals(expected, ReverseLinkedList.reverseRecursive(initial))
     }
 }

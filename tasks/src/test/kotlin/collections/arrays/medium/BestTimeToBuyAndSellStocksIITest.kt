@@ -9,6 +9,7 @@ class BestTimeToBuyAndSellStocksIITest {
     fun testSimple1() {
         val arr = intArrayOf(7, 1, 5, 3, 6, 4)
         val expected = 7
+
         assertEquals(expected, BestTimeToBuyAndSellStocksII.maxProfit(arr))
     }
 
@@ -16,6 +17,7 @@ class BestTimeToBuyAndSellStocksIITest {
     fun testSimple2() {
         val arr = intArrayOf(1, 2, 3, 4, 5)
         val expected = 4
+
         assertEquals(expected, BestTimeToBuyAndSellStocksII.maxProfit(arr))
     }
 
@@ -23,6 +25,7 @@ class BestTimeToBuyAndSellStocksIITest {
     fun testKadane1() {
         val arr = intArrayOf(7, 6, 4, 3, 1)
         val expected = 0
+
         assertEquals(expected, BestTimeToBuyAndSellStocksII.maxProfit(arr))
     }
 }

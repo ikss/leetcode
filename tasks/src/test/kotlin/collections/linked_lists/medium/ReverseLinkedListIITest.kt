@@ -12,6 +12,7 @@ class ReverseLinkedListIITest {
     fun testReverseRecursive() {
         val start = 2
         val end = 4
+
         assertEquals(expected, ReverseLinkedListII.reverseBetweenRecursive(initial, start, end))
     }
 
@@ -19,6 +20,7 @@ class ReverseLinkedListIITest {
     fun testReverseLoop() {
         val start = 1
         val end = 2
+
         assertEquals(
             ListBuilder.build(2, 1),
             ReverseLinkedListII.reverseBetweenLoop(ListBuilder.build(1, 2), start, end)

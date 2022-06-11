@@ -9,6 +9,7 @@ class StringToIntegerTest {
     fun test1() {
         val s = "42"
         val expected = 42
+
         assertEquals(expected, StringToInteger.myAtoi(s))
     }
 
@@ -16,6 +17,7 @@ class StringToIntegerTest {
     fun test2() {
         val s = "   -42"
         val expected = -42
+
         assertEquals(expected, StringToInteger.myAtoi(s))
     }
 
@@ -23,6 +25,7 @@ class StringToIntegerTest {
     fun test3() {
         val s = "4193 with words"
         val expected = 4193
+
         assertEquals(expected, StringToInteger.myAtoi(s))
     }
 

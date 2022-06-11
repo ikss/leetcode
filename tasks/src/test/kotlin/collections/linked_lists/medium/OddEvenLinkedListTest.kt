@@ -12,6 +12,7 @@ class OddEvenLinkedListTest {
         val expected = ListBuilder.build(1, 3, 5, 2, 4)
 
         val actual = OddEvenLinkedList.oddEvenList(l1)
+
         assertEquals(actual, expected)
     }
 
@@ -21,6 +22,7 @@ class OddEvenLinkedListTest {
         val expected = ListBuilder.build(2, 3, 6, 7, 1, 5, 4)
 
         val actual = OddEvenLinkedList.oddEvenList(l1)
+
         assertEquals(actual, expected)
     }
 }

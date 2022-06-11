@@ -9,6 +9,7 @@ class ZigZagConversionTest {
     fun test1() {
         val s = "PAYPALISHIRING"
         val expected = "PAHNAPLSIIGYIR"
+
         assertEquals(expected, ZigZagConversion.convert(s, 3))
     }
 
@@ -16,6 +17,7 @@ class ZigZagConversionTest {
     fun test2() {
         val s = "PAYPALISHIRING"
         val expected = "PINALSIGYAHRPI"
+
         assertEquals(expected, ZigZagConversion.convert(s, 4))
     }
 
@@ -23,6 +25,7 @@ class ZigZagConversionTest {
     fun test3() {
         val s = "PAYPALISHIRING"
         val expected = "PAYPALISHIRING"
+
         assertEquals(expected, ZigZagConversion.convert(s, 1))
     }
 }

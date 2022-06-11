@@ -18,6 +18,7 @@ class ValidSudokuTest {
             charArrayOf('.', '2', '.', '9', '.', '.', '.', '.', '.'),
             charArrayOf('.', '.', '4', '.', '.', '.', '.', '.', '.'),
         )
+
         assertFalse(ValidSudoku.isValidSudoku(board))
     }
 
@@ -34,6 +35,7 @@ class ValidSudokuTest {
             charArrayOf('.', '.', '.', '4', '1', '9', '.', '.', '5'),
             charArrayOf('.', '.', '.', '.', '8', '.', '.', '7', '9'),
         )
+
         assertTrue(ValidSudoku.isValidSudoku(board))
     }
 
@@ -50,6 +52,7 @@ class ValidSudokuTest {
             charArrayOf('.', '.', '.', '4', '1', '9', '.', '.', '5'),
             charArrayOf('.', '.', '.', '.', '8', '.', '.', '7', '9'),
         )
+
         assertFalse(ValidSudoku.isValidSudoku(board))
     }
 }

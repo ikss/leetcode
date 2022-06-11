@@ -11,31 +11,37 @@ class MergeTwoSortedListsTest {
 
     @Test
     fun testMergeLists1() {
+
         assertEquals(expected, MergeTwoSortedLists.mergeTwoLists(list1, list2))
     }
 
     @Test
     fun testMergeLists2() {
+
         assertEquals(list1, MergeTwoSortedLists.mergeTwoLists(list1, null))
     }
 
     @Test
     fun testMergeLists3() {
+
         assertEquals(list2, MergeTwoSortedLists.mergeTwoLists(null, list2))
     }
 
     @Test
     fun testMergeListsRecursive1() {
+
         assertEquals(expected, MergeTwoSortedLists.mergeTwoListsRecursive(list1, list2))
     }
 
     @Test
     fun testMergeListsRecursive2() {
+
         assertEquals(list1, MergeTwoSortedLists.mergeTwoLists(list1, null))
     }
 
     @Test
     fun testMergeListsRecursive3() {
+
         assertEquals(list2, MergeTwoSortedLists.mergeTwoLists(null, list2))
     }
 }

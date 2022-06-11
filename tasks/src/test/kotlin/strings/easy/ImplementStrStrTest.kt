@@ -10,6 +10,7 @@ class ImplementStrStrTest {
         val haystack = "hello"
         val needle = "ll"
         val expected = 2
+
         assertEquals(expected, ImplementStrStr.strStr(haystack, needle))
     }
 
@@ -18,6 +19,7 @@ class ImplementStrStrTest {
         val haystack = "aaaaa"
         val needle = "baa"
         val expected = -1
+
         assertEquals(expected, ImplementStrStr.strStr(haystack, needle))
     }
 
@@ -26,6 +28,7 @@ class ImplementStrStrTest {
         val haystack = "hello"
         val needle = ""
         val expected = 0
+
         assertEquals(expected, ImplementStrStr.strStr(haystack, needle))
     }
 }

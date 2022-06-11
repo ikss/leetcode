@@ -10,6 +10,7 @@ class ReverseStringTest {
         val s = "USA".toCharArray()
         val expected = "ASU".toCharArray()
         ReverseString.reverseString(s)
+
         assertTrue(expected.contentEquals(s))
     }
 
@@ -18,6 +19,7 @@ class ReverseStringTest {
         val s = "FLaG".toCharArray()
         val expected = "GaLF".toCharArray()
         ReverseString.reverseString(s)
+
         assertTrue(expected.contentEquals(s))
     }
 
@@ -26,6 +28,7 @@ class ReverseStringTest {
         val s = "A".toCharArray()
         val expected = "A".toCharArray()
         ReverseString.reverseString(s)
+
         assertTrue(expected.contentEquals(s))
     }
 
@@ -34,6 +37,7 @@ class ReverseStringTest {
         val s = "".toCharArray()
         val expected = "".toCharArray()
         ReverseString.reverseString(s)
+
         assertTrue(expected.contentEquals(s))
     }
 }

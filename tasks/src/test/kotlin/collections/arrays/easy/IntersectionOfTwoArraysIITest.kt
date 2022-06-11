@@ -10,6 +10,7 @@ class IntersectionOfTwoArraysIITest {
         val nums2 = intArrayOf(2, 2)
         val expected = intArrayOf(2, 2)
         val result = IntersectionOfTwoArraysII.intersect(nums1, nums2)
+
         assertTrue(expected.contentEquals(result))
     }
 
@@ -19,6 +20,7 @@ class IntersectionOfTwoArraysIITest {
         val nums2 = intArrayOf(9, 4, 9, 8, 4)
         val expected = intArrayOf(4, 9)
         val result = IntersectionOfTwoArraysII.intersect(nums1, nums2)
+
         assertTrue(expected.contentEquals(result))
     }
 }

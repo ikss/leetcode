@@ -10,6 +10,7 @@ class ValidAnagramTest {
     fun test1() {
         val s = "usa"
         val t = "asu"
+
         assertTrue(ValidAnagram.isAnagram(s, t))
     }
 
@@ -17,6 +18,7 @@ class ValidAnagramTest {
     fun test2() {
         val s = "anagram"
         val t = "nagaram"
+
         assertTrue(ValidAnagram.isAnagram(s, t))
     }
 
@@ -24,6 +26,7 @@ class ValidAnagramTest {
     fun test3() {
         val s = "rat"
         val t = "car"
+
         assertFalse(ValidAnagram.isAnagram(s, t))
     }
 }

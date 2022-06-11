@@ -9,6 +9,7 @@ class PalindromeNumberTest {
     fun test1() {
         val number = 121
         val expected = true
+
         assertEquals(expected, PalindromeNumber.isPalindrome(number))
     }
 
@@ -16,6 +17,7 @@ class PalindromeNumberTest {
     fun test2() {
         val number = -123
         val expected = false
+
         assertEquals(expected, PalindromeNumber.isPalindrome(number))
     }
 
@@ -23,6 +25,7 @@ class PalindromeNumberTest {
     fun test3() {
         val number = 10
         val expected = false
+
         assertEquals(expected, PalindromeNumber.isPalindrome(number))
     }
 
@@ -30,6 +33,7 @@ class PalindromeNumberTest {
     fun test4() {
         val number = -101
         val expected = false
+
         assertEquals(expected, PalindromeNumber.isPalindrome(number))
     }
 
@@ -37,6 +41,7 @@ class PalindromeNumberTest {
     fun test5() {
         val number = Integer.MAX_VALUE
         val expected = false
+
         assertEquals(expected, PalindromeNumber.isPalindrome(number))
     }
 }

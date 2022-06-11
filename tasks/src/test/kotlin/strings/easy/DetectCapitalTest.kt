@@ -9,6 +9,7 @@ class DetectCapitalTest {
     fun test1() {
         val s = "USA"
         val expected = true
+
         assertEquals(expected, DetectCapital.detectCapitalUse(s))
     }
 
@@ -16,6 +17,7 @@ class DetectCapitalTest {
     fun test2() {
         val s = "FLaG"
         val expected = false
+
         assertEquals(expected, DetectCapital.detectCapitalUse(s))
     }
 
@@ -23,6 +25,7 @@ class DetectCapitalTest {
     fun test3() {
         val s = "flag"
         val expected = true
+
         assertEquals(expected, DetectCapital.detectCapitalUse(s))
     }
 
@@ -30,6 +33,7 @@ class DetectCapitalTest {
     fun test4() {
         val s = "USa"
         val expected = false
+
         assertEquals(expected, DetectCapital.detectCapitalUse(s))
     }
 }

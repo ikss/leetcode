@@ -9,6 +9,7 @@ class LongestSubstringWithoutRepeatingTest {
     fun test1() {
         val s = "abcabcbb"
         val expected = 3
+
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstring(s))
     }
 
@@ -16,6 +17,7 @@ class LongestSubstringWithoutRepeatingTest {
     fun test2() {
         val s = "bbbbb"
         val expected = 1
+
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstring(s))
     }
 
@@ -23,6 +25,7 @@ class LongestSubstringWithoutRepeatingTest {
     fun test3() {
         val s = ""
         val expected = 0
+
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstring(s))
     }
 
@@ -30,6 +33,7 @@ class LongestSubstringWithoutRepeatingTest {
     fun test4() {
         val s = "pwwkew"
         val expected = 3
+
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstring(s))
     }
 
@@ -37,6 +41,7 @@ class LongestSubstringWithoutRepeatingTest {
     fun test5() {
         val s = "aab"
         val expected = 2
+
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstring(s))
     }
 
@@ -44,6 +49,7 @@ class LongestSubstringWithoutRepeatingTest {
     fun test6() {
         val s = "a"
         val expected = 1
+
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstring(s))
     }
 
@@ -52,6 +58,7 @@ class LongestSubstringWithoutRepeatingTest {
     fun testWOSet1() {
         val s = "abcabcbb"
         val expected = 3
+
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstringWOSet(s))
     }
 
@@ -59,6 +66,7 @@ class LongestSubstringWithoutRepeatingTest {
     fun testWOSet2() {
         val s = "bbbbb"
         val expected = 1
+
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstringWOSet(s))
     }
 
@@ -66,6 +74,7 @@ class LongestSubstringWithoutRepeatingTest {
     fun testWOSet3() {
         val s = ""
         val expected = 0
+
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstringWOSet(s))
     }
 

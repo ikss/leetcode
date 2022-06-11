@@ -8,6 +8,7 @@ class PlusOneTest {
     fun test1() {
         val nums = intArrayOf(1, 2, 3)
         val expected = intArrayOf(1, 2, 4)
+
         assertTrue(expected.contentEquals(PlusOne.plusOne(nums)))
     }
 
@@ -15,6 +16,7 @@ class PlusOneTest {
     fun test2() {
         val nums = intArrayOf(4, 3, 2, 1)
         val expected = intArrayOf(4, 3, 2, 2)
+
         assertTrue(expected.contentEquals(PlusOne.plusOne(nums)))
     }
 
@@ -22,6 +24,7 @@ class PlusOneTest {
     fun test3() {
         val nums = intArrayOf(9)
         val expected = intArrayOf(1, 0)
+
         assertTrue(expected.contentEquals(PlusOne.plusOne(nums)))
     }
 }

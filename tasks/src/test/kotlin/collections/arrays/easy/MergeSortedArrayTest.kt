@@ -13,6 +13,7 @@ class MergeSortedArrayTest {
 
         MergeSortedArray.merge(nums1, m, nums2, n)
         val expected = intArrayOf(1, 2, 2, 3, 5, 6)
+
         assertTrue(expected.contentEquals(nums1))
     }
 
@@ -25,6 +26,7 @@ class MergeSortedArrayTest {
 
         MergeSortedArray.merge(nums1, m, nums2, n)
         val expected = intArrayOf(1)
+
         assertTrue(expected.contentEquals(nums1))
     }
 
@@ -37,6 +39,7 @@ class MergeSortedArrayTest {
 
         MergeSortedArray.merge(nums1, m, nums2, n)
         val expected = intArrayOf(1)
+
         assertTrue(expected.contentEquals(nums1))
     }
 }

@@ -9,6 +9,7 @@ class IntegerToRomanTest {
     fun test1() {
         val num = 3
         val expected = "III"
+
         assertEquals(expected, IntegerToRoman.intToRoman(num))
     }
 
@@ -16,6 +17,7 @@ class IntegerToRomanTest {
     fun test2() {
         val num = 4
         val expected = "IV"
+
         assertEquals(expected, IntegerToRoman.intToRoman(num))
     }
 
@@ -23,6 +25,7 @@ class IntegerToRomanTest {
     fun test3() {
         val num = 9
         val expected = "IX"
+
         assertEquals(expected, IntegerToRoman.intToRoman(num))
     }
 
@@ -30,6 +33,7 @@ class IntegerToRomanTest {
     fun test4() {
         val num = 58
         val expected = "LVIII"
+
         assertEquals(expected, IntegerToRoman.intToRoman(num))
     }
 
@@ -37,6 +41,7 @@ class IntegerToRomanTest {
     fun test5() {
         val num = 1994
         val expected = "MCMXCIV"
+
         assertEquals(expected, IntegerToRoman.intToRoman(num))
     }
 }

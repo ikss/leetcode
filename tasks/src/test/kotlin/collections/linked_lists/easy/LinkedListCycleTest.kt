@@ -13,12 +13,14 @@ class LinkedListCycleTest {
         val node2 = ListNode(2)
         node2.next = ListNode(3, ListNode(4, node2))
         val list = ListNode(1, node2)
+
         assertTrue(LinkedListCycle.hasCycle(list))
     }
 
     @Test
     fun test2() {
         val list = ListBuilder.build(1, 2, 3, 4)
+
         assertFalse(LinkedListCycle.hasCycle(list))
     }
 }

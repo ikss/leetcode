@@ -9,12 +9,14 @@ class ValidParenthesisTest {
     @Test
     fun test1() {
         val s = "()"
+
         assertTrue(ValidParenthesis.isValid(s))
     }
 
     @Test
     fun test2() {
         val s = "(]"
+
         assertFalse(ValidParenthesis.isValid(s))
     }
 
