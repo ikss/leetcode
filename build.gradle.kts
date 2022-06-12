@@ -6,7 +6,7 @@
 
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "1.6.21"
+    id("org.jetbrains.kotlin.jvm") version "1.7.0"
 }
 
 allprojects {
@@ -15,4 +15,14 @@ allprojects {
         // You can declare any Maven/Ivy/file repository here.
         mavenCentral()
     }
+
+    tasks.withType(JavaCompile::class).all {
+        sourceCompatibility = "17"
+        targetCompatibility = "17"
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
+        kotlinOptions.jvmTarget = "17"
+    }
+
 }
