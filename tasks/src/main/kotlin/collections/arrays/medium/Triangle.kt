@@ -41,4 +41,5 @@ object Triangle {
         }
         return prevLevel[0]
     }
+
 }
