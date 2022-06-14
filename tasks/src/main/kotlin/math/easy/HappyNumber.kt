@@ -10,7 +10,7 @@ package math.easy
  *  * Those numbers for which this process ends in 1 are happy.
  * Return true if n is a happy number, and false if not.
  *
- * [URL](https://leetcode.com/problems/happy-number/
+ * [URL](https://leetcode.com/problems/happy-number/)
  */
 object HappyNumber {
 

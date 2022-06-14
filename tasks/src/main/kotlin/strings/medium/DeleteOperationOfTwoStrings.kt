@@ -2,12 +2,11 @@ package strings.medium
 
 
 /**
- * Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+ * Given two strings word1 and word2, return the minimum number of steps required to make word1 and word2 the same.
  *
- * An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
- * typically using all the original letters exactly once.
+ * In one step, you can delete exactly one character in either string.
  *
- * [URL](https://leetcode.com/problems/group-anagrams/
+ * [URL](https://leetcode.com/problems/delete-operation-for-two-strings/)
  */
 object DeleteOperationOfTwoStrings {
     fun minDistanceDp(word1: String, word2: String): Int {

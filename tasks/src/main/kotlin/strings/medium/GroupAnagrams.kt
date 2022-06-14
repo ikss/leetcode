@@ -7,7 +7,7 @@ package strings.medium
  * An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
  * typically using all the original letters exactly once.
  *
- * [URL](https://leetcode.com/problems/group-anagrams/
+ * [URL](https://leetcode.com/problems/group-anagrams/)
  */
 object GroupAnagrams {
     fun groupAnagrams(strs: Array<String>): List<List<String>> {
