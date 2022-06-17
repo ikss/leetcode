@@ -42,4 +42,22 @@ object DecodeWays {
         memo[i] = res
         return res
     }
+
+    fun numDecodingsDp(s: String): Int {
+        if (s.isEmpty()) return 0
+        val n = s.length
+        val dp = IntArray(n + 1)
+        dp[n] = 1
+        for (i in n - 1 downTo 0) {
+            if (s[i] == '0') {
+                dp[i] = 0
+            } else {
+                dp[i] = dp[i + 1]
+                if (i < n - 1 && (s[i] == '1' || (s[i] == '2' && s[i + 1] < '7'))) {
+                    dp[i] += dp[i + 2]
+                }
+            }
+        }
+        return dp[0]
+    }
 }
