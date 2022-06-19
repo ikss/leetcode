@@ -20,7 +20,6 @@ object HappyNumber {
         while (sum !in nums) {
             nums.add(sum)
             sum = getSum(sum)
-            println(sum)
             if (sum == 1) return true
         }
         return false

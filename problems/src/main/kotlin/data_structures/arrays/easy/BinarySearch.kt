@@ -16,10 +16,11 @@ object BinarySearch {
 
         while (l <= r) {
             val tmp = (r - l) / 2 + l
-            if (nums[tmp] == target) return tmp
-            else if (nums[tmp] > target) r = tmp - 1
-            else l = tmp + 1
-            println("l: $l, r: $r, tmp: $tmp")
+            when {
+                nums[tmp] == target -> return tmp
+                nums[tmp] > target -> r = tmp - 1
+                else -> l = tmp + 1
+            }
         }
 
         return -1

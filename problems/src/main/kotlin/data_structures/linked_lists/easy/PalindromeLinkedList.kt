@@ -21,10 +21,7 @@ object PalindromeLinkedList {
     private fun traverse(head: ListNode): Boolean {
         val next = head.next
             ?: return cur!!.`val` == head.`val`
-        println("cur: $cur, head: $head")
-        val interm = traverse(next)
-        println("cur: $cur, head: $head, interm: $interm")
-        if (!interm) {
+        if (!traverse(next)) {
             return false
         }
         cur = cur!!.next

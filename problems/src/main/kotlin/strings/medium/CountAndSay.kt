@@ -33,7 +33,6 @@ object CountAndSay {
             var s = "1"
             for (i in 1 until n) {
                 s = countIdx(s)
-                println("$i: $s")
             }
             mapOfPrev[n] = s
         }
