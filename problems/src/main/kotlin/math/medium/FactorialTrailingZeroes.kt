@@ -15,7 +15,17 @@ package math.medium
  * [URL](https://leetcode.com/problems/divide-two-integers/)
  */
 object FactorialTrailingZeroes {
-    fun trailingZeroes(n: Int): Int {
+    fun trailingZeroesOptimal(n: Int): Int {
+        var tmp = n
+        var result = 0
+        while (tmp >= 5) {
+            tmp /= 5
+            result += tmp
+        }
+        return result
+    }
+
+    fun trailingZeroesNonOptimal(n: Int): Int {
         val map = mutableMapOf<Int, Pair<Int, Int>>()
         var twos = 0
         var fifths = 0
