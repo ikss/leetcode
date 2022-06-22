@@ -3,14 +3,14 @@ package data_structures.arrays.easy
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-class TwoSumTest {
+class `2SumTest` {
     @Test
     fun test1() {
         val nums = intArrayOf(2, 7, 11, 15)
         val target = 9
         val expected = intArrayOf(0, 1)
 
-        assertTrue(expected.contentEquals(TwoSum.twoSum(nums, target)))
+        assertTrue(expected.contentEquals(`2Sum`.twoSum(nums, target)))
     }
 
     @Test
@@ -19,7 +19,7 @@ class TwoSumTest {
         val target = 6
         val expected = intArrayOf(1, 2)
 
-        assertTrue(expected.contentEquals(TwoSum.twoSum(nums, target)))
+        assertTrue(expected.contentEquals(`2Sum`.twoSum(nums, target)))
     }
 
     @Test
@@ -28,6 +28,6 @@ class TwoSumTest {
         val target = 6
         val expected = intArrayOf(0, 1)
 
-        assertTrue(expected.contentEquals(TwoSum.twoSum(nums, target)))
+        assertTrue(expected.contentEquals(`2Sum`.twoSum(nums, target)))
     }
 }

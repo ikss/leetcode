@@ -10,7 +10,7 @@ package data_structures.arrays.easy
  *
  * [URL](https://leetcode.com/problems/two-sum/)
  */
-object TwoSum {
+object `2Sum` {
     fun twoSum(nums: IntArray, target: Int): IntArray {
         val map = mutableMapOf<Int, Int>()
         nums.forEachIndexed { index, it ->
