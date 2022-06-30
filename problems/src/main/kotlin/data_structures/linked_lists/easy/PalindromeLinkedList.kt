@@ -8,7 +8,7 @@ import data_structures.ListNode
  * [URL](https://leetcode.com/problems/palindrome-linked-list//)
  */
 object PalindromeLinkedList {
-    var cur: ListNode? = null
+    private var cur: ListNode? = null
 
     fun isPalindrome(head: ListNode?): Boolean {
         if (head == null) return false

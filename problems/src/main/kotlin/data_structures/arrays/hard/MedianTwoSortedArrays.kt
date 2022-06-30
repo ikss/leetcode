@@ -7,6 +7,7 @@ package data_structures.arrays.hard
  * [URL](https://leetcode.com/problems/median-of-two-sorted-arrays/)
  */
 object MedianTwoSortedArrays {
+    @Suppress("unused")
     fun findMedianSortedArraysNaive(nums1: IntArray, nums2: IntArray): Double {
         val totalSize = nums1.size + nums2.size
         if (totalSize == 0) {

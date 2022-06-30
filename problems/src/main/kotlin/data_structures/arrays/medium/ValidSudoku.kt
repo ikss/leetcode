@@ -9,11 +9,11 @@ package data_structures.arrays.medium
  * (URL)(https://leetcode.com/problems/valid-sudoku/)
  */
 object ValidSudoku {
-    val uniqSet = setOf('1', '2', '3', '4', '5', '6', '7', '8', '9')
+    private val uniqSet = setOf('1', '2', '3', '4', '5', '6', '7', '8', '9')
 
     fun isValidSudoku(board: Array<CharArray>): Boolean {
         return validRows(board)
-                && validColums(board)
+                && validColumns(board)
                 && validNines(board)
     }
 
@@ -28,7 +28,7 @@ object ValidSudoku {
         return true
     }
 
-    private fun validColums(board: Array<CharArray>): Boolean {
+    private fun validColumns(board: Array<CharArray>): Boolean {
         for (i in 0 until 9) {
             val copySet = HashSet(uniqSet)
             for (j in 0 until 9) {

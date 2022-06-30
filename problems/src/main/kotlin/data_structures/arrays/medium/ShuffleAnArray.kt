@@ -3,7 +3,8 @@ package data_structures.arrays.medium
 import kotlin.random.Random
 
 /**
- * Given an integer array nums, design an algorithm to randomly shuffle the array. All permutations of the array should be equally likely as a result of the shuffling.
+ * Given an integer array nums, design an algorithm to randomly shuffle the array.
+ * All permutations of the array should be equally likely as a result of the shuffling.
 
  * Implement the Solution class:
 
@@ -13,6 +14,7 @@ import kotlin.random.Random
  *
  * [URL](https://leetcode.com/problems/shuffle-an-array/)
  */
+@Suppress("unused")
 class ShuffleAnArray(nums: IntArray) {
     private val oldNums = nums.copyOf()
     fun reset(): IntArray {

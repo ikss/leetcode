@@ -14,7 +14,7 @@ package strings.medium
  */
 object ShortEncodingOfWords {
     internal class TrieNode {
-        var children: Array<TrieNode?> = arrayOfNulls(26)
+        private var children: Array<TrieNode?> = arrayOfNulls(26)
         var count: Int = 0
 
         operator fun get(c: Char): TrieNode? {

@@ -24,7 +24,7 @@ object ReverseLinkedList {
 
     fun reverseRecursive(head: ListNode?): ListNode? {
         val next = head?.next
-            ?: return head;
+            ?: return head
         val reversed = reverseRecursive(head.next)
         next.next = head
         head.next = null

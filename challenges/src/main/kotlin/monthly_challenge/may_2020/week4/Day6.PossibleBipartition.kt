@@ -2,10 +2,10 @@ package monthly_challenge.may_2020.week4
 
 object PossibleBipartition {
     private lateinit var graph: Array<ArrayList<Int>>
-    var color = mutableMapOf<Int, Int>()
+    private var color = mutableMapOf<Int, Int>()
 
     fun possibleBipartition(N: Int, dislikes: Array<IntArray>): Boolean {
-        graph = Array(N + 1) { ArrayList<Int>() }
+        graph = Array(N + 1) { ArrayList() }
         for (edge in dislikes) {
             graph[edge[0]].add(edge[1])
             graph[edge[1]].add(edge[0])

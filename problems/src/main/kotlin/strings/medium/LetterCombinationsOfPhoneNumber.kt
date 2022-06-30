@@ -9,7 +9,7 @@ package strings.medium
  */
 object LetterCombinationsOfPhoneNumber {
 
-    val mapping: Map<Char, Set<Char>> = mapOf(
+    private val mapping: Map<Char, Set<Char>> = mapOf(
         '2' to setOf('a', 'b', 'c'),
         '3' to setOf('d', 'e', 'f'),
         '4' to setOf('g', 'h', 'i'),
