@@ -27,4 +27,26 @@ object LongestConsecutiveSubsequence {
         }
         return Math.max(longest, curr)
     }
+
+    fun longestConsecutiveOptimized(nums: IntArray): Int {
+        if (nums.isEmpty()) return 0
+
+        val set = nums.toHashSet()
+
+        var longest = 0
+
+        for (num in set) {
+            if (set.contains(num - 1)) {
+                continue
+            }
+            var curr = 1
+            var currNum = num
+            while (set.contains(currNum + 1)) {
+                curr++
+                currNum++
+            }
+            longest = Math.max(longest, curr)
+        }
+        return longest
+    }
 }
