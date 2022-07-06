@@ -12,7 +12,7 @@ package math.medium
  * [URL](https://leetcode.com/problems/fraction-to-recurring-decimal/)
  */
 object FractionToRecurringDecimal {
-    fun fractionToDecimal(numerator: Int, denominator: Int): String? {
+    fun fractionToDecimal(numerator: Int, denominator: Int): String {
         if (numerator == 0) {
             return "0"
         }
