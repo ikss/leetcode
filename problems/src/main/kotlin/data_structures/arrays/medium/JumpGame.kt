@@ -1,12 +1,12 @@
 package data_structures.arrays.medium
 
 /**
- * Given a triangle array, return the minimum path sum from top to bottom.
+ * You are given an integer array nums. You are initially positioned at the array's first index,
+ * and each element in the array represents your maximum jump length at that position.
  *
- * For each step, you may move to an adjacent number of the row below. More formally,
- * if you are on index i on the current row, you may move to either index i or index i + 1 on the next row.
+ * Return _true_ if you can reach the last index, or _false_ otherwise.
  *
- * [URL](https://leetcode.com/problems/triangle/)
+ * [URL](https://leetcode.com/problems/jump-game/)
  */
 object JumpGame {
     fun canJumpGreedy(nums: IntArray): Boolean {
