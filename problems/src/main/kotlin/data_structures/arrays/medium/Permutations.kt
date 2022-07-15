@@ -13,15 +13,16 @@ object Permutations {
         return ret
     }
 
-    private fun backtrack(ret: MutableList<List<Int>>, tmpList: MutableSet<Int>, nums: IntArray) {
-        if (tmpList.size == nums.size) {
-            ret.add(tmpList.toList())
+    private fun backtrack(ret: MutableList<List<Int>>, used: MutableSet<Int>, nums: IntArray) {
+        if (used.size == nums.size) {
+            ret.add(used.toList())
             return
         }
-        for (i in nums.indices) {
-            if (!tmpList.add(nums[i])) continue
-            backtrack(ret, tmpList, nums)
-            tmpList.remove(nums[i])
+        for (n in nums) {
+            if (!used.add(n)) continue
+
+            backtrack(ret, used, nums)
+            used.remove(n)
         }
     }
 }
