@@ -10,7 +10,7 @@ import java.util.*
  * You can apply at most maxMove moves to the ball.
  *
  * Given the five integers m, n, maxMove, startRow, startColumn, return the number of paths to move the ball
- * out of the grid boundary. Since the answer can be very large, return it modulo 109 + 7.
+ * out of the grid boundary. Since the answer can be very large, return it modulo 10^9 + 7.
  *
  * [URL](https://leetcode.com/problems/out-of-boundary-paths/)
  */
