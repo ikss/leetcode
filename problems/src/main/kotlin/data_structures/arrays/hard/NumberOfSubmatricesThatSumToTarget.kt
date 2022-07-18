@@ -15,28 +15,26 @@ import java.util.*
  */
 object NumberOfSubmatricesThatSumToTarget {
     fun numSubmatrixSumTarget(matrix: Array<IntArray>, target: Int): Int {
-        var res = 0
+        var result = 0
         val m = matrix.size
-        val n = matrix[0].size
-        for (i in 0 until m) {
-            for (j in 1 until n) {
-                matrix[i][j] += matrix[i][j - 1]
+        val n = matrix[0].size + 1
+        val prefixSum = Array(m) { IntArray(n) }
+        for (i in prefixSum.indices) {
+            for (j in 1 until prefixSum[0].size) {
+                prefixSum[i][j] = prefixSum[i][j - 1] + matrix[i][j - 1]
             }
         }
-
-        val counter = mutableMapOf<Int, Int>()
         for (i in 0 until n) {
-            for (j in i until n) {
-                counter.clear()
-                counter[0] = 1
+            for (j in i + 1 until n) {
+                val counter = mutableMapOf(0 to 1)
                 var cur = 0
                 for (k in 0 until m) {
-                    cur += matrix[k][j] - if (i > 0) matrix[k][i - 1] else 0
-                    res += counter.getOrDefault(cur - target, 0)
+                    cur += prefixSum[k][j] - prefixSum[k][i]
+                    result += counter.getOrDefault(cur - target, 0)
                     counter[cur] = counter.getOrDefault(cur, 0) + 1
                 }
             }
         }
-        return res
+        return result
     }
 }
