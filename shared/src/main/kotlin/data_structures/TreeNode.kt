@@ -3,6 +3,11 @@ package data_structures
 data class TreeNode(val `val`: Int, var left: TreeNode? = null, var right: TreeNode? = null)
 
 object TreeBuilder {
+    fun build(vararg values: Int?): TreeNode? {
+        if (values.isEmpty()) return null
+        return build(values.toList(), 0)
+    }
+
     fun build(values: List<Int?>?): TreeNode? {
         if (values.isNullOrEmpty()) return null
         return build(values, 0)
