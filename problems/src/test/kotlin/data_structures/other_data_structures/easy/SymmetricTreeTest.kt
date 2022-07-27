@@ -9,14 +9,14 @@ class SymmetricTreeTest {
 
     @Test
     fun test1() {
-        val root = TreeBuilder.build(listOf(1, 2, 2, 3, 4, 4, 3))
+        val root = TreeBuilder.build(1, 2, 2, 3, 4, 4, 3)
 
         assertTrue(SymmetricTree.isSymmetric(root))
     }
 
     @Test
     fun test2() {
-        val root = TreeBuilder.build(listOf(1, 2, 2, null, 3, null, 3))
+        val root = TreeBuilder.build(1, 2, 2, null, 3, null, 3)
 
         assertFalse(SymmetricTree.isSymmetric(root))
     }

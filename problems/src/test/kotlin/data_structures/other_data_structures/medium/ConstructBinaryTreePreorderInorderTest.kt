@@ -10,7 +10,7 @@ class ConstructBinaryTreePreorderInorderTest {
     fun test1naive() {
         val preorder = intArrayOf(3, 9, 20, 15, 7)
         val inorder = intArrayOf(9, 3, 15, 20, 7)
-        val expected = TreeBuilder.build(listOf(3, 9, 20, null, null, 15, 7))
+        val expected = TreeBuilder.build(3, 9, 20, null, null, 15, 7)
 
         assertEquals(expected, ConstructBinaryTreePreorderInorder.buildTreeNaive(preorder, inorder))
     }
@@ -19,7 +19,7 @@ class ConstructBinaryTreePreorderInorderTest {
     fun test2naive() {
         val preorder = intArrayOf(-1)
         val inorder = intArrayOf(-1)
-        val expected = TreeBuilder.build(listOf(-1))
+        val expected = TreeBuilder.build(-1)
 
         assertEquals(expected, ConstructBinaryTreePreorderInorder.buildTreeNaive(preorder, inorder))
     }
@@ -28,7 +28,7 @@ class ConstructBinaryTreePreorderInorderTest {
     fun test1index() {
         val preorder = intArrayOf(3, 9, 20, 15, 7)
         val inorder = intArrayOf(9, 3, 15, 20, 7)
-        val expected = TreeBuilder.build(listOf(3, 9, 20, null, null, 15, 7))
+        val expected = TreeBuilder.build(3, 9, 20, null, null, 15, 7)
 
         assertEquals(expected, ConstructBinaryTreePreorderInorder.buildTreeWithIndex(preorder, inorder))
     }
@@ -37,7 +37,7 @@ class ConstructBinaryTreePreorderInorderTest {
     fun test2index() {
         val preorder = intArrayOf(-1)
         val inorder = intArrayOf(-1)
-        val expected = TreeBuilder.build(listOf(-1))
+        val expected = TreeBuilder.build(-1)
 
         assertEquals(expected, ConstructBinaryTreePreorderInorder.buildTreeWithIndex(preorder, inorder))
     }

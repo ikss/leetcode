@@ -8,18 +8,18 @@ class MergeTwoBinaryTreesTest {
 
     @Test
     fun test1() {
-        val root1 = TreeBuilder.build(listOf(1, 3, 2, 5))
-        val root2 = TreeBuilder.build(listOf(2, 1, 3, null, 4, null, 7))
-        val expected = TreeBuilder.build(listOf(3, 4, 5, 5, 4, null, 7))
+        val root1 = TreeBuilder.build(1, 3, 2, 5)
+        val root2 = TreeBuilder.build(2, 1, 3, null, 4, null, 7)
+        val expected = TreeBuilder.build(3, 4, 5, 5, 4, null, 7)
 
         assertEquals(expected, MergeTwoBinaryTrees.mergeTrees(root1, root2))
     }
 
     @Test
     fun test2() {
-        val root1 = TreeBuilder.build(listOf(1))
-        val root2 = TreeBuilder.build(listOf(1, 2))
-        val expected = TreeBuilder.build(listOf(2, 2))
+        val root1 = TreeBuilder.build(1)
+        val root2 = TreeBuilder.build(1, 2)
+        val expected = TreeBuilder.build(2, 2)
 
         assertEquals(expected, MergeTwoBinaryTrees.mergeTrees(root1, root2))
     }

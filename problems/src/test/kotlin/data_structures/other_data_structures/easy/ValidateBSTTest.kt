@@ -9,14 +9,14 @@ class ValidateBSTTest {
 
     @Test
     fun test1() {
-        val root = TreeBuilder.build(listOf(2, 1, 3))
+        val root = TreeBuilder.build(2, 1, 3)
 
         assertTrue(ValidateBST.isValidBST(root))
     }
 
     @Test
     fun test2() {
-        val root = TreeBuilder.build(listOf(1, 1, 1))
+        val root = TreeBuilder.build(1, 1, 1)
 
         assertFalse(ValidateBST.isValidBST(root))
     }

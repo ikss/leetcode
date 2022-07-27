@@ -9,7 +9,7 @@ class ConvertSortedArrayToBSTTest {
     @Test
     fun test1() {
         val array = intArrayOf(-10, -3, 0, 5, 9)
-        val expected = TreeBuilder.build(listOf(0, -10, 5, null, -3, null, 9))
+        val expected = TreeBuilder.build(0, -10, 5, null, -3, null, 9)
 
         assertEquals(expected, ConvertSortedArrayToBST.sortedArrayToBST(array))
     }
@@ -17,7 +17,7 @@ class ConvertSortedArrayToBSTTest {
     @Test
     fun test2() {
         val array = intArrayOf(1, 3)
-        val expected = TreeBuilder.build(listOf(1, null, 3))
+        val expected = TreeBuilder.build(1, null, 3)
 
         assertEquals(expected, ConvertSortedArrayToBST.sortedArrayToBST(array))
     }

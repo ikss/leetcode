@@ -8,11 +8,6 @@ object TreeBuilder {
         return build(values.toList(), 0)
     }
 
-    fun build(values: List<Int?>?): TreeNode? {
-        if (values.isNullOrEmpty()) return null
-        return build(values, 0)
-    }
-
     private fun build(values: List<Int?>, index: Int): TreeNode? {
         if (index >= values.size) return null
         val `val` = values[index]

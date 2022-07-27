@@ -8,14 +8,14 @@ class MaximumDepthBTTest {
 
     @Test
     fun test1() {
-        val root = TreeBuilder.build(listOf(4, 2, 3, 1))
+        val root = TreeBuilder.build(4, 2, 3, 1)
 
         assertEquals(3, MaximumDepthBT.maxDepth(root))
     }
 
     @Test
     fun test2() {
-        val root = TreeBuilder.build(listOf(1))
+        val root = TreeBuilder.build(1)
 
         assertEquals(1, MaximumDepthBT.maxDepth(root))
     }
