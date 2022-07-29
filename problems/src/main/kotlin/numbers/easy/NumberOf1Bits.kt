@@ -26,4 +26,14 @@ object NumberOf1Bits {
         if (temp == 1L) result++
         return result
     }
+
+    fun hammingWeightBitShift(n: Int): Int {
+        var result = 0
+        var temp = n
+        while (temp != 0) {
+            result += temp and 1
+            temp = temp ushr 1
+        }
+        return result
+    }
 }
