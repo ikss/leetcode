@@ -12,4 +12,13 @@ class RangeSumQueryMutableTest {
         arr.update(1, 2)
         assertEquals(8, arr.sumRange(0, 2))
     }
+
+    @Test
+    fun test2() {
+        val arr = RangeSumQueryMutable.NumArrayPrecalculatedSums(intArrayOf(1, 3, 5))
+        assertEquals(9, arr.sumRange(0, 2))
+
+        arr.update(1, 2)
+        assertEquals(8, arr.sumRange(0, 2))
+    }
 }

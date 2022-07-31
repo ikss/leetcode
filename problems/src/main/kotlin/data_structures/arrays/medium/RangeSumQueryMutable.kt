@@ -30,4 +30,40 @@ object RangeSumQueryMutable {
         }
 
     }
+
+
+    class NumArrayPrecalculatedSums(val nums: IntArray) {
+        private var sums: IntArray
+        private var len = 0
+
+        init {
+            val l = Math.sqrt(nums.size.toDouble())
+            len = Math.ceil(nums.size / l).toInt()
+            sums = IntArray(len)
+            for (i in nums.indices) {
+                sums[i / len] += nums[i]
+            }
+        }
+
+        fun sumRange(i: Int, j: Int): Int {
+            var sum = 0
+            val startBlock = i / len
+            val endBlock = j / len
+            if (startBlock == endBlock) {
+                for (k in i..j) sum += nums[k]
+                return sum
+            } else {
+                for (k in i until (startBlock + 1) * len) sum += nums[k]
+                for (k in startBlock + 1 until endBlock) sum += sums[k]
+                for (k in endBlock * len..j) sum += nums[k]
+            }
+            return sum
+        }
+
+        fun update(i: Int, `val`: Int) {
+            val b_l = i / len
+            sums[b_l] = sums[b_l] - nums[i] + `val`
+            nums[i] = `val`
+        }
+    }
 }
