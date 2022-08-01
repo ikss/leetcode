@@ -61,8 +61,8 @@ object RangeSumQueryMutable {
         }
 
         fun update(i: Int, `val`: Int) {
-            val b_l = i / len
-            sums[b_l] = sums[b_l] - nums[i] + `val`
+            val batch = i / len
+            sums[batch] = sums[batch] - nums[i] + `val`
             nums[i] = `val`
         }
     }
