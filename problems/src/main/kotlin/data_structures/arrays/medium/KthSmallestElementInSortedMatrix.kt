@@ -1,5 +1,7 @@
 package data_structures.arrays.medium
 
+import java.util.*
+
 /**
  * Given an n x n matrix where each of the rows and columns is sorted in ascending order,
  * return the kth smallest element in the matrix.
@@ -11,7 +13,7 @@ package data_structures.arrays.medium
  * [URL](https://leetcode.com/problems/01-matrix/)
  */
 object KthSmallestElementInSortedMatrix {
-    fun kthSmallest(matrix: Array<IntArray>, k: Int): Int {
+    fun kthSmallestBinarySearch(matrix: Array<IntArray>, k: Int): Int {
         val n = matrix.size
         var lo = matrix[0][0]
         var hi = matrix[n - 1][n - 1] + 1 //[lo, hi)
@@ -25,8 +27,16 @@ object KthSmallestElementInSortedMatrix {
                 }
                 count += (j + 1)
             }
+            println("lo: $lo, hi: $hi, mid: $mid, j: $j, count: $count")
             if (count < k) lo = mid + 1 else hi = mid
         }
         return lo
+    }
+
+    fun kthSmallestPriorityQueue(matrix: Array<IntArray>, k: Int): Int {
+        val queue = PriorityQueue<Int>(k) { a, b -> b - a }
+        matrix.forEach { submatrix -> submatrix.forEach { queue.offer(it) } }
+        while (queue.size > k) queue.poll()
+        return queue.poll()
     }
 }
