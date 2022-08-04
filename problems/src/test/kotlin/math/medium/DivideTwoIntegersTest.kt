@@ -15,7 +15,7 @@ class DivideTwoIntegersTest {
     }
 
     @Test
-    fun test3() {
+    fun test2() {
         val dividend = Int.MAX_VALUE
         val divisor = -1
         val expected = -2147483647
@@ -24,7 +24,7 @@ class DivideTwoIntegersTest {
     }
 
     @Test
-    fun test4() {
+    fun test3() {
         val dividend = Int.MIN_VALUE
         val divisor = -1
         val expected = 2147483647

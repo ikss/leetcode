@@ -15,7 +15,7 @@ class FractionToRecurringDecimalTest {
     }
 
     @Test
-    fun test3() {
+    fun test2() {
         val dividend = 2
         val divisor = 1
         val expected = "2"
@@ -24,7 +24,7 @@ class FractionToRecurringDecimalTest {
     }
 
     @Test
-    fun test4() {
+    fun test3() {
         val dividend = 4
         val divisor = 333
         val expected = "0.(012)"
