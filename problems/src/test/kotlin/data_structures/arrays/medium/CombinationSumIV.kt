@@ -15,9 +15,9 @@ class CombinationSumIV {
 
     @Test
     fun test2() {
-        val nums = intArrayOf(3)
-        val target = 9
-        val expected = 3
+        val nums = intArrayOf(9)
+        val target = 3
+        val expected = 0
 
         assertEquals(expected, CombinationsSumIV.combinationSum4(nums, target))
     }
