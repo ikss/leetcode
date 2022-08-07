@@ -15,12 +15,12 @@ package strings.hard
  * [URL](https://leetcode.com/problems/count-vowels-permutation/)
  */
 object CountVowelsPermutation {
-    private val a = 0
-    private val e = 1
-    private val i = 2
-    private val o = 3
-    private val u = 4
-    private val MOD = 1_000_000_007
+    private const val a = 0
+    private const val e = 1
+    private const val i = 2
+    private const val o = 3
+    private const val u = 4
+    private const val MOD = 1_000_000_007
 
     fun countVowelPermutation(n: Int): Int {
         var n = n
