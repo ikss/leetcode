@@ -28,8 +28,6 @@ object LongestIncreasingSubsequence {
                 size++
             }
         }
-
-
         return size
     }
 }
