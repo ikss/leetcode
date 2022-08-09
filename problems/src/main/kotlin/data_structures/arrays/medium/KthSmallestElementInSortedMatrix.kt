@@ -27,7 +27,7 @@ object KthSmallestElementInSortedMatrix {
                 }
                 count += (j + 1)
             }
-            println("lo: $lo, hi: $hi, mid: $mid, j: $j, count: $count")
+
             if (count < k) lo = mid + 1 else hi = mid
         }
         return lo

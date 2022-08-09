@@ -19,11 +19,12 @@ object ReachingPoints {
                 tx %= ty
             }
         }
-        println("sx = [${sx}], sy = [${sy}], tx = [${tx}], ty = [${ty}]")
+
         return if (sx == tx && sy <= ty && (ty - sy) % sx == 0) {
             true
         } else {
             sy == ty && sx <= tx && (tx - sx) % sy == 0
         }
     }
+
 }
