@@ -13,9 +13,9 @@ import data_structures.TreeNode
  */
 object LowestCommonAncestorOfBinarySearchTree {
 
-    fun lowestCommonAncestor(root: TreeNode?, p: TreeNode, q: TreeNode): TreeNode? {
+    fun lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? {
         var root = root
-        val small = minOf(p.`val`, q.`val`)
+        val small = minOf(p!!.`val`, q!!.`val`)
         val large = maxOf(p.`val`, q.`val`)
         while (root != null) {
             root = if (root.`val` > large) {// p, q belong to the left subtree
