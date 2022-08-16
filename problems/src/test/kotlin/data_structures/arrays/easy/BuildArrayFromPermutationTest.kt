@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 class BuildArrayFromPermutationTest {
     @Test
     fun test1() {
-        val nums = intArrayOf(0, 2, 1, 5, 3)
+        val nums = intArrayOf(0, 2, 1, 5, 3, 4)
         val expected = intArrayOf(0, 1, 2, 4, 5, 3)
 
         assertTrue(expected.contentEquals(BuildArrayFromPermutation.buildArray(nums)))
