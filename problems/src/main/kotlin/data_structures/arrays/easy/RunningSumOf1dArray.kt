@@ -9,7 +9,7 @@ package data_structures.arrays.easy
  */
 object RunningSumOf1dArray {
     fun runningSum(nums: IntArray): IntArray {
-        val result = IntArray(nums.size) { 0 }
+        val result = IntArray(nums.size)
         var sum = 0
         nums.forEachIndexed { index, it ->
             sum += it

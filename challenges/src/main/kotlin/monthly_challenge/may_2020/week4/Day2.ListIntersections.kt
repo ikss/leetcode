@@ -6,8 +6,8 @@ object ListIntersections {
         var currA = 0
         var currB = 0
         while (currA < A.size && currB < B.size) {
-            val currentStart = Math.max(A[currA][0], B[currB][0])
-            val currentEnd = Math.min(A[currA][1], B[currB][1])
+            val currentStart = maxOf(A[currA][0], B[currB][0])
+            val currentEnd = minOf(A[currA][1], B[currB][1])
             if (currentStart <= currentEnd) result += intArrayOf(currentStart, currentEnd)
             if (B[currB][1] < A[currA][1]) {
                 currB++

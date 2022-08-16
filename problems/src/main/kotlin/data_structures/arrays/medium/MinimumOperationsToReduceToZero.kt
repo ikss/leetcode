@@ -25,7 +25,7 @@ object MinimumOperationsToReduceToZero {
         for (i in nums.indices) {
             sum += nums[i]
             if (map.containsKey(sum - target)) {
-                res = Math.max(res, i - map[sum - target]!!)
+                res = maxOf(res, i - map[sum - target]!!)
             }
 
             // no need to check containsKey since sum is unique

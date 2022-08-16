@@ -11,7 +11,7 @@ object ValidAnagram {
 
     fun isAnagram(s: String, t: String): Boolean {
         if (s.length != t.length) return false
-        val chars = Array(26) { 0 }
+        val chars = IntArray(26)
         s.toCharArray().forEach {
             chars[it - 'a']++
         }

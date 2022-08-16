@@ -15,8 +15,8 @@ object BestTimeToBuyAndSellStocks {
         var minLeft = prices[0]
         var maxProfit = 0
         for (i in 1 until prices.size) {
-            maxProfit = Math.max(maxProfit, prices[i] - minLeft)
-            minLeft = Math.min(minLeft, prices[i])
+            maxProfit = maxOf(maxProfit, prices[i] - minLeft)
+            minLeft = minOf(minLeft, prices[i])
         }
         return maxProfit
     }

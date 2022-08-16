@@ -13,8 +13,8 @@ object MaximumSubarray {
         var curSum = nums[0]
         for (i in 1 until nums.size) {
             val num = nums[i]
-            curSum = Math.max(curSum + num, num)
-            maxSum = Math.max(maxSum, curSum)
+            curSum = maxOf(curSum + num, num)
+            maxSum = maxOf(maxSum, curSum)
         }
         return maxSum
     }

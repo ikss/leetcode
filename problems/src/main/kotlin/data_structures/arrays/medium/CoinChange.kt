@@ -18,7 +18,7 @@ object CoinChange {
         dp[0] = 0
         for (coin in coins) {
             for (i in coin..amount) {
-                dp[i] = Math.min(dp[i], dp[i - coin] + 1)
+                dp[i] = minOf(dp[i], dp[i - coin] + 1)
             }
         }
         return if (dp[amount] > amount) -1 else dp[amount]

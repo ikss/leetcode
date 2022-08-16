@@ -21,11 +21,11 @@ object LongestConsecutiveSubsequence {
             } else if (nums[i] + 1 == nums[i + 1]) {
                 curr++
             } else {
-                longest = Math.max(longest, curr)
+                longest = maxOf(longest, curr)
                 curr = 1
             }
         }
-        return Math.max(longest, curr)
+        return maxOf(longest, curr)
     }
 
     fun longestConsecutiveOptimized(nums: IntArray): Int {
@@ -45,7 +45,7 @@ object LongestConsecutiveSubsequence {
                 curr++
                 currNum++
             }
-            longest = Math.max(longest, curr)
+            longest = maxOf(longest, curr)
         }
         return longest
     }

@@ -37,7 +37,7 @@ object FactorialTrailingZeroes {
             twos += pairs.first
             fifths += pairs.second
         }
-        return Math.min(twos, fifths)
+        return minOf(twos, fifths)
     }
 
     private fun getPairs(num: Int, map: MutableMap<Int, Pair<Int, Int>>): Pair<Int, Int> {

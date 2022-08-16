@@ -22,17 +22,17 @@ object MaximumAreaPieceOfCake {
         var maxV = 0
 
         for (hCut in horizontalCuts) {
-            maxH = Math.max(maxH, hCut - prev)
+            maxH = maxOf(maxH, hCut - prev)
             prev = hCut
         }
-        maxH = Math.max(maxH, h - prev)
+        maxH = maxOf(maxH, h - prev)
 
         prev = 0
         for (vCut in verticalCuts) {
-            maxV = Math.max(maxV, vCut - prev)
+            maxV = maxOf(maxV, vCut - prev)
             prev = vCut
         }
-        maxV = Math.max(maxV, w - prev)
+        maxV = maxOf(maxV, w - prev)
 
         return ((maxH.toLong() * maxV) % (1_000_000_007)).toInt()
     }

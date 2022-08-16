@@ -23,10 +23,10 @@ object LongestStringChain {
             var best = 0
             for (i in word.indices) {
                 val prev = word.removeRange(i, i + 1)
-                best = Math.max(best, (dp[prev] ?: 0) + 1)
+                best = maxOf(best, (dp[prev] ?: 0) + 1)
             }
             dp[word] = best
-            res = Math.max(res, best)
+            res = maxOf(res, best)
         }
         return res
     }

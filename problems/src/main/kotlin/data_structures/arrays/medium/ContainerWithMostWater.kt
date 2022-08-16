@@ -13,7 +13,7 @@ object ContainerWithMostWater {
         var max = 0
         var right = height.size - 1
         while (right > left) {
-            val area = Math.min(height[left], height[right]) * (right - left)
+            val area = minOf(height[left], height[right]) * (right - left)
             if (area > max) {
                 max = area
             }

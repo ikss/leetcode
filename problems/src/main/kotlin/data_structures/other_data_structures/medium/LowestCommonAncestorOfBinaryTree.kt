@@ -57,7 +57,7 @@ object LowestCommonAncestorOfBinaryTree {
         return second
     }
 
-    var ans: TreeNode? = null
+    private var ans: TreeNode? = null
 
     fun lowestCommonAncestorRecursive(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? {
         ans = null

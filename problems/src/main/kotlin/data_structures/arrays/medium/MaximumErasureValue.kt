@@ -18,7 +18,7 @@ object MaximumErasureValue {
         var max = 0
         for (n in nums) {
             if (!uniques.add(n)) {
-                max = Math.max(max, curr)
+                max = maxOf(max, curr)
                 while (!uniques.add(n)) {
                     val iter = uniques.iterator()
                     curr -= iter.next()
@@ -27,7 +27,7 @@ object MaximumErasureValue {
             }
             curr += n
         }
-        max = Math.max(max, curr)
+        max = maxOf(max, curr)
         return max
     }
 }

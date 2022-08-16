@@ -25,7 +25,7 @@ object Candy {
 
         for (i in ratings.size - 2 downTo 0) {
             if (ratings[i] > ratings[i + 1]) {
-                candies[i] = Math.max(candies[i], candies[i + 1] + 1)
+                candies[i] = maxOf(candies[i], candies[i + 1] + 1)
             }
             sum += candies[i]
         }

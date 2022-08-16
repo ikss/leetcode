@@ -9,13 +9,15 @@ object FirstUniqueCharacter {
 
     fun firstUniqChar(s: String): Int {
         val chars = s.toCharArray()
-        val counts = Array(33) { 0 }
+        val counts = IntArray(26)
 
         chars.forEach { char ->
             counts[char - 'a']++
         }
 
-        chars.forEachIndexed { index, i -> if (counts[i - 'a'] == 1) return index }
+        chars.forEachIndexed { index, i ->
+            if (counts[i - 'a'] == 1) return index
+        }
         return -1
     }
 }

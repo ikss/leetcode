@@ -24,7 +24,7 @@ object MaximumUnitsOnTruck {
         var tempSize = truckSize
         for (i in boxTypes.indices) {
             val (boxes, units) = boxTypes[i]
-            val tempCount = Math.min(tempSize, boxes)
+            val tempCount = minOf(tempSize, boxes)
             result += tempCount * units
             tempSize -= tempCount
             if (tempSize == 0) break

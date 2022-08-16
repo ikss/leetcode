@@ -24,7 +24,7 @@ object Triangle {
         if (level < triangle.size - 1) {
             val left = dfs(level + 1, i, triangle, memo)
             val right = dfs(level + 1, i + 1, triangle, memo)
-            path += Math.min(left, right)
+            path += minOf(left, right)
         }
         return path.also { memo[level][i] = it }
     }
@@ -35,7 +35,7 @@ object Triangle {
         for (level in n - 1 downTo 0) {
             val curLevel = IntArray(n + 1)
             for (i in 0..level) {
-                curLevel[i] = triangle[level][i] + Math.min(prevLevel[i], prevLevel[i + 1])
+                curLevel[i] = triangle[level][i] + minOf(prevLevel[i], prevLevel[i + 1])
             }
             prevLevel = curLevel
         }

@@ -65,7 +65,7 @@ object SubstringConcatenationOfAllWords {
         }
     }
 
-    fun findSubstring(s: String, words: Array<String>): List<Int>? {
+    fun findSubstring(s: String, words: Array<String>): List<Int> {
         wordCount.clear()
         n = s.length
         k = words.size

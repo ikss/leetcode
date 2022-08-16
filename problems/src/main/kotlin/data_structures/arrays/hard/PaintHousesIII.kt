@@ -38,7 +38,7 @@ object PaintHousesIII {
         for (house in 1 until m) {
             val memo = Array(target + 1) { IntArray(n) { MAX_COST } }
 
-            for (neighborhoods in 1..Math.min(target, house + 1)) {
+            for (neighborhoods in 1..minOf(target, house + 1)) {
                 for (color in 1..n) {
 
                     // If the house is already painted, and color is different
@@ -51,10 +51,10 @@ object PaintHousesIII {
                     for (prevColor in 1..n) {
                         currCost = if (prevColor != color) {
                             // Decrement the neighborhood as adjacent houses has different color
-                            Math.min(currCost, prevMemo[neighborhoods - 1][prevColor - 1])
+                            minOf(currCost, prevMemo[neighborhoods - 1][prevColor - 1])
                         } else {
                             // Previous house has the same color, no change in neighborhood count
-                            Math.min(currCost, prevMemo[neighborhoods][color - 1])
+                            minOf(currCost, prevMemo[neighborhoods][color - 1])
                         }
                     }
 
@@ -70,7 +70,7 @@ object PaintHousesIII {
         // Find the minimum cost with m houses and target neighborhoods
         // By comparing cost for different color for the last house
         for (color in 1..n) {
-            minCost = Math.min(minCost, prevMemo[target][color - 1])
+            minCost = minOf(minCost, prevMemo[target][color - 1])
         }
 
         // Return -1 if the answer is MAX_COST as it implies no answer possible

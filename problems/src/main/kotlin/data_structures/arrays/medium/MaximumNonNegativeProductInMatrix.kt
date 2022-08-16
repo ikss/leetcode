@@ -15,13 +15,13 @@ package data_structures.arrays.medium
  * [URL](https://leetcode.com/problems/maximum-non-negative-product-in-a-matrix/)
  */
 object MaximumNonNegativeProductInMatrix {
-    var product: Long = -1
-    val mod = 1_000_000_007
+    private var product: Long = -1
+    private const val MOD = 1_000_000_007
 
     fun maxProductPathDfs(grid: Array<IntArray>): Int {
         product = -1
         dfs(grid, 0, 0, grid[0][0].toLong())
-        return (product % mod).toInt()
+        return (product % MOD).toInt()
     }
 
     private fun dfs(grid: Array<IntArray>, i: Int, j: Int, curr: Long) {
@@ -70,6 +70,6 @@ object MaximumNonNegativeProductInMatrix {
             }
         }
         val res = dp[r - 1][c - 1]!!.second
-        return if (res < 0) -1 else (res % mod).toInt()
+        return if (res < 0) -1 else (res % MOD).toInt()
     }
 }

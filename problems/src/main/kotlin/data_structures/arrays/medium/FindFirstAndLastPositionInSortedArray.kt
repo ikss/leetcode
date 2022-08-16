@@ -28,7 +28,7 @@ object FindFirstAndLastPositionInSortedArray {
         return intArrayOf(min, max)
     }
 
-    fun searchRangeBinary(nums: IntArray, target: Int): IntArray? {
+    fun searchRangeBinary(nums: IntArray, target: Int): IntArray {
         val result = IntArray(2)
         result[0] = findFirst(nums, target)
         result[1] = findLast(nums, target)

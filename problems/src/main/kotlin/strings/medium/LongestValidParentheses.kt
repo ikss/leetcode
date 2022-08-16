@@ -21,7 +21,7 @@ object LongestValidParentheses {
                 if (stack.empty()) {
                     stack.push(i)
                 } else {
-                    max = Math.max(max, i - stack.peek())
+                    max = maxOf(max, i - stack.peek())
                 }
             }
         }

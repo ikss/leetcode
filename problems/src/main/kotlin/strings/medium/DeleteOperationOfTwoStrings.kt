@@ -18,7 +18,7 @@ object DeleteOperationOfTwoStrings {
                 } else if (word1[i - 1] == word2[j - 1]) {
                     dp[i][j] = dp[i - 1][j - 1]
                 } else {
-                    dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + 1
+                    dp[i][j] = minOf(dp[i - 1][j], dp[i][j - 1]) + 1
                 }
             }
         }
@@ -35,7 +35,7 @@ object DeleteOperationOfTwoStrings {
                 } else if (word1[i - 1] == word2[j - 1]) {
                     temp[j] = dp[j - 1]
                 } else {
-                    temp[j] = Math.min(dp[j], temp[j - 1]) + 1
+                    temp[j] = minOf(dp[j], temp[j - 1]) + 1
                 }
             }
             dp = temp

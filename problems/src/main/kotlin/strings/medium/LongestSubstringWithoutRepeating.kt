@@ -23,7 +23,7 @@ object LongestSubstringWithoutRepeating {
                 l++
             } else {
                 h.add(a[r])
-                len = Math.max(len, h.size)
+                len = maxOf(len, h.size)
                 r++
             }
         }
@@ -37,9 +37,9 @@ object LongestSubstringWithoutRepeating {
         var left = 0
         for (right in s.indices) {
             val char = s[right].code
-            left = Math.max(left, cache[char])
+            left = maxOf(left, cache[char])
             cache[char] = right + 1
-            result = Math.max(result, right - left + 1)
+            result = maxOf(result, right - left + 1)
         }
         return result
     }

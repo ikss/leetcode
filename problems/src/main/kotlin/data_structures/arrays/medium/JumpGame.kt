@@ -17,7 +17,7 @@ object JumpGame {
             } else if (maxLocation < i) {
                 return false
             }
-            maxLocation = Math.max(i + nums[i], maxLocation) // greedy:
+            maxLocation = maxOf(i + nums[i], maxLocation) // greedy:
         }
         return true
     }

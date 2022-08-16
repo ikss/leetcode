@@ -17,7 +17,7 @@ object MaxAreaOfIsland {
         var ans = 0
         for (r in grid.indices) {
             for (c in grid[0].indices) {
-                ans = Math.max(ans, area(r, c, seen, grid))
+                ans = maxOf(ans, area(r, c, seen, grid))
             }
         }
         return ans
