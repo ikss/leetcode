@@ -5,7 +5,7 @@ import data_structures.ListNode
 /**
  * Given the head of a singly linked list, return true if it is a palindrome.
  *
- * [URL](https://leetcode.com/problems/palindrome-linked-list//)
+ * [URL](https://leetcode.com/problems/palindrome-linked-list/)
  */
 object PalindromeLinkedList {
     private var cur: ListNode? = null
