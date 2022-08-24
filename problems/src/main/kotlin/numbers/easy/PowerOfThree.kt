@@ -7,12 +7,16 @@ package numbers.easy
  * [URL](https://leetcode.com/problems/roman-to-integer/)
  */
 object PowerOfThree {
-    fun isPowerOfThree(n: Int): Boolean {
-        if (n == 0) return false
+    fun isPowerOfThreeLoop(n: Int): Boolean {
+        if (n <= 0) return false
         var i = n
         while (i % 3 == 0) {
             i /= 3
         }
         return i == 1
+    }
+
+    fun isPowerOfThreeMath(n: Int): Boolean {
+        return n > 0 && 1162261467 % n == 0
     }
 }

@@ -6,34 +6,66 @@ import org.junit.jupiter.api.Test
 class PowerOfThreeTest {
 
     @Test
-    fun test1() {
+    fun test1loop() {
         val number = 45
         val expected = false
 
-        assertEquals(expected, PowerOfThree.isPowerOfThree(number))
+        assertEquals(expected, PowerOfThree.isPowerOfThreeLoop(number))
     }
 
     @Test
-    fun test2() {
+    fun test2loop() {
         val number = 9
         val expected = true
 
-        assertEquals(expected, PowerOfThree.isPowerOfThree(number))
+        assertEquals(expected, PowerOfThree.isPowerOfThreeLoop(number))
     }
 
     @Test
-    fun test3() {
+    fun test3loop() {
         val number = 0
         val expected = false
 
-        assertEquals(expected, PowerOfThree.isPowerOfThree(number))
+        assertEquals(expected, PowerOfThree.isPowerOfThreeLoop(number))
     }
 
     @Test
-    fun test4() {
+    fun test4loop() {
         val number = 27
         val expected = true
 
-        assertEquals(expected, PowerOfThree.isPowerOfThree(number))
+        assertEquals(expected, PowerOfThree.isPowerOfThreeLoop(number))
+    }
+
+    @Test
+    fun test1math() {
+        val number = 45
+        val expected = false
+
+        assertEquals(expected, PowerOfThree.isPowerOfThreeMath(number))
+    }
+
+    @Test
+    fun test2math() {
+        val number = 9
+        val expected = true
+
+        assertEquals(expected, PowerOfThree.isPowerOfThreeMath(number))
+    }
+
+    @Test
+    fun test3math() {
+        val number = 0
+        val expected = false
+
+        assertEquals(expected, PowerOfThree.isPowerOfThreeMath(number))
+    }
+
+    @Test
+    fun test4math() {
+        val number = 27
+        val expected = true
+
+        assertEquals(expected, PowerOfThree.isPowerOfThreeMath(number))
     }
 }
