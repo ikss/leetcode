@@ -28,7 +28,7 @@ object FindKSumOfArray {
         }
         nums.sort()
 
-        val heap = PriorityQueue<LongArray>(Comparator.comparingLong { it[0] })
+        val heap = PriorityQueue<LongArray> { a1, a2 -> a1[0].compareTo(a2[0]) }
         heap.offer(longArrayOf(nums[0].toLong(), 0))
 
         var k = k
