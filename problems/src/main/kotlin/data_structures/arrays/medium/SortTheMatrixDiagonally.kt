@@ -1,5 +1,8 @@
 package data_structures.arrays.medium
 
+import java.util.*
+
+
 /**
  * A matrix diagonal is a diagonal line of cells starting from some cell in either the topmost row or leftmost column
  * and going in the bottom-right direction until reaching the matrix's end. For example, the matrix diagonal starting
@@ -10,7 +13,25 @@ package data_structures.arrays.medium
  * [URL](https://leetcode.com/problems/sort-the-matrix-diagonally/)
  */
 object SortTheMatrixDiagonally {
-    fun diagonalSort(mat: Array<IntArray>): Array<IntArray> {
+    fun diagonalSortPQ(mat: Array<IntArray>): Array<IntArray> {
+        val m = mat.size
+        val n = mat[0].size
+        val d = hashMapOf<Int, PriorityQueue<Int>>()
+        for (i in 0 until m) {
+            for (j in 0 until n) {
+                d.putIfAbsent(i - j, PriorityQueue())
+                d[i - j]!!.add(mat[i][j])
+            }
+        }
+        for (i in 0 until m) {
+            for (j in 0 until n) {
+                mat[i][j] = d[i - j]!!.poll()
+            }
+        }
+        return mat
+    }
+
+    fun diagonalSortNaive(mat: Array<IntArray>): Array<IntArray> {
         for (i in 0 until mat.size - 1) {
             val arr = mutableListOf<Int>()
 
