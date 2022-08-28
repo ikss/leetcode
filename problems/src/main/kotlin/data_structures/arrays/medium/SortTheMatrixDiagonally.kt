@@ -19,8 +19,8 @@ object SortTheMatrixDiagonally {
         val d = hashMapOf<Int, PriorityQueue<Int>>()
         for (i in 0 until m) {
             for (j in 0 until n) {
-                d.putIfAbsent(i - j, PriorityQueue())
-                d[i - j]!!.add(mat[i][j])
+                val queue = d.getOrPut(i - j) { PriorityQueue() }
+                queue.add(mat[i][j])
             }
         }
         for (i in 0 until m) {
