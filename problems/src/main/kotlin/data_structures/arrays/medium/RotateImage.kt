@@ -10,13 +10,13 @@ package data_structures.arrays.medium
 object RotateImage {
     fun rotate(matrix: Array<IntArray>) {
         val maxIndex = matrix.size - 1
-        for (curLevel in 0..matrix.size / 2) {
-            for (i in curLevel until maxIndex - curLevel) {
-                val tmp = matrix[curLevel][i]
-                matrix[curLevel][i] = matrix[maxIndex - i][curLevel]
-                matrix[maxIndex - i][curLevel] = matrix[maxIndex - curLevel][maxIndex - i]
-                matrix[maxIndex - curLevel][maxIndex - i] = matrix[i][maxIndex - curLevel]
-                matrix[i][maxIndex - curLevel] = tmp
+        for (i in 0..matrix.size / 2) {
+            for (j in i until maxIndex - i) {
+                val tmp = matrix[i][j]
+                matrix[i][j] = matrix[maxIndex - j][i]
+                matrix[maxIndex - j][i] = matrix[maxIndex - i][maxIndex - j]
+                matrix[maxIndex - i][maxIndex - j] = matrix[j][maxIndex - i]
+                matrix[j][maxIndex - i] = tmp
             }
         }
     }
