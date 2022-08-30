@@ -8,7 +8,7 @@ package data_structures.arrays.medium
  * [URL](https://leetcode.com/problems/rotate-image/)
  */
 object RotateImage {
-    fun rotate(matrix: Array<IntArray>) {
+    fun rotateFours(matrix: Array<IntArray>) {
         val maxIndex = matrix.size - 1
         for (i in 0..matrix.size / 2) {
             for (j in i until maxIndex - i) {
@@ -17,6 +17,33 @@ object RotateImage {
                 matrix[maxIndex - j][i] = matrix[maxIndex - i][maxIndex - j]
                 matrix[maxIndex - i][maxIndex - j] = matrix[j][maxIndex - i]
                 matrix[j][maxIndex - i] = tmp
+            }
+        }
+    }
+
+    fun rotateTransposeReverse(matrix: Array<IntArray>) {
+        transpose(matrix)
+        reverse(matrix)
+    }
+
+    private fun transpose(matrix: Array<IntArray>) {
+        val n = matrix.size - 1
+        for (i in 1..n) {
+            for (j in 0..i) {
+                val tmp = matrix[i][j]
+                matrix[i][j] = matrix[j][i]
+                matrix[j][i] = tmp
+            }
+        }
+    }
+
+    private fun reverse(matrix: Array<IntArray>) {
+        val n = matrix.size - 1
+        for (i in 0..n) {
+            for (j in 0..n / 2) {
+                val tmp = matrix[i][j]
+                matrix[i][j] = matrix[i][n - j]
+                matrix[i][n - j] = tmp
             }
         }
     }
