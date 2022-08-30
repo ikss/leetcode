@@ -25,11 +25,9 @@ object FirstMissingPositive {
     fun firstMissingPositiveOptimized(nums: IntArray): Int {
         for (i in nums.indices) {
             while (nums[i] > 0 && nums[i] <= nums.size && (nums[nums[i] - 1] != nums[i])) {
-                println(nums.contentToString())
                 swap(nums, i, nums[i] - 1)
             }
         }
-        println(nums.contentToString())
         for (i in nums.indices) {
             if (nums[i] != i + 1) return i + 1
         }
