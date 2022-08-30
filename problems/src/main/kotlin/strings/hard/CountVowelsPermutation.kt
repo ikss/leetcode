@@ -24,18 +24,16 @@ object CountVowelsPermutation {
 
     fun countVowelPermutation(n: Int): Int {
         var n = n
-        var dp = LongArray(5)
-        var prevDP = LongArray(5) { 1L }
+        var dp = LongArray(5) { 1L }
         while (n-- > 1) {
-            dp[a] = (prevDP[e] + prevDP[i] + prevDP[u]) % MOD
-            dp[e] = (prevDP[a] + prevDP[i]) % MOD
-            dp[i] = (prevDP[e] + prevDP[o]) % MOD
-            dp[o] = prevDP[i]
-            dp[u] = (prevDP[i] + prevDP[o]) % MOD
-            val tmp = dp
-            dp = prevDP
-            prevDP = tmp
+            val tempDp = LongArray(5)
+            tempDp[a] = (dp[e] + dp[i] + dp[u]) % MOD
+            tempDp[e] = (dp[a] + dp[i]) % MOD
+            tempDp[i] = (dp[e] + dp[o]) % MOD
+            tempDp[o] = dp[i]
+            tempDp[u] = (dp[i] + dp[o]) % MOD
+            dp = tempDp
         }
-        return ((prevDP[a] + prevDP[e] + prevDP[i] + prevDP[o] + prevDP[u]) % MOD).toInt()
+        return ((dp[a] + dp[e] + dp[i] + dp[o] + dp[u]) % MOD).toInt()
     }
 }
