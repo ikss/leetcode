@@ -25,7 +25,6 @@ object LongestCommonPrefix {
             index++
         }
 
-
         return result.toString()
     }
 }

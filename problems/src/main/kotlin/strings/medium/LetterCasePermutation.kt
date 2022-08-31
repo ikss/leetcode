@@ -1,6 +1,5 @@
 package strings.medium
 
-
 /**
  * Given a string s, you can transform every letter individually to be lowercase or uppercase to create another string.
  *

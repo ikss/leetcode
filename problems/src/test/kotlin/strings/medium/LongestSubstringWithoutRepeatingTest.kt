@@ -53,7 +53,6 @@ class LongestSubstringWithoutRepeatingTest {
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstring(s))
     }
 
-
     @Test
     fun testWOSet1() {
         val s = "abcabcbb"

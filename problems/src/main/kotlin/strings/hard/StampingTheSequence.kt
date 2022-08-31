@@ -2,7 +2,6 @@ package strings.hard
 
 import java.util.*
 
-
 /**
  * You are given two strings stamp and target.
  * Initially, there is a string s of length target.length with all `s[i]` == '?'.
@@ -62,12 +61,12 @@ object StampingTheSequence {
 
             // For each window that is potentially affected,
             // j: start of window
-            for (j in Math.max(0, i - M + 1)..Math.min(N - M, i)) {
-                if (A[j]!!.todo.contains(i)) {  // This window is affected
-                    A[j]!!.todo.remove(i)
-                    if (A[j]!!.todo.isEmpty()) {
+            for (j in maxOf(0, i - M + 1)..minOf(N - M, i)) {
+                if (A[j].todo.contains(i)) {  // This window is affected
+                    A[j].todo.remove(i)
+                    if (A[j].todo.isEmpty()) {
                         ans.push(j)
-                        for (m in A[j]!!.made) if (!done[m]) {
+                        for (m in A[j].made) if (!done[m]) {
                             queue.add(m)
                             done[m] = true
                         }
@@ -75,10 +74,14 @@ object StampingTheSequence {
                 }
             }
         }
-        for (b in done) if (!b) return IntArray(0)
+        for (b in done) {
+            if (!b) return IntArray(0)
+        }
         val ret = IntArray(ans.size)
         var t = 0
-        while (!ans.isEmpty()) ret[t++] = ans.pop()
+        while (!ans.isEmpty()) {
+            ret[t++] = ans.pop()
+        }
         return ret
     }
 }

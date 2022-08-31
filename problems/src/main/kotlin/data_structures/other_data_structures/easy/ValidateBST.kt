@@ -15,7 +15,6 @@ object ValidateBST {
     fun isValidBST(root: TreeNode?): Boolean =
         isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE)
 
-
     private fun isValidBST(root: TreeNode?, minValue: Long, maxValue: Long): Boolean {
         if (root == null) return true
         val value = root.`val`.toLong()

@@ -29,7 +29,6 @@ class FirstMissingPositiveTest {
         assertEquals(expected, FirstMissingPositive.firstMissingPositiveNaive(nums))
     }
 
-
     @Test
     fun test1optimized() {
         val nums = intArrayOf(1, 2, 0)

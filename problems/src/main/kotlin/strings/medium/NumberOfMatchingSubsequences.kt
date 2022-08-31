@@ -2,7 +2,6 @@ package strings.medium
 
 import java.util.*
 
-
 /**
  * Given a string s and an array of strings words, return the number of `words[i]` that is a subsequence of s.
  *

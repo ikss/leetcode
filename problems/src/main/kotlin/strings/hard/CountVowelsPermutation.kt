@@ -1,6 +1,5 @@
 package strings.hard
 
-
 /**
  * Given an integer n, your task is to count how many strings of length n can be formed under the following rules:
  *

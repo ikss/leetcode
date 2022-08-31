@@ -3,7 +3,6 @@ package data_structures.arrays.medium
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-
 class AvoidFloodInTheCityTest {
     @Test
     fun test1() {

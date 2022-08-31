@@ -2,7 +2,6 @@ package data_structures.arrays.hard
 
 import java.util.*
 
-
 /**
  * You are given an array of n integers, nums, where there are at most 50 unique values in the array.
  * You are also given an array of m customer order quantities, quantity, where `quantity[i]` is the amount of integers

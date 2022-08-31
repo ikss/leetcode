@@ -36,7 +36,6 @@ object KInversePairArrays {
         return result
     }
 
-
     fun kInversePairsDp(n: Int, k: Int): Int {
         var dp = IntArray(k + 1)
 

@@ -1,6 +1,5 @@
 package strings.medium
 
-
 /**
  * A valid encoding of an array of words is any reference string s and array of indices such that:
  *

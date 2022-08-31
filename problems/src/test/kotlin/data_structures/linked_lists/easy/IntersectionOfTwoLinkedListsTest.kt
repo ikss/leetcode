@@ -35,7 +35,6 @@ class IntersectionOfTwoLinkedListsTest {
         val listA = ListBuilder.build(2, 6, 4)
         val listB = ListBuilder.build(1, 5)
 
-
         assertEquals(null, IntersectionOfTwoLinkedLists.getIntersectionNode(listA, listB))
     }
 }

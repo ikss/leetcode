@@ -33,7 +33,6 @@ object NumberOfDiceRollsWithTargetSum {
         return res
     }
 
-
     fun numRollsToTargetDp(n: Int, k: Int, target: Int): Int {
         val dp = Array(n + 1) { IntArray(target + 1) }
         dp[0][0] = 1

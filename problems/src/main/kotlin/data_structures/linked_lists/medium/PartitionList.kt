@@ -2,7 +2,6 @@ package data_structures.linked_lists.medium
 
 import data_structures.ListNode
 
-
 /**
  * Given the head of a linked list and a value x,
  * partition it such that all nodes less than x come before nodes greater than or equal to x.

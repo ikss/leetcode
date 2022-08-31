@@ -2,7 +2,6 @@ package data_structures.arrays.medium
 
 import java.util.*
 
-
 /**
  * There is an m x n grid with a ball. The ball is initially at the position `[startRow, startColumn]`.
  * You are allowed to move the ball to one of the four adjacent cells in the grid

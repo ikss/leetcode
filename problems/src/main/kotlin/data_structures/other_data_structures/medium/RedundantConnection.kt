@@ -2,7 +2,6 @@ package data_structures.other_data_structures.medium
 
 import java.util.*
 
-
 /**
  * In this problem, a tree is an undirected graph that is connected and has no cycles.
  *

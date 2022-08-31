@@ -2,7 +2,6 @@ package data_structures.arrays.medium
 
 import java.util.*
 
-
 /**
  * You are given an integer array heights representing the heights of buildings, some bricks, and some ladders.
  *

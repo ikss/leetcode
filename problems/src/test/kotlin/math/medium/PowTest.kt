@@ -23,7 +23,6 @@ class PowTest {
         assertEquals(expected, Pow.myPow(x, n), 0.00001)
     }
 
-
     @Test
     fun test3() {
         val x = 2.0

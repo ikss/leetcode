@@ -2,7 +2,6 @@ package data_structures.arrays.medium
 
 import java.util.*
 
-
 /**
  * A matrix diagonal is a diagonal line of cells starting from some cell in either the topmost row or leftmost column
  * and going in the bottom-right direction until reaching the matrix's end. For example, the matrix diagonal starting

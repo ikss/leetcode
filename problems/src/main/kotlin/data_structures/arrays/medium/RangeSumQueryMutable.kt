@@ -31,7 +31,6 @@ object RangeSumQueryMutable {
 
     }
 
-
     class NumArrayPrecalculatedSums(val nums: IntArray) {
         private var sums: IntArray
         private var len = 0

@@ -1,6 +1,5 @@
 package strings.medium
 
-
 /**
  * You are given two strings s and t of the same length and an integer maxCost.
  *

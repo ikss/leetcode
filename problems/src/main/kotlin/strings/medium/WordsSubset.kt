@@ -1,6 +1,5 @@
 package strings.medium
 
-
 /**
  * You are given two string arrays words1 and words2.
  *

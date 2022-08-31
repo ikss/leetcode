@@ -41,7 +41,6 @@ class JumpGameVITest {
         assertEquals(expected, JumpGameVI.maxResult(nums, k))
     }
 
-
     @Test
     fun test1opt() {
         val nums = intArrayOf(1, -1, -2, 4, -7, 3)

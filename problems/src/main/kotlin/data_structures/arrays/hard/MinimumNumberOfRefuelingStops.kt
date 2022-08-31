@@ -2,7 +2,6 @@ package data_structures.arrays.hard
 
 import java.util.*
 
-
 /**
  * A car travels from a starting position to a destination which is target miles east of the starting position.
  *
@@ -73,6 +72,5 @@ object MinimumNumberOfRefuelingStops {
         }
         return ans
     }
-
 
 }

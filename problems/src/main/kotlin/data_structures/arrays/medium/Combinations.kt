@@ -1,6 +1,5 @@
 package data_structures.arrays.medium
 
-
 /**
  * Given two integers n and k, return all possible combinations of k numbers out of the range [1, n].
  *

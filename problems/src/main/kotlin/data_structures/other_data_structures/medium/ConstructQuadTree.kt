@@ -27,7 +27,6 @@ object ConstructQuadTree {
         return divide(grid, 0, 0, n)
     }
 
-
     private fun divide(grid: Array<IntArray>, starti: Int, startj: Int, size: Int): Node {
         val value = grid[starti][startj]
         var isLeaf = true

@@ -2,7 +2,6 @@ package data_structures.other_data_structures.medium
 
 import data_structures.TreeNode
 
-
 /**
  * Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
  *
