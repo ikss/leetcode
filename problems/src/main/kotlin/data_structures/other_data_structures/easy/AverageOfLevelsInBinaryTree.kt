@@ -12,21 +12,21 @@ import java.util.*
 object AverageOfLevelsInBinaryTree {
     fun averageOfLevels(root: TreeNode?): DoubleArray {
         if (root == null) return doubleArrayOf()
+
         val result = mutableListOf<Double>()
         val queue = LinkedList<TreeNode>()
         queue.add(root)
 
         while (queue.isNotEmpty()) {
-            var size = queue.size
-            val sizeMemo = size
+            val size = queue.size
             var sum = 0.0
-            while (size-- > 0) {
+            repeat(size) {
                 val node = queue.poll()
                 sum += node.`val`
                 node.left?.let { queue.add(it) }
                 node.right?.let { queue.add(it) }
             }
-            result.add(sum / sizeMemo)
+            result.add(sum / size)
         }
         return result.toDoubleArray()
     }
