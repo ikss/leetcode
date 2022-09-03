@@ -1,5 +1,6 @@
 package numbers.medium
 
+
 /**
  * Return all non-negative integers of length n such that
  * the absolute difference between every two consecutive digits is k.
@@ -11,7 +12,7 @@ package numbers.medium
  * [URL](https://leetcode.com/problems/integer-to-roman/)
  */
 object NumbersWithSameConsecutiveDifferences {
-    fun numsSameConsecDiffNaive(n: Int, k: Int): IntArray {
+    fun numsSameConsecDiffRecursive(n: Int, k: Int): IntArray {
         val result = mutableListOf<Int>()
 
         val numbers = mutableListOf(
@@ -44,5 +45,26 @@ object NumbersWithSameConsecutiveDifferences {
         }
         if (newNumbers.isEmpty()) return
         generateNums(result, n, k, newNumbers)
+    }
+
+    fun numsSameConsecDiffOptimized(n: Int, k: Int): IntArray? {
+        if (n == 1) {
+            return intArrayOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+        }
+        var levelQueue = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        for (level in 1 until n) {
+            val nextLevelQueue = arrayListOf<Int>()
+            for (num in levelQueue) {
+                val tailDigit = num % 10
+                if (tailDigit - k >= 0) {
+                    nextLevelQueue.add(num * 10 + tailDigit - k)
+                }
+                if (tailDigit + k < 10 && k != 0) {
+                    nextLevelQueue.add(num * 10 + tailDigit + k)
+                }
+            }
+            levelQueue = nextLevelQueue
+        }
+        return levelQueue.toIntArray()
     }
 }
