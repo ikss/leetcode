@@ -1,6 +1,6 @@
 package data_structures.arrays.hard
 
-import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class BestTimeToBuyAndSellStocksIVTest {
@@ -11,7 +11,7 @@ class BestTimeToBuyAndSellStocksIVTest {
         val k = 2
         val expected = 2
 
-        Assertions.assertEquals(expected, BestTimeToBuyAndSellStocksIV.maxProfit(k, arr))
+        assertEquals(expected, BestTimeToBuyAndSellStocksIV.maxProfit(k, arr))
     }
 
     @Test
@@ -20,7 +20,7 @@ class BestTimeToBuyAndSellStocksIVTest {
         val k = 2
         val expected = 7
 
-        Assertions.assertEquals(expected, BestTimeToBuyAndSellStocksIV.maxProfit(k, arr))
+        assertEquals(expected, BestTimeToBuyAndSellStocksIV.maxProfit(k, arr))
     }
 
 }
