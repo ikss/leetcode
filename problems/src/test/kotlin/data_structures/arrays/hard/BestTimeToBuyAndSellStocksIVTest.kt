@@ -1,0 +1,26 @@
+package data_structures.arrays.hard
+
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
+
+class BestTimeToBuyAndSellStocksIVTest {
+
+    @Test
+    fun testSimple1() {
+        val arr = intArrayOf(2, 4, 1)
+        val k = 2
+        val expected = 2
+
+        Assertions.assertEquals(expected, BestTimeToBuyAndSellStocksIV.maxProfit(k, arr))
+    }
+
+    @Test
+    fun testSimple2() {
+        val arr = intArrayOf(3, 2, 6, 5, 0, 3)
+        val k = 2
+        val expected = 7
+
+        Assertions.assertEquals(expected, BestTimeToBuyAndSellStocksIV.maxProfit(k, arr))
+    }
+
+}
