@@ -3,7 +3,7 @@ package data_structures.arrays.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class TheNumberOfWeakCharactersInTheGameTest {
+class NumberOfWeakCharactersInTheGameTest {
     @Test
     fun test1() {
         val properties = arrayOf(
@@ -13,7 +13,7 @@ class TheNumberOfWeakCharactersInTheGameTest {
         )
         val expected = 0
 
-        assertEquals(expected, TheNumberOfWeakCharactersInTheGame.numberOfWeakCharacters(properties))
+        assertEquals(expected, NumberOfWeakCharactersInTheGame.numberOfWeakCharacters(properties))
     }
 
     @Test
@@ -24,7 +24,7 @@ class TheNumberOfWeakCharactersInTheGameTest {
         )
         val expected = 1
 
-        assertEquals(expected, TheNumberOfWeakCharactersInTheGame.numberOfWeakCharacters(properties))
+        assertEquals(expected, NumberOfWeakCharactersInTheGame.numberOfWeakCharacters(properties))
     }
 
     @Test
@@ -36,7 +36,7 @@ class TheNumberOfWeakCharactersInTheGameTest {
         )
         val expected = 1
 
-        assertEquals(expected, TheNumberOfWeakCharactersInTheGame.numberOfWeakCharacters(properties))
+        assertEquals(expected, NumberOfWeakCharactersInTheGame.numberOfWeakCharacters(properties))
     }
 
     @Test
@@ -51,6 +51,6 @@ class TheNumberOfWeakCharactersInTheGameTest {
         )
         val expected = 2
 
-        assertEquals(expected, TheNumberOfWeakCharactersInTheGame.numberOfWeakCharacters(properties))
+        assertEquals(expected, NumberOfWeakCharactersInTheGame.numberOfWeakCharacters(properties))
     }
 }

@@ -15,7 +15,7 @@ import java.util.*
  *
  * [URL](https://leetcode.com/problems/the-number-of-weak-characters-in-the-game/)
  */
-object TheNumberOfWeakCharactersInTheGame {
+object NumberOfWeakCharactersInTheGame {
     fun numberOfWeakCharacters(properties: Array<IntArray>): Int {
         var count = 0
         Arrays.sort(properties) { a: IntArray, b: IntArray -> if (b[0] == a[0]) a[1] - b[1] else b[0] - a[0] }
