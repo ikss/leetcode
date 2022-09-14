@@ -1,4 +1,4 @@
-package numbers.easy
+package data_structures.arrays.easy
 
 import kotlin.math.max
 

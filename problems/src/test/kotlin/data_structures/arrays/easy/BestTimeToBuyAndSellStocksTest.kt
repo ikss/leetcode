@@ -1,4 +1,4 @@
-package numbers.easy
+package data_structures.arrays.easy
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
