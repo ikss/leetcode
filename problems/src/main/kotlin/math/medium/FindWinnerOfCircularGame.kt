@@ -31,4 +31,12 @@ object FindWinnerOfCircularGame {
         }
         return list.first()
     }
+
+    fun findTheWinnerMath(n: Int, k: Int): Int {
+        var result = 0
+        for (i in 1..n) {
+            result = (result + k) % i
+        }
+        return result + 1
+    }
 }
