@@ -22,6 +22,7 @@ class FindWinnerOfCircularGameTest {
 
         assertEquals(expected, FindWinnerOfCircularGame.findTheWinner(n, k))
     }
+
     @Test
     fun test1math() {
         val n = 5

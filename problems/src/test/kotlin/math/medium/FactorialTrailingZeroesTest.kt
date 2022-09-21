@@ -28,6 +28,7 @@ class FactorialTrailingZeroesTest {
 
         assertEquals(expected, FactorialTrailingZeroes.trailingZeroesNonOptimal(n))
     }
+
     @Test
     fun test1Optimal() {
         val n = 3
