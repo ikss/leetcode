@@ -11,9 +11,9 @@ import interfaces.GuessEngine
  *
  * You call a pre-defined API int guess(int num), which returns three possible results:
  *
- *  * -1: Your guess is higher than the number I picked (i.e. num > pick).
- *  * 1: Your guess is lower than the number I picked (i.e. num < pick).
- *  * 0: your guess is equal to the number I picked (i.e. num == pick).
+ * * -1: Your guess is higher than the number I picked (i.e. num > pick).
+ * * 1: Your guess is lower than the number I picked (i.e. num < pick).
+ * * 0: your guess is equal to the number I picked (i.e. num == pick).
  * Return the number that I picked.
  *
  * [URL](https://leetcode.com/problems/guess-number-higher-or-lower/)

@@ -7,7 +7,7 @@ import java.util.*
  *
  * A subsequence of a string is a new string generated from the original string with some characters (can be none)
  * deleted without changing the relative order of the remaining characters.
- *  * For example, "ace" is a subsequence of "abcde".
+ * * For example, "ace" is a subsequence of "abcde".
  *
  * [URL](https://leetcode.com/problems/number-of-matching-subsequences/)
  */

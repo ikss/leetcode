@@ -5,9 +5,9 @@ import java.util.*
 /**
  * You are given an m x n grid where each cell can have one of three values:
  *
- *  * 0 representing an empty cell,
- *  * 1 representing a fresh orange, or
- *  * 2 representing a rotten orange.
+ * * 0 representing an empty cell,
+ * * 1 representing a fresh orange, or
+ * * 2 representing a rotten orange.
  *
  * Every minute, any fresh orange that is __4-directionally adjacent__ to a rotten orange becomes rotten.
  *

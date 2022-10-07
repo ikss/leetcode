@@ -8,7 +8,7 @@ import java.util.*
  *
  * In one turn, you can place stamp over s and replace every letter in the s with the corresponding letter from stamp.
  *
- *  * For example, if stamp = "abc" and target = "abcba", then s is "?????" initially. In one turn you can:
+ * * For example, if stamp = "abc" and target = "abcba", then s is "?????" initially. In one turn you can:
  *     * place stamp at index 0 of s to obtain "abc??",
  *     * place stamp at index 1 of s to obtain "?abc?", or
  *     * place stamp at index 2 of s to obtain "??abc".

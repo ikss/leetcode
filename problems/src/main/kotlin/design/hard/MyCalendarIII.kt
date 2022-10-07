@@ -10,8 +10,8 @@ import java.util.*
  * k-booking between all the previous events.
  *
  * Implement the MyCalendarThree class:
- *  * MyCalendarThree() Initializes the object.
- *  * int book(int start, int end) Returns an integer k representing the largest integer such that there exists
+ * * MyCalendarThree() Initializes the object.
+ * * int book(int start, int end) Returns an integer k representing the largest integer such that there exists
  *  a k-booking in the calendar.
  *
  * [URL](https://leetcode.com/problems/my-calendar-iii/)
