@@ -11,7 +11,7 @@ import data_structures.ListNode
  */
 object DeleteNodeInLinkedList {
     fun deleteNode(node: ListNode?) {
-        node?.next ?: return
+        node ?: return
         node.`val` = node.next!!.`val`
         node.next = node.next!!.next
     }
