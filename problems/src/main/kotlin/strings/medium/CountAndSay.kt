@@ -27,15 +27,12 @@ object CountAndSay {
         10 to "13211311123113112211"
     )
 
-    fun countAndSay(n: Int): String {
-        if (mapOfPrev[n] == null) {
-            var s = "1"
-            for (i in 1 until n) {
-                s = countIdx(s)
-            }
-            mapOfPrev[n] = s
+    fun countAndSay(n: Int): String = mapOfPrev.getOrPut(n) {
+        var s = "1"
+        for (i in 1 until n) {
+            s = countIdx(s)
         }
-        return mapOfPrev[n]!!
+        s
     }
 
     private fun countIdx(s: String): String {
@@ -57,4 +54,35 @@ object CountAndSay {
         sb.append(count).append(prev)
         return sb.toString()
     }
+
+    fun countAndSayTwoHelpers(n: Int): String {
+        var str = "1"
+        repeat(n - 1) {
+            str = pairsToString(stringToPairs(str))
+        }
+        return str
+    }
+
+    private fun stringToPairs(n: String): List<Pair<Int, Int>> {
+        val result = mutableListOf<Pair<Int, Int>>()
+        var count = 0
+        var prev = -1
+        for (c in n) {
+            val intval = c - '0'
+            if (intval != prev && count > 0) {
+                result.add(count to prev)
+                count = 0
+            }
+            prev = intval
+            count++
+        }
+        if (count > 0) {
+            result.add(count to prev)
+        }
+        return result
+    }
+
+
+    private fun pairsToString(pairs: List<Pair<Int, Int>>): String =
+        pairs.joinToString("") { "${it.first}${it.second}" }
 }
