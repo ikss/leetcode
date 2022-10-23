@@ -3,7 +3,7 @@ package math.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class DivideTwoIntegersTest {
+internal class DivideTwoIntegersTest {
 
     @Test
     fun test1() {

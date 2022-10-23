@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-class RunningSumOf1dArrayTest {
+internal class RunningSumOf1dArrayTest {
     @Test
     fun test1() {
         val nums = intArrayOf(1, 2, 3, 4)

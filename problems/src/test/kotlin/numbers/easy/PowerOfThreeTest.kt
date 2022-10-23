@@ -3,7 +3,7 @@ package numbers.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class PowerOfThreeTest {
+internal class PowerOfThreeTest {
 
     @Test
     fun test1loop() {

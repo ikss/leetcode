@@ -3,7 +3,7 @@ package arrays.hard
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class KInversePairsArrayTest {
+internal class KInversePairsArrayTest {
 
     @Test
     fun test1recursive() {

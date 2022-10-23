@@ -3,7 +3,7 @@ package strings.hard
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class BasicCalculatorTest {
+internal class BasicCalculatorTest {
 
     @Test
     fun test1() {

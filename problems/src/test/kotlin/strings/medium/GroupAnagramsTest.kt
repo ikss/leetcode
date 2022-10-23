@@ -3,7 +3,7 @@ package strings.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class GroupAnagramsTest {
+internal class GroupAnagramsTest {
 
     @Test
     fun test1() {

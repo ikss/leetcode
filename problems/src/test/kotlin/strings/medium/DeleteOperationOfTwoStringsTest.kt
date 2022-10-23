@@ -3,7 +3,7 @@ package strings.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class DeleteOperationOfTwoStringsTest {
+internal class DeleteOperationOfTwoStringsTest {
 
     @Test
     fun test1Dp() {

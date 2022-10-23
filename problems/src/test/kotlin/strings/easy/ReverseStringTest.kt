@@ -3,7 +3,7 @@ package strings.easy
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-class ReverseStringTest {
+internal class ReverseStringTest {
 
     @Test
     fun test1() {

@@ -3,7 +3,7 @@ package numbers.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class NumberOf1BitsTest {
+internal class NumberOf1BitsTest {
 
     @Test
     fun test1() {

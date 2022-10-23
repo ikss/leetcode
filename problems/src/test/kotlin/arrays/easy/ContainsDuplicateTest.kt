@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-class ContainsDuplicateTest {
+internal class ContainsDuplicateTest {
     @Test
     fun test1() {
         val nums = intArrayOf(1, 2, 3, 1)

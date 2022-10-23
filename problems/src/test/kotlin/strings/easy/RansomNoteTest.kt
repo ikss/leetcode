@@ -3,7 +3,7 @@ package strings.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class RansomNoteTest {
+internal class RansomNoteTest {
     @Test
     fun test1() {
         val ransomNote = "a"

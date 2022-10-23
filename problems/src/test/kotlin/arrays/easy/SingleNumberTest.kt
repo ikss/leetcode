@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class SingleNumberTest {
+internal class SingleNumberTest {
     @Test
     fun test1() {
         val nums = intArrayOf(2, 2, 1)

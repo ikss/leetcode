@@ -3,7 +3,7 @@ package strings.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class FirstUniqueCharacterTest {
+internal class FirstUniqueCharacterTest {
 
     @Test
     fun test1() {

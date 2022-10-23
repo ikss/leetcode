@@ -3,7 +3,7 @@ package math.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class FindWinnerOfCircularGameTest {
+internal class FindWinnerOfCircularGameTest {
 
     @Test
     fun test1() {

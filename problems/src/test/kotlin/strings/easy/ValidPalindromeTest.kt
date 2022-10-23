@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-class ValidPalindromeTest {
+internal class ValidPalindromeTest {
 
     @Test
     fun test1() {

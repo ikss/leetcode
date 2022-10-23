@@ -3,7 +3,7 @@ package numbers.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class StringToIntegerTest {
+internal class StringToIntegerTest {
 
     @Test
     fun test1() {

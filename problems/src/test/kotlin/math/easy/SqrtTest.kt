@@ -3,7 +3,7 @@ package math.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class SqrtTest {
+internal class SqrtTest {
 
     @Test
     fun test1() {

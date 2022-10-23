@@ -3,7 +3,7 @@ package arrays.hard
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class PaintHouseIIITest {
+internal class PaintHouseIIITest {
 
     @Test
     fun test1() {

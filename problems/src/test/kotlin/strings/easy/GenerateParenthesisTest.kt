@@ -3,7 +3,7 @@ package strings.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class GenerateParenthesisTest {
+internal class GenerateParenthesisTest {
 
     @Test
     fun test1() {

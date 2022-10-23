@@ -3,7 +3,7 @@ package numbers.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class ReorderedPowerOf2Test {
+internal class ReorderedPowerOf2Test {
 
     @Test
     fun test1() {

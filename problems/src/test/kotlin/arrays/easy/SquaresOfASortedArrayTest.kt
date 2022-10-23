@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-class SquaresOfASortedArrayTest {
+internal class SquaresOfASortedArrayTest {
     @Test
     fun test1() {
         val nums = intArrayOf(-4, -1, 0, 3, 10)

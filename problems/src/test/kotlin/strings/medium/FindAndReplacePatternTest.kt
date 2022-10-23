@@ -3,7 +3,7 @@ package strings.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class FindAndReplacePatternTest {
+internal class FindAndReplacePatternTest {
 
     @Test
     fun test1() {

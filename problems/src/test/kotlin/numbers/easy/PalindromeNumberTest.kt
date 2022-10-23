@@ -3,7 +3,7 @@ package numbers.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class PalindromeNumberTest {
+internal class PalindromeNumberTest {
 
     @Test
     fun test1() {

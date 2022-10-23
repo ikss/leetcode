@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-class BuildArrayFromPermutationTest {
+internal class BuildArrayFromPermutationTest {
     @Test
     fun test1() {
         val nums = intArrayOf(0, 2, 1, 5, 3, 4)

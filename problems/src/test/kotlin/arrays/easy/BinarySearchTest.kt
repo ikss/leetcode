@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class BinarySearchTest {
+internal class BinarySearchTest {
 
     @Test
     fun test1() {

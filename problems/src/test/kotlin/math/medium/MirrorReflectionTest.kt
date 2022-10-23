@@ -3,7 +3,7 @@ package math.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class MirrorReflectionTest {
+internal class MirrorReflectionTest {
 
     @Test
     fun test1() {

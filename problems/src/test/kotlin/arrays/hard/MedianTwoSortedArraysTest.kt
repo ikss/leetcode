@@ -3,7 +3,7 @@ package arrays.hard
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class MedianTwoSortedArraysTest {
+internal class MedianTwoSortedArraysTest {
 
     @Test
     fun test1() {

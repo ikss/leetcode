@@ -3,7 +3,7 @@ package strings.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class LetterCombinationsOfPhoneNumberTest {
+internal class LetterCombinationsOfPhoneNumberTest {
 
     @Test
     fun test1() {

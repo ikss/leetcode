@@ -3,7 +3,7 @@ package strings.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class NumberOfMatchingSubsequencesTest {
+internal class NumberOfMatchingSubsequencesTest {
 
     @Test
     fun test1() {

@@ -3,7 +3,7 @@ package math.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class PascalTriangleTest {
+internal class PascalTriangleTest {
 
     @Test
     fun test1() {

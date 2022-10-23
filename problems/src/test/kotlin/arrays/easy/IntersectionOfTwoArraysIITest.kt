@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-class IntersectionOfTwoArraysIITest {
+internal class IntersectionOfTwoArraysIITest {
     @Test
     fun test1() {
         val nums1 = intArrayOf(1, 2, 2, 1)
