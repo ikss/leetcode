@@ -1,6 +1,5 @@
 package trees.medium
 
-import data_structures.TreeBuilder
 import data_structures.TreeNode
 
 /**
@@ -46,9 +45,4 @@ object PseudoPalindromicPathsInBinaryTree {
 
         return result
     }
-}
-
-fun main() {
-    val root = TreeBuilder.build(2, 3, 1, 3, 1, null, 1)
-    println(PseudoPalindromicPathsInBinaryTree.pseudoPalindromicPaths(root))
 }

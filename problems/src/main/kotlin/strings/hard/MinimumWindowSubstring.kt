@@ -12,7 +12,7 @@ package strings.hard
  * [URL](https://leetcode.com/problems/minimum-window-substring/)
  */
 object MinimumWindowSubstring {
-    fun minWindow(s: String, t: String): String? {
+    fun minWindow(s: String, t: String): String {
         if (s.isEmpty() || t.isEmpty()) {
             return ""
         }

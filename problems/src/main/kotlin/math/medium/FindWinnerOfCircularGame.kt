@@ -27,7 +27,6 @@ object FindWinnerOfCircularGame {
         while (list.size > 1) {
             curr = (curr + k - 1) % list.size
             list.removeAt(curr)
-            println(list)
         }
         return list.first()
     }

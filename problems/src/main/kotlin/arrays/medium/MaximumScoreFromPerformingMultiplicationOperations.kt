@@ -27,7 +27,6 @@ object MaximumScoreFromPerformingMultiplicationOperations {
                     multiplier * nums[left] + dp[op + 1][left + 1],
                     multiplier * nums[n - 1 - (op - left)] + dp[op + 1][left]
                 )
-                println(dp.contentDeepToString())
             }
         }
         return dp[0][0]

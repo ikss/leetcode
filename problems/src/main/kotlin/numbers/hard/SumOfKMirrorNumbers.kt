@@ -29,7 +29,6 @@ object SumOfKMirrorNumbers {
             if (strnum[0] == '0' || num == 0L) continue
             if (isPalindrome(num.toString(k))) {
                 sum += num
-                println(num)
                 if (--n == 0) return sum
             }
         }
@@ -39,7 +38,6 @@ object SumOfKMirrorNumbers {
             if (strnum[0] == '0' || num == 0L) continue
             if (isPalindrome(num.toString(k))) {
                 sum += num
-                println(num)
                 if (--n == 0) return sum
             }
         }
@@ -59,7 +57,6 @@ object SumOfKMirrorNumbers {
                     if (newStr[0] == '0' || num == 0L) continue
                     if (isPalindrome(num.toString(k))) {
                         sum += num
-                        println(num)
                         if (--n == 0) return sum
                     }
                 }

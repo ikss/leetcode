@@ -22,7 +22,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/01-matrix/)
  */
 object PushDominoes {
-    fun pushDominoes(dominoes: String): String? {
+    fun pushDominoes(dominoes: String): String {
         val length = dominoes.length
         val forces = IntArray(length)
 
@@ -32,14 +32,12 @@ object PushDominoes {
             force = if (dominoes[i] == 'R') length else if (dominoes[i] == 'L') 0 else maxOf(force - 1, 0)
             forces[i] += force
         }
-        println(forces.contentToString())
         // Populate forces going from right to left
         force = 0
         for (i in length - 1 downTo 0) {
             force = if (dominoes[i] == 'L') length else if (dominoes[i] == 'R') 0 else maxOf(force - 1, 0)
             forces[i] -= force
         }
-        println(forces.contentToString())
 
         val result = CharArray(length)
         for (i in 0 until length) {

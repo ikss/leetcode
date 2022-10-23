@@ -15,7 +15,6 @@ object CheckIfSentenceIsPangram {
         for (c in sentence) {
             hash[c - 'a']++
         }
-        println(hash.contentToString())
         return hash.none { it == 0 }
     }
 }
