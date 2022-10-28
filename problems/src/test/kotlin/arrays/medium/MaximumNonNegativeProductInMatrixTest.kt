@@ -7,9 +7,9 @@ class MaximumNonNegativeProductInMatrixTest {
     @Test
     fun test1dfs() {
         val grid = arrayOf(
-                intArrayOf(-1, -2, -3),
-                intArrayOf(-2, -3, -3),
-                intArrayOf(-3, -3, -2),
+            intArrayOf(-1, -2, -3),
+            intArrayOf(-2, -3, -3),
+            intArrayOf(-3, -3, -2),
         )
         val expected = -1
 
@@ -19,9 +19,9 @@ class MaximumNonNegativeProductInMatrixTest {
     @Test
     fun test2dfs() {
         val grid = arrayOf(
-                intArrayOf(1, -2, 1),
-                intArrayOf(1, -2, 1),
-                intArrayOf(3, -4, 1),
+            intArrayOf(1, -2, 1),
+            intArrayOf(1, -2, 1),
+            intArrayOf(3, -4, 1),
         )
         val expected = 8
 
@@ -31,8 +31,8 @@ class MaximumNonNegativeProductInMatrixTest {
     @Test
     fun test3dfs() {
         val grid = arrayOf(
-                intArrayOf(1, 3),
-                intArrayOf(0, -4),
+            intArrayOf(1, 3),
+            intArrayOf(0, -4),
         )
         val expected = 0
 
@@ -42,9 +42,9 @@ class MaximumNonNegativeProductInMatrixTest {
     @Test
     fun test1dp() {
         val grid = arrayOf(
-                intArrayOf(-1, -2, -3),
-                intArrayOf(-2, -3, -3),
-                intArrayOf(-3, -3, -2),
+            intArrayOf(-1, -2, -3),
+            intArrayOf(-2, -3, -3),
+            intArrayOf(-3, -3, -2),
         )
         val expected = -1
 
@@ -54,9 +54,9 @@ class MaximumNonNegativeProductInMatrixTest {
     @Test
     fun test2dp() {
         val grid = arrayOf(
-                intArrayOf(1, -2, 1),
-                intArrayOf(1, -2, 1),
-                intArrayOf(3, -4, 1),
+            intArrayOf(1, -2, 1),
+            intArrayOf(1, -2, 1),
+            intArrayOf(3, -4, 1),
         )
         val expected = 8
 
@@ -66,8 +66,8 @@ class MaximumNonNegativeProductInMatrixTest {
     @Test
     fun test3dp() {
         val grid = arrayOf(
-                intArrayOf(1, 3),
-                intArrayOf(0, -4),
+            intArrayOf(1, 3),
+            intArrayOf(0, -4),
         )
         val expected = 0
 

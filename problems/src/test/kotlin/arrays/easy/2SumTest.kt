@@ -10,7 +10,7 @@ internal class `2SumTest` {
         val target = 9
         val expected = intArrayOf(0, 1)
 
-        assertTrue(expected.contentEquals(arrays.easy.`2Sum`.twoSum(nums, target)))
+        assertTrue(expected.contentEquals(`2Sum`.twoSum(nums, target)))
     }
 
     @Test
@@ -19,7 +19,7 @@ internal class `2SumTest` {
         val target = 6
         val expected = intArrayOf(1, 2)
 
-        assertTrue(expected.contentEquals(arrays.easy.`2Sum`.twoSum(nums, target)))
+        assertTrue(expected.contentEquals(`2Sum`.twoSum(nums, target)))
     }
 
     @Test
@@ -28,6 +28,6 @@ internal class `2SumTest` {
         val target = 6
         val expected = intArrayOf(0, 1)
 
-        assertTrue(expected.contentEquals(arrays.easy.`2Sum`.twoSum(nums, target)))
+        assertTrue(expected.contentEquals(`2Sum`.twoSum(nums, target)))
     }
 }

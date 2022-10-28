@@ -28,18 +28,22 @@ object BasicCalculator {
                     }
                     result += number * sign
                 }
+
                 c == '+' -> {
                     sign = 1
                 }
+
                 c == '-' -> {
                     sign = -1
                 }
+
                 c == '(' -> {
                     stack.push(result)
                     stack.push(sign)
                     result = 0
                     sign = 1
                 }
+
                 c == ')' -> {
                     result = result * stack.pop() + stack.pop()
                 }

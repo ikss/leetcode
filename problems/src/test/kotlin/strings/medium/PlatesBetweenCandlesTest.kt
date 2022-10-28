@@ -18,7 +18,7 @@ internal class PlatesBetweenCandlesTest {
     fun test2() {
         val s = "***|**|*****|**||**|*"
         val queries = arrayOf(
-                intArrayOf(1, 17), intArrayOf(4, 5), intArrayOf(14, 17), intArrayOf(5, 11), intArrayOf(15, 16)
+            intArrayOf(1, 17), intArrayOf(4, 5), intArrayOf(14, 17), intArrayOf(5, 11), intArrayOf(15, 16)
         )
         val expected = intArrayOf(9, 0, 0, 0, 0)
 

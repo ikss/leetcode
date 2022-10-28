@@ -22,8 +22,8 @@ class ReverseLinkedListIITest {
         val end = 2
 
         assertEquals(
-                ListBuilder.build(2, 1),
-                ReverseLinkedListII.reverseBetweenLoop(ListBuilder.build(1, 2), start, end)
+            ListBuilder.build(2, 1),
+            ReverseLinkedListII.reverseBetweenLoop(ListBuilder.build(1, 2), start, end)
         )
     }
 }

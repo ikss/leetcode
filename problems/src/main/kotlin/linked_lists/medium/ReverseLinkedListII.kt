@@ -68,14 +68,17 @@ object ReverseLinkedListII {
                     newBegin = current
                     prevNode = newBegin
                 }
+
                 left -> {
                     prevNode = current
                     newEnd = current
                 }
+
                 in (left + 1) until right -> {
                     current.next = prevNode
                     prevNode = current
                 }
+
                 right -> {
                     current.next = prevNode
                     newEnd?.next = next

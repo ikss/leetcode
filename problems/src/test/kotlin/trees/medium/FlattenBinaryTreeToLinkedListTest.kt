@@ -13,8 +13,8 @@ class FlattenBinaryTreeToLinkedListTest {
 
         FlattenBinaryTreeToLinkedList.flattenRecursive(root)
         val expected = TreeNode(
-                1,
-                right = TreeNode(2, right = TreeNode(3, right = TreeNode(4, right = TreeNode(5, right = TreeNode(6)))))
+            1,
+            right = TreeNode(2, right = TreeNode(3, right = TreeNode(4, right = TreeNode(5, right = TreeNode(6)))))
         )
 
         assertEquals(expected, root)
@@ -46,8 +46,8 @@ class FlattenBinaryTreeToLinkedListTest {
 
         FlattenBinaryTreeToLinkedList.flattenStack(root)
         val expected = TreeNode(
-                1,
-                right = TreeNode(2, right = TreeNode(3, right = TreeNode(4, right = TreeNode(5, right = TreeNode(6)))))
+            1,
+            right = TreeNode(2, right = TreeNode(3, right = TreeNode(4, right = TreeNode(5, right = TreeNode(6)))))
         )
 
         assertEquals(expected, root)
