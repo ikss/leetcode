@@ -23,7 +23,8 @@ object WordSearchII {
 
         for (i in board.indices) {
             for (j in board[i].indices) {
-                findWords(board, i, j, root.getChild(board[i][j]) ?: continue, res)
+                val node = root.getChild(board[i][j]) ?: continue
+                findWords(board, i, j, node, res)
             }
         }
         return res
@@ -34,17 +35,17 @@ object WordSearchII {
             res.add(it)
             node.word = null
         }
-        board[bx][by].let {
-            board[bx][by] = 'z' + 1
-            for (i in 0 until 4) {
-                val x = bx + DIRECTIONS_X[i]
-                val y = by + DIRECTIONS_Y[i]
-                if (x >= 0 && x < board.size && y >= 0 && y < board[x].size) {
-                    findWords(board, x, y, node.getChild(board[x][y]) ?: continue, res)
-                }
+        val c = board[bx][by]
+        board[bx][by] = 'z' + 1
+        for (i in 0 until 4) {
+            val x = bx + DIRECTIONS_X[i]
+            val y = by + DIRECTIONS_Y[i]
+            if (x >= 0 && x < board.size && y >= 0 && y < board[x].size) {
+                val trie = node.getChild(board[x][y]) ?: continue
+                findWords(board, x, y, trie, res)
             }
-            board[bx][by] = it
         }
+        board[bx][by] = c
     }
 
     private class Trie {
@@ -59,12 +60,11 @@ object WordSearchII {
             node.word = word
         }
 
-        fun getChild(c: Char) = this.hash(c).let { this.children[it] }
+        fun getChild(c: Char) = children[c - 'a']
 
-        private fun hash(c: Char): Int = c - 'a'
-
-        private fun getAndSetChildDefault(c: Char): Trie = this.hash(c).let { key ->
-            children[key] ?: Trie().also { children[key] = it }
+        private fun getAndSetChildDefault(c: Char): Trie {
+            val index = c - 'a'
+            return children[index] ?: Trie().also { children[index] = it }
         }
     }
 }
