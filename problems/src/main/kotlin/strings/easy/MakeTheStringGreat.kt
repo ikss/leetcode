@@ -46,8 +46,8 @@ object MakeTheStringGreat {
         }
         val s = StringBuilder()
 
-        while (!stack.isEmpty()) {
-            s.insert(0, stack.pop())
+        for (c in stack) {
+            s.append(c)
         }
 
         return s.toString()
