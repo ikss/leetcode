@@ -25,27 +25,15 @@ object DungeonGame {
     fun calculateMinimumHP(dungeon: Array<IntArray>): Int {
         val m = dungeon.size
         val n = dungeon[0].size
-        val dp = Array(n) { IntArray(m) }
-
-        dp[m - 1][n - 1] = minOf(0, dungeon[m - 1][n - 1])
-
-        for (i in m - 2 downTo 0) {
-            dp[i][n - 1] = minOf(dp[i + 1][n - 1] + dungeon[i][n - 1], 0)
-        }
-
-        for (j in n - 2 downTo 0) {
-            dp[m - 1][j] = minOf(dp[m - 1][j + 1] + dungeon[m - 1][j], 0)
-
-        }
-
-        for (i in m - 2 downTo 0) {
-            for (j in n - 2 downTo 0) {
-                val down = minOf(dp[i + 1][j] + dungeon[i][j], 0)
-                val right = minOf(dp[i][j + 1] + dungeon[i][j], 0)
-                dp[i][j] = maxOf(right, down)
+        val dp = Array(m + 1) { IntArray(n + 1) { Int.MAX_VALUE } }
+        dp[m - 1][n] = 1
+        dp[m][n - 1] = 1
+        for (i in m - 1 downTo 0) {
+            for (j in n - 1 downTo 0) {
+                val minVal = minOf(dp[i + 1][j], dp[i][j + 1])
+                dp[i][j] = maxOf(minVal - dungeon[i][j], 1)
             }
         }
-        println(dp.contentDeepToString())
-        return Math.abs(dp[0][0]) + 1
+        return dp[0][0]
     }
 }
