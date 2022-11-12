@@ -31,7 +31,6 @@ internal class CheckIfTwoStringArraysAreEquivalentTest {
         assertEquals(expected, CheckIfTwoStringArraysAreEquivalent.arrayStringsAreEqualIndices(word1, word2))
     }
 
-
     @Test
     fun test1join() {
         val word1 = arrayOf("ab", "c")

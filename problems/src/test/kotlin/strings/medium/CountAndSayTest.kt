@@ -29,7 +29,6 @@ internal class CountAndSayTest {
         assertEquals(expected, CountAndSay.countAndSay(n))
     }
 
-
     @Test
     fun test1twoHelpers() {
         val n = 1

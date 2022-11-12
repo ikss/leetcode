@@ -2,7 +2,6 @@ package arrays.hard
 
 import java.util.*
 
-
 /**
  * You have n flower seeds. Every seed must be planted first before it can begin to grow, then bloom.
  * Planting a seed takes time and so does the growth of a seed. You are given two 0-indexed integer arrays

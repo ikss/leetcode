@@ -20,7 +20,6 @@ class SetMismatchTest {
         assertTrue(expected.contentEquals(SetMismatch.findErrorNumsAdditionalArray(nums)))
     }
 
-
     @Test
     fun test1findErrorNumsSquareSum() {
         val nums = intArrayOf(1, 2, 2, 4)

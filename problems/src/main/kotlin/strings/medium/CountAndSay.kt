@@ -82,7 +82,6 @@ object CountAndSay {
         return result
     }
 
-
     private fun pairsToString(pairs: List<Pair<Int, Int>>): String =
         pairs.joinToString("") { "${it.first}${it.second}" }
 }
