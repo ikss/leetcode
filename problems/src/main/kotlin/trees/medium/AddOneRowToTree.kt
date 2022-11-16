@@ -25,7 +25,7 @@ object AddOneRowToTree {
             node.left = root
             return node
         } else if (root == null) {
-            return root
+            return null
         }
 
         traverse(root, `val`, depth - 1)
