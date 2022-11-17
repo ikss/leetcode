@@ -3,7 +3,7 @@ package strings.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class FindDuplicateFileInSystemTest {
+class FindDuplicateFileInSystemTest {
 
     @Test
     fun test1() {

@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class ToeplitzMatrixTest {
+class ToeplitzMatrixTest {
     @Test
     fun test1() {
         val matrix = arrayOf(

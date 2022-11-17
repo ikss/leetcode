@@ -3,7 +3,7 @@ package math.hard
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class PoorPigsTest {
+class PoorPigsTest {
 
     @Test
     fun test1() {

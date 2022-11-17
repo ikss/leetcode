@@ -3,7 +3,7 @@ package arrays.medium
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-internal class WhereWillTheBallFallTest {
+class WhereWillTheBallFallTest {
     @Test
     fun test1() {
         val board = arrayOf(

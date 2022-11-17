@@ -3,7 +3,7 @@ package numbers.medium
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-internal class NumbersWithSameConsecutiveDifferencesTest {
+class NumbersWithSameConsecutiveDifferencesTest {
 
     @Test
     fun test1recursive() {

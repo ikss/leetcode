@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class RemoveElementTest {
+class RemoveElementTest {
     @Test
     fun test1() {
         val nums = intArrayOf(3, 2, 2, 3)

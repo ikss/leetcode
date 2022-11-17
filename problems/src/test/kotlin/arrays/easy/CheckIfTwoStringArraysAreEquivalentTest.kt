@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class CheckIfTwoStringArraysAreEquivalentTest {
+class CheckIfTwoStringArraysAreEquivalentTest {
     @Test
     fun test1indices() {
         val word1 = arrayOf("ab", "c")

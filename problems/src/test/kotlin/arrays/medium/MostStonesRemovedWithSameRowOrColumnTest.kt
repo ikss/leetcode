@@ -3,7 +3,7 @@ package arrays.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class MostStonesRemovedWithSameRowOrColumnTest {
+class MostStonesRemovedWithSameRowOrColumnTest {
     @Test
     fun test1() {
         val stones = arrayOf(

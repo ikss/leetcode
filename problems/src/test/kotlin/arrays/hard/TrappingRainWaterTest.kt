@@ -3,7 +3,7 @@ package arrays.hard
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class TrappingRainWaterTest {
+class TrappingRainWaterTest {
 
     @Test
     fun test1() {

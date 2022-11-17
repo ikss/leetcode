@@ -3,7 +3,7 @@ package math.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class CountPrimesTest {
+class CountPrimesTest {
 
     @Test
     fun test1() {

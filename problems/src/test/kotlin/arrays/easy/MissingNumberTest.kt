@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class MissingNumberTest {
+class MissingNumberTest {
     @Test
     fun test1() {
         val nums = intArrayOf(3, 0, 1)

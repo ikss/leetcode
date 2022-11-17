@@ -3,7 +3,7 @@ package numbers.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class Maximum69NumberTest {
+class Maximum69NumberTest {
 
     @Test
     fun test1() {

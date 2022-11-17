@@ -3,7 +3,7 @@ package arrays.hard
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class DistributeRepeatingIntegersTest {
+class DistributeRepeatingIntegersTest {
 
     @Test
     fun test1backtrack() {

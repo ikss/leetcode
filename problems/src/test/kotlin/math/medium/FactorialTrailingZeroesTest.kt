@@ -3,7 +3,7 @@ package math.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class FactorialTrailingZeroesTest {
+class FactorialTrailingZeroesTest {
 
     @Test
     fun test1NonOptimal() {

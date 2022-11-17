@@ -4,7 +4,7 @@ import data_structures.TreeBuilder
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class CountCompleteTreeNodesTest {
+class CountCompleteTreeNodesTest {
 
     @Test
     fun test1() {

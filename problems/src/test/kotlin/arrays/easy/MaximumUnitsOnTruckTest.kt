@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class MaximumUnitsOnTruckTest {
+class MaximumUnitsOnTruckTest {
     @Test
     fun test1() {
         val boxTypes = arrayOf(intArrayOf(1, 3), intArrayOf(2, 2), intArrayOf(3, 1))

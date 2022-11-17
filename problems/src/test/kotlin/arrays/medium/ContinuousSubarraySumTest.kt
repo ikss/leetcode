@@ -3,7 +3,7 @@ package arrays.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class ContinuousSubarraySumTest {
+class ContinuousSubarraySumTest {
     @Test
     fun test1() {
         val nums = intArrayOf(23, 2, 4, 6, 7)

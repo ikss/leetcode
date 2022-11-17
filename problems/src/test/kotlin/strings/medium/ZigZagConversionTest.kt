@@ -3,7 +3,7 @@ package strings.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class ZigZagConversionTest {
+class ZigZagConversionTest {
 
     @Test
     fun test1() {

@@ -3,7 +3,7 @@ package math.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class FibonacciNumberTest {
+class FibonacciNumberTest {
 
     @Test
     fun test1() {

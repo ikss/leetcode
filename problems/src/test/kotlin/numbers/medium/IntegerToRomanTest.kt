@@ -3,7 +3,7 @@ package numbers.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class IntegerToRomanTest {
+class IntegerToRomanTest {
 
     @Test
     fun test1() {

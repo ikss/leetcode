@@ -3,7 +3,7 @@ package strings.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class LongestStringChainTest {
+class LongestStringChainTest {
 
     @Test
     fun test1() {

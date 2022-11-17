@@ -3,7 +3,7 @@ package strings.medium
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-internal class PlatesBetweenCandlesTest {
+class PlatesBetweenCandlesTest {
 
     @Test
     fun test1() {

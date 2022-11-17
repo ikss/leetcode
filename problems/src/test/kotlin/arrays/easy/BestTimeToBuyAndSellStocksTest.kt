@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class BestTimeToBuyAndSellStocksTest {
+class BestTimeToBuyAndSellStocksTest {
 
     @Test
     fun testSimple1() {

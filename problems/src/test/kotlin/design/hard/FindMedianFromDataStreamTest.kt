@@ -3,7 +3,7 @@ package design.hard
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class FindMedianFromDataStreamTest {
+class FindMedianFromDataStreamTest {
     @Test
     fun test1() {
         val medianFinder = FindMedianFromDataStream.MedianFinder()

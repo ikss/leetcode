@@ -3,7 +3,7 @@ package strings.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class LongestCommonPrefixTest {
+class LongestCommonPrefixTest {
 
     @Test
     fun test1() {

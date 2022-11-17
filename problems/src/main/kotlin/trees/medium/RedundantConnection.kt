@@ -16,7 +16,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/redundant-connection/)
  */
 object RedundantConnection {
-    var MAX_EDGE_VAL = 1000
+    private var MAX_EDGE_VAL = 1000
 
     fun findRedundantConnectionDfs(edges: Array<IntArray>): IntArray {
         val graph = Array(MAX_EDGE_VAL + 1) { arrayListOf<Int>() }
@@ -53,7 +53,7 @@ object RedundantConnection {
         throw AssertionError()
     }
 
-    internal class DSU(size: Int) {
+    class DSU(size: Int) {
         private val parent = IntArray(size) { it }
         private val rank = IntArray(size)
 

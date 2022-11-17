@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class MinCostClimbingStairsTest {
+class MinCostClimbingStairsTest {
     @Test
     fun test1() {
         val cost = intArrayOf(10, 15, 20)

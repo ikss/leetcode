@@ -5,14 +5,15 @@ package strings.medium
  *
  * * words.length == indices.length
  * * The reference string s ends with the '#' character.
- * * For each index indices`[i]`, the substring of s starting from indices`[i]` and up to (but not including) the next '#' character is equal to words[i].
+ * * For each index `indices[i]`, the substring of s starting from `indices[i]` and up to (but not including) the next
+ * '#' character is equal to `words[i]`.
  *
  * Given an array of words, return the length of the shortest reference string s possible of any valid encoding of words.
  *
  * [URL](https://leetcode.com/problems/decode-ways/)
  */
 object ShortEncodingOfWords {
-    internal class TrieNode {
+    class TrieNode {
         private var children: Array<TrieNode?> = arrayOfNulls(26)
         var count: Int = 0
 

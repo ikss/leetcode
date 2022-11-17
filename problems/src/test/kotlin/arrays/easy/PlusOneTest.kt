@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-internal class PlusOneTest {
+class PlusOneTest {
     @Test
     fun test1() {
         val nums = intArrayOf(1, 2, 3)

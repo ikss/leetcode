@@ -3,7 +3,7 @@ package arrays.hard
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class CountOfSmallerNumbersAfterSelfTest {
+class CountOfSmallerNumbersAfterSelfTest {
 
     @Test
     fun test1() {

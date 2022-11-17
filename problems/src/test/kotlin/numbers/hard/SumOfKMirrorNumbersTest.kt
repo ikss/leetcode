@@ -3,7 +3,7 @@ package numbers.hard
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class SumOfKMirrorNumbersTest {
+class SumOfKMirrorNumbersTest {
 
     @Test
     fun test1() {

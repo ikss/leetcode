@@ -3,7 +3,7 @@ package strings.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class RemovePalindromicSubsequenceTest {
+class RemovePalindromicSubsequenceTest {
 
     @Test
     fun test1() {

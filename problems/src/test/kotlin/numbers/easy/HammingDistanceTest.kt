@@ -3,7 +3,7 @@ package numbers.easy
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class HammingDistanceTest {
+class HammingDistanceTest {
 
     @Test
     fun test1() {

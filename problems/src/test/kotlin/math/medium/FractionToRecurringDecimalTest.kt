@@ -3,7 +3,7 @@ package math.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class FractionToRecurringDecimalTest {
+class FractionToRecurringDecimalTest {
 
     @Test
     fun test1() {

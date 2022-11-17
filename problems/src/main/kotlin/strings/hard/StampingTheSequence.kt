@@ -4,7 +4,7 @@ import java.util.*
 
 /**
  * You are given two strings stamp and target.
- * Initially, there is a string s of length target.length with all `s[i]` == '?'.
+ * Initially, there is a string s of length target.length with all `s[i] == '?'`.
  *
  * In one turn, you can place stamp over s and replace every letter in the s with the corresponding letter from stamp.
  *
@@ -24,7 +24,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/stamping-the-sequence/)
  */
 object StampingTheSequence {
-    internal class Node(var made: Set<Int>, var todo: MutableSet<Int>)
+    class Node(var made: Set<Int>, var todo: MutableSet<Int>)
 
     fun movesToStamp(stamp: String, target: String): IntArray {
         val M = stamp.length

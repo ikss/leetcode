@@ -3,7 +3,7 @@ package strings.hard
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class CountVowelsPermutationTest {
+class CountVowelsPermutationTest {
 
     @Test
     fun test1() {

@@ -3,7 +3,7 @@ package arrays.easy
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-internal class MoveZeroesTest {
+class MoveZeroesTest {
     @Test
     fun test1() {
         val nums = intArrayOf(0, 1, 0, 3, 12)

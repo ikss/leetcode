@@ -3,7 +3,7 @@ package strings.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class LetterCasePermutationTest {
+class LetterCasePermutationTest {
     @Test
     fun test1() {
         val s = "a1b2"
