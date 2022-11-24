@@ -56,7 +56,10 @@ npm-debug.log
 *.iml
 
 ## Directory-based project format:
-.idea/
+.idea/*/*
+.idea/*.*
+!.idea/scopes/**
+!.idea/codeStyles/**
 # if you removeFromSet the above rule, at least ignore the following:
 
 # User-specific stuff:
