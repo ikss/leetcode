@@ -1,0 +1,32 @@
+package strings.easy
+
+/**
+ * You are given a string s of even length. Split this string into two halves of equal lengths,
+ * and let a be the first half and b be the second half.
+ *
+ * Two strings are alike if they have the same number of vowels ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U').
+ * Notice that s contains uppercase and lowercase letters.
+ *
+ * Return true if a and b are alike. Otherwise, return false.
+ *
+ * [URL](https://leetcode.com/problems/determine-if-string-halves-are-alike/)
+ */
+object DetermineIfStringHalvesAreAlike {
+    private val vowels = hashSetOf('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
+
+    fun halvesAreAlike(s: String): Boolean {
+        val med = s.length / 2
+
+        return countVowels(s, 0, med) == countVowels(s, med, s.length)
+
+    }
+
+    private fun countVowels(s: String, start: Int, end: Int): Int {
+        var res = 0
+        for (i in start until end) {
+            if (s[i] in vowels) res++
+        }
+
+        return res
+    }
+}
