@@ -1,4 +1,4 @@
-package linked_lists.medium
+package design.medium
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test

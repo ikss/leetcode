@@ -1,4 +1,4 @@
-package linked_lists.medium
+package design.medium
 
 /**
  * Design your implementation of the circular queue. The circular queue is a linear data structure
