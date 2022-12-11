@@ -1,4 +1,4 @@
-package trees.medium
+package design.medium
 
 import java.util.*
 
