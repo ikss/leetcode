@@ -1,6 +1,5 @@
-package trees.hard
+package numbers.hard
 
-import numbers.hard.ReachingPoints
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
