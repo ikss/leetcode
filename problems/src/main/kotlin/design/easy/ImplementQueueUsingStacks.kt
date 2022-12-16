@@ -21,7 +21,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/implement-queue-using-stacks/
  */
 object ImplementQueueUsingStacks {
-    class MyQueue() {
+    class MyQueue {
         private val s1 = Stack<Int>()
         private val s2 = Stack<Int>()
         private var front = 0

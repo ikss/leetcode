@@ -13,7 +13,7 @@ package design.medium
  *
  * [URL](https://leetcode.com/problems/insert-delete-getrandom-o1/)
  */
-class `InsertDeleteGetRandom_O(1)` {
+object `InsertDeleteGetRandom_O(1)` {
     class RandomizedSet {
         private val random = java.util.Random()
         var nums = mutableListOf<Int>()
