@@ -1,6 +1,5 @@
 package arrays.hard
 
-
 /**
  * Given an integer array nums, return the number of all the arithmetic subsequences of nums.
  *

@@ -1,6 +1,5 @@
 package numbers.medium
 
-
 /**
  * Given an integer n, return the least number of perfect square numbers that sum to n.
  *
