@@ -7,12 +7,16 @@ object CourseScheduleTest {
     @Test
     fun test1() {
         val prerequisites = arrayOf(intArrayOf(1, 0))
-        assertEquals(true, CourseSchedule.canFinish(2, prerequisites))
+        val expected = true
+
+        assertEquals(expected, CourseSchedule.canFinish(2, prerequisites))
     }
 
     @Test
     fun test2() {
         val prerequisites = arrayOf(intArrayOf(1, 0), intArrayOf(0, 1))
-        assertEquals(false, CourseSchedule.canFinish(2, prerequisites))
+        val expected = false
+
+        assertEquals(expected, CourseSchedule.canFinish(2, prerequisites))
     }
 }
