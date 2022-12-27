@@ -1,35 +1,55 @@
 package arrays.medium
 
 /**
- * Given an m x n binary matrix mat, return the distance of the nearest 0 for each cell.
+ * A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
  *
- * The distance between two adjacent cells is 1.
+ * For example, for `arr = [1,2,3]`, the following are all the permutations of
+ * `arr: [1,2,3], [1,3,2], [2, 1, 3], [2, 3, 1], [3,1,2], [3,2,1]`.
+ * The next permutation of an array of integers is the next lexicographically greater permutation of its integer.
+ * More formally, if all the permutations of the array are sorted in one container according to their lexicographical
+ * order, then the next permutation of that array is the permutation that follows it in the sorted container.
+ * If such arrangement is not possible, the array must be rearranged as the lowest possible order
+ * (i.e., sorted in ascending order).
+ * * For example, the next permutation of `arr = [1,2,3]` is `[1,3,2]`.
+ * * Similarly, the next permutation of `arr = [2,3,1]` is `[3,1,2].
+ * * While the next permutation of `arr = [3,2,1]` is `[1,2,3]` because `[3,2,1]` does not have a lexicographical
+ * larger rearrangement.
+ *
+ * Given an array of integers nums, find the next permutation of nums.
+ *
+ * The replacement must be in place and use only constant extra memory.
  *
  * [URL](https://leetcode.com/problems/01-matrix/)
  */
-object `01Matrix` {
-    fun updateMatrix(mat: Array<IntArray>): Array<IntArray> {
-        val m: Int = mat.size
-        val n: Int = mat[0].size
-        val maxValue = m + n
-
-        for (r in 0 until m) {
-            for (c in 0 until n) {
-                if (mat[r][c] == 0) continue
-                val top = if (r - 1 >= 0) mat[r - 1][c] else maxValue
-                val left = if (c - 1 >= 0) mat[r][c - 1] else maxValue
-                mat[r][c] = minOf(top, left) + 1
-            }
+object NextPermutation {
+    fun nextPermutation(nums: IntArray) {
+        var i = nums.size - 2
+        while (i >= 0 && nums[i + 1] <= nums[i]) {
+            i--
         }
-        for (r in m - 1 downTo 0) {
-            for (c in n - 1 downTo 0) {
-                if (mat[r][c] == 0) continue
-                val bottom = if (r + 1 < m) mat[r + 1][c] else maxValue
-                val right = if (c + 1 < n) mat[r][c + 1] else maxValue
-
-                mat[r][c] = minOf(mat[r][c], minOf(bottom, right) + 1)
+        if (i >= 0) {
+            var j = nums.size - 1
+            while (nums[j] <= nums[i]) {
+                j--
             }
+            swap(nums, i, j)
         }
-        return mat
+        reverse(nums, i + 1)
+    }
+
+    private fun reverse(nums: IntArray, start: Int) {
+        var i = start
+        var j = nums.size - 1
+        while (i < j) {
+            swap(nums, i, j)
+            i++
+            j--
+        }
+    }
+
+    private fun swap(nums: IntArray, i: Int, j: Int) {
+        val temp = nums[i]
+        nums[i] = nums[j]
+        nums[j] = temp
     }
 }
