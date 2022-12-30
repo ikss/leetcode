@@ -16,7 +16,7 @@ object AllPathsFromSourceToTarget {
         val target = graph.size - 1
 
         val result = mutableListOf<List<Int>>()
-        val visited = mutableSetOf<Int>()
+        val visited = mutableListOf<Int>()
         traverse(source, target, graph, visited, result)
 
         return result
@@ -26,21 +26,19 @@ object AllPathsFromSourceToTarget {
         current: Int,
         target: Int,
         graph: Array<IntArray>,
-        visited: MutableSet<Int>,
+        visited: MutableList<Int>,
         result: MutableList<List<Int>>,
     ) {
-        if (!visited.add(current)) {
-            return
-        }
+        visited.add(current)
 
         if (current == target) {
             result.add(visited.toList())
-            visited.remove(current)
+            visited.removeLast()
             return
         }
         for (next in graph[current]) {
             traverse(next, target, graph, visited, result)
         }
-        visited.remove(current)
+        visited.removeLast()
     }
 }
