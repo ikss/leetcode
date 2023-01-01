@@ -13,10 +13,6 @@ import java.util.*
 object TopKFrequentWords {
     fun topKFrequent(words: Array<String>, k: Int): List<String> {
         val map = words.groupingBy { it }.eachCount()
-        val queue = PriorityQueue<Pair<String, Int>> { p1, p2 ->
-            val res = p1.second.compareTo(p2.second)
-            if (res != 0) res else p1.first.compareTo(p2.first)
-        }
         val pq: PriorityQueue<Pair<String, Int>> = PriorityQueue { a, b ->
             if (a.second == b.second) b.first.compareTo(a.first) else a.second - b.second
         }
