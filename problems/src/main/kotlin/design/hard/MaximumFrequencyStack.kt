@@ -14,7 +14,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/maximum-frequency-stack/)
  */
 object MaximumFrequencyStack {
-    class FreqStack() {
+    class FreqStack {
         private val freq = hashMapOf<Int, Int>()
         private val groups = hashMapOf<Int, Stack<Int>>()
         private var maxFrequency = 0
