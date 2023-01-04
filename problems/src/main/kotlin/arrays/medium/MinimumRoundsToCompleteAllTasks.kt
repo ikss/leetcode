@@ -16,9 +16,7 @@ object MinimumRoundsToCompleteAllTasks {
         for (count in taskCount) {
             if (count == 1) return -1
 
-            val threes = if (count % 3 == 0) count / 3 else (count - 2) / 3
-            val twos = (count - threes * 3) / 2
-            result += twos + threes
+            result += if (count % 3 == 0) count / 3 else (count / 3) + 1
         }
 
         return result
