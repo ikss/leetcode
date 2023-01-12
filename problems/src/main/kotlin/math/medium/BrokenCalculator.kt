@@ -12,11 +12,11 @@ package math.medium
 object BrokenCalculator {
     fun brokenCalc(startValue: Int, target: Int): Int {
         var target = target
-        var ans = 0
+        var result = 0
         while (target > startValue) {
-            ans++
+            result++
             if (target % 2 == 1) target++ else target /= 2
         }
-        return ans + startValue - target
+        return result + startValue - target
     }
 }
