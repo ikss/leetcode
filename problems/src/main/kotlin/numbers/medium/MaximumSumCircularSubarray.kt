@@ -18,6 +18,7 @@ object MaximumSumCircularSubarray {
         var sum = 0
         var maxSum = nums[0]
         var minSum = maxSum
+
         for (num in nums) {
             curMax = maxOf(curMax, 0) + num
             maxSum = maxOf(maxSum, curMax)
