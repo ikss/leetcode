@@ -68,9 +68,3 @@ object SnakesAndLadders {
         return board[size - row - 1][column]
     }
 }
-
-fun main() {
-    val board = arrayOf(intArrayOf(-1, -1, -1), intArrayOf(-1, 9, 8), intArrayOf(-1, 8, 9))
-
-    println(SnakesAndLadders.snakesAndLadders(board))
-}
