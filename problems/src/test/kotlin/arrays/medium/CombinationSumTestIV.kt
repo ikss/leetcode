@@ -3,7 +3,7 @@ package arrays.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class CombinationSumIV {
+class CombinationSumTestIV {
     @Test
     fun test1() {
         val nums = intArrayOf(1, 2, 3)
