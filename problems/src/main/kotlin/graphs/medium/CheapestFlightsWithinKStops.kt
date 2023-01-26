@@ -18,7 +18,6 @@ object CheapestFlightsWithinKStops {
             graph.computeIfAbsent(start) { mutableListOf() }.add(end to price)
         }
 
-        var result = Int.MAX_VALUE
         var count = -1
         val queue = java.util.ArrayDeque<Pair<Int, Int>>()
         queue.offer(src to 0)
@@ -31,9 +30,6 @@ object CheapestFlightsWithinKStops {
                 val prevVisited = visited[airport]
                 if (prevVisited != null && prevVisited <= currSum) continue
                 visited[airport] = currSum
-                if (airport == dst) {
-                    result = minOf(result, currSum)
-                }
                 for ((dest, price) in graph[airport] ?: ArrayList()) {
                     queue.offer(dest to currSum + price)
                 }
@@ -41,6 +37,6 @@ object CheapestFlightsWithinKStops {
             count++
         }
 
-        return if (result == Int.MAX_VALUE) -1 else result
+        return visited[dst] ?: -1
     }
 }
