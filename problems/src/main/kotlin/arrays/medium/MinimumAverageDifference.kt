@@ -52,7 +52,3 @@ object MinimumAverageDifference {
         return ans
     }
 }
-
-fun main() {
-    println(MinimumAverageDifference.minimumAverageDifference(intArrayOf(4, 2, 0)))
-}

@@ -74,12 +74,3 @@ object CutOffTreesForGolfEvent {
         return -1
     }
 }
-
-fun main() {
-    val forest = listOf(
-        listOf(1, 2, 3),
-        listOf(0, 0, 4),
-        listOf(7, 6, 5),
-    )
-    println(CutOffTreesForGolfEvent.cutOffTree(forest))
-}

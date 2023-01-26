@@ -39,15 +39,3 @@ object ShortestPathInGridWithObstaclesElimination {
         return -1 // Not found
     }
 }
-
-fun main() {
-    val grid = arrayOf(
-        intArrayOf(0, 0, 0),
-        intArrayOf(1, 1, 0),
-        intArrayOf(0, 0, 0),
-        intArrayOf(0, 1, 1),
-        intArrayOf(0, 0, 0),
-    )
-    val k = 1
-    println(ShortestPathInGridWithObstaclesElimination.shortestPath(grid, k))
-}

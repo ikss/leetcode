@@ -34,8 +34,3 @@ object NonDecreasingSubsequences {
         }
     }
 }
-
-fun main() {
-    val nums = intArrayOf(4, 6, 7, 7)
-    println(NonDecreasingSubsequences.findSubsequences(nums))
-}
