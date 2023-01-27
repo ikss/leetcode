@@ -1,5 +1,6 @@
 package strings.hard
 
+
 /**
  * Given an array of strings words (without duplicates), return all the concatenated words in the given list of words.
  *
@@ -8,7 +9,28 @@ package strings.hard
  * [URL](https://leetcode.com/problems/concatenated-words/)
  */
 object ConcatenatedWords {
-    fun findAllConcatenatedWordsInADict(words: Array<String>): List<String> {
+    fun findAllConcatenatedWordsInADictDp(words: Array<String>): List<String>? {
+        val dictionary = words.toSet()
+        val result = mutableListOf<String>()
+        for (word in words) {
+            val length = word.length
+            val dp = BooleanArray(length + 1)
+            dp[0] = true
+            for (i in 1..length) {
+                var j = if (i == length) 1 else 0
+                while (!dp[i] && j < i) {
+                    dp[i] = dp[j] && dictionary.contains(word.substring(j, i))
+                    ++j
+                }
+            }
+            if (dp[length]) {
+                result.add(word)
+            }
+        }
+        return result.sorted()
+    }
+
+    fun findAllConcatenatedWordsInADictNaive(words: Array<String>): List<String> {
         words.sortBy { it.length }
         val result = mutableListOf<String>()
         val minSize = words[0].length * 2
@@ -20,7 +42,7 @@ object ConcatenatedWords {
                 }
             }
         }
-        return result
+        return result.sorted()
     }
 
     private fun checkCandidate(w: String, index: Int, words: Array<String>): Boolean {
