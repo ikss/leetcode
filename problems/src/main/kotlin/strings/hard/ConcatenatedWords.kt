@@ -41,8 +41,3 @@ object ConcatenatedWords {
         return true
     }
 }
-
-fun main() {
-    val words = arrayOf("cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat")
-    println(ConcatenatedWords.findAllConcatenatedWordsInADict(words))
-}
