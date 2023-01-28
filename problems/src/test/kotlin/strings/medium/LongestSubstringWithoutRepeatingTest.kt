@@ -54,7 +54,7 @@ class LongestSubstringWithoutRepeatingTest {
     }
 
     @Test
-    fun testWOSet1() {
+    fun test1WOSet() {
         val s = "abcabcbb"
         val expected = 3
 
@@ -62,7 +62,7 @@ class LongestSubstringWithoutRepeatingTest {
     }
 
     @Test
-    fun testWOSet2() {
+    fun test2WOSet() {
         val s = "bbbbb"
         val expected = 1
 
@@ -70,7 +70,7 @@ class LongestSubstringWithoutRepeatingTest {
     }
 
     @Test
-    fun testWOSet3() {
+    fun test3WOSet() {
         val s = ""
         val expected = 0
 
@@ -78,21 +78,21 @@ class LongestSubstringWithoutRepeatingTest {
     }
 
     @Test
-    fun testWOSet4() {
+    fun test4WOSet() {
         val s = "pwwkew"
         val expected = 3
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstringWOSet(s))
     }
 
     @Test
-    fun testWOSet5() {
+    fun test5WOSet() {
         val s = "aab"
         val expected = 2
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstringWOSet(s))
     }
 
     @Test
-    fun testWOSet6() {
+    fun test6WOSet() {
         val s = "a"
         val expected = 1
         assertEquals(expected, LongestSubstringWithoutRepeating.lengthOfLongestSubstringWOSet(s))

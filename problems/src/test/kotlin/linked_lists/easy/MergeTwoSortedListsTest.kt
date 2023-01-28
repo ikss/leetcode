@@ -10,37 +10,37 @@ class MergeTwoSortedListsTest {
     private val expected = ListBuilder.build(1, 1, 2, 3, 4, 4)
 
     @Test
-    fun testMergeLists1() {
+    fun test1mergeLists() {
 
         assertEquals(expected, MergeTwoSortedLists.mergeTwoLists(list1, list2))
     }
 
     @Test
-    fun testMergeLists2() {
+    fun test2mergeLists() {
 
         assertEquals(list1, MergeTwoSortedLists.mergeTwoLists(list1, null))
     }
 
     @Test
-    fun testMergeLists3() {
+    fun test3mergeLists() {
 
         assertEquals(list2, MergeTwoSortedLists.mergeTwoLists(null, list2))
     }
 
     @Test
-    fun testMergeListsRecursive1() {
+    fun test1mergeListsRecursive() {
 
         assertEquals(expected, MergeTwoSortedLists.mergeTwoListsRecursive(list1, list2))
     }
 
     @Test
-    fun testMergeListsRecursive2() {
+    fun test2mergeListsRecursive() {
 
         assertEquals(list1, MergeTwoSortedLists.mergeTwoLists(list1, null))
     }
 
     @Test
-    fun testMergeListsRecursive3() {
+    fun test3mergeListsRecursive() {
 
         assertEquals(list2, MergeTwoSortedLists.mergeTwoLists(null, list2))
     }

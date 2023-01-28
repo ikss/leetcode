@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test
 class JumpGameTest {
 
     @Test
-    fun testGreedy1() {
+    fun test1greedy() {
         val nums = intArrayOf(2, 3, 1, 1, 4)
 
         assertTrue(JumpGame.canJumpGreedy(nums))
     }
 
     @Test
-    fun testGreedy2() {
+    fun test2greedy() {
         val nums = intArrayOf(2, 3, 1, 1, 4)
 
         assertTrue(JumpGame.canJumpGreedy(nums))

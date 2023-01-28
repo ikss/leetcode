@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 class TriangleTest {
 
     @Test
-    fun testDfs1() {
+    fun test1dfs() {
         val triangle = listOf(listOf(2), listOf(3, 4), listOf(6, 5, 7), listOf(4, 1, 8, 3))
         val expected = 11
 
@@ -14,7 +14,7 @@ class TriangleTest {
     }
 
     @Test
-    fun testDfs2() {
+    fun test2dfs() {
         val triangle = listOf(listOf(-11))
         val expected = -11
 
@@ -22,7 +22,7 @@ class TriangleTest {
     }
 
     @Test
-    fun testDp1() {
+    fun test1dp() {
         val triangle = listOf(listOf(2), listOf(3, 4), listOf(6, 5, 7), listOf(4, 1, 8, 3))
         val expected = 11
 
@@ -30,7 +30,7 @@ class TriangleTest {
     }
 
     @Test
-    fun testDp2() {
+    fun test2dp() {
         val triangle = listOf(listOf(-11))
         val expected = -11
 

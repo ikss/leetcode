@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 class BestTimeToBuyAndSellStocksTest {
 
     @Test
-    fun testSimple1() {
+    fun test1simple() {
         val arr = intArrayOf(7, 1, 5, 3, 6, 4)
         val expected = 5
 
@@ -14,7 +14,7 @@ class BestTimeToBuyAndSellStocksTest {
     }
 
     @Test
-    fun testSimple2() {
+    fun test2simple() {
         val arr = intArrayOf(7, 6, 4, 3, 1)
         val expected = 0
 
@@ -22,7 +22,7 @@ class BestTimeToBuyAndSellStocksTest {
     }
 
     @Test
-    fun testKadane1() {
+    fun test1kadane() {
         val arr = intArrayOf(7, 1, 5, 3, 6, 4)
         val expected = 5
 
@@ -30,7 +30,7 @@ class BestTimeToBuyAndSellStocksTest {
     }
 
     @Test
-    fun testKadane2() {
+    fun test2kadane() {
         val arr = intArrayOf(7, 6, 4, 3, 1)
         val expected = 0
 
