@@ -31,8 +31,8 @@ class LFUCache(private val capacity: Int) {
     private var minf = 0
 
     fun get(key: Int): Int {
-        val frequencyAndValue = cache[key] ?: return -1
-        val (frequency, value) = frequencyAndValue
+        val (frequency, value) = cache[key]
+            ?: return -1
         val keys = frequencies[frequency]!!
         keys.remove(key)
         if (minf == frequency && keys.isEmpty()) {
