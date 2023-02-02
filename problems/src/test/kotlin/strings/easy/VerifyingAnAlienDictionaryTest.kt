@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 class VerifyingAnAlienDictionaryTest {
 
     @Test
-    fun test1() {
+    fun test1naive() {
         val words = arrayOf("hello", "leetcode")
         val order = "hlabcdefgijkmnopqrstuvwxyz"
         val expected = true
@@ -15,7 +15,7 @@ class VerifyingAnAlienDictionaryTest {
     }
 
     @Test
-    fun test2() {
+    fun test2naive() {
         val words = arrayOf("word", "world", "row")
         val order = "worldabcefghijkmnpqstuvxyz"
         val expected = false
@@ -24,7 +24,7 @@ class VerifyingAnAlienDictionaryTest {
     }
 
     @Test
-    fun test3() {
+    fun test3naive() {
         val words = arrayOf("apple", "app")
         val order = "abcdefghijklmnopqrstuvwxyz"
         val expected = false
