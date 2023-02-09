@@ -8,7 +8,7 @@ class NamingCompanyTest {
     @Test
     fun test1() {
         val ideas = arrayOf("coffee", "donuts", "time", "toffee")
-        val expected = 6
+        val expected = 6L
 
         assertEquals(expected, NamingCompany.distinctNames(ideas))
     }
@@ -16,7 +16,7 @@ class NamingCompanyTest {
     @Test
     fun test2() {
         val ideas = arrayOf("lack", "back")
-        val expected = 0
+        val expected = 0L
 
         assertEquals(expected, NamingCompany.distinctNames(ideas))
     }
