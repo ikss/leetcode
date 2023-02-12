@@ -41,10 +41,8 @@ object ShortestPathWithAlternatingColors {
             if (!adj.containsKey(node)) {
                 continue
             }
-            for (nei in adj[node]!!) {
-                val neighbor = nei[0]
-                val color = nei[1]
-                if (!visit[neighbor][color] && color != prevColor) {
+            for ((neighbor, color) in adj[node]!!) {
+                if (color != prevColor && !visit[neighbor][color]) {
                     if (answer[neighbor] == -1) {
                         answer[neighbor] = 1 + steps
                     }
