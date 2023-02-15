@@ -1,5 +1,6 @@
 package numbers.easy
 
+
 /**
  * The array-form of an integer num is an array representing its digits in left to right order.
  *
@@ -9,7 +10,7 @@ package numbers.easy
  * [URL](https://leetcode.com/problems/add-to-array-form-of-integer/)
  */
 object AddToArrayFormOfInteger {
-    fun addToArrayForm(num: IntArray, k: Int): List<Int> {
+    fun addToArrayFormSimple(num: IntArray, k: Int): List<Int> {
         val result = mutableListOf<Int>()
 
         var index = 0
@@ -34,5 +35,18 @@ object AddToArrayFormOfInteger {
         }
 
         return result
+    }
+
+    fun addToArrayFormOfficial(num: IntArray, k: Int): List<Int> {
+        val n = num.size
+        var cur = k
+        val ans = ArrayList<Int>()
+        var i = n
+        while (--i >= 0 || cur > 0) {
+            if (i >= 0) cur += num[i]
+            ans.add(cur % 10)
+            cur /= 10
+        }
+        return ans.reversed()
     }
 }
