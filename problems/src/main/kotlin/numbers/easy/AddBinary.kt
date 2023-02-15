@@ -37,7 +37,3 @@ object AddBinary {
         return builder.toString()
     }
 }
-
-fun main() {
-    println(AddBinary.addBinary("11", "1"))
-}
