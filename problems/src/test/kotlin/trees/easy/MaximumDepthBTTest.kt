@@ -7,16 +7,34 @@ import org.junit.jupiter.api.Test
 class MaximumDepthBTTest {
 
     @Test
-    fun test1() {
+    fun test1recursion() {
         val root = TreeBuilder.build(4, 2, 3, 1)
+        val expected = 3
 
-        assertEquals(3, MaximumDepthBT.maxDepth(root))
+        assertEquals(expected, MaximumDepthBT.maxDepthRecursion(root))
     }
 
     @Test
-    fun test2() {
+    fun test2recursion() {
         val root = TreeBuilder.build(1)
+        val expected = 1
 
-        assertEquals(1, MaximumDepthBT.maxDepth(root))
+        assertEquals(expected, MaximumDepthBT.maxDepthRecursion(root))
+    }
+
+    @Test
+    fun test1queue() {
+        val root = TreeBuilder.build(4, 2, 3, 1)
+        val expected = 3
+
+        assertEquals(expected, MaximumDepthBT.maxDepthQueue(root))
+    }
+
+    @Test
+    fun test2queue() {
+        val root = TreeBuilder.build(1)
+        val expected = 1
+
+        assertEquals(expected, MaximumDepthBT.maxDepthQueue(root))
     }
 }
