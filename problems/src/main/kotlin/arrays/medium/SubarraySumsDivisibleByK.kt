@@ -13,7 +13,7 @@ object SubarraySumsDivisibleByK {
     fun subarraysDivByKNaive(nums: IntArray, k: Int): Int {
         result = 0
 
-        for(i in nums.indices) {
+        for (i in nums.indices) {
             traverse(i, k, nums[i], nums)
         }
 
@@ -29,6 +29,7 @@ object SubarraySumsDivisibleByK {
         }
         traverse(index + 1, goal, currSum + nums[index + 1], nums)
     }
+
     fun subarraysDivByKPrefixSum(nums: IntArray, k: Int): Int {
         var prefixMod = 0
         var result = 0

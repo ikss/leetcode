@@ -27,10 +27,10 @@ object WordSearch {
         board[i][j] = '-'
         val newIndex = index + 1
         if (
-                dfs(i - 1, j, newIndex, word, board) ||
-                dfs(i, j - 1, newIndex, word, board) ||
-                dfs(i + 1, j, newIndex, word, board) ||
-                dfs(i, j + 1, newIndex, word, board)
+            dfs(i - 1, j, newIndex, word, board) ||
+            dfs(i, j - 1, newIndex, word, board) ||
+            dfs(i + 1, j, newIndex, word, board) ||
+            dfs(i, j + 1, newIndex, word, board)
         ) return true
         board[i][j] = word[index]
         return false

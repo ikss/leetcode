@@ -33,7 +33,7 @@ object WordLadderII {
         endWord: String,
         map: Map<String, MutableList<String>>,
         res: MutableList<List<String>>,
-        path: MutableList<String>
+        path: MutableList<String>,
     ) {
         if (beginWord == endWord) {
             res.add(ArrayList(path))

@@ -23,17 +23,21 @@ object EvaluateReversePolishNotation {
                 "+" -> {
                     stack.push(stack.pop() + stack.pop())
                 }
+
                 "-" -> {
                     val first = stack.pop()
                     stack.push(stack.pop() - first)
                 }
+
                 "*" -> {
                     stack.push(stack.pop() * stack.pop())
                 }
+
                 "/" -> {
                     val first = stack.pop()
                     stack.push(stack.pop() / first)
                 }
+
                 else -> stack.push(t.toInt())
             }
         }
