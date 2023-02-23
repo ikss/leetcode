@@ -13,7 +13,7 @@ import data_structures.TreeNode
  *
  * A node a is an ancestor of b if either: any child of a is equal to b or any child of a is an ancestor of b.
  *
- * [URL](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/description/)
+ * [URL](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/)
  */
 object MaximumDifferenceBetweenNodeAndAncestor {
     fun maxAncestorDiff(root: TreeNode?): Int {

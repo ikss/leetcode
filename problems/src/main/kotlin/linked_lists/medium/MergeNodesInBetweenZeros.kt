@@ -11,7 +11,7 @@ import data_structures.ListNode
  *
  * Return the head of the modified linked list.
  *
- * [URL](https://leetcode.com/problems/merge-nodes-in-between-zeros/description/)
+ * [URL](https://leetcode.com/problems/merge-nodes-in-between-zeros/)
  */
 object MergeNodesInBetweenZeros {
     fun mergeNodes(head: ListNode?): ListNode? {
