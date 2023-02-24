@@ -1,6 +1,5 @@
 package design.hard
 
-
 /**
  * Design and implement a data structure for a Least Frequently Used (LFU) cache.
  *

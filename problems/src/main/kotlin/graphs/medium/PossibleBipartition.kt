@@ -2,7 +2,6 @@ package graphs.medium
 
 import data_structures.UnionFind
 
-
 /**
  * We want to split a group of n people (labeled from 1 to n) into two groups of any size.
  * Each person may dislike some other people, and they should not go into the same group.

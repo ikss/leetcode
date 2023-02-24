@@ -2,7 +2,6 @@ package arrays.medium
 
 import java.util.*
 
-
 /**
  * You are given n tasks labeled from 0 to n - 1 represented by a 2D integer array tasks,
  * where `tasks[i] = [enqueueTimei, processingTimei]` means that the ith task will be available to process at

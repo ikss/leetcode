@@ -1,6 +1,5 @@
 package graphs.medium
 
-
 /**
  * There is a tree (i.e., a connected, undirected graph with no cycles) structure country network consisting of n
  * cities numbered from 0 to n - 1 and exactly n - 1 roads. The capital city is city 0. You are given a 2D integer array
