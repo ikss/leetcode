@@ -11,7 +11,7 @@ package arrays.medium
 object MinimumRoundsToCompleteAllTasks {
     fun minimumRounds(tasks: IntArray): Int {
         val taskCount = tasks.toList().groupingBy { it }.eachCount().values
-        println(taskCount)
+
         var result = 0
         for (count in taskCount) {
             if (count == 1) return -1

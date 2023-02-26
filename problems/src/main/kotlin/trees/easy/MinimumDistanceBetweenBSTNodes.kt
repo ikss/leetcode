@@ -1,6 +1,5 @@
 package trees.easy
 
-import data_structures.TreeBuilder
 import data_structures.TreeNode
 
 /**
@@ -35,9 +34,4 @@ object MinimumDistanceBetweenBSTNodes {
         prevValue = root
         inorderTraversal(root.right)
     }
-}
-
-fun main() {
-    val tree = TreeBuilder.build(90, 69, null, 49, 89, null, 52)
-    println(MinimumDistanceBetweenBSTNodes.minDiffInBST(tree!!))
 }

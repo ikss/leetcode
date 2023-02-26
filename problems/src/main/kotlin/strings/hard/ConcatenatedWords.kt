@@ -33,7 +33,7 @@ object ConcatenatedWords {
         words.sortBy { it.length }
         val result = mutableListOf<String>()
         val minSize = words[0].length * 2
-        println(words.contentToString())
+
         for (w in words) {
             if (w.length >= minSize) {
                 if (checkCandidate(w, 0, words)) {

@@ -19,7 +19,6 @@ object JumpGameII {
         dp[0] = 0
 
         for (i in nums.indices) {
-            println(dp.contentToString())
             val num = nums[i]
             for (j in i..minOf(nums.size - 1, num + i)) {
                 dp[j] = minOf(dp[j], dp[i] + 1)

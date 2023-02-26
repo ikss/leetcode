@@ -37,7 +37,7 @@ object EditDistance {
         val l1 = word1.length
         val l2 = word2.length
         var prev = IntArray(word2.length + 1) { it }
-        println(prev.contentToString())
+
         for (i in 1..l1) {
             val curr = IntArray(word2.length + 1)
             curr[0] = i
@@ -49,13 +49,8 @@ object EditDistance {
                 }
             }
             prev = curr
-            println(prev.contentToString())
         }
 
         return prev[l2]
     }
-}
-
-fun main() {
-    println(EditDistance.minDistanceDpMemOptimized("a", ""))
 }

@@ -27,7 +27,6 @@ object NumberOfNodesInTheSubTreeWithTheSameLabel {
     }
 
     private fun dfs(curr: Int, graph: Map<Int, List<Int>>, labels: String, result: IntArray): Map<Char, Int> {
-        println(curr)
         val map = mutableMapOf<Char, Int>()
         map[labels[curr]] = 1
 
