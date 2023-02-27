@@ -19,12 +19,7 @@ object ConstructQuadTree {
     }
 
     fun construct(grid: Array<IntArray>): Node {
-        val n = grid.size
-        if (n == 1) {
-            return Node(grid[0][0] == 1, true)
-        }
-
-        return divide(grid, 0, 0, n)
+        return divide(grid, 0, 0, grid.size)
     }
 
     private fun divide(grid: Array<IntArray>, starti: Int, startj: Int, size: Int): Node {

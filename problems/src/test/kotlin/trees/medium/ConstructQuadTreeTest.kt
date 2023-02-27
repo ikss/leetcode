@@ -20,4 +20,14 @@ class ConstructQuadTreeTest {
 
         assertEquals(expected, ConstructQuadTree.construct(grid))
     }
+
+    @Test
+    fun test2() {
+        val grid = arrayOf(
+            intArrayOf(1),
+        )
+        val expected = ConstructQuadTree.Node(`val` = true, isLeaf = true)
+
+        assertEquals(expected, ConstructQuadTree.construct(grid))
+    }
 }
