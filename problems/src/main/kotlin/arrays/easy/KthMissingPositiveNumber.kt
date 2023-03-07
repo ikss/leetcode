@@ -27,6 +27,8 @@ object KthMissingPositiveNumber {
         return arr[arr.size - 1] + k - missing
     }
 
+    // LeetCode comment with detailed description
+    // https://leetcode.com/problems/kth-missing-positive-number/solutions/779999/java-c-python-o-logn/comments/811118
     fun findKthPositiveBinarySearch(arr: IntArray, k: Int): Int {
         var left = 0
         var right = arr.size
