@@ -9,8 +9,8 @@ class RemoveNthNodeTest {
 
     @Test
     fun test1recursive() {
-        val before = ListBuilder.build(listOf(1, 2, 3, 4, 5))
-        val expected = ListBuilder.build(listOf(1, 2, 3, 5))
+        val before = ListBuilder.build(1, 2, 3, 4, 5)
+        val expected = ListBuilder.build(1, 2, 3, 5)
         val actual = RemoveNthNode.removeNthFromEndRecursive(before, 2)
 
         assertEquals(actual, expected)
@@ -36,8 +36,8 @@ class RemoveNthNodeTest {
 
     @Test
     fun test1cycle() {
-        val before = ListBuilder.build(listOf(1, 2, 3, 4, 5))
-        val expected = ListBuilder.build(listOf(1, 2, 3, 5))
+        val before = ListBuilder.build(1, 2, 3, 4, 5)
+        val expected = ListBuilder.build(1, 2, 3, 5)
         val actual = RemoveNthNode.removeNthFromEndCycle(before, 2)
 
         assertEquals(actual, expected)

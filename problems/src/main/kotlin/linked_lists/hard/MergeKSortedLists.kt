@@ -10,7 +10,7 @@ import linked_lists.easy.MergeTwoSortedLists
  * [URL](https://leetcode.com/problems/merge-k-sorted-lists/)
  */
 object MergeKSortedLists {
-    fun mergeKLists(lists: Array<ListNode?>): ListNode? {
+    fun mergeKLists(lists: Array<ListNode>): ListNode? {
         if (lists.isEmpty()) {
             return null
         } else if (lists.size == 1) {
