@@ -60,6 +60,7 @@ npm-debug.log
 .idea/*.*
 !.idea/scopes/**
 !.idea/codeStyles/**
+!.idea/runConfigurations/**
 # if you removeFromSet the above rule, at least ignore the following:
 
 # User-specific stuff:
