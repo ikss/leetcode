@@ -1,6 +1,7 @@
 package linked_lists.easy
 
 import data_structures.ListNode
+import data_structures.ListNodeCycled
 
 /**
  * Given head, the head of a linked list, determine if the linked list has a cycle in it.
@@ -13,7 +14,7 @@ import data_structures.ListNode
  * [URL](https://leetcode.com/problems/linked-list-cycle/)
  */
 object LinkedListCycle {
-    fun hasCycle(head: ListNode?): Boolean {
+    fun hasCycle(head: ListNodeCycled?): Boolean {
         head?.next ?: return false
 
         var slow = head.next
