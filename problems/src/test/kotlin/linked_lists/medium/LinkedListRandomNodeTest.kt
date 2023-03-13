@@ -34,7 +34,7 @@ class LinkedListRandomNodeTest {
     fun test1reservoirSampling() {
         val head = ListBuilder.build(3, 8, 3, 9, 1, 3, 9, 9, 2, 1)
         val randomizer = LinkedListRandomNode.SolutionReservoirSampling(head, Random(seed))
-        val expected = listOf(1)
+        val expected = listOf(3, 9, 3, 2, 3, 3, 2, 2, 8, 3)
 
         val actual = generateSequence { randomizer.getRandom() }.take(10).toList()
 
