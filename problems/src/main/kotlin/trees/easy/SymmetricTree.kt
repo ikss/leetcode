@@ -9,7 +9,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/symmetric-tree/)
  */
 object SymmetricTree {
-    fun isSymmetric(root: TreeNode?): Boolean {
+    fun isSymmetricQueue(root: TreeNode?): Boolean {
         if (root == null) return true
 
         val queue = ArrayDeque<Pair<TreeNode?, TreeNode?>>()
@@ -30,5 +30,17 @@ object SymmetricTree {
         queue.add(left.left to right.right)
         queue.add(left.right to right.left)
         return true
+    }
+
+    fun isSymmetricRecursive(root: TreeNode?): Boolean {
+        if (root == null) return true
+
+        return checkReversed(root.left, root.right)
+    }
+
+    private fun checkReversed(left: TreeNode?, right: TreeNode?): Boolean {
+        if (left == null && right == null) return true
+        if (left?.`val` != right?.`val`) return false
+        return checkReversed(left?.left, right?.right) && checkReversed(left?.right, right?.left)
     }
 }

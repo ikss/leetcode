@@ -8,16 +8,31 @@ import org.junit.jupiter.api.Test
 class SymmetricTreeTest {
 
     @Test
-    fun test1() {
+    fun test1queue() {
         val root = TreeBuilder.build(1, 2, 2, 3, 4, 4, 3)
 
-        assertTrue(SymmetricTree.isSymmetric(root))
+        assertTrue(SymmetricTree.isSymmetricQueue(root))
     }
 
     @Test
-    fun test2() {
+    fun test2queue() {
         val root = TreeBuilder.build(1, 2, 2, null, 3, null, 3)
 
-        assertFalse(SymmetricTree.isSymmetric(root))
+        assertFalse(SymmetricTree.isSymmetricQueue(root))
+    }
+
+
+    @Test
+    fun test1recursive() {
+        val root = TreeBuilder.build(1, 2, 2, 3, 4, 4, 3)
+
+        assertTrue(SymmetricTree.isSymmetricRecursive(root))
+    }
+
+    @Test
+    fun test2recursive() {
+        val root = TreeBuilder.build(1, 2, 2, null, 3, null, 3)
+
+        assertFalse(SymmetricTree.isSymmetricRecursive(root))
     }
 }
