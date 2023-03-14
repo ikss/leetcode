@@ -21,7 +21,6 @@ class SymmetricTreeTest {
         assertFalse(SymmetricTree.isSymmetricQueue(root))
     }
 
-
     @Test
     fun test1recursive() {
         val root = TreeBuilder.build(1, 2, 2, 3, 4, 4, 3)

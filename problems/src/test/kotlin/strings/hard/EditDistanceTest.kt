@@ -41,7 +41,6 @@ class EditDistanceTest {
         assertEquals(expected, EditDistance.minDistanceDp(word1, word2))
     }
 
-
     @Test
     fun test1dpMemOptimized() {
         val word1 = "horse"

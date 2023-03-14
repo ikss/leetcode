@@ -2,7 +2,6 @@ package arrays.medium
 
 import java.util.*
 
-
 /**
  * Given an array of integers arr, you are initially positioned at the first index of the array.
  *

@@ -3,7 +3,6 @@ package trees.medium
 import data_structures.ListNode
 import data_structures.TreeNode
 
-
 /**
  * Given the head of a singly linked list where elements are sorted in ascending order, convert it to a
  * height-balanced binary search tree.
