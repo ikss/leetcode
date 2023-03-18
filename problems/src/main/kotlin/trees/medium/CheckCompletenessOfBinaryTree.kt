@@ -3,7 +3,6 @@ package trees.medium
 import data_structures.TreeNode
 import java.util.*
 
-
 /**
  * Given the root of a binary tree, determine if it is a complete binary tree.
  *
