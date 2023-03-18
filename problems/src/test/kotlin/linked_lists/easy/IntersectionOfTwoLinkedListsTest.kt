@@ -12,8 +12,8 @@ class IntersectionOfTwoLinkedListsTest {
         val listB = ListBuilder.build(5, 6, 1)
 
         val tail = ListBuilder.build(8, 4, 5)
-        listA!!.next = tail
-        listB!!.next = tail
+        listA.next = tail
+        listB.next = tail
 
         assertEquals(tail, IntersectionOfTwoLinkedLists.getIntersectionNode(listA, listB))
     }
@@ -24,8 +24,8 @@ class IntersectionOfTwoLinkedListsTest {
         val listB = ListBuilder.build(3)
 
         val tail = ListBuilder.build(2, 1)
-        listA!!.next = tail
-        listB!!.next = tail
+        listA.next = tail
+        listB.next = tail
 
         assertEquals(tail, IntersectionOfTwoLinkedLists.getIntersectionNode(listA, listB))
     }

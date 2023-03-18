@@ -10,7 +10,7 @@ class DeleteNodeInLinkedListTest {
     fun test1() {
         val initial = ListBuilder.build(1, 2, 3, 4)
         val expected = ListBuilder.build(1, 2, 4)
-        val toDelete = initial!!.next!!.next
+        val toDelete = initial.next!!.next
         DeleteNodeInLinkedList.deleteNode(toDelete)
 
         assertEquals(expected, initial)
