@@ -11,20 +11,20 @@ package arrays.easy
  */
 object CanPlaceFlowers {
     fun canPlaceFlowers(flowerbed: IntArray, n: Int): Boolean {
-        var n = n
+        var count = 0
 
         for (i in flowerbed.indices) {
             if (flowerbed[i] == 1) continue
-            val prev = if (i > 0) flowerbed[i - 1] == 0 else true
-            val next = if (i < flowerbed.size - 1) flowerbed[i + 1] == 0 else true
+            val prev = i == 0 || flowerbed[i - 1] == 0
+            val next = i == flowerbed.size - 1 || flowerbed[i + 1] == 0
 
             if (prev && next) {
                 flowerbed[i] = 1
-                n--
+                count++
             }
-            if (n == 0) break
+            if (count >= n) return true
         }
 
-        return n == 0
+        return count >= n
     }
 }
