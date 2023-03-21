@@ -8,7 +8,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/number-of-zero-filled-subarrays/)
  */
 object NumberOfZeroFilledSubarrays {
-    fun zeroFilledSubarray(nums: IntArray): Long {
+    fun zeroFilledSubarrayNaive(nums: IntArray): Long {
         var count = 0L
         var result = 0L
         for (n in nums) {
@@ -23,5 +23,20 @@ object NumberOfZeroFilledSubarrays {
             result += count * (count + 1) / 2
         }
         return result
+    }
+
+    fun zeroFilledSubarrayNaiveOfficial(nums: IntArray): Long {
+        var ans = 0L
+        var numSubarray = 0L
+
+        for (num in nums) {
+            if (num == 0) {
+                numSubarray++
+                ans += numSubarray
+            } else {
+                numSubarray = 0
+            }
+        }
+        return ans
     }
 }
