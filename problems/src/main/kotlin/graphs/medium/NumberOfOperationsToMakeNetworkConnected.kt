@@ -1,5 +1,6 @@
 package graphs.medium
 
+import data_structures.UnionFind
 import java.util.*
 
 /**
@@ -17,7 +18,7 @@ import java.util.*
  */
 object NumberOfOperationsToMakeNetworkConnected {
 
-    fun makeConnected(n: Int, connections: Array<IntArray>): Int {
+    fun makeConnectedDfs(n: Int, connections: Array<IntArray>): Int {
         if (connections.size < n - 1) {
             return -1
         }
@@ -52,4 +53,22 @@ object NumberOfOperationsToMakeNetworkConnected {
             }
         }
     }
+
+    fun makeConnectedUnionFind(n: Int, connections: Array<IntArray>): Int {
+        if (connections.size < n - 1) {
+            return -1
+        }
+        val find = UnionFind(n)
+        var numberOfConnectedComponents = n
+
+        for ((s, e) in connections) {
+            if (find.find(s) != find.find(e)) {
+                numberOfConnectedComponents--
+                find.union(s, e)
+            }
+        }
+
+        return numberOfConnectedComponents - 1
+    }
+
 }
