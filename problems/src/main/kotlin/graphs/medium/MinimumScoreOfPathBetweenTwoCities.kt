@@ -1,4 +1,4 @@
-package arrays.medium
+package graphs.medium
 
 /**
  * You are given a positive integer n representing n cities numbered from 1 to n. You are also given a 2D array roads

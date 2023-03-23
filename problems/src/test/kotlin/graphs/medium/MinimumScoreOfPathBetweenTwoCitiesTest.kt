@@ -1,4 +1,4 @@
-package arrays.medium
+package graphs.medium
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
