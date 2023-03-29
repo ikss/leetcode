@@ -39,4 +39,20 @@ object ReducingDishes {
             backtrack(satisfaction, currSum + satisfaction[currDish] * currStep, currStep + 1, i + 1)
         }
     }
+
+
+    fun maxSatisfactionGreedy(satisfaction: IntArray): Int {
+        satisfaction.sort()
+        var result = 0
+        var suffixSum = 0
+
+        for (i in satisfaction.size - 1 downTo 0) {
+            if (suffixSum + satisfaction[i] <= 0) {
+                break
+            }
+            suffixSum += satisfaction[i]
+            result += suffixSum
+        }
+        return result
+    }
 }

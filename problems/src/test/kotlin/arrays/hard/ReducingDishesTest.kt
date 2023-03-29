@@ -28,4 +28,28 @@ class ReducingDishesTest {
 
         assertEquals(expected, ReducingDishes.maxSatisfactionNaive(satisfaction))
     }
+
+    @Test
+    fun test1greedy() {
+        val satisfaction = intArrayOf(-1, -8, 0, 5, -9)
+        val expected = 14
+
+        assertEquals(expected, ReducingDishes.maxSatisfactionGreedy(satisfaction))
+    }
+
+    @Test
+    fun test2greedy() {
+        val satisfaction = intArrayOf(4, 3, 2)
+        val expected = 20
+
+        assertEquals(expected, ReducingDishes.maxSatisfactionGreedy(satisfaction))
+    }
+
+    @Test
+    fun test3greedy() {
+        val satisfaction = intArrayOf(-1, -4, -5)
+        val expected = 0
+
+        assertEquals(expected, ReducingDishes.maxSatisfactionGreedy(satisfaction))
+    }
 }
