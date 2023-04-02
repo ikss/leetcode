@@ -1,4 +1,4 @@
-package linked_lists.easy
+package trees.easy
 
 import data_structures.TreeBuilder
 import org.junit.jupiter.api.Assertions.assertEquals

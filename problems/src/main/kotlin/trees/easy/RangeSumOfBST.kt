@@ -1,4 +1,4 @@
-package linked_lists.easy
+package trees.easy
 
 import data_structures.TreeNode
 import java.util.*
