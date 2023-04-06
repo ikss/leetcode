@@ -22,7 +22,7 @@ object MinimizeMaximumOfArray {
 
         // Iterate over nums, update prefix sum and answer.
         for (i in nums.indices) {
-            prefixSum += nums[i].toLong()
+            prefixSum += nums[i]
             answer = maxOf(answer, (prefixSum + i) / (i + 1))
         }
         return answer.toInt()
