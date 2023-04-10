@@ -21,11 +21,7 @@ object ValidParenthesis {
         for (c in s) {
             when (c) {
                 '(', '{', '[' -> stack.push(c)
-                else -> {
-                    if (stack.isEmpty()) return false
-                    val lastOpen = stack.pop()
-                    if (lastOpen != charMap[c]) return false
-                }
+                else -> if (stack.isEmpty() || stack.pop() != charMap[c]) return false
             }
         }
 
