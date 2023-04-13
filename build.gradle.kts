@@ -17,12 +17,12 @@ allprojects {
     }
 
     tasks.withType(JavaCompile::class).all {
-        sourceCompatibility = "20"
-        targetCompatibility = "20"
+        sourceCompatibility = "19"
+        targetCompatibility = "19"
     }
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
-        kotlinOptions.jvmTarget = "20"
+        kotlinOptions.jvmTarget = "19"
     }
 
 }
