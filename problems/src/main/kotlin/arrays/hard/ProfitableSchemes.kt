@@ -66,7 +66,7 @@ object ProfitableSchemes {
                         // Adding ways to get profitable schemes, including this crime.
                         val nexMinProfit = minOf(minProfit, profit + profits[index])
                         val including = dp[index + 1][nexPeople][nexMinProfit]
-                        dp[index][count][profit] += including % MOD
+                        dp[index][count][profit] = (dp[index][count][profit] + including) % MOD
                     }
                 }
             }
