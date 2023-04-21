@@ -10,7 +10,7 @@ package arrays.hard
  *
  * Return the number of schemes that can be chosen. Since the answer may be very large, return it modulo 10^9 + 7.
  *
- * [URL](https://leetcode.com/problems/arithmetic-slices-ii-subsequence/)
+ * [URL](https://leetcode.com/problems/profitable-schemes/)
  */
 object ProfitableSchemes {
     private const val MOD = 1000000007
