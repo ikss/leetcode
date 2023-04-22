@@ -18,7 +18,7 @@ import java.util.*
  * * Depending on your language, the stack may not be supported natively. You may simulate a stack using a list or
  * deque(double-ended queue) as long as you use only a stack's standard operations.
  *
- * [URL](https://leetcode.com/problems/implement-queue-using-stacks/
+ * [URL](https://leetcode.com/problems/implement-queue-using-stacks/)
  */
 object ImplementQueueUsingStacks {
     class MyQueue {

@@ -6,7 +6,7 @@ package arrays.medium
  * * Integers in each row are sorted in ascending from left to right.
  * * Integers in each column are sorted in ascending from top to bottom.
  *
- * [URL](https://leetcode.com/problems/search-a-2d-matrix-ii/
+ * [URL](https://leetcode.com/problems/search-a-2d-matrix-ii/)
  */
 object Search2DMatrixII {
     fun searchMatrix(matrix: Array<IntArray>, target: Int): Boolean {

@@ -15,7 +15,7 @@ import java.util.*
  *
  * Note that the empty subsequence is considered to have a sum of 0.
  *
- * [URL](https://leetcode.com/problems/find-the-k-sum-of-an-array/
+ * [URL](https://leetcode.com/problems/find-the-k-sum-of-an-array/)
  */
 object FindKSumOfArray {
     fun kSum(nums: IntArray, k: Int): Long {

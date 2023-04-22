@@ -11,7 +11,7 @@ package arrays.medium
  *
  * Return the minimum time Bob needs to make the rope colorful.
  *
- * [URL](https://leetcode.com/problems/minimum-time-to-make-rope-colorful/
+ * [URL](https://leetcode.com/problems/minimum-time-to-make-rope-colorful/)
  */
 object MinimumTimeToMakeRopeColorful {
     fun minCost(colors: String, neededTime: IntArray): Int {

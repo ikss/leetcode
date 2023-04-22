@@ -17,7 +17,7 @@ import java.util.*
  *
  * Return an integer array answer where `answer[i]` is the answer to the ith query.
  *
- * [URL](https://leetcode.com/problems/plates-between-candles/
+ * [URL](https://leetcode.com/problems/plates-between-candles/)
  */
 object PlatesBetweenCandles {
     fun platesBetweenCandles(s: String, queries: Array<IntArray>): IntArray {

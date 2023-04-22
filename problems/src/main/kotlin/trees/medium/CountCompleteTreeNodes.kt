@@ -11,7 +11,7 @@ import data_structures.TreeNode
  *
  * Design an algorithm that runs in less than O(n) time complexity.
  *
- * [URL](https://leetcode.com/problems/count-complete-tree-nodes/
+ * [URL](https://leetcode.com/problems/count-complete-tree-nodes/)
  */
 object CountCompleteTreeNodes {
     fun countNodes(root: TreeNode?): Int {
