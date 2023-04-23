@@ -35,7 +35,6 @@ object KthMissingPositiveNumber {
 
         while (left < right) {
             val candidate = (left + right) / 2
-            println("candidate: $candidate, val: ${arr[candidate]}")
             if (arr[candidate] - candidate <= k) {
                 left = candidate + 1
             } else {

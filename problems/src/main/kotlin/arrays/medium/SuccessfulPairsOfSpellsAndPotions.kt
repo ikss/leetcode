@@ -18,9 +18,8 @@ object SuccessfulPairsOfSpellsAndPotions {
 
         val sortedSpells = spells.withIndex().sortedBy { it.value }
 
-        println(sortedSpells)
         potions.sort()
-        println(potions.contentToString())
+
         val result = IntArray(spells.size)
         var pi = m - 1
 
