@@ -25,4 +25,8 @@ allprojects {
         kotlinOptions.jvmTarget = "19"
     }
 
+    tasks.withType(Test::class).configureEach {
+        maxParallelForks = Runtime.getRuntime().availableProcessors()
+    }
+
 }
