@@ -6,7 +6,7 @@ package math.easy
  * [URL](https://leetcode.com/problems/add-digits/)
  */
 object AddDigits {
-    fun addDigitsTailrec(num: Int): Int {
+    tailrec fun addDigitsTailrec(num: Int): Int {
         return if (num < 9) {
             num
         } else {
@@ -14,7 +14,7 @@ object AddDigits {
             for (c in num.toString()) {
                 res += c - '0'
             }
-            res
+            addDigitsTailrec(res)
         }
     }
 
