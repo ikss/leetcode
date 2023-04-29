@@ -31,4 +31,8 @@ class UnionFind(n: Int) {
         root[rootX] = rootY
         rank[rootY] += rank[rootX]
     }
+
+    fun areConnected(node1: Int, node2: Int): Boolean {
+        return find(node1) == find(node2)
+    }
 }
