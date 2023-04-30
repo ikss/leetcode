@@ -60,11 +60,3 @@ object CheckingExistenceOfEdgeLengthLimitedPaths {
         return answer
     }
 }
-
-fun main() {
-    val n = 3
-    val edgeList = arrayOf(intArrayOf(0, 1, 2), intArrayOf(1, 2, 4), intArrayOf(2, 0, 8), intArrayOf(1, 0, 16))
-    val queries = arrayOf(intArrayOf(0, 1, 2), intArrayOf(0, 2, 5))
-
-    println(CheckingExistenceOfEdgeLengthLimitedPaths.distanceLimitedPathsExist(n, edgeList, queries).contentToString())
-}
