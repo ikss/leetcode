@@ -7,39 +7,39 @@ package arrays.medium
  */
 object SpiralMatrix {
     fun spiralOrder(matrix: Array<IntArray>): List<Int>? {
-        var startRow = 0
-        var endRow = matrix.size - 1
-        var startCol = 0
-        var endCol = matrix[0].size - 1
+        var top = 0
+        var bottom = matrix.size
 
-        val res = ArrayList<Int>(endRow * endCol)
-        while (startRow <= endRow && startCol <= endCol) {
-            //top
-            for (j in startCol..endCol) {
-                res.add(matrix[startRow][j])
+        var left = 0
+        var right = matrix[0].size
+
+        val res = ArrayList<Int>(right * bottom)
+        while (top < right && left < bottom) {
+            // top
+            for (col in left until right) {
+                res.add(matrix[top][col])
             }
+            top++
+
             // right
-            for (i in startRow + 1..endRow) {
-                res.add(matrix[i][endCol])
+            for (row in top until bottom) {
+                res.add(matrix[row][right - 1])
             }
+            right--
+
+            if (left >= right || top >= bottom) break
+
             // bottom
-            for (j in endCol - 1 downTo startCol) {
-                if (startRow == endRow) {
-                    break
-                }
-                res.add(matrix[endRow][j])
+            for (col in right - 1 downTo left) {
+                res.add(matrix[bottom - 1][col])
             }
+            bottom--
+
             // left
-            for (i in endRow - 1 downTo startRow + 1) {
-                if (startCol == endCol) {
-                    break
-                }
-                res.add(matrix[i][startCol])
+            for (row in bottom - 1 downTo top) {
+                res.add(matrix[row][left])
             }
-            startCol++
-            startRow++
-            endCol--
-            endRow--
+            left++
         }
         return res
     }
