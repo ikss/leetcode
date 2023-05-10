@@ -5,9 +5,9 @@ package arrays.easy
  * remove the duplicates in-place such that each unique element appears only once.
  * The relative order of the elements should be kept the same.
  *
- * [URL](https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/727/)
+ * [URL](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
  */
-object RemoveDuplicatesSorted {
+object RemoveDuplicatesFromSortedArray {
     fun removeDuplicates(nums: IntArray): Int {
         var curr = 0
         nums.forEach {
