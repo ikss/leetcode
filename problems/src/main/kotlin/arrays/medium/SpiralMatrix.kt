@@ -6,7 +6,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/spiral-matrix/)
  */
 object SpiralMatrix {
-    fun spiralOrder(matrix: Array<IntArray>): List<Int>? {
+    fun spiralOrder(matrix: Array<IntArray>): List<Int> {
         var top = 0
         var bottom = matrix.size
 
