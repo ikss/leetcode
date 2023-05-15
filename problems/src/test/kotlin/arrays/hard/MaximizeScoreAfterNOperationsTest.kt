@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 class MaximizeScoreAfterNOperationsTest {
 
     @Test
-    fun test1recursive() {
+    fun test1() {
         val nums = intArrayOf(1, 2)
         val expected = 1
 
@@ -14,7 +14,7 @@ class MaximizeScoreAfterNOperationsTest {
     }
 
     @Test
-    fun test2recursive() {
+    fun test2() {
         val nums = intArrayOf(3, 4, 6, 8)
         val expected = 11
 
