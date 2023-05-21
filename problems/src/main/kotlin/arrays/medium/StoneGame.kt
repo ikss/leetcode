@@ -21,13 +21,13 @@ object StoneGame {
     }
 
     fun stoneGameDp(piles: IntArray): Boolean {
-        val N = piles.size
+        val n = piles.size
 
-        val dp = Array(N + 2) { IntArray(N + 2) }
-        for (size in 1..N) {
-            for (i in 0..N - size) {
+        val dp = Array(n + 2) { IntArray(n + 2) }
+        for (size in 1..n) {
+            for (i in 0..n - size) {
                 val j = i + size - 1
-                val parity = (j + i + N) % 2
+                val parity = (j + i + n) % 2
                 dp[i + 1][j + 1] = if (parity == 1) {
                     maxOf(piles[i] + dp[i + 2][j + 1], piles[j] + dp[i + 1][j])
                 } else {
@@ -36,6 +36,6 @@ object StoneGame {
             }
 
         }
-        return dp[1][N] > 0
+        return dp[1][n] > 0
     }
 }
