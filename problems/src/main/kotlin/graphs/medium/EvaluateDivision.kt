@@ -27,11 +27,8 @@ object EvaluateDivision {
         val results = DoubleArray(queries.size)
 
         for (i in queries.indices) {
-            val start = queries[i][0]
-            val end = queries[i][1]
-            // first check if start or end exist in big map or not
+            val (start, end) = queries[i]
             results[i] = if (graph.containsKey(start) && graph.containsKey(end)) {
-                // enter dfs loop, for each query, there is a new visited set
                 dfs(graph, start, end, HashSet())
             } else {
                 -1.0
@@ -41,21 +38,17 @@ object EvaluateDivision {
         return results
     }
 
-    private fun dfs(
-        map: HashMap<String, HashMap<String, Double>>,
-        start: String,
-        end: String,
-        visited: HashSet<String>,
-    ): Double {
-        val neighbours = map[start]!!
+    private fun dfs(graph: HashMap<String, HashMap<String, Double>>, start: String, end: String, visited: HashSet<String>): Double {
+        val neighbours = graph[start]
+            ?: return -1.0
         if (neighbours.containsKey(end)) {
             return neighbours[end]!!
         }
-        // mark visited
         visited.add(start)
-        for ((key, value) in neighbours) {
-            if (visited.contains(key)) continue
-            val res = dfs(map, key, end, visited)
+
+        for ((neighbour, value) in neighbours) {
+            if (visited.contains(neighbour)) continue
+            val res = dfs(graph, start, end, visited)
             if (res == -1.0) continue
             return res * value
         }
