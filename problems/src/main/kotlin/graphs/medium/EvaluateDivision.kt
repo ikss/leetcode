@@ -48,7 +48,7 @@ object EvaluateDivision {
 
         for ((neighbour, value) in neighbours) {
             if (visited.contains(neighbour)) continue
-            val res = dfs(graph, start, end, visited)
+            val res = dfs(graph, neighbour, end, visited)
             if (res == -1.0) continue
             return res * value
         }
