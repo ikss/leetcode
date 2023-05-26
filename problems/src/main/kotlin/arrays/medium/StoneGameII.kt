@@ -26,10 +26,10 @@ object StoneGameII {
             suffixSum[i] += suffixSum[i + 1]
         }
         val dp = Array(piles.size) { IntArray(piles.size) }
-        return dfs(1, 0, suffixSum, dp)
+        return dfs(0, 1, suffixSum, dp)
     }
 
-    private fun dfs(m: Int, pile: Int, suffixSum: IntArray, memo: Array<IntArray>): Int {
+    private fun dfs(pile: Int, m: Int, suffixSum: IntArray, memo: Array<IntArray>): Int {
         if (pile + 2 * m >= suffixSum.size) { // last player takes all
             return suffixSum[pile]
         }
@@ -38,7 +38,7 @@ object StoneGameII {
         for (i in 1..2 * m) {
             // current take
             // take max of current + what lefts from other player max take
-            result = maxOf(result, suffixSum[pile] - dfs(maxOf(i, m), pile + i, suffixSum, memo))
+            result = maxOf(result, suffixSum[pile] - dfs(pile + i, maxOf(i, m), suffixSum, memo))
         }
         memo[pile][m] = result
         return result
