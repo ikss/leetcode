@@ -34,15 +34,13 @@ object StoneGameII {
             return suffixSum[pile]
         }
         if (memo[pile][m] > 0) return memo[pile][m]
-        var res = 0
-        var take = 0
+        var result = 0
         for (i in 1..2 * m) {
             // current take
-            take = suffixSum[pile] - suffixSum[pile + i]
             // take max of current + what lefts from other player max take
-            res = maxOf(res, take + suffixSum[pile + i] - dfs(maxOf(i, m), pile + i, suffixSum, memo))
+            result = maxOf(result, suffixSum[pile] - dfs(maxOf(i, m), pile + i, suffixSum, memo))
         }
-        memo[pile][m] = res
-        return res
+        memo[pile][m] = result
+        return result
     }
 }
