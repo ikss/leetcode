@@ -1,5 +1,7 @@
 package design.easy
 
+import java.util.*
+
 /**
  * Design a HashSet without using any built-in hash table libraries.
  *
@@ -12,26 +14,18 @@ package design.easy
  */
 object DesignHashSet {
     class MyHashSet {
-        var num = LongArray(15626)
+        var num = BitSet(1_000_000)
 
         fun add(key: Int) {
-            num[getIdx(key)] = num[getIdx(key)] or getMask(key)
+            num.set(key)
         }
 
         fun remove(key: Int) {
-            num[getIdx(key)] = num[getIdx(key)] and getMask(key).inv()
+            num.clear(key)
         }
 
         operator fun contains(key: Int): Boolean {
-            return num[getIdx(key)] and getMask(key) != 0L
-        }
-
-        private fun getIdx(key: Int): Int {
-            return key / 64
-        }
-
-        private fun getMask(key: Int): Long {
-            return 1L shl (key % 64)
+            return num.get(key)
         }
     }
 }
