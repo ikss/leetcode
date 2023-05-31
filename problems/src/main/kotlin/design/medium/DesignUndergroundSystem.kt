@@ -13,8 +13,8 @@ package design.medium
  */
 object DesignUndergroundSystem {
     class UndergroundSystem() {
-        private val activeCheckins = HashMap<Int, Pair<String, Int>>()
-        private val average = HashMap<String, HashMap<String, ArrayList<Int>>>()
+        val activeCheckins = HashMap<Int, Pair<String, Int>>()
+        val average = HashMap<Pair<String, String>, Pair<Double, Int>>()
 
         fun checkIn(id: Int, stationName: String, t: Int) {
             activeCheckins[id] = stationName to t
@@ -22,14 +22,14 @@ object DesignUndergroundSystem {
 
         fun checkOut(id: Int, stationName: String, t: Int) {
             val (start, startT) = activeCheckins[id]!!
-            average.computeIfAbsent(start) { hashMapOf() }.computeIfAbsent(stationName) { arrayListOf() }
-                .add(t - startT)
+            val oldVal = average.computeIfAbsent(start to stationName) { 0.0 to 0 }
+            val newCount = oldVal.second + 1
+            average[start to stationName] = ((oldVal.first * oldVal.second) + (t - startT)) / newCount to newCount
         }
 
         fun getAverageTime(startStation: String, endStation: String): Double {
-            val times = average[startStation]!![endStation]!!
-            return times.average()
+            val times = average[startStation to endStation]!!
+            return times.first
         }
-
     }
 }
