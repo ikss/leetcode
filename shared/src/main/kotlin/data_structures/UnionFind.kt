@@ -1,9 +1,9 @@
 package data_structures
 
 class UnionFind(n: Int) {
-    private val root = IntArray(n + 1)
-    private val rank = IntArray(n + 1)
-    private var components = n
+    val root = IntArray(n + 1)
+    val rank = IntArray(n + 1)
+    var components = n
 
     init {
         for (i in 0 until n) {
