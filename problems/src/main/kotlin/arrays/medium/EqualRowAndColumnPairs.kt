@@ -9,7 +9,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/equal-row-and-column-pairs/)
  */
 object EqualRowAndColumnPairs {
-    fun equalPairs(grid: Array<IntArray>): Int {
+    fun equalPairsNaive(grid: Array<IntArray>): Int {
         var result = 0
         for (i in grid.indices) {
             for (j in grid[0].indices) {
@@ -28,5 +28,24 @@ object EqualRowAndColumnPairs {
             }
         }
         return true
+    }
+
+    fun equalPairsHashMap(grid: Array<IntArray>): Int {
+        var result = 0
+        val rows = HashMap<String, Int>()
+        for (arr in grid) {
+            rows.merge(arr.contentToString(), 1, Integer::sum)
+        }
+
+        for (i in grid.indices) {
+            val count = rows[getColumn(grid, i)] ?: continue
+            result += count
+        }
+        return result
+    }
+
+    private fun getColumn(grid: Array<IntArray>, index: Int): String {
+        val column = IntArray(grid.size) { grid[it][index] }
+        return column.contentToString()
     }
 }
