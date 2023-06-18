@@ -41,7 +41,7 @@ object MakeArrayStrictlyIncreasing {
 
         // Replace arr1[i], with a cost of 1 operation.
         if (idx < arr2.size) {
-            cost = Math.min(cost, 1 + dfs(i + 1, arr2[idx], arr1, arr2, dp))
+            cost = minOf(cost, 1 + dfs(i + 1, arr2[idx], arr1, arr2, dp))
         }
         dp[Pair(i, prev)] = cost
         return cost
