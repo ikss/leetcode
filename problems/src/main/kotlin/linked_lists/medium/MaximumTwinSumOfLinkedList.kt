@@ -23,7 +23,6 @@ object MaximumTwinSumOfLinkedList {
     }
 
     private fun findRecursive(currNode: ListNode, prevNode: ListNode): Pair<Int, ListNode?> {
-        println("Curr: : ${currNode.`val`}, prev: ${prevNode.`val`}, ")
         if (currNode.next == null) {
             return currNode.`val` + prevNode.`val` to prevNode.next!!
         }
