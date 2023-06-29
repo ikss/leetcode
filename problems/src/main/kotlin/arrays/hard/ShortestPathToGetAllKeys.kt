@@ -26,7 +26,7 @@ import java.util.*
 object ShortestPathToGetAllKeys {
     private val directions = listOf(0 to -1, 0 to 1, -1 to 0, 1 to 0)
 
-    private data class State(val x: Int, val y: Int, val keys: HashSet<Int>)
+    private data class State(val x: Int, val y: Int, val keys: Int)
 
     fun shortestPathAllKeys(grid: Array<String>): Int {
         var neededKeys = 0
@@ -36,14 +36,14 @@ object ShortestPathToGetAllKeys {
             for (j in grid[0].indices) {
                 val c = grid[i][j]
                 if (c in 'a'..'z') {
-                    neededKeys++
+                    neededKeys += 1 shl (c - 'a')
                 } else if (c == '@') {
                     startingPoint = i to j
                 }
             }
         }
         val queue = ArrayDeque<Pair<State, Int>>()
-        queue.offer(State(startingPoint.first, startingPoint.second, HashSet()) to 0)
+        queue.offer(State(startingPoint.first, startingPoint.second, 0) to 0)
         val visited = HashSet<State>()
         var result = Int.MAX_VALUE
 
@@ -52,7 +52,7 @@ object ShortestPathToGetAllKeys {
             if (!visited.add(state)) continue
             val (x, y, keys) = state
 
-            if (keys.size == neededKeys) {
+            if (keys == neededKeys) {
                 result = minOf(result, step)
                 continue
             }
@@ -67,12 +67,11 @@ object ShortestPathToGetAllKeys {
                 if (c == '#') {
                     continue
                 }
-                val newKeys = HashSet(keys)
+                var newKeys = keys
                 if (c in 'a'..'z') {
-                    newKeys.add(c - 'a')
+                    newKeys = newKeys or (1 shl (c - 'a'))
                 } else if (c in 'A'..'Z') {
-                    val key = c - 'A'
-                    if (!keys.contains(key)) continue
+                    if ((keys and (1 shl (c - 'A'))) == 0) continue
                 }
                 queue.offer(State(newX, newY, newKeys) to step + 1)
             }
