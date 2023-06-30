@@ -1,5 +1,6 @@
 package trees.medium
 
+import data_structures.UnionFind
 import java.util.*
 
 /**
@@ -46,36 +47,10 @@ object RedundantConnection {
     }
 
     fun findRedundantConnectionDsu(edges: Array<IntArray>): IntArray {
-        val dsu = DSU(MAX_EDGE_VAL + 1)
+        val dsu = UnionFind(MAX_EDGE_VAL + 1)
         for (edge in edges) {
-            if (!dsu.union(edge[0], edge[1])) return edge
+            if (dsu.union(edge[0], edge[1]) == 0) return edge
         }
         throw AssertionError()
-    }
-
-    class DSU(size: Int) {
-        private val parent = IntArray(size) { it }
-        private val rank = IntArray(size)
-
-        fun find(x: Int): Int {
-            if (parent[x] != x) parent[x] = find(parent[x])
-            return parent[x]
-        }
-
-        fun union(x: Int, y: Int): Boolean {
-            val xr = find(x)
-            val yr = find(y)
-            if (xr == yr) {
-                return false
-            } else if (rank[xr] < rank[yr]) {
-                parent[xr] = yr
-            } else if (rank[xr] > rank[yr]) {
-                parent[yr] = xr
-            } else {
-                parent[yr] = xr
-                rank[xr]++
-            }
-            return true
-        }
     }
 }
