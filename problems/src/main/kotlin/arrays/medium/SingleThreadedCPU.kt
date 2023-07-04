@@ -51,7 +51,7 @@ object SingleThreadedCPU {
             val (_, processTime, index) = nextTask.poll()
 
             // Complete this task and increment currTime.
-            currTime += processTime.toLong()
+            currTime += processTime
             result[ansIndex++] = index
         }
         return result
