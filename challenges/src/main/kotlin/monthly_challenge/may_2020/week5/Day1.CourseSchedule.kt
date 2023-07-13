@@ -4,8 +4,8 @@ object CourseSchedule {
 
     fun canFinish(numCourses: Int, prerequisites: Array<IntArray>): Boolean {
         val adj = Array<ArrayList<Int>>(numCourses) { ArrayList() }
-        for (pair in prerequisites) {
-            adj[pair[1]].add(pair[0])
+        for ((from, to) in prerequisites) {
+            adj[from].add(to)
         }
         val color = IntArray(numCourses)
         for (i in 0 until numCourses) {
