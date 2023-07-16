@@ -1,0 +1,32 @@
+package arrays.hard
+
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
+
+class SmallestSufficientTeamTest {
+    @Test
+    fun test1() {
+        val req_skills = arrayOf("java", "nodejs", "reactjs")
+        val people = listOf(listOf("java"), listOf("nodejs"), listOf("nodejs", "reactjs"))
+        val expected = intArrayOf(0, 2)
+
+        assertTrue(expected.contentEquals(SmallestSufficientTeam.smallestSufficientTeam(req_skills, people)))
+    }
+
+    @Test
+    fun test2() {
+        val req_skills = arrayOf("algorithms", "math", "java", "reactjs", "csharp", "aws")
+        val people = listOf(
+            listOf("algorithms", "math", "java"),
+            listOf("algorithms", "math", "reactjs"),
+            listOf("java", "csharp", "aws"),
+            listOf("reactjs", "csharp"),
+            listOf("csharp", "math"),
+            listOf("aws", "java"),
+        )
+        val expected = intArrayOf(1, 2)
+
+        assertTrue(expected.contentEquals(SmallestSufficientTeam.smallestSufficientTeam(req_skills, people)))
+    }
+}
