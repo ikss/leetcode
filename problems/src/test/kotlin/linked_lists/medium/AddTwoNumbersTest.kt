@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 class AddTwoNumbersTest {
 
     @Test
-    fun `carry over two digits`() {
+    fun test1() {
         val l1 = ListBuilder.build(9, 9)
         val l2 = ListNode(1)
         val expected = ListBuilder.build(0, 0, 1)
@@ -18,7 +18,7 @@ class AddTwoNumbersTest {
     }
 
     @Test
-    fun `digit overflow`() {
+    fun test2() {
         val l1 = ListNode(5)
         val l2 = ListNode(5)
         val expected = ListBuilder.build(0, 1)
@@ -28,7 +28,7 @@ class AddTwoNumbersTest {
     }
 
     @Test
-    fun `description example`() {
+    fun test3() {
         val l1 = ListBuilder.build(2, 4, 3)
         val l2 = ListBuilder.build(5, 6, 4)
         val expected = ListBuilder.build(7, 0, 8)
