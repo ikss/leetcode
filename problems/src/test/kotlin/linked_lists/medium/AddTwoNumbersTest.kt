@@ -12,9 +12,8 @@ class AddTwoNumbersTest {
         val l1 = ListBuilder.build(9, 9)
         val l2 = ListNode(1)
         val expected = ListBuilder.build(0, 0, 1)
-        val actual = AddTwoNumbers.addTwoNumbers(l1, l2)
 
-        assertEquals(actual, expected)
+        assertEquals(expected, AddTwoNumbers.addTwoNumbers(l1, l2))
     }
 
     @Test
@@ -22,9 +21,8 @@ class AddTwoNumbersTest {
         val l1 = ListNode(5)
         val l2 = ListNode(5)
         val expected = ListBuilder.build(0, 1)
-        val actual = AddTwoNumbers.addTwoNumbers(l1, l2)
 
-        assertEquals(expected, actual)
+        assertEquals(expected, AddTwoNumbers.addTwoNumbers(l1, l2))
     }
 
     @Test
@@ -32,8 +30,7 @@ class AddTwoNumbersTest {
         val l1 = ListBuilder.build(2, 4, 3)
         val l2 = ListBuilder.build(5, 6, 4)
         val expected = ListBuilder.build(7, 0, 8)
-        val actual = AddTwoNumbers.addTwoNumbers(l1, l2)
 
-        assertEquals(expected, actual)
+        assertEquals(expected, AddTwoNumbers.addTwoNumbers(l1, l2))
     }
 }
