@@ -27,4 +27,12 @@ class NonOverlappingIntervalsTest {
 
         assertEquals(expected, NonOverlappingIntervals.eraseOverlapIntervals(intervals))
     }
+
+    @Test
+    fun test4() {
+        val intervals = arrayOf(intArrayOf(1, 100), intArrayOf(11, 22), intArrayOf(1, 11), intArrayOf(2, 12))
+        val expected = 2
+
+        assertEquals(expected, NonOverlappingIntervals.eraseOverlapIntervals(intervals))
+    }
 }

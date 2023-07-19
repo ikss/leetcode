@@ -8,7 +8,7 @@ package arrays.medium
  */
 object NonOverlappingIntervals {
     fun eraseOverlapIntervals(intervals: Array<IntArray>): Int {
-        intervals.sortBy { it[0] }
+        intervals.sortBy { it[1] }
         var result = 0
         var maxEndTime = Int.MIN_VALUE
 
