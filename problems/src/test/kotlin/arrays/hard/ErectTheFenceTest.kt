@@ -1,6 +1,6 @@
 package arrays.hard
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class ErectTheFenceTest {
@@ -23,7 +23,7 @@ class ErectTheFenceTest {
             intArrayOf(2, 0),
         )
 
-        assertTrue(expected.contentDeepEquals(ErectTheFence.outerTrees(trees)))
+        assertArrayEquals(expected, ErectTheFence.outerTrees(trees))
     }
 
     @Test
@@ -39,6 +39,6 @@ class ErectTheFenceTest {
             intArrayOf(1, 2),
         )
 
-        assertTrue(expected.contentDeepEquals(ErectTheFence.outerTrees(trees)))
+        assertArrayEquals(expected, ErectTheFence.outerTrees(trees))
     }
 }

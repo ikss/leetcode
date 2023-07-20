@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class SpiralMatrixIITest {
@@ -13,7 +13,7 @@ class SpiralMatrixIITest {
             intArrayOf(7, 6, 5),
         )
 
-        assertTrue(expected.contentDeepEquals(SpiralMatrixII.generateMatrixNaive(n)))
+        assertArrayEquals(expected, SpiralMatrixII.generateMatrixNaive(n))
     }
 
     @Test
@@ -23,7 +23,7 @@ class SpiralMatrixIITest {
             intArrayOf(1),
         )
 
-        assertTrue(expected.contentDeepEquals(SpiralMatrixII.generateMatrixNaive(n)))
+        assertArrayEquals(expected, SpiralMatrixII.generateMatrixNaive(n))
     }
 
     @Test
@@ -34,6 +34,6 @@ class SpiralMatrixIITest {
             intArrayOf(4, 3),
         )
 
-        assertTrue(expected.contentDeepEquals(SpiralMatrixII.generateMatrixNaive(n)))
+        assertArrayEquals(expected, SpiralMatrixII.generateMatrixNaive(n))
     }
 }

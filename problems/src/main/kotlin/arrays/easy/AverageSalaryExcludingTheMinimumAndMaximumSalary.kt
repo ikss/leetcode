@@ -5,7 +5,7 @@ package arrays.easy
  *
  * Return the average salary of employees excluding the minimum and maximum salary.
  * Answers within 10-5 of the actual answer will be accepted.
-  *
+ *
  * [URL](https://leetcode.com/problems/two-sum/)
  */
 object AverageSalaryExcludingTheMinimumAndMaximumSalary {

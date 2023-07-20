@@ -12,12 +12,12 @@ object MatrixDiagonalSum {
     fun diagonalSum(mat: Array<IntArray>): Int {
         val n = mat.size
         var result = 0
-        for (i in 0 until n/2) {
-            val j = n-i-1
+        for (i in 0 until n / 2) {
+            val j = n - i - 1
             result += mat[i][i] + mat[j][i] + mat[i][j] + mat[j][j]
         }
         if (n % 2 != 0) {
-            result += mat[n/2][n/2]
+            result += mat[n / 2][n / 2]
         }
         return result
     }

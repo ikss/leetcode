@@ -1,6 +1,5 @@
 package linked_lists.easy
 
-import data_structures.ListNode
 import data_structures.ListNodeCycled
 
 /**

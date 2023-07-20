@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class RotateImageTest {
@@ -18,7 +18,7 @@ class RotateImageTest {
         )
         RotateImage.rotateFours(matrix)
 
-        assertTrue(expected.contentDeepEquals(matrix))
+        assertArrayEquals(expected, matrix)
     }
 
     @Test
@@ -37,7 +37,7 @@ class RotateImageTest {
         )
         RotateImage.rotateFours(matrix)
 
-        assertTrue(expected.contentDeepEquals(matrix))
+        assertArrayEquals(expected, matrix)
     }
 
     @Test
@@ -54,7 +54,7 @@ class RotateImageTest {
         )
         RotateImage.rotateTransposeReverse(matrix)
 
-        assertTrue(expected.contentDeepEquals(matrix))
+        assertArrayEquals(expected, matrix)
     }
 
     @Test
@@ -73,6 +73,6 @@ class RotateImageTest {
         )
         RotateImage.rotateTransposeReverse(matrix)
 
-        assertTrue(expected.contentDeepEquals(matrix))
+        assertArrayEquals(expected, matrix)
     }
 }

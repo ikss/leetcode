@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class QueueReconstructionByHeightTest {
@@ -23,7 +23,7 @@ class QueueReconstructionByHeightTest {
             intArrayOf(7, 1),
         )
 
-        assertTrue(expected.contentDeepEquals(QueueReconstructionByHeight.reconstructQueue(people)))
+        assertArrayEquals(expected, QueueReconstructionByHeight.reconstructQueue(people))
     }
 
     @Test
@@ -45,6 +45,6 @@ class QueueReconstructionByHeightTest {
             intArrayOf(6, 0),
         )
 
-        assertTrue(expected.contentDeepEquals(QueueReconstructionByHeight.reconstructQueue(people)))
+        assertArrayEquals(expected, QueueReconstructionByHeight.reconstructQueue(people))
     }
 }

@@ -1,6 +1,6 @@
 package strings.hard
 
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class NumberOfWaysToFormTargetStringGivenDictionaryTest {
@@ -16,7 +16,7 @@ class NumberOfWaysToFormTargetStringGivenDictionaryTest {
 
     @Test
     fun test2() {
-        val words = arrayOf("abba","baab")
+        val words = arrayOf("abba", "baab")
         val target = "bab"
         val expected = 4
 

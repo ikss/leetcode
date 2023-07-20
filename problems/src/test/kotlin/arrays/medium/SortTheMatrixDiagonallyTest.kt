@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class SortTheMatrixDiagonallyTest {
@@ -19,7 +19,7 @@ class SortTheMatrixDiagonallyTest {
         )
         val actual = SortTheMatrixDiagonally.diagonalSortNaive(mat)
 
-        assertTrue(expected.contentDeepEquals(actual))
+        assertArrayEquals(expected, actual)
     }
 
     @Test
@@ -40,7 +40,7 @@ class SortTheMatrixDiagonallyTest {
         )
         val actual = SortTheMatrixDiagonally.diagonalSortNaive(mat)
 
-        assertTrue(expected.contentDeepEquals(actual))
+        assertArrayEquals(expected, actual)
     }
 
     @Test
@@ -57,7 +57,7 @@ class SortTheMatrixDiagonallyTest {
         )
         val actual = SortTheMatrixDiagonally.diagonalSortPQ(mat)
 
-        assertTrue(expected.contentDeepEquals(actual))
+        assertArrayEquals(expected, actual)
     }
 
     @Test
@@ -78,6 +78,6 @@ class SortTheMatrixDiagonallyTest {
         )
         val actual = SortTheMatrixDiagonally.diagonalSortPQ(mat)
 
-        assertTrue(expected.contentDeepEquals(actual))
+        assertArrayEquals(expected, actual)
     }
 }

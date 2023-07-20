@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class SetMatrixZeroesTest {
@@ -11,7 +11,7 @@ class SetMatrixZeroesTest {
 
         SetMatrixZeroes.setZeroes(nums)
 
-        assertTrue(expected.contentDeepEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 
     @Test
@@ -21,6 +21,6 @@ class SetMatrixZeroesTest {
 
         SetMatrixZeroes.setZeroes(nums)
 
-        assertTrue(expected.contentDeepEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 }

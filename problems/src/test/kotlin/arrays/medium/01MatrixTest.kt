@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class `01MatrixTest` {
@@ -17,7 +17,7 @@ class `01MatrixTest` {
             intArrayOf(0, 0, 0),
         )
 
-        assertTrue(expected.contentDeepEquals(`01Matrix`.updateMatrix(mat)))
+        assertArrayEquals(expected, `01Matrix`.updateMatrix(mat))
     }
 
     @Test
@@ -33,7 +33,7 @@ class `01MatrixTest` {
             intArrayOf(1, 2, 1),
         )
 
-        assertTrue(expected.contentDeepEquals(`01Matrix`.updateMatrix(mat)))
+        assertArrayEquals(expected, `01Matrix`.updateMatrix(mat))
     }
 
 }

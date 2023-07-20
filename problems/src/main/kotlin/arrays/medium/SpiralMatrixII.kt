@@ -19,13 +19,13 @@ object SpiralMatrixII {
 
         while (top <= bottom && left <= right) {
             // top row
-            for (row in left .. right) {
+            for (row in left..right) {
                 result[top][row] = elem++
             }
             top++
 
             // right column
-            for (col in top .. bottom) {
+            for (col in top..bottom) {
                 result[col][right] = elem++
             }
             right--

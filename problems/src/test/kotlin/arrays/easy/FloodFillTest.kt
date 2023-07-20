@@ -1,6 +1,6 @@
 package arrays.easy
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class FloodFillTest {
@@ -12,7 +12,7 @@ class FloodFillTest {
         val color = 2
         val expected = arrayOf(intArrayOf(2, 2, 2), intArrayOf(2, 2, 0), intArrayOf(2, 0, 1))
 
-        assertTrue(expected.contentDeepEquals(FloodFill.floodFill(image, sr, sc, color)))
+        assertArrayEquals(expected, FloodFill.floodFill(image, sr, sc, color))
     }
 
     @Test
@@ -23,6 +23,6 @@ class FloodFillTest {
         val color = 0
         val expected = arrayOf(intArrayOf(0, 0, 0), intArrayOf(0, 0, 0))
 
-        assertTrue(expected.contentDeepEquals(FloodFill.floodFill(image, sr, sc, color)))
+        assertArrayEquals(expected, FloodFill.floodFill(image, sr, sc, color))
     }
 }

@@ -21,6 +21,7 @@ class KthMissingPositiveNumberTest {
 
         assertEquals(expected, KthMissingPositiveNumber.findKthPositiveNaive(arr, k))
     }
+
     @Test
     fun test1binarySearch() {
         val arr = intArrayOf(2, 3, 4, 7, 11)

@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class InsertIntervalTest {
@@ -10,7 +10,7 @@ class InsertIntervalTest {
         val newInterval = intArrayOf(2, 5)
         val expected = arrayOf(intArrayOf(1, 5), intArrayOf(6, 9))
 
-        assertTrue(expected.contentDeepEquals(InsertInterval.insertInterval(intervals, newInterval)))
+        assertArrayEquals(expected, InsertInterval.insertInterval(intervals, newInterval))
     }
 
     @Test
@@ -20,6 +20,6 @@ class InsertIntervalTest {
         val newInterval = intArrayOf(4, 8)
         val expected = arrayOf(intArrayOf(1, 2), intArrayOf(3, 10), intArrayOf(12, 16))
 
-        assertTrue(expected.contentDeepEquals(InsertInterval.insertInterval(intervals, newInterval)))
+        assertArrayEquals(expected, InsertInterval.insertInterval(intervals, newInterval))
     }
 }
