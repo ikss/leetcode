@@ -27,16 +27,15 @@ object NumberOfLongestIncreasingSubsequence {
                 }
             }
         }
-        var maxLength = 0
+        val maxLength = length.max()
         var result = 0
-        for (len in length) {
-            maxLength = maxOf(maxLength, len)
-        }
+
         for (i in 0 until n) {
             if (length[i] == maxLength) {
                 result += count[i]
             }
         }
+
         return result
     }
 }
