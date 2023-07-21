@@ -2,7 +2,6 @@ package arrays.medium
 
 import java.util.*
 
-
 /**
  * Alice and Bob continue their games with piles of stones. There are a number of piles arranged in a row,
  * and each pile has a positive integer number of stones `piles[i]`.

@@ -2,7 +2,6 @@ package arrays.medium
 
 import java.util.*
 
-
 /**
  * You are given a list of bombs. The range of a bomb is defined as the area where its effect can be felt.
  * This area is in the shape of a circle with the center as the location of the bomb.

@@ -1,6 +1,5 @@
 package arrays.medium
 
-
 /**
  * You are given an array of integers nums and an integer target.
  *

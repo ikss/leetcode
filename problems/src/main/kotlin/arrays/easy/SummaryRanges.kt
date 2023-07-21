@@ -1,6 +1,5 @@
 package arrays.easy
 
-
 /**
  * You are given a sorted unique integer array nums.
  *

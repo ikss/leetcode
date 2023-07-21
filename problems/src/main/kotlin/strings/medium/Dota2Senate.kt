@@ -1,6 +1,5 @@
 package strings.medium
 
-
 /**
  * In the world of Dota2, there are two parties: the Radiant and the Dire.
  *

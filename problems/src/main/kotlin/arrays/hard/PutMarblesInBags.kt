@@ -2,7 +2,6 @@ package arrays.hard
 
 import java.util.*
 
-
 /**
  * You have k bags. You are given a 0-indexed integer array weights where `weights[i]` is the weight of the ith marble.
  * You are also given the integer k.

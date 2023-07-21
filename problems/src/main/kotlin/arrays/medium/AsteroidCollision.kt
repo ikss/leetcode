@@ -2,7 +2,6 @@ package arrays.medium
 
 import java.util.*
 
-
 /**
  * We are given an array asteroids of integers representing asteroids in a row.
  *

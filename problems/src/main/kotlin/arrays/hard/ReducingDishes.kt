@@ -40,7 +40,6 @@ object ReducingDishes {
         }
     }
 
-
     fun maxSatisfactionGreedy(satisfaction: IntArray): Int {
         satisfaction.sort()
         var result = 0

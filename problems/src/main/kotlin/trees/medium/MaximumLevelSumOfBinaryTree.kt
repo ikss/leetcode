@@ -38,7 +38,6 @@ object MaximumLevelSumOfBinaryTree {
             curLevel++
         }
 
-
         return level
     }
 }

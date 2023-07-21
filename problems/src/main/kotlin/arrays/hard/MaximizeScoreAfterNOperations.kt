@@ -1,6 +1,5 @@
 package arrays.hard
 
-
 /**
  * You are given nums, an array of positive integers of size 2 * n. You must perform n operations on this array.
  *

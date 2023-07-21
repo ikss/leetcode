@@ -3,7 +3,6 @@ package linked_lists.medium
 import data_structures.ListNode
 import java.util.*
 
-
 /**
  * You are given two non-empty linked lists representing two non-negative integers.
  * The most significant digit comes first and each of their nodes contains a single digit.

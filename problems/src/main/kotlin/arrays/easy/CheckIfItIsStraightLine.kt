@@ -26,7 +26,6 @@ object CheckIfItIsStraightLine {
         val xdif = x1 - x2
         val ydif = y1 - y2
 
-
         return xdif to ydif
     }
 }

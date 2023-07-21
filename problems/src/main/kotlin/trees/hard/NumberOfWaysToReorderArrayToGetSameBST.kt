@@ -1,6 +1,5 @@
 package trees.hard
 
-
 /**
  * Given an array nums that represents a permutation of integers from 1 to n. We are going to construct a binary search
  * tree (BST) by inserting the elements of nums in order into an initially empty BST. Find the number of different ways

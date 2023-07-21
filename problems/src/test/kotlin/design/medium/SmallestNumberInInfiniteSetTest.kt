@@ -3,7 +3,6 @@ package design.medium
 import design.medium.SmallestNumberInInfiniteSet.SmallestInfiniteSet
 import org.junit.jupiter.api.Test
 
-
 class SmallestNumberInInfiniteSetTest {
 
     @Test

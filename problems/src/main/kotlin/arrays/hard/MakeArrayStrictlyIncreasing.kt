@@ -2,7 +2,6 @@ package arrays.hard
 
 import java.util.*
 
-
 /**
  * Given two integer arrays arr1 and arr2, return the minimum number of operations (possibly zero) needed to make arr1
  * strictly increasing.

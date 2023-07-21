@@ -1,6 +1,5 @@
 package arrays.hard
 
-
 /**
  * Given a rectangular pizza represented as a rows x cols matrix containing the following characters: 'A' (an apple)
  * and '.' (empty cell) and given the integer k. You have to cut the pizza into k pieces using k-1 cuts.
