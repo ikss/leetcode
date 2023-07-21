@@ -26,7 +26,6 @@ object LongestAlternatingSubarray {
             }
             i = maxOf(i + 1, j - 1)
         }
-
-        return result
+        return if (result > 1) result else -1
     }
 }

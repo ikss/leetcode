@@ -20,4 +20,12 @@ class LongestAlternatingSubarrayTest {
         assertEquals(expected, LongestAlternatingSubarray.alternatingSubarray(nums))
     }
 
+    @Test
+    fun test3() {
+        val nums = intArrayOf(21, 9, 5)
+        val expected = -1
+
+        assertEquals(expected, LongestAlternatingSubarray.alternatingSubarray(nums))
+    }
+
 }
