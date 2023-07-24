@@ -16,10 +16,7 @@ object AllPossibleFullBinaryTrees {
     fun allPossibleFBT(n: Int): List<TreeNode?> {
         if (n % 2 == 0) return emptyList()
 
-        val dp = ArrayList<ArrayList<TreeNode>>()
-        for (i in 0..n) {
-            dp.add(ArrayList())
-        }
+        val dp = Array<ArrayList<TreeNode>>(n + 1) { ArrayList() }
 
         dp[1].add(TreeNode(0))
         for (count in 3..n step 2) {
