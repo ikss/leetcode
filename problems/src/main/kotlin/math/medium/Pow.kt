@@ -7,16 +7,26 @@ package math.medium
  */
 object Pow {
     fun myPow(x: Double, n: Int): Double {
-        var ans = 1.0
+        if (n == 0) return 1.0
         var x = x
-        var absN = Math.abs(n.toLong())
-        while (absN > 0) {
-            if ((absN and 1L) == 1L) {
-                ans *= x
-            }
-            absN = absN shr 1
-            x *= x
+        var n = n.toLong()
+
+        if (n < 0) {
+            n *= -1
+            x = 1 / x
         }
-        return if (n < 0) 1 / ans else ans
+
+        var result = 1.0
+        while (n != 0L) {
+            if (n and 1 == 1L) {
+                result *= x
+                n -= 1
+            }
+
+            x *= x
+            n /= 2
+        }
+
+        return result
     }
 }
