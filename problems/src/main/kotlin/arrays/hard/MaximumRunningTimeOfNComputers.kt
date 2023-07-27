@@ -60,7 +60,7 @@ object MaximumRunningTimeOfNComputers {
             val target = right - (right - left) / 2
             var extra = 0L
             for (b in batteries) {
-                extra += Math.min(b.toLong(), target)
+                extra += minOf(b.toLong(), target)
             }
             if (extra >= (n * target)) {
                 left = target
@@ -69,5 +69,33 @@ object MaximumRunningTimeOfNComputers {
             }
         }
         return left
+    }
+
+    // TLE for large input
+    fun maxRunTimePriorityQueue(n: Int, batteries: IntArray): Long {
+        val pq = PriorityQueue<Int>(Collections.reverseOrder())
+
+        for (b in batteries) {
+            pq.offer(b)
+        }
+
+        var result = 0L
+        while (pq.size >= n) {
+            val list = ArrayList<Int>(n)
+            for (i in 0 until n) {
+                val battery = pq.poll()
+                list.add(battery)
+            }
+            val last = list[n - 1]
+            val next = if (pq.isEmpty()) 0 else pq.peek()
+            val delta = maxOf(last - next, 1)
+
+            for (used in list) {
+                if (used > delta) pq.offer(used - delta)
+            }
+            result += delta
+        }
+
+        return result
     }
 }
