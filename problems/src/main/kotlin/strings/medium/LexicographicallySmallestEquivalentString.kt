@@ -35,7 +35,7 @@ object LexicographicallySmallestEquivalentString {
         val ans = StringBuilder()
         // Create the answer string with final mappings.
         for (c in baseStr) {
-            ans.append((find(c - 'a') + 'a'.toInt()).toChar())
+            ans.append((find(c - 'a') + 'a'.code).toChar())
         }
         return ans.toString()
     }

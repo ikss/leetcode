@@ -24,21 +24,21 @@ object MinimumASCIIDeleteSumForTwoStrings {
         }
 
         if (i == 0) {
-            dp[i][j] = s2[j - 1].toInt() + calculateCost(s1, s2, i, j - 1, dp)
+            dp[i][j] = s2[j - 1].code + calculateCost(s1, s2, i, j - 1, dp)
             return dp[i][j]
         }
 
         if (j == 0) {
-            dp[i][j] = s1[i - 1].toInt() + calculateCost(s1, s2, i - 1, j, dp)
+            dp[i][j] = s1[i - 1].code + calculateCost(s1, s2, i - 1, j, dp)
             return dp[i][j]
         }
 
-        if (s1[i - 1] == s2[j - 1]) {
-            dp[i][j] = calculateCost(s1, s2, i - 1, j - 1, dp)
+        dp[i][j] = if (s1[i - 1] == s2[j - 1]) {
+            calculateCost(s1, s2, i - 1, j - 1, dp)
         } else {
-            dp[i][j] = minOf(
-                s1[i - 1].toInt() + calculateCost(s1, s2, i - 1, j, dp),
-                s2[j - 1].toInt() + calculateCost(s1, s2, i, j - 1, dp)
+            minOf(
+                s1[i - 1].code + calculateCost(s1, s2, i - 1, j, dp),
+                s2[j - 1].code + calculateCost(s1, s2, i, j - 1, dp)
             )
         }
         return dp[i][j]
