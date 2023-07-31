@@ -15,7 +15,7 @@ package arrays.medium
 object MinimumTimeToCompleteTrips {
     fun minimumTime(time: IntArray, totalTrips: Int): Long {
         // Initialize the left and right boundaries.
-        var left = time.min()!!.toLong()
+        var left = time.min().toLong()
         var right = left * totalTrips
 
         // Binary search to find the minimum time to finish the task.

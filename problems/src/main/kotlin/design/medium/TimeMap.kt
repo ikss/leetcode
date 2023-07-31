@@ -19,7 +19,7 @@ class TimeMap {
     private val map = mutableMapOf<String, TreeMap<Int, String>>()
 
     fun set(key: String, value: String, timestamp: Int) {
-        map.getOrPut(key) { TreeMap<Int, String>() }.put(timestamp, value)
+        map.getOrPut(key) { TreeMap<Int, String>() }[timestamp] = value
     }
 
     fun get(key: String, timestamp: Int): String {

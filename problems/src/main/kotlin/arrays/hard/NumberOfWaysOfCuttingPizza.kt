@@ -19,12 +19,12 @@ object NumberOfWaysOfCuttingPizza {
         val rows = pizza.size
         val cols = pizza[0].length
         val apples = Array(rows + 1) { IntArray(cols + 1) }
-        var f = Array(rows) { IntArray(cols) }
+        val dp = Array(rows) { IntArray(cols) }
         for (row in rows - 1 downTo 0) {
             for (col in cols - 1 downTo 0) {
                 val apple = if (pizza[row][col] == 'A') 1 else 0
                 apples[row][col] = (apple + apples[row + 1][col] + apples[row][col + 1] - apples[row + 1][col + 1])
-                f[row][col] = if (apples[row][col] > 0) 1 else 0
+                dp[row][col] = if (apples[row][col] > 0) 1 else 0
             }
         }
         val mod = 1000000007
@@ -34,21 +34,21 @@ object NumberOfWaysOfCuttingPizza {
                 for (col in 0 until cols) {
                     for (nextRow in row + 1 until rows) {
                         if (apples[row][col] - apples[nextRow][col] > 0) {
-                            g[row][col] += f[nextRow][col]
+                            g[row][col] += dp[nextRow][col]
                             g[row][col] %= mod
                         }
                     }
                     for (nextCol in col + 1 until cols) {
                         if (apples[row][col] - apples[row][nextCol] > 0) {
-                            g[row][col] += f[row][nextCol]
+                            g[row][col] += dp[row][nextCol]
                             g[row][col] %= mod
                         }
                     }
                 }
             }
             // copy g to f
-            g.copyInto(f)
+            g.copyInto(dp)
         }
-        return f[0][0]
+        return dp[0][0]
     }
 }

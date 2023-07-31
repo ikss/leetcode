@@ -17,7 +17,7 @@ import java.util.*
  */
 object CheckingExistenceOfEdgeLengthLimitedPaths {
 
-    fun distanceLimitedPathsExist(n: Int, edgeList: Array<IntArray>, queries: Array<IntArray>): BooleanArray? {
+    fun distanceLimitedPathsExist(n: Int, edgeList: Array<IntArray>, queries: Array<IntArray>): BooleanArray {
         val uf = UnionFind(n)
         val queriesCount = queries.size
         val answer = BooleanArray(queriesCount)

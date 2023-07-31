@@ -49,7 +49,7 @@ object CutOffTreesForGolfEvent {
     }
 
     private fun bfs(curr: Pair<Int, Int>, next: Pair<Int, Int>, forest: List<List<Int>>): Int {
-        val queue = java.util.ArrayDeque<Pair<Int, Int>>()
+        val queue = ArrayDeque<Pair<Int, Int>>()
         queue.offer(curr)
         var result = 0
         val visited = hashSetOf<Pair<Int, Int>>()

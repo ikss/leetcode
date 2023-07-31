@@ -46,7 +46,7 @@ object MinimumCostToCutStick {
     }
 
     fun minCostDpBottomUp(n: Int, cuts: IntArray): Int {
-        val m = cuts.size;
+        val m = cuts.size
         val newCuts = IntArray(m + 2)
         System.arraycopy(cuts, 0, newCuts, 1, m)
         newCuts[m + 1] = n

@@ -9,7 +9,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/sum-of-subarray-minimums/)
  */
 object SumOfSubarrayMinimums {
-    private val MOD = 1_000_000_007
+    private const val MOD = 1_000_000_007
 
     fun sumSubarrayMinsNaive(arr: IntArray): Int {
         var sum = 0L

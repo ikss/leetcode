@@ -20,8 +20,8 @@ object EvaluateDivision {
             val (start, end) = equations[i]
             val value = values[i]
 
-            graph.computeIfAbsent(start) { HashMap() }.put(end, value)
-            graph.computeIfAbsent(end) { HashMap() }.put(start, 1.0 / value)
+            graph.computeIfAbsent(start) { HashMap() }[end] = value
+            graph.computeIfAbsent(end) { HashMap() }[start] = 1.0 / value
         }
 
         val results = DoubleArray(queries.size)

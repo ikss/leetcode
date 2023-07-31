@@ -41,7 +41,7 @@ object UniquePathsIII {
             return if (zero == -1) 1 else 0
         }
         grid[x][y] = -1
-        var zero = zero - 1
+        val zero = zero - 1
         val totalCount = path(grid, x + 1, y, zero) + path(grid, x, y + 1, zero) +
                 path(grid, x - 1, y, zero) + path(grid, x, y - 1, zero)
         grid[x][y] = 0

@@ -12,7 +12,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/domino-and-tromino-tiling/)
  */
 object DominoAndTrominoTiling {
-    private val MOD = 1_000_000_007
+    private const val MOD = 1_000_000_007
 
     fun numTilingsDp(n: Int): Int {
         if (n == 1) return 1

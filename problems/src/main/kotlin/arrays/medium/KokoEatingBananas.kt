@@ -16,7 +16,7 @@ package arrays.medium
 object KokoEatingBananas {
     fun minEatingSpeed(piles: IntArray, h: Int): Int {
         var left = Math.ceil(piles.sum().toDouble() / h).toInt()
-        var right = piles.max()!!
+        var right = piles.max()
 
         while (left < right) {
             val mid = (right - left) / 2 + left

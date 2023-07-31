@@ -38,7 +38,7 @@ object CloneGraph {
                 }
 
                 // copy the neighbor
-                map[node]!!.neighbors.add(map.get(neighbor)!!)
+                map[node]!!.neighbors.add(map[neighbor]!!)
             }
         }
 

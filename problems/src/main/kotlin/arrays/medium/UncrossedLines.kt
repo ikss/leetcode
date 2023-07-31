@@ -17,8 +17,8 @@ package arrays.medium
  */
 object UncrossedLines {
     fun maxUncrossedLines(nums1: IntArray, nums2: IntArray): Int {
-        var l1 = nums1.size
-        var l2 = nums2.size
+        val l1 = nums1.size
+        val l2 = nums2.size
 
         val dp = Array(l1 + 1) { IntArray(l2 + 1) }
 

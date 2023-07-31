@@ -37,7 +37,7 @@ object TimeNeededToInformAllEmployees {
             val size = queue.size
 
             for (i in 0 until size) {
-                var (next, currMax) = queue.poll()
+                val (next, currMax) = queue.poll()
                 result = maxOf(result, currMax)
                 val time = informTime[next]
                 for (n in graph[next] ?: continue) {

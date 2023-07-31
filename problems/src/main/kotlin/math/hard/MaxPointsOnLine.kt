@@ -22,7 +22,7 @@ object MaxPointsOnLine {
                     cnt.merge(Math.atan2(yDiff, xDiff), 1, Integer::sum)
                 }
             }
-            result = maxOf(result, cnt.values.max()!! + 1)
+            result = maxOf(result, cnt.values.max() + 1)
         }
         return result
     }

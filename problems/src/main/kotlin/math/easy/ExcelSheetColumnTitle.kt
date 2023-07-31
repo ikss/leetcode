@@ -12,7 +12,7 @@ object ExcelSheetColumnTitle {
         while (n > 0) {
             val mod = n % 26
             val tmp = 'A' - 1 + if (mod == 0) 26 else mod
-            sb.append(tmp);
+            sb.append(tmp)
             n /= 26
             if (mod == 0) n--
         }

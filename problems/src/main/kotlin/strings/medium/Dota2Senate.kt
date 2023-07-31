@@ -21,7 +21,7 @@ package strings.medium
  * [URL](https://leetcode.com/problems/dota2-senate/)
  */
 object Dota2Senate {
-    fun predictPartyVictory(senate: String): String? {
+    fun predictPartyVictory(senate: String): String {
         // Number of Senators of each party
         var rCount = 0
         var dCount = 0

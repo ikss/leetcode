@@ -41,7 +41,7 @@ object SoupServings {
         } else if (j <= 0) {
             return 0.0
         }
-        dp.get(i)?.get(j)?.let {
+        dp[i]?.get(j)?.let {
             return it
         }
         val result = (

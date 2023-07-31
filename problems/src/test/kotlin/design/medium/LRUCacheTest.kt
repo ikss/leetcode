@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 class LRUCacheTest {
     @Test
     fun test1() {
-        val lRUCache = design.medium.LRUCache.LRUCache(2)
+        val lRUCache = LRUCache.LRUCache(2)
         lRUCache[1] = 1 // cache is {1=1}
         lRUCache[2] = 2 // cache is {1=1, 2=2}
         assertEquals(1, lRUCache[1]) // return 1

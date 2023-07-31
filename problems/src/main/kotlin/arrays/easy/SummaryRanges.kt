@@ -16,7 +16,7 @@ package arrays.easy
  * [URL](https://leetcode.com/problems/two-sum/)
  */
 object SummaryRanges {
-    fun summaryRanges(nums: IntArray): List<String>? {
+    fun summaryRanges(nums: IntArray): List<String> {
         val result = ArrayList<String>()
         var i = 0
 

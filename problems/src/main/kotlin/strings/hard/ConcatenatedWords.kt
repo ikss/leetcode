@@ -8,7 +8,7 @@ package strings.hard
  * [URL](https://leetcode.com/problems/concatenated-words/)
  */
 object ConcatenatedWords {
-    fun findAllConcatenatedWordsInADictDp(words: Array<String>): List<String>? {
+    fun findAllConcatenatedWordsInADictDp(words: Array<String>): List<String> {
         val dictionary = words.toSet()
         val result = mutableListOf<String>()
         for (word in words) {

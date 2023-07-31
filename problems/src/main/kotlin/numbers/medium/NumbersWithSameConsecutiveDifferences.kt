@@ -46,7 +46,7 @@ object NumbersWithSameConsecutiveDifferences {
         generateNums(result, n, k, newNumbers)
     }
 
-    fun numsSameConsecDiffOptimized(n: Int, k: Int): IntArray? {
+    fun numsSameConsecDiffOptimized(n: Int, k: Int): IntArray {
         if (n == 1) {
             return intArrayOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
         }

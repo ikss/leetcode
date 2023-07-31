@@ -12,7 +12,7 @@ package design.medium
  * [URL](https://leetcode.com/problems/design-add-and-search-words-data-structure/)
  */
 object DesignUndergroundSystem {
-    class UndergroundSystem() {
+    class UndergroundSystem {
         val activeCheckins = HashMap<Int, Pair<String, Int>>()
         val average = HashMap<Pair<String, String>, Pair<Double, Int>>()
 

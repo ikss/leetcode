@@ -23,11 +23,11 @@ object LetterCasePermutation {
 
         val c = s[index]
         if (c.isLetter()) {
-            temp.add(c.toLowerCase())
+            temp.add(c.lowercaseChar())
             permute(result, temp, s, index + 1)
             temp.removeAt(index)
 
-            temp.add(c.toUpperCase())
+            temp.add(c.uppercaseChar())
             permute(result, temp, s, index + 1)
         } else {
             temp.add(c)

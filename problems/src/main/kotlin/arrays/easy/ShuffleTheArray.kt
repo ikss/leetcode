@@ -17,7 +17,7 @@ object ShuffleTheArray {
         return result
     }
 
-    fun shuffleWithBits(nums: IntArray, n: Int): IntArray? {
+    fun shuffleWithBits(nums: IntArray, n: Int): IntArray {
         // Store each y(i) with respective x(i).
         for (i in n until 2 * n) {
             val secondNum = nums[i] shl 10

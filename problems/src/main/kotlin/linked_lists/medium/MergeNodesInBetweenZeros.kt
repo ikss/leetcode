@@ -26,7 +26,7 @@ object MergeNodesInBetweenZeros {
                 curr.next = ListNode(0)
                 curr = curr.next!!
             } else {
-                curr.`val` = curr.`val` + head.`val`
+                curr.`val` += head.`val`
             }
 
             head = head.next!!

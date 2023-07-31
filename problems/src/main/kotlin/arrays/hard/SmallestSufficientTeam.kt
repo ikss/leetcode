@@ -18,7 +18,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/smallest-sufficient-team/)
  */
 object SmallestSufficientTeam {
-    fun smallestSufficientTeam(req_skills: Array<String>, people: List<List<String>>): IntArray? {
+    fun smallestSufficientTeam(req_skills: Array<String>, people: List<List<String>>): IntArray {
         val n = people.size
         val m = req_skills.size
         val skillId = HashMap<String, Int>()

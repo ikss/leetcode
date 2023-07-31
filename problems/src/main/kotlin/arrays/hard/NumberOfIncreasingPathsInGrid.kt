@@ -11,7 +11,7 @@ package arrays.hard
  * [URL](https://leetcode.com/problems/number-of-increasing-paths-in-a-grid/)
  */
 object NumberOfIncreasingPathsInGrid {
-    private val MOD = 1_000_000_007
+    private const val MOD = 1_000_000_007
     private val directions = listOf(-1 to 0, 1 to 0, 0 to -1, 0 to 1)
 
     fun countPaths(grid: Array<IntArray>): Int {
