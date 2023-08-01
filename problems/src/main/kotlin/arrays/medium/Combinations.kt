@@ -8,21 +8,40 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/combinations/)
  */
 object Combinations {
-    fun combine(n: Int, k: Int): List<List<Int>> =
-        combineRecursive(n, k)
+    fun combineRecursive(n: Int, k: Int): List<List<Int>> {
+        return recursive(n, k)
+    }
 
-    private fun combineRecursive(n: Int, k: Int): MutableList<MutableList<Int>> {
+    private fun recursive(n: Int, k: Int): MutableList<MutableList<Int>> {
         if (k > n) return mutableListOf()
 
         if (k == 0) {
             return mutableListOf(mutableListOf())
         }
 
-        val result = combineRecursive(n - 1, k - 1)
+        val result = recursive(n - 1, k - 1)
         result.forEach {
             it.add(n)
         }
-        result.addAll(combineRecursive(n - 1, k))
+        result.addAll(recursive(n - 1, k))
         return result
+    }
+
+    fun combineBacktrack(n: Int, k: Int): List<List<Int>> {
+        val result = ArrayList<ArrayList<Int>>()
+        backtrack(n, k, 1, result, ArrayList<Int>())
+        return result
+    }
+
+    private fun backtrack(n: Int, k: Int, start: Int, result: ArrayList<ArrayList<Int>>, curList: ArrayList<Int>) {
+        if (curList.size == k) {
+            result.add(ArrayList(curList))
+            return
+        }
+        for (i in start..n) {
+            curList.add(i)
+            backtrack(n, k, i + 1, result, curList)
+            curList.removeAt(curList.size - 1)
+        }
     }
 }
