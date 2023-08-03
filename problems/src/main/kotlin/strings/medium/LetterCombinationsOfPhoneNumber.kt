@@ -8,27 +8,49 @@ package strings.medium
  * [URL](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
  */
 object LetterCombinationsOfPhoneNumber {
-
-    private val mapping: Map<Char, Set<Char>> = mapOf(
-        '2' to setOf('a', 'b', 'c'),
-        '3' to setOf('d', 'e', 'f'),
-        '4' to setOf('g', 'h', 'i'),
-        '5' to setOf('j', 'k', 'l'),
-        '6' to setOf('m', 'n', 'o'),
-        '7' to setOf('p', 'q', 'r', 's'),
-        '8' to setOf('s', 't', 'u'),
-        '9' to setOf('w', 'x', 'y', 'z'),
+    private val mapping = listOf(
+        listOf('a', 'b', 'c'),
+        listOf('d', 'e', 'f'),
+        listOf('g', 'h', 'i'),
+        listOf('j', 'k', 'l'),
+        listOf('m', 'n', 'o'),
+        listOf('p', 'q', 'r', 's'),
+        listOf('t', 'u', 'v'),
+        listOf('w', 'x', 'y', 'z')
     )
 
     fun letterCombinationsOfPhoneNumber(digits: String): List<String> {
         if (digits.isEmpty()) return emptyList()
         val chars = digits.toCharArray()
-        return cartesianProduct(chars.map { mapping[it]!! })
+        return cartesianProduct(chars.map { mapping[it - '2'] })
     }
 
-    private fun cartesianProduct(lists: List<Set<Char>>): List<String> =
+    private fun cartesianProduct(lists: List<List<Char>>): List<String> =
         lists.fold(listOf("")) { acc, set ->
             acc.flatMap { list -> set.map { element -> list + element } }
         }
 
+    fun letterCombinationsBacktrack(digits: String): List<String> {
+        if (digits.isEmpty()) return emptyList()
+        val result = ArrayList<String>()
+
+        backtrack(digits.toCharArray(), ArrayList(), result)
+
+        return result
+    }
+
+    private fun backtrack(digits: CharArray, currDigits: ArrayList<Char>, result: ArrayList<String>) {
+        val nextIndex = currDigits.size
+        if (nextIndex == digits.size) {
+            result.add(String(currDigits.toCharArray()))
+            return
+        }
+
+        for (c in mapping[digits[nextIndex] - '2']) {
+            currDigits.add(c)
+            backtrack(digits, currDigits, result)
+            currDigits.removeAt(nextIndex)
+        }
+
+    }
 }
