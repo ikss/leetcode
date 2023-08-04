@@ -51,6 +51,5 @@ object LetterCombinationsOfPhoneNumber {
             backtrack(digits, currDigits, result)
             currDigits.removeAt(nextIndex)
         }
-
     }
 }
