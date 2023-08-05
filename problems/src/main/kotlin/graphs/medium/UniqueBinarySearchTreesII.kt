@@ -34,10 +34,10 @@ object UniqueBinarySearchTreesII {
     }
 
     private fun allPossibleBST(start: Int, end: Int, memo: HashMap<Pair<Int, Int>, List<TreeNode?>>): List<TreeNode?> {
-        val res = ArrayList<TreeNode?>()
+        val result = ArrayList<TreeNode?>()
         if (start > end) {
-            res.add(null)
-            return res
+            result.add(null)
+            return result
         }
         memo[start to end]?.let { return it }
         // Iterate through all values from start to end to construct left and right subtree recursively.
@@ -49,11 +49,11 @@ object UniqueBinarySearchTreesII {
             for (left in leftSubTrees) {
                 for (right in rightSubTrees) {
                     val root = TreeNode(i, left, right)
-                    res.add(root)
+                    result.add(root)
                 }
             }
         }
-        memo[start to end] = res
-        return res
+        memo[start to end] = result
+        return result
     }
 }
