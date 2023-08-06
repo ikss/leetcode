@@ -14,7 +14,7 @@ package arrays.hard
 object NumberOfMusicPlaylists {
     private const val MOD = 1_000_000_007
 
-    fun numMusicPlaylists(n: Int, goal: Int, k: Int): Int {
+    fun numMusicPlaylistsDp(n: Int, goal: Int, k: Int): Int {
         val dp = Array(goal + 1) { LongArray(n + 1) }
         dp[0][0] = 1
 
@@ -29,5 +29,27 @@ object NumberOfMusicPlaylists {
         }
 
         return dp[goal][n].toInt()
+    }
+
+    fun numMusicPlaylistsRecursive(n: Int, goal: Int, k: Int): Int {
+        val memo = Array(goal + 1) { LongArray(n + 1) { -1L } }
+        return recursive(n, goal, k, n, memo).toInt()
+    }
+
+    private fun recursive(songs: Int, goal: Int, k: Int, n: Int, memo: Array<LongArray>): Long {
+        if (songs == 0 || goal == 0) {
+            return if (songs == goal) 1 else 0
+        }
+        if (memo[goal][songs] != -1L) {
+            return memo[goal][songs]
+        }
+
+        memo[goal][songs] = recursive(songs - 1, goal - 1, k, n, memo) * (n - songs + 1)
+        if (songs > k) {
+            memo[goal][songs] += recursive(songs, goal - 1, k, n, memo) * (songs - k)
+        }
+        memo[goal][songs] = memo[goal][songs] % MOD
+
+        return memo[goal][songs]
     }
 }
