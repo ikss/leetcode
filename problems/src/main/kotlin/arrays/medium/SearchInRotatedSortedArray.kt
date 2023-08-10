@@ -12,7 +12,7 @@ package arrays.medium
  *
  * You must write an algorithm with O(log n) runtime complexity.
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/search-in-rotated-sorted-array/)
  */
 object SearchInRotatedSortedArray {
     fun search(nums: IntArray, target: Int): Int {
