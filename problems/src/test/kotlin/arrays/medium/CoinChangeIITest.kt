@@ -30,4 +30,31 @@ class CoinChangeIITest {
 
         assertEquals(expected, CoinChangeII.changeBacktrack(amount, coins))
     }
+
+    @Test
+    fun test1dp() {
+        val amount = 5
+        val coins = intArrayOf(1, 2, 5)
+        val expected = 4
+
+        assertEquals(expected, CoinChangeII.changeDp(amount, coins))
+    }
+
+    @Test
+    fun test2dp() {
+        val amount = 3
+        val coins = intArrayOf(2)
+        val expected = 0
+
+        assertEquals(expected, CoinChangeII.changeDp(amount, coins))
+    }
+
+    @Test
+    fun test3dp() {
+        val amount = 10
+        val coins = intArrayOf(10)
+        val expected = 1
+
+        assertEquals(expected, CoinChangeII.changeDp(amount, coins))
+    }
 }

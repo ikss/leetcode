@@ -31,9 +31,29 @@ object CoinChangeII {
             return
         }
         for (i in currIndex until coins.size) {
-            val addedSum = coins[i]+ currSum
+            val addedSum = coins[i] + currSum
             if (addedSum > amount) continue
             backtrack(addedSum, i, amount, coins)
         }
+    }
+    
+    fun changeDp(amount: Int, coins: IntArray): Int {
+        val n = coins.size
+        val dp = Array(n + 1) { IntArray(amount + 1) }
+        for (i in 0 until n) {
+            dp[i][0] = 1
+        }
+        for (i in n - 1 downTo 0) {
+            val coin = coins[i]
+            for (j in 1..amount) {
+                if (coin > j) {
+                    dp[i][j] = dp[i + 1][j]
+                } else {
+                    dp[i][j] = dp[i + 1][j] + dp[i][j - coin]
+                }
+            }
+        }
+
+        return dp[0][amount]
     }
 }
