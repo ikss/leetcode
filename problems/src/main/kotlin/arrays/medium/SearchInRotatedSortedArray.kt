@@ -17,31 +17,31 @@ package arrays.medium
 object SearchInRotatedSortedArray {
     fun search(nums: IntArray, target: Int): Int {
         val n = nums.size
-        var lo = 0
-        var hi = n - 1
+        var left = 0
+        var right = n - 1
 
-        while (lo < hi) {
-            val mid = (hi - lo) / 2 + lo
-            if (nums[mid] > nums[hi]) {
-                lo = mid + 1
+        while (left < right) {
+            val mid = left + (right - left) / 2
+            if (nums[mid] > nums[right]) {
+                left = mid + 1
             } else {
-                hi = mid
+                right = mid
             }
         }
 
-        val rotation = hi
-        lo = 0
-        hi = nums.size - 1
+        val pivot = right
+        left = 0
+        right = nums.size - 1
 
-        while (lo <= hi) {
-            val mid = (hi - lo) / 2 + lo
-            val realMid = (mid + rotation) % n
+        while (left <= right) {
+            val mid = (right - left) / 2 + left
+            val realMid = (mid + pivot) % n
             val value = nums[realMid]
 
             when {
                 value == target -> return realMid
-                value < target -> lo = mid + 1
-                else -> hi = mid - 1
+                value < target -> left = mid + 1
+                else -> right = mid - 1
             }
         }
         return -1
