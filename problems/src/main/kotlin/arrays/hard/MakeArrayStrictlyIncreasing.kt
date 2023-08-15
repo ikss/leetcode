@@ -50,7 +50,7 @@ object MakeArrayStrictlyIncreasing {
         var left = 0
         var right = arr.size
         while (left < right) {
-            val mid = (left + right) / 2
+            val mid = left + (right - left) / 2
             if (arr[mid] <= value) {
                 left = mid + 1
             } else {

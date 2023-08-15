@@ -23,7 +23,7 @@ object CapacityToShipPackagesWithinDDays {
         var l = maxLoad
         var r = totalLoad
         while (l < r) {
-            val mid = (l + r) / 2
+            val mid = l + (r - l) / 2
             if (canShip(weights, mid, days)) {
                 r = mid
             } else {

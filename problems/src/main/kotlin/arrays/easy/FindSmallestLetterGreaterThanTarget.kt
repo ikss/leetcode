@@ -14,7 +14,7 @@ object FindSmallestLetterGreaterThanTarget {
         var left = 0
         var right = letters.size - 1
         while (left <= right) {
-            val mid = (right - left) / 2 + left
+            val mid = left + (right - left) / 2
             if (letters[mid] <= target) {
                 left = mid + 1
             } else {

@@ -23,7 +23,7 @@ object MaximumValueAtGivenIndexInBoundedArray {
         var left = 1
         var right = maxSum
         while (left < right) {
-            val mid = (left + right + 1) / 2
+            val mid = left + (right - left + 1) / 2
             if (getSum(index, mid, n) <= maxSum) {
                 left = mid
             } else {

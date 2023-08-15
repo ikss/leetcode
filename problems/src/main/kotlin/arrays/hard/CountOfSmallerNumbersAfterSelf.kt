@@ -25,7 +25,7 @@ object CountOfSmallerNumbersAfterSelf {
 
     private fun mergeSort(nums: IntArray, index: IntArray, l: Int, r: Int, res: IntArray) {
         if (l >= r) return
-        val mid = (l + r) / 2
+        val mid = l + (r - l) / 2
         mergeSort(nums, index, l, mid, res)
         mergeSort(nums, index, mid + 1, r, res)
         merge(nums, index, l, mid, mid + 1, r, res)

@@ -20,7 +20,7 @@ object MinimumTimeToCompleteTrips {
 
         // Binary search to find the minimum time to finish the task.
         while (left < right) {
-            val mid = (left + right) / 2
+            val mid = left + (right - left) / 2
             if (timeEnough(time, mid, totalTrips)) {
                 right = mid
             } else {

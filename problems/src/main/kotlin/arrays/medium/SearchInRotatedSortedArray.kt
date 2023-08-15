@@ -34,7 +34,7 @@ object SearchInRotatedSortedArray {
         right = nums.size - 1
 
         while (left <= right) {
-            val mid = (right - left) / 2 + left
+            val mid = left + (right - left) / 2
             val realMid = (mid + pivot) % n
             val value = nums[realMid]
 

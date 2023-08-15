@@ -19,7 +19,7 @@ object KokoEatingBananas {
         var right = piles.max()
 
         while (left < right) {
-            val mid = (right - left) / 2 + left
+            val mid = left + (right - left) / 2
             if (hasEnoughTime(mid, piles, h)) {
                 right = mid
             } else {

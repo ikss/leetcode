@@ -23,15 +23,16 @@ object AsFarFromLandAsPossible {
         for (i in 0 until n) {
             for (j in 0 until n) {
                 // Distance of land cells will be 0.
-                if (grid[i][j] == 1) {
-                    dist[i][j] = 0
-                } else {
-                    // Check left and top cell distances if they exist and update the current cell distance.
-                    val minTopLeft = minOf(
-                        if (i > 0) dist[i - 1][j] + 1 else maxDistance,
-                        if (j > 0) dist[i][j - 1] + 1 else maxDistance,
-                    )
-                    dist[i][j] = minOf(dist[i][j], minTopLeft)
+                dist[i][j] = when {
+                    grid[i][j] == 1 -> 0
+                    else -> {
+                        // Check left and top cell distances if they exist and update the current cell distance.
+                        val minTopLeft = minOf(
+                            if (i > 0) dist[i - 1][j] + 1 else maxDistance,
+                            if (j > 0) dist[i][j - 1] + 1 else maxDistance,
+                        )
+                        minOf(dist[i][j], minTopLeft)
+                    }
                 }
             }
         }

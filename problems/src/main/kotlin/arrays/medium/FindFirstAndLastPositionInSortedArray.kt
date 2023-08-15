@@ -40,7 +40,7 @@ object FindFirstAndLastPositionInSortedArray {
         var start = 0
         var end = nums.size - 1
         while (start <= end) {
-            val mid = (start + end) / 2
+            val mid = start + (end - start) / 2
             if (nums[mid] >= target) {
                 end = mid - 1
             } else {
@@ -56,7 +56,7 @@ object FindFirstAndLastPositionInSortedArray {
         var start = 0
         var end = nums.size - 1
         while (start <= end) {
-            val mid = (start + end) / 2
+            val mid = start + (end - start) / 2
             if (nums[mid] > target) {
                 end = mid - 1
             } else {

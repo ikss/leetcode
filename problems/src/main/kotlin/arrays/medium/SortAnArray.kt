@@ -21,7 +21,7 @@ object SortAnArray {
         if (left >= right) {
             return
         }
-        val mid = (left + right) / 2
+        val mid = left + (right - left) / 2
         // Sort first and second halves recursively.
         mergeSort(arr, left, mid, tempArr)
         mergeSort(arr, mid + 1, right, tempArr)

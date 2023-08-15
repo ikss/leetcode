@@ -20,7 +20,7 @@ object MinimumCostToMakeArrayEqual {
         var result = 0L
 
         while (min < max) {
-            val mid = (max - min) / 2 + min
+            val mid = min + (max - min) / 2
 
             val costMid = calcCost(nums, cost, mid)
             val costNext = calcCost(nums, cost, mid + 1)
