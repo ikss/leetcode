@@ -7,7 +7,7 @@ class NodeWithHighestEdgeScoreTest {
     @Test
     fun test1() {
         val edges = intArrayOf(1, 0, 0, 0, 0, 7, 7, 5)
-        val expected = 4
+        val expected = 7
 
         assertEquals(expected, NodeWithHighestEdgeScore.edgeScore(edges))
     }
