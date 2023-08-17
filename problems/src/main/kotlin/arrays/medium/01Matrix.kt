@@ -9,23 +9,23 @@ package arrays.medium
  */
 object `01Matrix` {
     fun updateMatrix(mat: Array<IntArray>): Array<IntArray> {
-        val m: Int = mat.size
-        val n: Int = mat[0].size
+        val m = mat.size
+        val n = mat[0].size
         val maxValue = m + n
 
         for (r in 0 until m) {
             for (c in 0 until n) {
                 if (mat[r][c] == 0) continue
-                val top = if (r - 1 >= 0) mat[r - 1][c] else maxValue
-                val left = if (c - 1 >= 0) mat[r][c - 1] else maxValue
+                val top = if (r > 0) mat[r - 1][c] else maxValue
+                val left = if (c > 0) mat[r][c - 1] else maxValue
                 mat[r][c] = minOf(top, left) + 1
             }
         }
         for (r in m - 1 downTo 0) {
             for (c in n - 1 downTo 0) {
                 if (mat[r][c] == 0) continue
-                val bottom = if (r + 1 < m) mat[r + 1][c] else maxValue
-                val right = if (c + 1 < n) mat[r][c + 1] else maxValue
+                val bottom = if (r < m - 1) mat[r + 1][c] else maxValue
+                val right = if (c < n - 1) mat[r][c + 1] else maxValue
 
                 mat[r][c] = minOf(mat[r][c], minOf(bottom, right) + 1)
             }
