@@ -1,15 +1,10 @@
 package data_structures
 
 class UnionFind(n: Int) {
-    val root = IntArray(n + 1)
-    val rank = IntArray(n + 1)
+    val root = IntArray(n + 1) { it }
+    val rank = IntArray(n + 1) { 1 }
+    var maxRank = 0
     var components = n
-
-    init {
-        for (i in 0 until n) {
-            this.root[i] = i
-        }
-    }
 
     fun find(x: Int): Int {
         if (root[x] != x) {
@@ -32,6 +27,7 @@ class UnionFind(n: Int) {
         components--
         root[rootX] = rootY
         rank[rootY] += rank[rootX]
+        maxRank = maxOf(maxRank, rank[rootY])
         return 1
     }
 
