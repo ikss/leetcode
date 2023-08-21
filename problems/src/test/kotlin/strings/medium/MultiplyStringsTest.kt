@@ -30,4 +30,13 @@ class Test {
 
         assertEquals(expected, MultiplyStrings.multiply(num1, num2))
     }
+
+    @Test
+    fun test4() {
+        val num1 = "9999"
+        val num2 = "9999"
+        val expected = "99980001"
+
+        assertEquals(expected, MultiplyStrings.multiply(num1, num2))
+    }
 }
