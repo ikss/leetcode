@@ -7,15 +7,13 @@ package math.easy
  */
 object ExcelSheetColumnTitle {
     fun convertToTitle(columnNumber: Int): String {
-        val sb = StringBuilder()
+        val result = StringBuilder(5)
         var n = columnNumber
         while (n > 0) {
-            val mod = n % 26
-            val tmp = 'A' - 1 + if (mod == 0) 26 else mod
-            sb.append(tmp)
+            n--
+            result.insert(0, 'A' + n % 26)
             n /= 26
-            if (mod == 0) n--
         }
-        return sb.reverse().toString()
+        return result.toString()
     }
 }
