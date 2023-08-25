@@ -15,7 +15,7 @@ package strings.medium
  * [URL](https://leetcode.com/problems/interleaving-string/)
  */
 object InterleavingString {
-    fun isInterleave(s1: String, s2: String, s3: String): Boolean {
+    fun isInterleaveDp(s1: String, s2: String, s3: String): Boolean {
         if (s1.length + s2.length != s3.length) {
             return false
         }
@@ -38,5 +38,29 @@ object InterleavingString {
             }
         }
         return dp[s1.length][s2.length]
+    }
+
+    fun isInterleaveDpSpaceOptimized(s1: String, s2: String, s3: String): Boolean {
+        if (s1.length + s2.length != s3.length) {
+            return false
+        }
+        var dp = BooleanArray(s2.length + 1)
+
+        for (i in 0..s1.length) {
+            val temp = BooleanArray(s2.length + 1)
+            for (j in 0..s2.length) {
+                temp[j] = if (i == 0 && j == 0) {
+                    true
+                } else if (i == 0) {
+                    temp[j - 1] && s2[j - 1] == s3[j - 1]
+                } else if (j == 0) {
+                    dp[j] && s1[i - 1] == s3[i - 1]
+                } else {
+                    (dp[j] && s1[i - 1] == s3[i + j - 1]) || (temp[j - 1] && s2[j - 1] == s3[i + j - 1])
+                }
+            }
+            dp = temp
+        }
+        return dp[s2.length]
     }
 }
