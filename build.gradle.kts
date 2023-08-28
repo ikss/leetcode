@@ -6,7 +6,7 @@
 
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "1.9.0"
+    id("org.jetbrains.kotlin.jvm") version "1.9.10"
 }
 
 allprojects {
@@ -17,12 +17,12 @@ allprojects {
     }
 
     tasks.withType(JavaCompile::class).all {
-        sourceCompatibility = "19"
-        targetCompatibility = "19"
+        sourceCompatibility = "20"
+        targetCompatibility = "20"
     }
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
-        kotlinOptions.jvmTarget = "19"
+        kotlinOptions.jvmTarget = "20"
     }
 
     tasks.withType(Test::class).configureEach {
