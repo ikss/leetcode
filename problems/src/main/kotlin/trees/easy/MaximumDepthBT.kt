@@ -1,7 +1,6 @@
 package trees.easy
 
 import data_structures.TreeNode
-import kotlin.math.max
 
 /**
  * Given the root of a binary tree, return its maximum depth.
@@ -16,7 +15,7 @@ object MaximumDepthBT {
         if (root == null) return 0
         val left = maxDepthRecursion(root.left)
         val right = maxDepthRecursion(root.right)
-        return max(left, right) + 1
+        return maxOf(left, right) + 1
     }
 
     fun maxDepthQueue(root: TreeNode?): Int {

@@ -13,7 +13,7 @@ import java.util.*
  * * boolean empty() Returns true if the stack is empty, false otherwise.
  *
  * __Notes:__
- * 
+ *
  * You must use only standard operations of a queue, which means that only push to back, peek/pop from front,
  * size and is empty operations are valid.
  * Depending on your language, the queue may not be supported natively. You may simulate a queue using a list
@@ -22,7 +22,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/implement-stack-using-queues/)
  */
 object ImplementStackUsingQueues {
-    class MyStack() {
+    class MyStack {
         private var queue = LinkedList<Pair<Int, LinkedList<Any>>>()
 
         fun push(x: Int) {

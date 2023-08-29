@@ -1,7 +1,5 @@
 package arrays.easy
 
-import kotlin.math.max
-
 /**
  * You are given an array prices where prices[i] is the price of a given stock on the ith day.
  * You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
@@ -27,8 +25,8 @@ object BestTimeToBuyAndSellStocks {
         var maxProfit = 0
         for (i in 1 until prices.size) {
             maxCur += prices[i] - prices[i - 1]
-            maxCur = max(0, maxCur)
-            maxProfit = max(maxCur, maxProfit)
+            maxCur = maxOf(0, maxCur)
+            maxProfit = maxOf(maxCur, maxProfit)
         }
         return maxProfit
     }

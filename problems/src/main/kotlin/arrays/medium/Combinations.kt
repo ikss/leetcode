@@ -29,7 +29,7 @@ object Combinations {
 
     fun combineBacktrack(n: Int, k: Int): List<List<Int>> {
         val result = ArrayList<ArrayList<Int>>()
-        backtrack(n, k, 1, result, ArrayList<Int>())
+        backtrack(n, k, 1, result, ArrayList())
         return result
     }
 

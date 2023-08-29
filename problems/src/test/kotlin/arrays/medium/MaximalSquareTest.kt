@@ -38,6 +38,7 @@ class MaximalSquareTest {
         assertEquals(expected, MaximalSquare.maximalSquareDp(matrix))
     }
 
+    @Test
     fun test1optimizedDp() {
         val matrix = arrayOf(
             charArrayOf('1', '0', '1', '0', '0'),
