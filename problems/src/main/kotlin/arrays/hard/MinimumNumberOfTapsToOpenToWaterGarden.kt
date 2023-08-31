@@ -2,8 +2,6 @@ package arrays.hard
 
 import java.util.*
 import kotlin.math.max
-import kotlin.math.min
-
 
 /**
  * There is a one-dimensional garden on the x-axis. The garden starts at the point 0 and ends at the point n.
