@@ -28,11 +28,12 @@ object SplitLinkedListInParts {
         val result = Array<ListNode?>(k) { null }
         var index = 0
         curr = head
-        while (curr != null) {
-            val batchSize = (size - 1) / (k - index) + 1
+        val batchSize = size / k
+        val rem = size % k
 
-            result[index] = curr
-            repeat(batchSize - 1) {
+        while (curr != null) {
+            result[index++] = curr
+            repeat(batchSize - 1 + if (index <= rem) 1 else 0) {
                 curr = curr?.next
             }
             if (curr != null) {
@@ -40,8 +41,6 @@ object SplitLinkedListInParts {
                 curr!!.next = null
                 curr = temp
             }
-            index++
-            size -= batchSize
         }
         return result
     }
