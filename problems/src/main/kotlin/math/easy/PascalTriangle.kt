@@ -7,16 +7,18 @@ package math.easy
  */
 object PascalTriangle {
     fun generate(numRows: Int): List<List<Int>> {
-        val result = mutableListOf<List<Int>>()
-        result += listOf(1)
+        val result = ArrayList<List<Int>>(numRows)
+        result.add(listOf(1))
+
         for (i in 1 until numRows) {
             val row = mutableListOf(1)
             for (j in 1 until i) {
                 row += result[i - 1][j - 1] + result[i - 1][j]
             }
-            row += 1
-            result += row
+            row.add(1)
+            result.add(row)
         }
+
         return result
     }
 }
