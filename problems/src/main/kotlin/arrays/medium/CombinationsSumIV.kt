@@ -9,7 +9,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/01-matrix/)
  */
 object CombinationsSumIV {
-    fun combinationSum4(nums: IntArray, target: Int): Int {
+    fun combinationSum4dp(nums: IntArray, target: Int): Int {
         val dp = IntArray(target + 1)
         dp[0] = 1
         for (i in 1..target) {
@@ -20,5 +20,23 @@ object CombinationsSumIV {
             }
         }
         return dp[target]
+    }
+
+    fun combinationSum4recursive(nums: IntArray, target: Int): Int {
+        nums.sort()
+        return backtrack(nums, target, 0)
+    }
+
+    private fun backtrack(nums: IntArray, target: Int, currSum: Int): Int {
+        var result = 0
+        for (n in nums) {
+            val newSum = currSum + n
+            if (newSum == target) {
+                return result + 1
+            }
+            if (newSum > target) break
+            result += backtrack(nums, target, newSum)
+        }
+        return result
     }
 }
