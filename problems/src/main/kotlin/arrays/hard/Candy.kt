@@ -31,4 +31,34 @@ object Candy {
         }
         return sum
     }
+
+    fun candySelf(ratings: IntArray): Int {
+        val size = ratings.size
+        val candies = IntArray(size) { 1 }
+
+        var result = size
+        var distributed = true
+        while (distributed) {
+            distributed = false
+            for (i in ratings.indices) {
+                if (i > 0) {
+                    if (ratings[i] > ratings[i - 1] && candies[i] <= candies[i - 1]) {
+                        val delta = candies[i - 1] - candies[i] + 1
+                        result += delta
+                        candies[i] += delta
+                        distributed = true
+                    }
+                }
+                if (i < size - 1) {
+                    if (ratings[i] > ratings[i + 1] && candies[i] <= candies[i + 1]) {
+                        val delta = candies[i + 1] - candies[i] + 1
+                        result += delta
+                        candies[i] += delta
+                        distributed = true
+                    }
+                }
+            }
+        }
+        return result
+    }
 }
