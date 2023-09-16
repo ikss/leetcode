@@ -35,10 +35,9 @@ object PathWithMinimumEffort {
                 val c = y + dy
                 if (r < 0 || r >= m || c < 0 || c >= n) continue
                 val nextEffort = maxOf(effort, Math.abs((heights[r][c] - heights[x][y])))
-                if (efforts[r][c] > nextEffort) {
-                    efforts[r][c] = nextEffort
-                    pq.offer(intArrayOf(nextEffort, r, c))
-                }
+                if (efforts[r][c] <= nextEffort || efforts[m - 1][n - 1] <= nextEffort) continue
+                efforts[r][c] = nextEffort
+                pq.offer(intArrayOf(nextEffort, r, c))
             }
         }
         return -1
