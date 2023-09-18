@@ -22,14 +22,7 @@ object TheKWeakestRowsInAMatrix {
         }
 
         for (i in mat.indices) {
-            var sol = 0
-            for (j in mat[0].indices) {
-                if (mat[i][j] != 1) {
-                    break
-                }
-                sol++
-            }
-            pq.offer(i to sol)
+            pq.offer(i to numOnes(mat[i]))
             if (pq.size > k) {
                 pq.poll()
             }
@@ -40,5 +33,19 @@ object TheKWeakestRowsInAMatrix {
             result[k - i - 1] = index
         }
         return result
+    }
+
+    private fun numOnes(row: IntArray): Int {
+        var lo = 0
+        var hi = row.size
+        while (lo < hi) {
+            val mid = lo + (hi - lo) / 2
+            if (row[mid] == 1) {
+                lo = mid + 1
+            } else {
+                hi = mid
+            }
+        }
+        return lo
     }
 }
