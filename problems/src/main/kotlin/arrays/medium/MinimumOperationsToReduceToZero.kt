@@ -34,4 +34,27 @@ object MinimumOperationsToReduceToZero {
 
         return if (res == Integer.MIN_VALUE) -1 else nums.size - res
     }
+
+    fun minOperationsTwoPointers(nums: IntArray, x: Int): Int {
+        val size = nums.size
+        var sum = nums.sum()
+        var result = Int.MAX_VALUE
+
+        var left = 0
+        var right = 0
+
+        while (left <= right) {
+            if (sum >= x) {
+                if (sum == x) {
+                    result = minOf(result, size - right + left)
+                }
+                if (right >= size) break
+                sum -= nums[right++]
+            } else {
+                sum += nums[left++]
+            }
+        }
+
+        return if (result == Int.MAX_VALUE) -1 else result
+    }
 }
