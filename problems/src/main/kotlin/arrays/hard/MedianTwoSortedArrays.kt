@@ -48,39 +48,37 @@ object MedianTwoSortedArrays {
     }
 
     fun findMedianSortedArrays(nums1: IntArray, nums2: IntArray): Double {
-        val m = nums1.size
-        val n = nums2.size
+        val size1 = nums1.size
+        val size2 = nums2.size
 
-        if (m > n) {
+        if (size1 > size2) {
             return findMedianSortedArrays(nums2, nums1)
-        } else if (m == 0) {
+        } else if (size1 == 0) {
             return median(nums2)
         }
-        var low = 0
-        var high = m
+        var left = 0
+        var right = size1
 
-        while (low <= high) {
-            val partitionX = low + (high - low) / 2
-            val partitionY = (m + n + 1) / 2 - partitionX
+        while (left <= right) {
+            val partitionA = left + (right - left) / 2
+            val partitionB = (size1 + size2 + 1) / 2 - partitionA
 
-            val maxX = if (partitionX == 0) Integer.MIN_VALUE else nums1[partitionX - 1]
-            val minX = if (partitionX == m) Integer.MAX_VALUE else nums1[partitionX]
+            val maxLeftA = if (partitionA == 0) Integer.MIN_VALUE else nums1[partitionA - 1]
+            val minRightA = if (partitionA == size1) Integer.MAX_VALUE else nums1[partitionA]
 
-            val maxY = if (partitionY == 0) Integer.MIN_VALUE else nums2[partitionY - 1]
-            val minY = if (partitionY == n) Integer.MAX_VALUE else nums2[partitionY]
+            val maxLeftB = if (partitionB == 0) Integer.MIN_VALUE else nums2[partitionB - 1]
+            val minRightB = if (partitionB == size2) Integer.MAX_VALUE else nums2[partitionB]
 
-            if (maxX <= minY && maxY <= minX) {
-                return if ((m + n) % 2 == 0) {
-                    (maxOf(maxX, maxY).toDouble() + minOf(minX, minY).toDouble()) / 2
+            if (maxLeftA <= minRightB && maxLeftB <= minRightA) {
+                return if ((size1 + size2) % 2 == 0) {
+                    (maxOf(maxLeftA, maxLeftB).toDouble() + minOf(minRightA, minRightB).toDouble()) / 2
                 } else {
-                    maxOf(maxX.toDouble(), maxY.toDouble())
+                    maxOf(maxLeftA.toDouble(), maxLeftB.toDouble())
                 }
-
-            } else if (maxX > minY) {
-                high = partitionX - 1
-
+            } else if (maxLeftA > minRightB) {
+                right = partitionA - 1
             } else {
-                low = partitionX + 1
+                left = partitionA + 1
             }
         }
 
