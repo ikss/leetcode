@@ -7,7 +7,6 @@ package arrays.hard
  * [URL](https://leetcode.com/problems/median-of-two-sorted-arrays/)
  */
 object MedianTwoSortedArrays {
-    @Suppress("unused")
     fun findMedianSortedArraysNaive(nums1: IntArray, nums2: IntArray): Double {
         val totalSize = nums1.size + nums2.size
         if (totalSize == 0) {
@@ -37,12 +36,10 @@ object MedianTwoSortedArrays {
                 } else {
                     left1++
                 }
+            } else if (left1 > right1 || (left2 <= right2 && nums2[right2] > nums1[right1])) {
+                right2--
             } else {
-                if (left1 > right1 || (left2 <= right2 && nums2[right2] > nums1[right1])) {
-                    right2--
-                } else {
-                    right1--
-                }
+                right1--
             }
         }
         val a = if (left1 > right1) nums2[left2] else nums1[left1]
@@ -54,35 +51,39 @@ object MedianTwoSortedArrays {
         val m = nums1.size
         val n = nums2.size
 
-        if (m > n) return findMedianSortedArrays(nums2, nums1)
-
-        if (m == 0) return median(nums2)
-
+        if (m > n) {
+            return findMedianSortedArrays(nums2, nums1)
+        } else if (m == 0) {
+            return median(nums2)
+        }
         var low = 0
         var high = m
 
         while (low <= high) {
             val partitionX = low + (high - low) / 2
-            val partitionY = ((m + n + 1) / 2) - partitionX
+            val partitionY = (m + n + 1) / 2 - partitionX
 
-            val maxX: Int = if (partitionX == 0) Integer.MIN_VALUE else nums1[partitionX - 1]
-            val minX: Int = if (partitionX == m) Integer.MAX_VALUE else nums1[partitionX]
+            val maxX = if (partitionX == 0) Integer.MIN_VALUE else nums1[partitionX - 1]
+            val minX = if (partitionX == m) Integer.MAX_VALUE else nums1[partitionX]
 
-            val maxY: Int = if (partitionY == 0) Integer.MIN_VALUE else nums2[partitionY - 1]
-            val minY: Int = if (partitionY == n) Integer.MAX_VALUE else nums2[partitionY]
+            val maxY = if (partitionY == 0) Integer.MIN_VALUE else nums2[partitionY - 1]
+            val minY = if (partitionY == n) Integer.MAX_VALUE else nums2[partitionY]
 
             if (maxX <= minY && maxY <= minX) {
                 return if ((m + n) % 2 == 0) {
-                    (maxX.coerceAtLeast(maxY).toDouble() + minX.coerceAtMost(minY).toDouble()) / 2
+                    (maxOf(maxX, maxY).toDouble() + minOf(minX, minY).toDouble()) / 2
                 } else {
-                    maxX.toDouble().coerceAtLeast(maxY.toDouble())
+                    maxOf(maxX.toDouble(), maxY.toDouble())
                 }
+
             } else if (maxX > minY) {
                 high = partitionX - 1
+
             } else {
                 low = partitionX + 1
             }
         }
+
         return 0.0
     }
 
