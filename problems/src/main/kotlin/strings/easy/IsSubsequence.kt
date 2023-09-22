@@ -14,11 +14,10 @@ object IsSubsequence {
         if (s.isEmpty()) return true
         if (s.length > t.length) return false
 
-        var found = 0
+        var curr = 0
         for (c in t) {
-            if (s[found] == c) {
-                found++
-                if (found == s.length) return true
+            if (s[curr] == c) {
+                if (++curr == s.length) return true
             }
         }
         return false
