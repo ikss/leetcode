@@ -13,7 +13,7 @@ package arrays.medium
  */
 object ChampagneTower {
     fun champagneTower(poured: Int, query_row: Int, query_glass: Int): Double {
-        val tower = Array(102) { DoubleArray(102) }
+        val tower = Array(query_row + 2) { DoubleArray(it + 2) }
         tower[0][0] = poured.toDouble()
 
         for (r in 0..query_row) {
