@@ -17,4 +17,21 @@ object TheKthFactorOfN {
         }
         return if (k == 1) n else -1
     }
+
+    fun kthFactorSqrt(n: Int, k: Int): Int {
+        var k = k
+        val root = Math.sqrt(n.toDouble())
+
+        var i = 1
+        while (i < root) {
+            if (n % i == 0 && --k == 0) return i
+            i++
+        }
+
+        for (i in root.toInt() downTo 1) {
+            if (n % i == 0 && --k == 0) return n / i
+        }
+
+        return -1
+    }
 }

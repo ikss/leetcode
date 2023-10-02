@@ -8,23 +8,53 @@ class TheKthFactorOfNTest {
     fun test1() {
         val n = 12
         val k = 3
+        val expected = 3
 
-        assertEquals(3, TheKthFactorOfN.kthFactor(n, k))
+        assertEquals(expected, TheKthFactorOfN.kthFactor(n, k))
     }
 
     @Test
     fun test2() {
         val n = 7
         val k = 2
+        val expected = 7
 
-        assertEquals(7, TheKthFactorOfN.kthFactor(n, k))
+        assertEquals(expected, TheKthFactorOfN.kthFactor(n, k))
     }
     
     @Test
     fun test3() {
         val n = 4
         val k = 4
+        val expected = -1
 
-        assertEquals(-1, TheKthFactorOfN.kthFactor(n, k))
+        assertEquals(expected, TheKthFactorOfN.kthFactor(n, k))
+    }
+
+    @Test
+    fun test1sqrt() {
+        val n = 12
+        val k = 3
+        val expected = 3
+
+        assertEquals(expected, TheKthFactorOfN.kthFactorSqrt(n, k))
+    }
+
+    @Test
+    fun test2sqrt() {
+        val n = 7
+        val k = 2
+        val expected = 7
+
+        assertEquals(expected, TheKthFactorOfN.kthFactorSqrt(n, k))
+    }
+
+    @Test
+    fun test3sqrt() {
+        val n = 4
+        val k = 4
+        val expected = -1
+
+        assertEquals(expected, TheKthFactorOfN.kthFactorSqrt(n, k))
     }
 }
