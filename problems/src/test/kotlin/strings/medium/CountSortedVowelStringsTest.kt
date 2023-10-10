@@ -3,13 +3,13 @@ package strings.medium
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class CountVowelsStringsTest {
+class CountSortedVowelStringsTest {
     @Test
     fun test1() {
         val n = 1
         val expected = 5
 
-        assertEquals(expected, CountVowelsStrings.countVowelStrings(n))
+        assertEquals(expected, CountSortedVowelStrings.countVowelStrings(n))
     }
 
     @Test
@@ -17,7 +17,7 @@ class CountVowelsStringsTest {
         val n = 2
         val expected = 15
 
-        assertEquals(expected, CountVowelsStrings.countVowelStrings(n))
+        assertEquals(expected, CountSortedVowelStrings.countVowelStrings(n))
     }
 
     @Test
@@ -25,6 +25,6 @@ class CountVowelsStringsTest {
         val n = 33
         val expected = 66045
 
-        assertEquals(expected, CountVowelsStrings.countVowelStrings(n))
+        assertEquals(expected, CountSortedVowelStrings.countVowelStrings(n))
     }
 }

@@ -9,7 +9,7 @@ package strings.medium
  *
  * [URL](https://leetcode.com/problems/count-sorted-vowel-strings/)
  */
-object CountVowelsStrings {
+object CountSortedVowelStrings {
     fun countVowelStrings(n: Int): Int {
         val dp = Array(n + 1) { IntArray(6) }
         for (k in 1..5) {
