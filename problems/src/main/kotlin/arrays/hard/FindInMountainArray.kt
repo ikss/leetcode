@@ -21,7 +21,8 @@ package arrays.hard
  */
 object FindInMountainArray {
     class MountainArray(val arr: IntArray) {
-        var callCount = 0
+        private var callCount = 0
+        
         fun get(index: Int): Int {
             if (callCount++ > 100) {
                 throw RuntimeException("Too many calls")
@@ -34,7 +35,7 @@ object FindInMountainArray {
 
     fun findInMountainArray(target: Int, mountainArr: MountainArray): Int {
         val cache = HashMap<Int, Int>()
-        var peak = peakIndex(mountainArr, cache)
+        val peak = peakIndex(mountainArr, cache)
 
         val leftmost = findLeft(peak, target, mountainArr, cache)
         return if (leftmost != -1) {
