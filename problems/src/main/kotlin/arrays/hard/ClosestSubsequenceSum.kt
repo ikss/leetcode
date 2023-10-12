@@ -14,7 +14,7 @@ import java.util.*
  * Note that a subsequence of an array is an array formed by removing some elements (possibly all or none)
  * of the original array.
  *
- * [URL](https://leetcode.com/problems/closest-subsequence-sum/submissions/)
+ * [URL](https://leetcode.com/problems/closest-subsequence-sum/)
  */
 object ClosestSubsequenceSum {
     fun minAbsDifference(nums: IntArray, goal: Int): Int {

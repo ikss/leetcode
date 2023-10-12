@@ -8,7 +8,7 @@ package arrays.hard
  *
  * If the frog's last jump was k units, its next jump must be either k - 1, k, or k + 1 units. The frog can only jump in the forward direction.
  *
- * [URL](https://leetcode.com/problems/closest-subsequence-sum/submissions/)
+ * [URL](https://leetcode.com/problems/closest-subsequence-sum/)
  */
 object FrogJump {
 
