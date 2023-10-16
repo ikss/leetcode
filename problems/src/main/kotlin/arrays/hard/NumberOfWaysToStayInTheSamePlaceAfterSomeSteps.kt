@@ -30,4 +30,26 @@ object NumberOfWaysToStayInTheSamePlaceAfterSomeSteps {
         }
         return dp[0][steps]
     }
+
+    fun numWaysSpaceOptimized(steps: Int, arrLen: Int): Int {
+        val mod = 1_000_000_007
+        val len = minOf(arrLen, steps)
+        var dp = IntArray(len)
+        dp[0] = 1
+        for (remain in 1..steps) {
+            val tmp = IntArray(len)
+            for (curr in len - 1 downTo 0) {
+                var ans = dp[curr]
+                if (curr > 0) {
+                    ans = (ans + dp[curr - 1]) % mod
+                }
+                if (curr < len - 1) {
+                    ans = (ans + dp[curr + 1]) % mod
+                }
+                tmp[curr] = ans
+            }
+            dp = tmp
+        }
+        return dp[0]
+    }
 }
