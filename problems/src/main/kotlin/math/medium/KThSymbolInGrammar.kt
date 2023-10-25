@@ -14,4 +14,15 @@ object KThSymbolInGrammar {
         val count = (k - 1).countOneBits()
         return if (count % 2 == 0) 0 else 1
     }
+
+    fun kthGrammarOwn(n: Int, k: Int): Int {
+        var k = k - 1
+        var inverted = false
+
+        while (k > 0) {
+            if (k % 2 != 0) inverted = !inverted
+            k /= 2
+        }
+        return if (inverted) 1 else 0
+    }
 }
