@@ -16,23 +16,28 @@ object BinaryTreeWithFactors {
     private const val MOD = 1_000_000_007
 
     fun numFactoredBinaryTrees(arr: IntArray): Int {
-        val numbers = TreeMap<Int, Int>()
+        val dp = LinkedHashMap<Int, Int>()
         arr.sort()
 
+        var result = 0
         for (n in arr) {
-            var result = 1
+            var subresult = 1
 
-            for (e in numbers) {
-                val rem = n % e.key
-                val div = n / e.key
-                if (rem == 0 && numbers[div] != null) {
-                    result += (numbers[div]!! * e.value) % MOD
+            for ((k, v) in dp) {
+                if (k > n / 2) break
+
+                val rem = n % k
+                val div = n / k
+
+                if (rem == 0 && dp[div] != null) {
+                    val subtrees = (v.toLong() * dp[div]!!) % MOD
+                    subresult = (subresult + subtrees.toInt()) % MOD
                 }
             }
 
-            numbers[n] = result % MOD
+            dp[n] = subresult
+            result = (result + subresult) % MOD
         }
-
-        return numbers.values.sumOf { it } % MOD
+        return result
     }
 }
