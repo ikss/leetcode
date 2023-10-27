@@ -36,4 +36,38 @@ object LongestPalindromicSubstring {
         }
         return s.substring(index - max / 2 + 1 - max % 2, index + max / 2 + 1)
     }
+
+    fun longestPalindromeExpand(s: String): String {
+        var start = 0
+        var end = 0
+
+        for (i in s.indices) {
+            val odd = expand(i, i, s)
+            if (odd > end - start + 1) {
+                val dist = odd / 2
+                start = i - dist
+                end = i + dist
+            }
+
+            val even = expand(i, i + 1, s)
+            if (even > end - start + 1) {
+                val dist = even / 2 - 1
+                start = i - dist
+                end = i + dist + 1
+            }
+        }
+
+        return s.substring(start, end + 1)
+    }
+
+    private fun expand(i: Int, j: Int, s: String): Int {
+        var start = i
+        var end = j
+
+        while (start >= 0 && end < s.length && s[start] == s[end]) {
+            start--
+            end++
+        }
+        return end - start - 1
+    }
 }

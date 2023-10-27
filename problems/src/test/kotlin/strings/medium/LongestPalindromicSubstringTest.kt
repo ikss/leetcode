@@ -36,4 +36,36 @@ class LongestPalindromicSubstringTest {
 
         assertEquals(expected, LongestPalindromicSubstring.longestPalindrome(s))
     }
+
+    @Test
+    fun test1expand() {
+        val s = "babad"
+        val expected = "bab"
+
+        assertEquals(expected, LongestPalindromicSubstring.longestPalindromeExpand(s))
+    }
+
+    @Test
+    fun test2expand() {
+        val s = "cbbd"
+        val expected = "bb"
+
+        assertEquals(expected, LongestPalindromicSubstring.longestPalindromeExpand(s))
+    }
+
+    @Test
+    fun test3expand() {
+        val s = "a"
+        val expected = "a"
+
+        assertEquals(expected, LongestPalindromicSubstring.longestPalindromeExpand(s))
+    }
+
+    @Test
+    fun test4expand() {
+        val s = "ac"
+        val expected = "a"
+
+        assertEquals(expected, LongestPalindromicSubstring.longestPalindromeExpand(s))
+    }
 }
