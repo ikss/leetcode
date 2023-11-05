@@ -15,25 +15,31 @@ package arrays.medium
  */
 object FindTheWinnerOfAnArrayGame {
     fun getWinnerOwn(arr: IntArray, k: Int): Int {
-        val queue = java.util.ArrayDeque<Pair<Int, Int>>()
-
-        for (n in arr) {
-            queue.offer(n to 0)
+        var maxElement = arr[0]
+        val queue = java.util.ArrayDeque<Int>()
+        for (i in 1 until arr.size) {
+            maxElement = maxOf(maxElement, arr[i])
+            queue.offer(arr[i])
         }
 
-        while (true) {
-            val e1 = queue.pollFirst()
-            if (e1.second == k || e1.second == arr.size - 1) return e1.first
+        var curr = arr[0]
+        var winstreak = 0
 
-            val e2 = queue.pollFirst()
-
-            if (e1.first > e2.first) {
-                queue.offerFirst(e1.first to e1.second + 1)
-                queue.offerLast(e2.first to 1)
+        while (!queue.isEmpty()) {
+            val opponent = queue.poll()
+            if (curr > opponent) {
+                queue.offer(opponent)
+                winstreak++
             } else {
-                queue.offerFirst(e2.first to e2.second + 1)
-                queue.offerLast(e1.first to 1)
+                queue.offer(curr)
+                curr = opponent
+                winstreak = 1
+            }
+            if (winstreak == k || curr == maxElement) {
+                return curr
             }
         }
+
+        return -1
     }
 }
