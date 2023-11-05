@@ -33,4 +33,14 @@ class LastMomentBeforeAllAntsFallOutOfAPlankTest {
 
         assertEquals(expected, LastMomentBeforeAllAntsFallOutOfAPlank.getLastMoment(n, left, right))
     }
+
+    @Test
+    fun test4() {
+        val n = 14
+        val left = intArrayOf(0, 1, 2, 3, 4, 5, 6, 7)
+        val right = intArrayOf(8, 9, 10, 11, 12, 13, 14)
+        val expected = 7
+
+        assertEquals(expected, LastMomentBeforeAllAntsFallOutOfAPlank.getLastMoment(n, left, right))
+    }
 }
