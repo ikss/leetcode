@@ -15,7 +15,7 @@ class FindUniqueBinaryStringTest {
     @Test
     fun test2() {
         val nums = arrayOf("00", "01")
-        val expected = "11"
+        val expected = "10"
 
         assertEquals(expected, FindUniqueBinaryString.findDifferentBinaryString(nums))
     }
@@ -23,7 +23,7 @@ class FindUniqueBinaryStringTest {
     @Test
     fun test3() {
         val nums = arrayOf("111", "011", "001")
-        val expected = "101"
+        val expected = "000"
 
         assertEquals(expected, FindUniqueBinaryString.findDifferentBinaryString(nums))
     }
