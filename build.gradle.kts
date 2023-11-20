@@ -26,7 +26,7 @@ allprojects {
     }
 
     tasks.withType(Test::class).configureEach {
-        maxParallelForks = Runtime.getRuntime().availableProcessors()
+        maxParallelForks = (Runtime.getRuntime().availableProcessors() / 2).takeIf { it > 0 } ?: 1
     }
 
 }
