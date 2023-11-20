@@ -21,7 +21,7 @@ object CountUnreachablePairsOfNodesInUndirectedGraph {
         }
 
         var numberOfPairs = 0L
-        var sizeOfGroup = 0L
+        var sizeOfGroup: Long
         var remainingNodes = n.toLong()
         val visited = BooleanArray(n)
 
