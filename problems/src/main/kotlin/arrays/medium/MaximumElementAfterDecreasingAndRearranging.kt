@@ -14,7 +14,7 @@ package arrays.medium
  *
  * Return the maximum possible value of an element in arr after performing the operations to satisfy the conditions.
  *
- * [URL](https://leetcode.com/problems/maximum-element-after-decreasing-and-rearranging/description/)
+ * [URL](https://leetcode.com/problems/maximum-element-after-decreasing-and-rearranging/)
  */
 object MaximumElementAfterDecreasingAndRearranging {
     fun maximumElementAfterDecrementingAndRearranging(arr: IntArray): Int {
