@@ -23,4 +23,8 @@ object CountOfMatchesInTournament {
 
         return result
     }
+
+    fun numberOfMatchesSimplified(n: Int): Int {
+        return n - 1
+    }
 }
