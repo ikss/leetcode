@@ -2,7 +2,6 @@ package arrays.medium
 
 import java.util.*
 
-
 /**
  * You are given an array of n pairs pairs where `pairs[i] = [lefti, righti]` and lefti < righti.
  *

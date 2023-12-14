@@ -1,6 +1,5 @@
 package strings.hard
 
-
 /**
  * Given two strings s and t, transform string s into string t using the following operation any number of times:
  * * Choose a non-empty substring in s and sort it in place so the characters are in ascending order.

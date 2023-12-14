@@ -2,7 +2,6 @@ package graphs.hard
 
 import java.util.*
 
-
 /**
  * There is a directed weighted graph that consists of n nodes numbered from 0 to n - 1.
  * The edges of the graph are initially represented by the given array edges where `edges[i] = [fromi, toi, edgeCosti]`

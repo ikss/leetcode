@@ -3,7 +3,6 @@ package trees.easy
 import data_structures.TreeNode
 import java.util.*
 
-
 /**
  * Given the root of a binary tree, return the inorder traversal of its nodes' values.
  *

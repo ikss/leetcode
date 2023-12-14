@@ -1,8 +1,5 @@
 package arrays.medium
 
-import java.util.*
-
-
 /**
  * You are given an array of positive integers beans, where each integer represents the number of magic beans
  * found in a particular magic bag.

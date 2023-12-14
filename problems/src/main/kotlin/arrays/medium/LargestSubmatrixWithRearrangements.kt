@@ -1,6 +1,5 @@
 package arrays.medium
 
-
 /**
  * You are given a binary matrix _matrix_ of size m x n, and you are allowed to rearrange the columns
  * of the matrix in any order.

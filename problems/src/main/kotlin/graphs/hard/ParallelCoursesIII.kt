@@ -3,7 +3,6 @@ package graphs.hard
 import java.util.*
 import kotlin.math.max
 
-
 /**
  * ou are given an integer n, which indicates that there are n courses labeled from 1 to n. You are also given a
  * 2D integer array relations where `relations[j] = [prevCoursej, nextCoursej]` denotes that course prevCoursej has to

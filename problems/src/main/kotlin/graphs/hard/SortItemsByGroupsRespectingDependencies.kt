@@ -2,7 +2,6 @@ package graphs.hard
 
 import java.util.*
 
-
 /**
  * There are n items each belonging to zero or one of m groups where `group[i]` is the group that the i-th item belongs
  * to and it's equal to -1 if the i-th item belongs to no group. The items and the groups are zero indexed.

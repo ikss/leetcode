@@ -1,6 +1,5 @@
 package graphs.medium
 
-
 /**
  * There is an infrastructure of n cities with some number of roads connecting these cities. Each `roads[i] = [ai, bi]`
  * indicates that there is a bidirectional road between cities ai and bi.

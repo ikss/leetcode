@@ -1,6 +1,5 @@
 package arrays.medium
 
-
 /**
  * A sequence of numbers is called arithmetic if it consists of at least two elements, and the difference between every
  * two consecutive elements is the same. More formally, a sequence s is arithmetic if and only if
