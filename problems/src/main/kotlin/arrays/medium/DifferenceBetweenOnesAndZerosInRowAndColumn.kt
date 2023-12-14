@@ -20,17 +20,12 @@ object DifferenceBetweenOnesAndZerosInRowAndColumn {
         val m = grid[0].size
         val onesRow = IntArray(n)
         val onesCol = IntArray(m)
-        val zeroesRow = IntArray(n)
-        val zeroesCol = IntArray(m)
 
         for (i in grid.indices){
             for (j in grid[0].indices) {
                 if (grid[i][j] == 1) {
                     onesRow[i]++
                     onesCol[j]++
-                } else {
-                    zeroesRow[i]++
-                    zeroesCol[j]++
                 }
             }
         }
@@ -38,7 +33,7 @@ object DifferenceBetweenOnesAndZerosInRowAndColumn {
 
         for (i in grid.indices){
             for (j in grid[0].indices) {
-                result[i][j] = onesRow[i] + onesCol[j] - zeroesRow[i] - zeroesCol[j]
+                result[i][j] = onesRow[i] + onesCol[j] - (m - onesRow[i]) - (n - onesCol[j])
             }
         }
 
