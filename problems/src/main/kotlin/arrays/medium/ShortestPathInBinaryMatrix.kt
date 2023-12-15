@@ -5,7 +5,7 @@ package arrays.medium
  *
  * The distance between two adjacent cells is 1.
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/shortest-path-in-binary-matrix/)
  */
 object ShortestPathInBinaryMatrix {
     private val directions = listOf(-1 to -1, -1 to 0, -1 to 1, 0 to -1, 0 to 1, 1 to -1, 1 to 0, 1 to 1)

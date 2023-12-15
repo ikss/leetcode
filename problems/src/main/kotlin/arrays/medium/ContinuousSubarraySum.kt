@@ -6,7 +6,7 @@ package arrays.medium
  *
  * An integer x is a multiple of k if there exists an integer n such that x = n * k. 0 is always a multiple of k.
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/continuous-subarray-sum/)
  */
 object ContinuousSubarraySum {
     fun checkSubarraySum(nums: IntArray, k: Int): Boolean {

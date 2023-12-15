@@ -19,7 +19,7 @@ package arrays.medium
  *
  * The replacement must be in place and use only constant extra memory.
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/next-permutation/)
  */
 object NextPermutation {
     fun nextPermutation(nums: IntArray) {

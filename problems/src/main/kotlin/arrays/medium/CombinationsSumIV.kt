@@ -6,7 +6,7 @@ package arrays.medium
  *
  * The test cases are generated so that the answer can fit in a 32-bit integer.
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/combination-sum-iv/)
  */
 object CombinationsSumIV {
     fun combinationSum4dp(nums: IntArray, target: Int): Int {

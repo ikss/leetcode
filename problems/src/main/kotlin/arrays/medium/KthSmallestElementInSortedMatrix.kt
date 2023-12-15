@@ -10,7 +10,7 @@ import java.util.*
  *
  * You must find a solution with a memory complexity better than O(n^2).
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
  */
 object KthSmallestElementInSortedMatrix {
     fun kthSmallestBinarySearch(matrix: Array<IntArray>, k: Int): Int {

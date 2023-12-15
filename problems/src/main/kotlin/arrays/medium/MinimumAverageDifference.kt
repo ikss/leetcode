@@ -14,7 +14,7 @@ package arrays.medium
  * The average of n elements is the sum of the n elements divided (integer division) by n.
  * The average of 0 elements is considered to be 0.
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/minimum-average-difference/)
  */
 object MinimumAverageDifference {
     fun minimumAverageDifference(nums: IntArray): Int {

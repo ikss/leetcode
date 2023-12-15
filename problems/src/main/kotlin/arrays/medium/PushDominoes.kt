@@ -19,7 +19,7 @@ package arrays.medium
  *
  * Return a string representing the final state.
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/push-dominoes/)
  */
 object PushDominoes {
     fun pushDominoes(dominoes: String): String {

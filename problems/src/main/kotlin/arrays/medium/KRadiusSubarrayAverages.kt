@@ -14,7 +14,7 @@ package arrays.medium
  * The integer division truncates toward zero, which means losing its fractional part.
  * * For example, the average of four elements 2, 3, 1, and 5 is (2+3+1+5)/4 = 11/4 = 2.75, which truncates to 2.
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/k-radius-subarray-averages/)
  */
 object KRadiusSubarrayAverages {
     fun getAverages(nums: IntArray, k: Int): IntArray {

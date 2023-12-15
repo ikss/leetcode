@@ -5,7 +5,7 @@ package arrays.medium
  *
  * The distance between two adjacent cells is 1.
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii/)
  */
 object MaximumNumberOfEventsThatCanBeAttendedII {
     fun maxValue(events: Array<IntArray>, k: Int): Int {

@@ -6,7 +6,7 @@ package arrays.medium
  * Return the size of the longest non-empty subarray containing only 1's in the resulting array.
  * Return 0 if there is no such subarray.
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/)
  */
 object LongestSubarrayOf1AfterDeletingOneElement {
     fun longestSubarray(nums: IntArray): Int {

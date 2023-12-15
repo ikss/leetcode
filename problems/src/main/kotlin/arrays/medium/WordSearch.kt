@@ -5,7 +5,7 @@ package arrays.medium
  *
  * The distance between two adjacent cells is 1.
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/word-search/)
  */
 object WordSearch {
     fun exist(board: Array<CharArray>, word: String): Boolean {

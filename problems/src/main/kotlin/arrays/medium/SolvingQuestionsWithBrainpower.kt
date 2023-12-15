@@ -5,7 +5,7 @@ package arrays.medium
  *
  * The distance between two adjacent cells is 1.
  *
- * [URL](https://leetcode.com/problems/01-matrix/)
+ * [URL](https://leetcode.com/problems/solving-questions-with-brainpower/)
  */
 object SolvingQuestionsWithBrainpower {
     fun mostPointsDp(questions: Array<IntArray>): Long {
