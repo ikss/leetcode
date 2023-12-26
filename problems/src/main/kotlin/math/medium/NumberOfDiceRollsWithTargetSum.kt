@@ -37,12 +37,11 @@ object NumberOfDiceRollsWithTargetSum {
         val dp = Array(n + 1) { IntArray(target + 1) }
         dp[0][0] = 1
 
-        for (i in 1..n) {
-            for (j in 0..target) {
-                for (l in 1..k) {
-                    if (j < l)
-                        break
-                    dp[i][j] = (dp[i][j] + dp[i - 1][j - l]) % MOD
+        for (dice in 1..n) {
+            for (sum in 1..target) {
+                for (left in 1..k) {
+                    if (sum < left) break
+                    dp[dice][sum] = (dp[dice][sum] + dp[dice - 1][sum - left]) % MOD
                 }
             }
         }
