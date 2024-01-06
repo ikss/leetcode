@@ -1,5 +1,7 @@
 package arrays.medium
 
+import java.util.*
+
 /**
  * Given an integer array nums, return the length of the longest strictly increasing subsequence.
  *
@@ -9,7 +11,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/longest-increasing-subsequence/)
  */
 object LongestIncreasingSubsequence {
-    fun lengthOfLIS(nums: IntArray): Int {
+    fun lengthOfLISArray(nums: IntArray): Int {
         val piles = IntArray(nums.size)
 
         var size = 0
@@ -29,5 +31,20 @@ object LongestIncreasingSubsequence {
         }
 
         return size
+    }
+
+    fun lengthOfLISTreeSet(nums: IntArray): Int {
+        val piles = TreeSet<Int>()
+
+        for (n in nums) {
+            val greater = piles.ceiling(n)
+            if (greater != null) {
+                piles.remove(greater)
+            }
+            piles.add(n)
+        }
+
+
+        return piles.size
     }
 }
