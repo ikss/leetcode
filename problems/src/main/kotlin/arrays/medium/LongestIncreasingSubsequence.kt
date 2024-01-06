@@ -11,23 +11,23 @@ package arrays.medium
 object LongestIncreasingSubsequence {
     fun lengthOfLIS(nums: IntArray): Int {
         val piles = IntArray(nums.size)
+
         var size = 0
-        for (num in nums) {
+        for (n in nums) {
             var i = 0
             var j = size
             while (i != j) {
-                val m = (i + j) / 2
-                if (piles[m] < num) {
-                    i = m + 1
+                val mid = (j - i) / 2 + i
+                if (piles[mid] < n) {
+                    i = mid + 1
                 } else {
-                    j = m
+                    j = mid
                 }
             }
-            piles[i] = num
-            if (i == size) {
-                size++
-            }
+            piles[i] = n
+            if (i == size) size++
         }
+
         return size
     }
 }
