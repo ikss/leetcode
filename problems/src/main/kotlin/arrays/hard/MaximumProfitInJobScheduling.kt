@@ -16,17 +16,16 @@ import java.util.*
 object MaximumProfitInJobScheduling {
     fun jobScheduling(startTime: IntArray, endTime: IntArray, profit: IntArray): Int {
         val n = startTime.size
-        val jobs = Array(n) { IntArray(3) }
-        for (i in 0 until n) {
-            jobs[i] = intArrayOf(startTime[i], endTime[i], profit[i])
-        }
+        val jobs = Array(n) { intArrayOf(startTime[it], endTime[it], profit[it]) }
         jobs.sortBy { it[1] }
+
         val dp = TreeMap<Int, Int>()
         dp[0] = 0
-        for (job in jobs) {
-            val cur = dp.floorEntry(job[0]).value + job[2]
+
+        for ((start, end, jobProfit) in jobs) {
+            val cur = dp.floorEntry(start).value + jobProfit
             if (cur > dp.lastEntry().value) {
-                dp[job[1]] = cur
+                dp[end] = cur
             }
         }
         return dp.lastEntry().value
