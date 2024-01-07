@@ -18,18 +18,18 @@ package arrays.hard
 object ArithmeticSlicesIISubsequence {
     fun numberOfArithmeticSlices(nums: IntArray): Int {
         var ans = 0
-        val cnt = arrayOfNulls<MutableMap<Int, Int>>(nums.size)
+        val cnt = Array(nums.size) { HashMap<Int, Int>(it, 1.0F) }
+        
         for (i in nums.indices) {
-            cnt[i] = HashMap(i)
             for (j in 0 until i) {
                 val delta = nums[i].toLong() - nums[j].toLong()
                 if (delta < Int.MIN_VALUE || delta > Int.MAX_VALUE) {
                     continue
                 }
                 val diff = delta.toInt()
-                val sum = cnt[j]!!.getOrDefault(diff, 0)
-                val origin = cnt[i]!!.getOrDefault(diff, 0)
-                cnt[i]!![diff] = origin + sum + 1
+                val sum = cnt[j].getOrDefault(diff, 0)
+                val origin = cnt[i].getOrDefault(diff, 0)
+                cnt[i][diff] = origin + sum + 1
                 ans += sum
             }
         }
