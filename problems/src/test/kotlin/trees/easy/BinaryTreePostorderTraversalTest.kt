@@ -8,7 +8,7 @@ class BinaryTreePostorderTraversalTest {
 
     @Test
     fun test1() {
-        val root = TreeBuilder.build(1, null, 2, null, null, null, 3)
+        val root = TreeBuilder.build(1, null, 2, null, 3)
         val expected = listOf(3, 2, 1)
 
         assertEquals(expected, BinaryTreePostorderTraversal.postorderTraversal(root))

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 class InorderTraversalTest {
     @Test
     fun test1recursive() {
-        val tree = TreeBuilder.build(1, null, 2, null, null, 3)
+        val tree = TreeBuilder.build(1, null, 2, 3)
         val expected = listOf(1, 3, 2)
 
         assertEquals(expected, InorderTraversal.inorderTraversalRecursive(tree))
@@ -31,7 +31,7 @@ class InorderTraversalTest {
 
     @Test
     fun test1stack() {
-        val tree = TreeBuilder.build(1, null, 2, null, null, 3)
+        val tree = TreeBuilder.build(1, null, 2, 3)
         val expected = listOf(1, 3, 2)
 
         assertEquals(expected, InorderTraversal.inorderTraversalStack(tree))

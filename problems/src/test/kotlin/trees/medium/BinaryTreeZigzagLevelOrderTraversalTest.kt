@@ -32,7 +32,7 @@ class BinaryTreeZigzagLevelOrderTraversalTest {
 
     @Test
     fun test4naive() {
-        val tree = TreeBuilder.build(0, 2, 4, 1, null, 3, -1, 5, 1, null, null, 6, null, 8)
+        val tree = TreeBuilder.build(0, 2, 4, 1, null, 3, -1, 5, 1, 6, null, 8)
         val expected = arrayListOf(arrayListOf(0), arrayListOf(4, 2), arrayListOf(1, 3, -1), arrayListOf(8, 6, 1, 5))
 
         assertEquals(expected, BinaryTreeZigzagLevelOrderTraversal.zigzagLevelOrderNaive(tree))
@@ -64,7 +64,7 @@ class BinaryTreeZigzagLevelOrderTraversalTest {
 
     @Test
     fun test4dfs() {
-        val tree = TreeBuilder.build(0, 2, 4, 1, null, 3, -1, 5, 1, null, null, 6, null, 8)
+        val tree = TreeBuilder.build(0, 2, 4, 1, null, 3, -1, 5, 1, 6, null, 8)
         val expected = arrayListOf(arrayListOf(0), arrayListOf(4, 2), arrayListOf(1, 3, -1), arrayListOf(8, 6, 1, 5))
 
         assertEquals(expected, BinaryTreeZigzagLevelOrderTraversal.zigzagLevelOrderDfs(tree))

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 class FindModeInBinarySearchTreeTest {
     @Test
     fun test1Morris() {
-        val root = TreeBuilder.build(1, null, 2, null, null, 2)
+        val root = TreeBuilder.build(1, null, 2, 2)
         val expected = intArrayOf(2)
 
         assertArrayEquals(expected, FindModeInBinarySearchTree.findModeMorrisInorder(root))

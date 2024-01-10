@@ -11,7 +11,7 @@ class AddOneRowToTreeTest {
         val root = TreeBuilder.build(4, 2, 6, 3, 1, 5)
         val `val` = 1
         val depth = 2
-        val expected = TreeBuilder.build(4, 1, 1, 2, null, null, 6, 3, 1, null, null, null, null, 5)
+        val expected = TreeBuilder.build(4, 1, 1, 2, null, null, 6, 3, 1, 5)
 
         assertEquals(expected, AddOneRowToTree.addOneRow(root, `val`, depth))
     }
@@ -21,7 +21,7 @@ class AddOneRowToTreeTest {
         val root = TreeBuilder.build(4, 2, null, 3, 1)
         val `val` = 1
         val depth = 3
-        val expected = TreeBuilder.build(4, 2, null, 1, 1, null, null, 3, null, null, 1)
+        val expected = TreeBuilder.build(4, 2, null, 1, 1, 3, null, null, 1)
 
         assertEquals(expected, AddOneRowToTree.addOneRow(root, `val`, depth))
     }

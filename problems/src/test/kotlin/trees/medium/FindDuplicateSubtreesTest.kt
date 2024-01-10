@@ -9,7 +9,7 @@ class FindDuplicateSubtreesTest {
 
     @Test
     fun test1() {
-        val root = TreeBuilder.build(1, 2, 3, 4, null, 2, 4, null, null, null, null, 4)
+        val root = TreeBuilder.build(1, 2, 3, 4, null, 2, 4, null, null, 4)
         val expected = listOf(TreeNode(4), TreeNode(2, left = TreeNode(4)))
 
         assertEquals(expected, FindDuplicateSubtrees.findDuplicateSubtrees(root))

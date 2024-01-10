@@ -16,7 +16,7 @@ class MaximumProductOfSplittedBinaryTreeTest {
 
     @Test
     fun test2() {
-        val root = TreeBuilder.build(1, null, 2, null, null, 3, 4, null, null, null, null, null, null, 5, 6)
+        val root = TreeBuilder.build(1, null, 2, 3, 4, null, null, 5, 6)
         val expected = 90
 
         assertEquals(expected, MaximumProductOfSplittedBinaryTree.maxProduct(root))

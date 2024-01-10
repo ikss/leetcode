@@ -8,7 +8,7 @@ class PathSumIITest {
 
     @Test
     fun test1() {
-        val root = TreeBuilder.build(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, null, 5, 1)
+        val root = TreeBuilder.build(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1)
         val targetSum = 22
         val expected = listOf(listOf(5, 4, 11, 2), listOf(5, 8, 4, 5))
 

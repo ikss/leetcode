@@ -16,7 +16,7 @@ class MaximumDifferenceBetweenNodeAndAncestorTest {
 
     @Test
     fun test2() {
-        val root = TreeBuilder.build(1, null, 2, null, null, null, 0, null, null, null, null, null, null, 3)
+        val root = TreeBuilder.build(1, null, 2, null, 0, 3)
         val expected = 3
 
         assertEquals(expected, MaximumDifferenceBetweenNodeAndAncestor.maxAncestorDiff(root))

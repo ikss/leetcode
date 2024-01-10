@@ -16,8 +16,8 @@ class MinimumDepthOfBinaryTreeTest {
 
     @Test
     fun test2() {
-        val root = TreeBuilder.build(2, null, 3, null, null, null, 4, null, null, null, null, null, null, null, 5)
-        val expected = 4
+        val root = TreeBuilder.build(2, null, 3, null, 4, null, 5, null, 6)
+        val expected = 5
 
         assertEquals(expected, MinimumDepthOfBinaryTree.minDepth(root))
     }
