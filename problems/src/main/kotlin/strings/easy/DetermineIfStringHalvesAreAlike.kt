@@ -15,18 +15,19 @@ object DetermineIfStringHalvesAreAlike {
     private val vowels = hashSetOf('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
 
     fun halvesAreAlike(s: String): Boolean {
-        val med = s.length / 2
+        var first = 0
+        var second = 0
 
-        return countVowels(s, 0, med) == countVowels(s, med, s.length)
-
-    }
-
-    private fun countVowels(s: String, start: Int, end: Int): Int {
-        var res = 0
-        for (i in start until end) {
-            if (s[i] in vowels) res++
+        val mid = s.length / 2
+        for (i in s.indices) {
+            if (s[i] in vowels) {
+                if (i < mid) {
+                    first++
+                } else {
+                    second++
+                }
+            }
         }
-
-        return res
+        return first == second
     }
 }
