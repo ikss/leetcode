@@ -23,7 +23,7 @@ object DetermineIfTwoStringsAreClose {
         val arr2 = getHash(word2)
 
         for (i in arr1.indices) {
-            if ((arr1[i] != arr2[i]) && (arr1[i] == 0 || arr2[i] == 0)) return false
+            if ((arr1[i] == 0 || arr2[i] == 0) && (arr1[i] != arr2[i])) return false
         }
         arr1.sort()
         arr2.sort()
