@@ -18,18 +18,15 @@ package arrays.medium
  */
 object FindPlayersWithZeroOrOneLosses {
     fun findWinners(matches: Array<IntArray>): List<List<Int>> {
-        val players = hashMapOf<Int, Int>()
+        val players = HashMap<Int, Int>()
 
         for ((win, loose) in matches) {
-            if (!players.containsKey(win)) {
-                players[win] = 0
-            }
-            val looser = players[loose] ?: 0
-            players[loose] = looser + 1
+            players.putIfAbsent(win, 0)
+            players.merge(loose, 1, Int::plus)
         }
 
-        val winners = mutableListOf<Int>()
-        val losers = mutableListOf<Int>()
+        val winners = ArrayList<Int>()
+        val losers = ArrayList<Int>()
         for ((player, losses) in players) {
             if (losses == 0) {
                 winners.add(player)
