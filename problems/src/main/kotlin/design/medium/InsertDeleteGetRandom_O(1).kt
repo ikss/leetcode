@@ -15,9 +15,8 @@ package design.medium
  */
 object `InsertDeleteGetRandom_O(1)` {
     class RandomizedSet {
-        private val random = java.util.Random()
-        var nums = mutableListOf<Int>()
-        var locs = hashMapOf<Int, Int>()
+        var nums = ArrayList<Int>()
+        var locs = HashMap<Int, Int>()
 
         /** Inserts a value to the set. Returns true if the set did not already contain the specified element.  */
         fun insert(`val`: Int): Boolean {
@@ -34,16 +33,16 @@ object `InsertDeleteGetRandom_O(1)` {
             val loc = locs[`val`]
                 ?: return false
             if (loc < nums.size - 1) { // not the last one than swap the last one with this val
-                val lastone = nums[nums.size - 1]
+                val lastone = nums.last()
                 nums[loc] = lastone
                 locs[lastone] = loc
             }
             locs.remove(`val`)
-            nums.removeAt(nums.size - 1)
+            nums.removeLast()
             return true
         }
 
         /** Get a random element from the set.  */
-        fun getRandom(): Int = nums[random.nextInt(nums.size)]
+        fun getRandom(): Int = nums.random()
     }
 }
