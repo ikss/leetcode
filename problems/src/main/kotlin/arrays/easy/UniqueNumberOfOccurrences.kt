@@ -8,13 +8,13 @@ package arrays.easy
  */
 object UniqueNumberOfOccurrences {
     fun uniqueOccurrences(arr: IntArray): Boolean {
-        val map = hashMapOf<Int, Int>()
+        val map = HashMap<Int, Int>()
 
         for (i in arr) {
-            map[i] = map.getOrDefault(i, 0) + 1
+            map.merge(i, 1, Int::plus)
         }
 
-        val set = hashSetOf<Int>()
+        val set = HashSet<Int>()
 
         for (v in map.values) {
             if (!set.add(v)) return false
