@@ -8,18 +8,15 @@ package numbers.easy
  */
 object ClimbingStairs {
     fun climbStairs(n: Int): Int {
-        if (n == 0) return 0
-        if (n == 1) return 1
-        if (n == 2) return 2
+        var prevprev = 0
+        var prev = 1
 
-        var prevprev = 1
-        var prev = 2
-        var result = 0
-        for (i in 3..n) {
-            result = prev + prevprev
+        for (i in 0 until n) {
+            val curr = prevprev + prev
             prevprev = prev
-            prev = result
+            prev = curr
         }
-        return result
+
+        return prev
     }
 }
