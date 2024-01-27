@@ -11,7 +11,7 @@ class KInversePairsArrayTest {
         val k = 0
         val expected = 1
 
-        assertEquals(expected, KInversePairArrays.kInversePairsRecursive(n, k))
+        assertEquals(expected, KInversePairsArrays.kInversePairsRecursive(n, k))
     }
 
     @Test
@@ -20,7 +20,7 @@ class KInversePairsArrayTest {
         val k = 1
         val expected = 2
 
-        assertEquals(expected, KInversePairArrays.kInversePairsRecursive(n, k))
+        assertEquals(expected, KInversePairsArrays.kInversePairsRecursive(n, k))
     }
 
     @Test
@@ -29,7 +29,7 @@ class KInversePairsArrayTest {
         val k = 0
         val expected = 1
 
-        assertEquals(expected, KInversePairArrays.kInversePairsDp(n, k))
+        assertEquals(expected, KInversePairsArrays.kInversePairsDp(n, k))
     }
 
     @Test
@@ -38,6 +38,6 @@ class KInversePairsArrayTest {
         val k = 1
         val expected = 2
 
-        assertEquals(expected, KInversePairArrays.kInversePairsDp(n, k))
+        assertEquals(expected, KInversePairsArrays.kInversePairsDp(n, k))
     }
 }

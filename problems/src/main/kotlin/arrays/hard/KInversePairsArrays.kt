@@ -11,26 +11,27 @@ import java.util.*
  *
  * [URL](https://leetcode.com/problems/k-inverse-pairs-array/)
  */
-object KInversePairArrays {
-    private var M = 1000000007
+object KInversePairsArrays {
+    private var MOD = 1000000007
+
     fun kInversePairsRecursive(n: Int, k: Int): Int {
-        val memo = Array<Array<Int?>>(1001) { arrayOfNulls(1001) }
+        val memo = Array(1001) { IntArray(1001) { -1 } }
         return kInversePairsRecursive(n, k, memo)
     }
 
-    private fun kInversePairsRecursive(n: Int, k: Int, memo: Array<Array<Int?>>): Int {
+    private fun kInversePairsRecursive(n: Int, k: Int, memo: Array<IntArray>): Int {
         if (n == 0) {
             return 0
         }
         if (k == 0) {
             return 1
         }
-        if (memo[n][k] != null) {
-            return memo[n][k]!!
+        if (memo[n][k] != -1) {
+            return memo[n][k]
         }
         var result = 0
         for (i in 0..minOf(k, n - 1)) {
-            result = (result + kInversePairsRecursive(n - 1, k - i, memo)) % M
+            result = (result + kInversePairsRecursive(n - 1, k - i, memo)) % MOD
         }
         memo[n][k] = result
         return result
@@ -46,13 +47,13 @@ object KInversePairArrays {
                 if (j == 0) {
                     tmp[j] = 1
                 } else {
-                    val result = (dp[j] + M - if (j - i >= 0) dp[j - i] else 0) % M
-                    tmp[j] = (tmp[j - 1] + result) % M
+                    val result = (dp[j] + MOD - if (j - i >= 0) dp[j - i] else 0) % MOD
+                    tmp[j] = (tmp[j - 1] + result) % MOD
                 }
             }
             dp = tmp
         }
 
-        return (dp[k] + M - if (k > 0) dp[k - 1] else 0) % M
+        return (dp[k] + MOD - if (k > 0) dp[k - 1] else 0) % MOD
     }
 }
