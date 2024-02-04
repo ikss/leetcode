@@ -18,10 +18,9 @@ object MinimumWindowSubstring {
         }
 
         // Dictionary which keeps a count of all the unique characters in t.
-        val dictT: MutableMap<Char, Int> = HashMap()
+        val dictT = HashMap<Char, Int>()
         for (i in t.indices) {
-            val count = dictT.getOrDefault(t[i], 0)
-            dictT[t[i]] = count + 1
+            dictT.merge(t[i], 1, Int::plus)
         }
 
         // Number of unique characters in t, which need to be present in the desired window.
@@ -38,19 +37,18 @@ object MinimumWindowSubstring {
         var formed = 0
 
         // Dictionary which keeps a count of all the unique characters in the current window.
-        val windowCounts: MutableMap<Char, Int> = HashMap()
+        val windowCounts = HashMap<Char, Int>()
 
         // ans list of the form (window length, left, right)
         val ans = intArrayOf(-1, 0, 0)
         while (r < s.length) {
             // Add one character from the right to the window
             var c = s[r]
-            val count = windowCounts.getOrDefault(c, 0)
-            windowCounts[c] = count + 1
+            windowCounts.merge(c, 1, Int::plus)
 
             // If the frequency of the current character added equals to the
             // desired count in t then increment the formed count by 1.
-            if (dictT.containsKey(c) && windowCounts[c]!!.toInt() == dictT[c]!!.toInt()) {
+            if (windowCounts[c]!! == dictT[c]) {
                 formed++
             }
 
@@ -66,8 +64,8 @@ object MinimumWindowSubstring {
 
                 // The character at the position pointed by the
                 // `Left` pointer is no longer a part of the window.
-                windowCounts[c] = windowCounts[c]!! - 1
-                if (dictT.containsKey(c) && windowCounts[c]!!.toInt() < dictT[c]!!.toInt()) {
+                windowCounts.merge(c, 1, Int::minus)
+                if (dictT.containsKey(c) && windowCounts[c]!! < dictT[c]!!) {
                     formed--
                 }
 
