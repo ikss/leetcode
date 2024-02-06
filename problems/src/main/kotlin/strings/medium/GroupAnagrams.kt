@@ -12,10 +12,10 @@ object GroupAnagrams {
     fun groupAnagrams(strs: Array<String>): List<List<String>> {
         if (strs.isEmpty()) return emptyList()
 
-        val map = mutableMapOf<String, MutableList<String>>()
+        val map = LinkedHashMap<String, ArrayList<String>>()
         for (s in strs) {
             val ca = CharArray(26)
-            for (c in s.toCharArray()) {
+            for (c in s) {
                 ca[c - 'a']++
             }
             val keyStr = String(ca)
