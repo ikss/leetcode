@@ -18,7 +18,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/find-polygon-with-the-largest-perimeter/)
  */
 object FindPolygonWithTheLargestPerimeter {
-    fun largestPerimeter(nums: IntArray): Long {
+    fun largestPerimeterRollingSum(nums: IntArray): Long {
         nums.sort()
 
         val rollingsum = LongArray(nums.size)
@@ -34,5 +34,19 @@ object FindPolygonWithTheLargestPerimeter {
         }
 
         return -1
+    }
+
+    fun largestPerimeterSimplified(nums: IntArray): Long {
+        nums.sort()
+
+        var prevsum = 0L
+        var results = -1L
+        for (num in nums) {
+            if (num < prevsum) {
+                results = num + prevsum
+            }
+            prevsum += num
+        }
+        return results
     }
 }
