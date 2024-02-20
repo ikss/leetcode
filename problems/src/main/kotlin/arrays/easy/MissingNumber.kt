@@ -14,4 +14,12 @@ object MissingNumber {
         }
         return sum
     }
+
+    fun missingNumberGauss(nums: IntArray): Int {
+        val size = nums.size
+        val expected = size * (size + 1) / 2
+        val actual = nums.sum()
+
+        return expected - actual
+    }
 }
