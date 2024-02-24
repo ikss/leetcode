@@ -36,4 +36,9 @@ class UnionFind(n: Int) {
     }
 
     fun allIsConnected(): Boolean = components == 1
+    
+    fun reset(node: Int) {
+        root[node] = node
+        rank[node] = 1
+    }
 }
