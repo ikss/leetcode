@@ -12,7 +12,7 @@ import data_structures.TreeNode
  *
  * Return the number of minutes needed for the entire tree to be infected.
  *
- *  [URL](https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/)
+ * [URL](https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/)
  */
 object AmountOfTimeForBinaryTreeToBeInfected {
     private var maxDistance = 0

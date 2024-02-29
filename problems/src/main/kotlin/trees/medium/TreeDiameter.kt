@@ -9,7 +9,7 @@ package trees.medium
  *
  * Return the diameter of the tree.
  *
- *  [URL](https://leetcode.com/problems/tree-diameter/)
+ * [URL](https://leetcode.com/problems/tree-diameter/)
  */
 object TreeDiameter {
     private var result = 0
