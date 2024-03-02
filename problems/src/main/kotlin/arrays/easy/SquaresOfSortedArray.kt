@@ -1,12 +1,10 @@
 package arrays.easy
 
 /**
- * Given a sorted array of distinct integers and a target value, return the index if the target is found.
- * If not, return the index where it would be if it were inserted in order.
+ * Given an integer array nums sorted in non-decreasing order,
+ * return an array of the squares of each number sorted in non-decreasing order.
  *
- * You must write an algorithm with O(log n) runtime complexity.
- *
- * [URL](https://leetcode.com/problems/search-insert-position/)
+ * [URL](https://leetcode.com/problems/squares-of-a-sorted-array/)
  */
 object SquaresOfSortedArray {
     fun sortedSquares(nums: IntArray): IntArray {
@@ -14,10 +12,10 @@ object SquaresOfSortedArray {
         var hi = nums.size - 1
         val result = IntArray(nums.size)
         for (i in nums.size - 1 downTo 0) {
-            if (Math.abs(nums[lo]) >= Math.abs(nums[hi])) {
-                result[i] = nums[lo] * nums[lo++]
+            result[i] = if (Math.abs(nums[lo]) >= Math.abs(nums[hi])) {
+                nums[lo] * nums[lo++]
             } else {
-                result[i] = nums[hi] * nums[hi--]
+                nums[hi] * nums[hi--]
             }
         }
         return result
