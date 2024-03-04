@@ -22,22 +22,22 @@ import java.util.*
 object BagOfTokens {
     fun bagOfTokensScore(tokens: IntArray, power: Int): Int {
         tokens.sort()
-        var power = power
-        var lo = 0
-        var hi = tokens.size - 1
-        var score = 0
+        var start = 0
+        var end = tokens.size - 1
+
         var result = 0
-        while (lo <= hi && (power >= tokens[lo] || score > 0)) {
-            while (lo <= hi && power >= tokens[lo]) {
-                power -= tokens[lo++]
-                score++
+        var power = power
+
+        while (start <= end && power >= tokens[start]) {
+            power -= tokens[start++]
+            result++
+            if (start < end && power < tokens[start]) {
+                power += tokens[end--]
+                result--
             }
-            result = maxOf(result, score)
-            if (lo <= hi && score > 0) {
-                power += tokens[hi--]
-                score--
-            }
+
         }
+
         return result
     }
 
