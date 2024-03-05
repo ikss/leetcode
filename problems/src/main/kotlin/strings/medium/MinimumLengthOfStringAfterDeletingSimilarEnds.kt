@@ -17,9 +17,7 @@ object MinimumLengthOfStringAfterDeletingSimilarEnds {
         var start = 0
         var end = s.length - 1
 
-        while (true) {
-            if (start >= end || s[start] != s[end]) break
-
+        while (start < end && s[start] == s[end]) {
             val c = s[start]
 
             while (start <= end && s[start] == c) {
