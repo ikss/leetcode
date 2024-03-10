@@ -19,10 +19,10 @@ class FindFirstPalindromicStringInTheArrayTest {
 
         assertEquals(expected, FindFirstPalindromicStringInTheArray.firstPalindrome(words))
     }
-    
+
     @Test
     fun test3() {
-        val words = arrayOf("def","ghi")
+        val words = arrayOf("def", "ghi")
         val expected = ""
 
         assertEquals(expected, FindFirstPalindromicStringInTheArray.firstPalindrome(words))

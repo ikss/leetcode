@@ -58,7 +58,7 @@ object ShortestBridge {
                     val newx = difx + i
                     val newy = dify + j
 
-                    if (newx in 0..<m && newy in 0 ..<n && grid[newx][newy] != 2) {
+                    if (newx in 0..<m && newy in 0..<n && grid[newx][newy] != 2) {
                         firstLand.add(newx to newy)
                     }
                 }

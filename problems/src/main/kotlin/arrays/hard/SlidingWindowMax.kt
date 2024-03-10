@@ -34,7 +34,7 @@ object SlidingWindowMax {
     fun maxSlidingWindowIndexDeque(nums: IntArray, k: Int): IntArray {
         val result = IntArray(nums.size - k + 1)
         val dq = ArrayDeque<Int>()
-        
+
         for (i in 0 until k) {
             while (!dq.isEmpty() && nums[i] >= nums[dq.peekLast()]) {
                 dq.pollLast()
@@ -42,7 +42,7 @@ object SlidingWindowMax {
             dq.offerLast(i)
         }
         result[0] = nums[dq.peekFirst()]
-        
+
         for (i in k until nums.size) {
             if (dq.peekFirst() == i - k) {
                 dq.pollFirst()

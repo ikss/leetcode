@@ -34,7 +34,7 @@ object DuplicateZeros {
 
         // Start backwards from the last element which would be part of new array.
         val last = length_ - possibleDups
-        
+
         // Copy zero twice, and non zero once.
         for (i in last downTo 0) {
             arr[i + possibleDups] = arr[i]

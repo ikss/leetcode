@@ -22,7 +22,7 @@ package arrays.hard
 object FindInMountainArray {
     class MountainArray(val arr: IntArray) {
         private var callCount = 0
-        
+
         fun get(index: Int): Int {
             if (callCount++ > 100) {
                 throw RuntimeException("Too many calls")

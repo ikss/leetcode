@@ -27,7 +27,7 @@ object MergeIntervals {
 
     fun mergeLinkedList(intervals: Array<IntArray>): Array<IntArray> {
         intervals.sortBy { it[0] }
-        
+
         val merged = LinkedList<IntArray>()
         for (interval in intervals) {
             // if the list of merged intervals is empty or if the current

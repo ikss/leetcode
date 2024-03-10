@@ -11,7 +11,7 @@ class MaximumProductDifferenceBetweenTwoPairsTest {
 
         assertEquals(expected, MaximumProductDifferenceBetweenTwoPairs.maxProductDifference(nums))
     }
-    
+
     @Test
     fun test2() {
         val nums = intArrayOf(4, 2, 5, 9, 7, 4, 8)

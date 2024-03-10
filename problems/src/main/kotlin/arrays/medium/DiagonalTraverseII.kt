@@ -9,7 +9,7 @@ object DiagonalTraverseII {
     fun findDiagonalOrder(nums: List<List<Int>>): IntArray {
         val queue = java.util.ArrayDeque<Pair<Int, Int>>()
         queue.offer(0 to 0)
-        
+
         val result = ArrayList<Int>()
         while (queue.isNotEmpty()) {
             val (row, col) = queue.poll()

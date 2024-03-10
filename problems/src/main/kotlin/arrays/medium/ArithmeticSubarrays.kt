@@ -39,7 +39,7 @@ object ArithmeticSubarrays {
         var min = Int.MAX_VALUE
         var max = Int.MIN_VALUE
         val unique = HashSet<Int>()
-        
+
         for (num in arr) {
             min = minOf(min, num)
             max = maxOf(max, num)

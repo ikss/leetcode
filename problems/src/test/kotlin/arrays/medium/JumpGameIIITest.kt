@@ -30,7 +30,7 @@ class JumpGameIIITest {
 
         assertEquals(expected, JumpGameIII.canReach(arr, start))
     }
-    
+
     @Test
     fun test4() {
         val arr = intArrayOf(0, 1)

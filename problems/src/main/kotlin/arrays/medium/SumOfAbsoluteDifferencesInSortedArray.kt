@@ -19,7 +19,7 @@ object SumOfAbsoluteDifferencesInSortedArray {
         }
 
         val result = IntArray(size)
-        
+
         var rollingSum = 0
         for (i in nums.indices) {
             val n = nums[i]

@@ -16,7 +16,7 @@ object PaintFence {
         var prevprev = k
         var prev = k * k
 
-        for (i in 3 .. n) {
+        for (i in 3..n) {
             val temp = prev
             prev = (k - 1) * (prev + prevprev)
             prevprev = temp

@@ -33,11 +33,12 @@ object TrappingRainWater {
         }
         return result
     }
+
     fun trapTwoPointers(height: IntArray): Int {
         var result = 0
         var start = 0
         var end = height.size - 1
-        
+
         while (start < end) {
             if (height[start] <= height[end]) {
                 val current = height[start]

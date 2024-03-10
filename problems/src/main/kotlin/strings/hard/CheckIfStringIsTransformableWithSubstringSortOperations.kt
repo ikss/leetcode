@@ -21,7 +21,7 @@ object CheckIfStringIsTransformableWithSubstringSortOperations {
         for (i in t.indices) {
             val d = t[i] - '0'
             if (pos[d] >= idx[d].size) return false
-            
+
             for (j in 0 until d) {
                 if (pos[j] < idx[j].size && idx[j][pos[j]] < idx[d][pos[d]]) return false
             }

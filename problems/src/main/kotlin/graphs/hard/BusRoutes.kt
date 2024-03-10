@@ -28,7 +28,7 @@ object BusRoutes {
             }
         }
         val q = java.util.ArrayDeque<Int>()
-        val vis= HashSet<Int> (routes.size)
+        val vis = HashSet<Int>(routes.size)
         // Insert all the routes in the queue that have the source stop.
         for (route in adjList[source]!!) {
             q.add(route)

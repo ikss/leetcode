@@ -20,7 +20,7 @@ object MinimumNumberOfOperationsToMakeArrayContinuous {
 
         val unique = nums.toSet()
         val newNums = unique.toTypedArray().sortedArray()
-        
+
         var j = 0
         for (i in newNums.indices) {
             while (j < newNums.size && newNums[j] < newNums[i] + n) {

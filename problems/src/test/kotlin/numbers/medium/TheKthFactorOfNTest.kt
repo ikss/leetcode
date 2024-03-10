@@ -21,7 +21,7 @@ class TheKthFactorOfNTest {
 
         assertEquals(expected, TheKthFactorOfN.kthFactor(n, k))
     }
-    
+
     @Test
     fun test3() {
         val n = 4

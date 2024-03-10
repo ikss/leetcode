@@ -19,7 +19,7 @@ class MaximumScoreAfterSplittingStringTest {
 
         assertEquals(expected, MaximumScoreAfterSplittingString.maxScore(s))
     }
-    
+
     @Test
     fun test3() {
         val s = "1111"

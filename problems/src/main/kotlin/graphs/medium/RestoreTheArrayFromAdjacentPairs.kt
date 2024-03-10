@@ -41,7 +41,7 @@ object RestoreTheArrayFromAdjacentPairs {
         for (i in 1 until result.size) {
             for (neighbor in graph[curr]!!) {
                 if (neighbor == prev) continue
-                
+
                 result[i] = neighbor
                 prev = curr
                 curr = neighbor

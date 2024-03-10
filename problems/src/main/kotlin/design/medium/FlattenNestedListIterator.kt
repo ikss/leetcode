@@ -52,7 +52,7 @@ object FlattenNestedListIterator {
         fun getList(): List<NestedInteger>? = if (isInteger()) null else list
     }
 
-    class NestedIteratorCopy(nestedList: List<NestedInteger>): Iterator<Int> {
+    class NestedIteratorCopy(nestedList: List<NestedInteger>) : Iterator<Int> {
         private val list = fillList(nestedList)
         private val iterator = list.iterator()
 

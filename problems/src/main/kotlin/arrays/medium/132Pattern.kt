@@ -13,7 +13,7 @@ import kotlin.math.min
 object `132Pattern` {
     fun find132pattern(nums: IntArray): Boolean {
         if (nums.size < 3) return false
-        
+
         val min = IntArray(nums.size)
         min[0] = nums[0]
         for (i in 1 until nums.size) {

@@ -11,7 +11,7 @@ class TreeDiameterTest {
 
         assertEquals(expected, TreeDiameter.treeDiameterDfs(edges))
     }
-    
+
     @Test
     fun test2() {
         val edges = arrayOf(intArrayOf(0, 1), intArrayOf(1, 2), intArrayOf(2, 3), intArrayOf(1, 4), intArrayOf(4, 5))

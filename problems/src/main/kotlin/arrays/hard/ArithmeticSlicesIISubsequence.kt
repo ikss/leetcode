@@ -19,7 +19,7 @@ object ArithmeticSlicesIISubsequence {
     fun numberOfArithmeticSlices(nums: IntArray): Int {
         var ans = 0
         val cnt = Array(nums.size) { HashMap<Int, Int>(it, 1.0F) }
-        
+
         for (i in nums.indices) {
             for (j in 0 until i) {
                 val delta = nums[i].toLong() - nums[j].toLong()

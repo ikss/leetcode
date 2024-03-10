@@ -14,7 +14,7 @@ object ReorganizeStringKApart {
             chars.merge(c, 1, Integer::sum)
         }
         val pairs = chars.entries.sortedByDescending { it.value }
-        
+
         val result = CharArray(s.length)
         var index = 0
         for ((char, count) in pairs) {

@@ -21,6 +21,7 @@ class FindTheDifferenceTest {
 
         assertEquals(expected, FindTheDifference.findTheDifference(s, t))
     }
+
     @Test
     fun test1xor() {
         val s = "abcd"

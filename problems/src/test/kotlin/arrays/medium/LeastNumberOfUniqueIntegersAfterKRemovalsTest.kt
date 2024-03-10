@@ -21,6 +21,7 @@ class LeastNumberOfUniqueIntegersAfterKRemovalsTest {
 
         assertEquals(expected, LeastNumberOfUniqueIntegersAfterKRemovals.findLeastNumOfUniqueIntsSortValues(arr, k))
     }
+
     @Test
     fun test1sortCountSort() {
         val arr = intArrayOf(5, 5, 4)

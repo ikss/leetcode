@@ -1,7 +1,6 @@
 package arrays.medium
 
 import data_structures.TreeNode
-import java.util.*
 
 /**
  * Given a binary tree where node values are digits from 1 to 9. A path in the binary tree is said to be

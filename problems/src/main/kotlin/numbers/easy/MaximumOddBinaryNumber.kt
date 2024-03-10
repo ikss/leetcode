@@ -28,7 +28,7 @@ object MaximumOddBinaryNumber {
             result.append('0')
         }
         result.append('1')
-        
+
         return result.toString()
     }
 }

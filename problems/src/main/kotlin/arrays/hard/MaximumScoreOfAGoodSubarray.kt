@@ -17,7 +17,7 @@ object MaximumScoreOfAGoodSubarray {
         var right = k
         var result = nums[k]
         var currMin = nums[k]
-        
+
         while (left > 0 || right < n - 1) {
             val goRight = (if (left > 0) nums[left - 1] else 0) < (if (right < n - 1) nums[right + 1] else 0)
             if (goRight) {

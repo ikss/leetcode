@@ -12,7 +12,7 @@ class DiameterOfBinaryTreeTest {
 
         assertEquals(expected, DiameterOfBinaryTree.diameterOfBinaryTree(root))
     }
-    
+
     @Test
     fun test2() {
         val root = TreeBuilder.build(1, 2)

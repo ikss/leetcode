@@ -46,10 +46,10 @@ object SoupServings {
         }
         val result = (
                 calculateDp(i - 4, j, dp) +
-                calculateDp(i - 3, j - 1, dp) +
-                calculateDp(i - 2, j - 2, dp) +
-                calculateDp(i - 1, j - 3, dp)
-        ) / 4.0
+                        calculateDp(i - 3, j - 1, dp) +
+                        calculateDp(i - 2, j - 2, dp) +
+                        calculateDp(i - 1, j - 3, dp)
+                ) / 4.0
         dp.computeIfAbsent(i) { HashMap() }[j] = result
         return result
     }

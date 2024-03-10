@@ -32,7 +32,7 @@ class ImageSmootherTest {
             intArrayOf(141, 138, 141),
             intArrayOf(137, 141, 137),
         )
-        
+
         assertArrayEquals(expected, ImageSmoother.imageSmoother(matrix))
     }
 }

@@ -38,7 +38,12 @@ object EvaluateDivision {
         return results
     }
 
-    private fun dfs(graph: HashMap<String, HashMap<String, Double>>, start: String, end: String, visited: HashSet<String>): Double {
+    private fun dfs(
+        graph: HashMap<String, HashMap<String, Double>>,
+        start: String,
+        end: String,
+        visited: HashSet<String>,
+    ): Double {
         val neighbours = graph[start]
             ?: return -1.0
         if (neighbours.containsKey(end)) {

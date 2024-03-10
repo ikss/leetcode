@@ -13,7 +13,7 @@ class TextJustificationTest {
             "example  of text",
             "justification.  "
         )
-        
+
         assertEquals(expected, TextJustification.fullJustify(words, maxWidth))
     }
 
@@ -26,7 +26,7 @@ class TextJustificationTest {
             "acknowledgment  ",
             "shall be        "
         )
-        
+
         assertEquals(expected, TextJustification.fullJustify(words, maxWidth))
     }
 
@@ -45,7 +45,7 @@ class TextJustificationTest {
             "everything  else  we",
             "do                  "
         )
-        
+
         assertEquals(expected, TextJustification.fullJustify(words, maxWidth))
     }
 }

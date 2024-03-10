@@ -10,8 +10,8 @@ package strings.medium
  */
 object CheckIfStringCanBreakAnotherString {
     fun checkIfCanBreak(s1: String, s2: String): Boolean {
-        val chars1 =  s1.chars().sorted().toArray()
-        val chars2 =  s2.chars().sorted().toArray()
+        val chars1 = s1.chars().sorted().toArray()
+        val chars2 = s2.chars().sorted().toArray()
 
         var sign = 0
 

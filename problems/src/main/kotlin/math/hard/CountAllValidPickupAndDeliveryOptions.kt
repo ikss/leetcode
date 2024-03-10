@@ -11,7 +11,7 @@ package math.hard
  */
 object CountAllValidPickupAndDeliveryOptions {
     private const val MOD = 1_000_000_007
-    
+
     fun countOrders(n: Int): Int {
         var result = 1L
         for (i in 1..n) {
