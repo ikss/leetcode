@@ -1,6 +1,6 @@
 package strings.hard
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class StampingTheSequenceTest {
@@ -11,7 +11,7 @@ class StampingTheSequenceTest {
         val target = "ababc"
         val expected = intArrayOf(1, 0, 2)
 
-        assertTrue(expected.contentEquals(StampingTheSequence.movesToStamp(stamp, target)))
+        assertArrayEquals(expected, StampingTheSequence.movesToStamp(stamp, target))
     }
 
     @Test
@@ -20,6 +20,6 @@ class StampingTheSequenceTest {
         val target = "aabcaca"
         val expected = intArrayOf(2, 3, 0, 1)
 
-        assertTrue(expected.contentEquals(StampingTheSequence.movesToStamp(stamp, target)))
+        assertArrayEquals(expected, StampingTheSequence.movesToStamp(stamp, target))
     }
 }

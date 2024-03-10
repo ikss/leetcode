@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class RotateArrayTest {
@@ -11,7 +11,7 @@ class RotateArrayTest {
         RotateArray.rotate(nums, k)
         val expected = intArrayOf(5, 6, 7, 1, 2, 3, 4)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 
     @Test
@@ -21,7 +21,7 @@ class RotateArrayTest {
         RotateArray.rotate(nums, k)
         val expected = intArrayOf(3, 99, -1, -100)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 
     @Test
@@ -31,6 +31,6 @@ class RotateArrayTest {
         RotateArray.rotate(nums, k)
         val expected = intArrayOf(-1)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 }

@@ -1,6 +1,6 @@
 package graphs.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class ShortestPathWithAlternatingColorsTest {
@@ -13,7 +13,7 @@ class ShortestPathWithAlternatingColorsTest {
         val expected = intArrayOf(0, 1, -1)
 
         val actual = ShortestPathWithAlternatingColors.shortestAlternatingPaths(n, redEdges, blueEdges)
-        assertTrue(expected.contentEquals(actual))
+        assertArrayEquals(expected, actual)
     }
 
     @Test
@@ -24,6 +24,6 @@ class ShortestPathWithAlternatingColorsTest {
         val expected = intArrayOf(0, 1, -1)
 
         val actual = ShortestPathWithAlternatingColors.shortestAlternatingPaths(n, redEdges, blueEdges)
-        assertTrue(expected.contentEquals(actual))
+        assertArrayEquals(expected, actual)
     }
 }

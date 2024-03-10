@@ -1,6 +1,6 @@
 package trees.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class DailyTemperaturesTest {
@@ -10,7 +10,7 @@ class DailyTemperaturesTest {
         val temperatures = intArrayOf(73, 74, 75, 71, 69, 72, 76, 73)
         val expected = intArrayOf(1, 1, 4, 2, 1, 1, 0, 0)
 
-        assertTrue(expected.contentEquals(DailyTemperatures.dailyTemperaturesTwoCycles(temperatures)))
+        assertArrayEquals(expected, DailyTemperatures.dailyTemperaturesTwoCycles(temperatures))
     }
 
     @Test
@@ -18,7 +18,7 @@ class DailyTemperaturesTest {
         val temperatures = intArrayOf(30, 40, 50, 60)
         val expected = intArrayOf(1, 1, 1, 0)
 
-        assertTrue(expected.contentEquals(DailyTemperatures.dailyTemperaturesTwoCycles(temperatures)))
+        assertArrayEquals(expected, DailyTemperatures.dailyTemperaturesTwoCycles(temperatures))
     }
 
     @Test
@@ -26,7 +26,7 @@ class DailyTemperaturesTest {
         val temperatures = intArrayOf(30, 60, 90)
         val expected = intArrayOf(1, 1, 0)
 
-        assertTrue(expected.contentEquals(DailyTemperatures.dailyTemperaturesTwoCycles(temperatures)))
+        assertArrayEquals(expected, DailyTemperatures.dailyTemperaturesTwoCycles(temperatures))
     }
 
     @Test
@@ -34,7 +34,7 @@ class DailyTemperaturesTest {
         val temperatures = intArrayOf(73, 74, 75, 71, 69, 72, 76, 73)
         val expected = intArrayOf(1, 1, 4, 2, 1, 1, 0, 0)
 
-        assertTrue(expected.contentEquals(DailyTemperatures.dailyTemperaturesMonotonicStack(temperatures)))
+        assertArrayEquals(expected, DailyTemperatures.dailyTemperaturesMonotonicStack(temperatures))
     }
 
     @Test
@@ -42,7 +42,7 @@ class DailyTemperaturesTest {
         val temperatures = intArrayOf(30, 40, 50, 60)
         val expected = intArrayOf(1, 1, 1, 0)
 
-        assertTrue(expected.contentEquals(DailyTemperatures.dailyTemperaturesMonotonicStack(temperatures)))
+        assertArrayEquals(expected, DailyTemperatures.dailyTemperaturesMonotonicStack(temperatures))
     }
 
     @Test
@@ -50,6 +50,6 @@ class DailyTemperaturesTest {
         val temperatures = intArrayOf(30, 60, 90)
         val expected = intArrayOf(1, 1, 0)
 
-        assertTrue(expected.contentEquals(DailyTemperatures.dailyTemperaturesMonotonicStack(temperatures)))
+        assertArrayEquals(expected, DailyTemperatures.dailyTemperaturesMonotonicStack(temperatures))
     }
 }

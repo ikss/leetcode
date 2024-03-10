@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class NextPermutationTest {
@@ -11,7 +11,7 @@ class NextPermutationTest {
 
         NextPermutation.nextPermutation(nums)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 
     @Test
@@ -21,7 +21,7 @@ class NextPermutationTest {
 
         NextPermutation.nextPermutation(nums)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 
     @Test
@@ -31,6 +31,6 @@ class NextPermutationTest {
 
         NextPermutation.nextPermutation(nums)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 }

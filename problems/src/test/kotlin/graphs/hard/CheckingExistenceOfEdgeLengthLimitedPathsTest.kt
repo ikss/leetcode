@@ -1,6 +1,6 @@
 package graphs.hard
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class CheckingExistenceOfEdgeLengthLimitedPathsTest {
@@ -13,7 +13,7 @@ class CheckingExistenceOfEdgeLengthLimitedPathsTest {
         val expected = booleanArrayOf(false, true)
 
         val actual = CheckingExistenceOfEdgeLengthLimitedPaths.distanceLimitedPathsExist(n, edgeList, queries)
-        assertTrue(expected.contentEquals(actual))
+        assertArrayEquals(expected, actual)
     }
 
     @Test
@@ -24,6 +24,6 @@ class CheckingExistenceOfEdgeLengthLimitedPathsTest {
         val expected = booleanArrayOf(true, false)
 
         val actual = CheckingExistenceOfEdgeLengthLimitedPaths.distanceLimitedPathsExist(n, edgeList, queries)
-        assertTrue(expected.contentEquals(actual))
+        assertArrayEquals(expected, actual)
     }
 }

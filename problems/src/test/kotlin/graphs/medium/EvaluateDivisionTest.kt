@@ -1,6 +1,6 @@
 package graphs.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class EvaluateDivisionTest {
@@ -12,7 +12,7 @@ class EvaluateDivisionTest {
         val queries = listOf(listOf("a", "c"), listOf("b", "a"), listOf("a", "e"), listOf("a", "a"), listOf("x", "x"))
         val expected = doubleArrayOf(6.00000, 0.50000, -1.00000, 1.00000, -1.00000)
 
-        assertTrue(expected.contentEquals(EvaluateDivision.calcEquation(equations, values, queries)))
+        assertArrayEquals(expected, EvaluateDivision.calcEquation(equations, values, queries))
     }
 
     @Test
@@ -22,7 +22,7 @@ class EvaluateDivisionTest {
         val queries = listOf(listOf("a", "c"), listOf("c", "b"), listOf("bc", "cd"), listOf("cd", "bc"))
         val expected = doubleArrayOf(3.75000, 0.40000, 5.00000, 0.20000)
 
-        assertTrue(expected.contentEquals(EvaluateDivision.calcEquation(equations, values, queries)))
+        assertArrayEquals(expected, EvaluateDivision.calcEquation(equations, values, queries))
     }
 
     @Test
@@ -32,6 +32,6 @@ class EvaluateDivisionTest {
         val queries = listOf(listOf("a", "b"), listOf("b", "a"), listOf("a", "c"), listOf("x", "y"))
         val expected = doubleArrayOf(0.50000, 2.00000, -1.00000, -1.00000)
 
-        assertTrue(expected.contentEquals(EvaluateDivision.calcEquation(equations, values, queries)))
+        assertArrayEquals(expected, EvaluateDivision.calcEquation(equations, values, queries))
     }
 }

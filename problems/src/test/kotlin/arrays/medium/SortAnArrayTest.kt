@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class SortAnArrayTest {
@@ -10,7 +10,7 @@ class SortAnArrayTest {
         val expected = intArrayOf(1, 2, 3, 5)
         SortAnArray.sortArray(nums)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 
     @Test
@@ -19,6 +19,6 @@ class SortAnArrayTest {
         val expected = intArrayOf(0, 0, 1, 1, 2, 5)
         SortAnArray.sortArray(nums)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 }

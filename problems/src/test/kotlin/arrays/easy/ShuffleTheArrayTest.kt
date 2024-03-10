@@ -1,6 +1,6 @@
 package arrays.easy
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class ShuffleTheArrayTest {
@@ -10,7 +10,7 @@ class ShuffleTheArrayTest {
         val n = 3
         val expected = intArrayOf(2, 3, 5, 4, 1, 7)
 
-        assertTrue(expected.contentEquals(ShuffleTheArray.shuffleNaive(nums, n)))
+        assertArrayEquals(expected, ShuffleTheArray.shuffleNaive(nums, n))
     }
 
     @Test
@@ -19,7 +19,7 @@ class ShuffleTheArrayTest {
         val n = 4
         val expected = intArrayOf(1, 4, 2, 3, 3, 2, 4, 1)
 
-        assertTrue(expected.contentEquals(ShuffleTheArray.shuffleNaive(nums, n)))
+        assertArrayEquals(expected, ShuffleTheArray.shuffleNaive(nums, n))
     }
 
     @Test
@@ -28,7 +28,7 @@ class ShuffleTheArrayTest {
         val n = 2
         val expected = intArrayOf(1, 2, 1, 2)
 
-        assertTrue(expected.contentEquals(ShuffleTheArray.shuffleNaive(nums, n)))
+        assertArrayEquals(expected, ShuffleTheArray.shuffleNaive(nums, n))
     }
 
     @Test
@@ -37,7 +37,7 @@ class ShuffleTheArrayTest {
         val n = 3
         val expected = intArrayOf(2, 3, 5, 4, 1, 7)
 
-        assertTrue(expected.contentEquals(ShuffleTheArray.shuffleWithBits(nums, n)))
+        assertArrayEquals(expected, ShuffleTheArray.shuffleWithBits(nums, n))
     }
 
     @Test
@@ -46,7 +46,7 @@ class ShuffleTheArrayTest {
         val n = 4
         val expected = intArrayOf(1, 4, 2, 3, 3, 2, 4, 1)
 
-        assertTrue(expected.contentEquals(ShuffleTheArray.shuffleWithBits(nums, n)))
+        assertArrayEquals(expected, ShuffleTheArray.shuffleWithBits(nums, n))
     }
 
     @Test
@@ -55,6 +55,6 @@ class ShuffleTheArrayTest {
         val n = 2
         val expected = intArrayOf(1, 2, 1, 2)
 
-        assertTrue(expected.contentEquals(ShuffleTheArray.shuffleWithBits(nums, n)))
+        assertArrayEquals(expected, ShuffleTheArray.shuffleWithBits(nums, n))
     }
 }

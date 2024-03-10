@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class FindFirstAndLastPositionInSortedArrayTest {
@@ -10,7 +10,7 @@ class FindFirstAndLastPositionInSortedArrayTest {
         val target = 8
         val expected = intArrayOf(3, 4)
 
-        assertTrue(expected.contentEquals(FindFirstAndLastPositionInSortedArray.searchRangeFullPass(nums, target)))
+        assertArrayEquals(expected, FindFirstAndLastPositionInSortedArray.searchRangeFullPass(nums, target))
     }
 
     @Test
@@ -19,7 +19,7 @@ class FindFirstAndLastPositionInSortedArrayTest {
         val target = 6
         val expected = intArrayOf(-1, -1)
 
-        assertTrue(expected.contentEquals(FindFirstAndLastPositionInSortedArray.searchRangeFullPass(nums, target)))
+        assertArrayEquals(expected, FindFirstAndLastPositionInSortedArray.searchRangeFullPass(nums, target))
     }
 
     @Test
@@ -28,7 +28,7 @@ class FindFirstAndLastPositionInSortedArrayTest {
         val target = 0
         val expected = intArrayOf(-1, -1)
 
-        assertTrue(expected.contentEquals(FindFirstAndLastPositionInSortedArray.searchRangeFullPass(nums, target)))
+        assertArrayEquals(expected, FindFirstAndLastPositionInSortedArray.searchRangeFullPass(nums, target))
     }
 
     @Test
@@ -37,7 +37,7 @@ class FindFirstAndLastPositionInSortedArrayTest {
         val target = 1
         val expected = intArrayOf(0, 0)
 
-        assertTrue(expected.contentEquals(FindFirstAndLastPositionInSortedArray.searchRangeFullPass(nums, target)))
+        assertArrayEquals(expected, FindFirstAndLastPositionInSortedArray.searchRangeFullPass(nums, target))
     }
 
     @Test
@@ -46,7 +46,7 @@ class FindFirstAndLastPositionInSortedArrayTest {
         val target = 8
         val expected = intArrayOf(3, 4)
 
-        assertTrue(expected.contentEquals(FindFirstAndLastPositionInSortedArray.searchRangeBinary(nums, target)))
+        assertArrayEquals(expected, FindFirstAndLastPositionInSortedArray.searchRangeBinary(nums, target))
     }
 
     @Test
@@ -55,7 +55,7 @@ class FindFirstAndLastPositionInSortedArrayTest {
         val target = 6
         val expected = intArrayOf(-1, -1)
 
-        assertTrue(expected.contentEquals(FindFirstAndLastPositionInSortedArray.searchRangeBinary(nums, target)))
+        assertArrayEquals(expected, FindFirstAndLastPositionInSortedArray.searchRangeBinary(nums, target))
     }
 
     @Test
@@ -64,7 +64,7 @@ class FindFirstAndLastPositionInSortedArrayTest {
         val target = 0
         val expected = intArrayOf(-1, -1)
 
-        assertTrue(expected.contentEquals(FindFirstAndLastPositionInSortedArray.searchRangeBinary(nums, target)))
+        assertArrayEquals(expected, FindFirstAndLastPositionInSortedArray.searchRangeBinary(nums, target))
     }
 
     @Test
@@ -73,6 +73,6 @@ class FindFirstAndLastPositionInSortedArrayTest {
         val target = 1
         val expected = intArrayOf(0, 0)
 
-        assertTrue(expected.contentEquals(FindFirstAndLastPositionInSortedArray.searchRangeBinary(nums, target)))
+        assertArrayEquals(expected, FindFirstAndLastPositionInSortedArray.searchRangeBinary(nums, target))
     }
 }

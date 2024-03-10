@@ -1,6 +1,6 @@
 package trees.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class RedundantConnectionTest {
@@ -14,7 +14,7 @@ class RedundantConnectionTest {
         )
         val expected = intArrayOf(2, 3)
 
-        assertTrue(expected.contentEquals(RedundantConnection.findRedundantConnectionDfs(edges)))
+        assertArrayEquals(expected, RedundantConnection.findRedundantConnectionDfs(edges))
     }
 
     @Test
@@ -28,7 +28,7 @@ class RedundantConnectionTest {
         )
         val expected = intArrayOf(1, 4)
 
-        assertTrue(expected.contentEquals(RedundantConnection.findRedundantConnectionDfs(edges)))
+        assertArrayEquals(expected, RedundantConnection.findRedundantConnectionDfs(edges))
     }
 
     @Test
@@ -40,7 +40,7 @@ class RedundantConnectionTest {
         )
         val expected = intArrayOf(2, 3)
 
-        assertTrue(expected.contentEquals(RedundantConnection.findRedundantConnectionDsu(edges)))
+        assertArrayEquals(expected, RedundantConnection.findRedundantConnectionDsu(edges))
     }
 
     @Test
@@ -54,6 +54,6 @@ class RedundantConnectionTest {
         )
         val expected = intArrayOf(1, 4)
 
-        assertTrue(expected.contentEquals(RedundantConnection.findRedundantConnectionDsu(edges)))
+        assertArrayEquals(expected, RedundantConnection.findRedundantConnectionDsu(edges))
     }
 }

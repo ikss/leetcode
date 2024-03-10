@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class TopKFrequentElementsTest {
@@ -10,7 +10,7 @@ class TopKFrequentElementsTest {
         val k = 2
         val expected = intArrayOf(1, 2)
 
-        assertTrue(expected.contentEquals(TopKFrequentElements.topKFrequentGrouping(nums, k)))
+        assertArrayEquals(expected, TopKFrequentElements.topKFrequentGrouping(nums, k))
     }
 
     @Test
@@ -19,7 +19,7 @@ class TopKFrequentElementsTest {
         val k = 1
         val expected = intArrayOf(1)
 
-        assertTrue(expected.contentEquals(TopKFrequentElements.topKFrequentGrouping(nums, k)))
+        assertArrayEquals(expected, TopKFrequentElements.topKFrequentGrouping(nums, k))
     }
 
     @Test
@@ -28,7 +28,7 @@ class TopKFrequentElementsTest {
         val k = 2
         val expected = intArrayOf(1, 2)
 
-        assertTrue(expected.contentEquals(TopKFrequentElements.topKFrequentPriorityQueue(nums, k)))
+        assertArrayEquals(expected, TopKFrequentElements.topKFrequentPriorityQueue(nums, k))
     }
 
     @Test
@@ -37,6 +37,6 @@ class TopKFrequentElementsTest {
         val k = 1
         val expected = intArrayOf(1)
 
-        assertTrue(expected.contentEquals(TopKFrequentElements.topKFrequentPriorityQueue(nums, k)))
+        assertArrayEquals(expected, TopKFrequentElements.topKFrequentPriorityQueue(nums, k))
     }
 }

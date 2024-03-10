@@ -1,5 +1,6 @@
 package arrays.easy
 
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
@@ -10,7 +11,7 @@ class LongestSubsequenceWithLimitedSumTest {
         val queries = intArrayOf(3, 10, 21)
         val expected = intArrayOf(2, 3, 4)
 
-        assertTrue(expected.contentEquals(LongestSubsequenceWithLimitedSum.answerQueries(nums, queries)))
+        assertArrayEquals(expected, LongestSubsequenceWithLimitedSum.answerQueries(nums, queries))
     }
 
     @Test
@@ -19,6 +20,6 @@ class LongestSubsequenceWithLimitedSumTest {
         val queries = intArrayOf(1)
         val expected = intArrayOf(0)
 
-        assertTrue(expected.contentEquals(LongestSubsequenceWithLimitedSum.answerQueries(nums, queries)))
+        assertArrayEquals(expected, LongestSubsequenceWithLimitedSum.answerQueries(nums, queries))
     }
 }

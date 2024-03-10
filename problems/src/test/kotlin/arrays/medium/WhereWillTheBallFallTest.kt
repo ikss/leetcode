@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class WhereWillTheBallFallTest {
@@ -15,7 +15,7 @@ class WhereWillTheBallFallTest {
         )
         val expected = intArrayOf(1, -1, -1, -1, -1)
 
-        assertTrue(expected.contentEquals(WhereWillTheBallFall.findBall(board)))
+        assertArrayEquals(expected, WhereWillTheBallFall.findBall(board))
     }
 
     @Test
@@ -25,7 +25,7 @@ class WhereWillTheBallFallTest {
         )
         val expected = intArrayOf(-1)
 
-        assertTrue(expected.contentEquals(WhereWillTheBallFall.findBall(board)))
+        assertArrayEquals(expected, WhereWillTheBallFall.findBall(board))
     }
 
     @Test
@@ -38,6 +38,6 @@ class WhereWillTheBallFallTest {
         )
         val expected = intArrayOf(0, 1, 2, 3, 4, -1)
 
-        assertTrue(expected.contentEquals(WhereWillTheBallFall.findBall(board)))
+        assertArrayEquals(expected, WhereWillTheBallFall.findBall(board))
     }
 }

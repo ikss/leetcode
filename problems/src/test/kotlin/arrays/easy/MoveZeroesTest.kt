@@ -1,6 +1,6 @@
 package arrays.easy
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class MoveZeroesTest {
@@ -10,7 +10,7 @@ class MoveZeroesTest {
         MoveZeroes.moveZeroes(nums)
         val expected = intArrayOf(1, 3, 12, 0, 0)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 
     @Test
@@ -19,7 +19,7 @@ class MoveZeroesTest {
         MoveZeroes.moveZeroes(nums)
         val expected = intArrayOf(1, 2, 3, 4)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 
     @Test
@@ -28,6 +28,6 @@ class MoveZeroesTest {
         MoveZeroes.moveZeroes(nums)
         val expected = intArrayOf(0, 0, 0)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 }

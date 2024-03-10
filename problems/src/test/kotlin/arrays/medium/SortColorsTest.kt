@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class SortColorsTest {
@@ -10,7 +10,7 @@ class SortColorsTest {
         val expected = intArrayOf(0, 0, 1, 1, 2, 2)
         SortColors.sortColors(nums)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 
     @Test
@@ -19,6 +19,6 @@ class SortColorsTest {
         val expected = intArrayOf(0, 1, 2)
         SortColors.sortColors(nums)
 
-        assertTrue(expected.contentEquals(nums))
+        assertArrayEquals(expected, nums)
     }
 }

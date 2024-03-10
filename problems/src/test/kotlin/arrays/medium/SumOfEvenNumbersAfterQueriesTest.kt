@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class SumOfEvenNumbersAfterQueriesTest {
@@ -10,7 +10,7 @@ class SumOfEvenNumbersAfterQueriesTest {
         val queries = arrayOf(intArrayOf(1, 0), intArrayOf(-3, 1), intArrayOf(-4, 0), intArrayOf(2, 3))
         val expected = intArrayOf(8, 6, 2, 4)
 
-        assertTrue(expected.contentEquals(SumOfEvenNumbersAfterQueries.sumEvenAfterQueries(nums, queries)))
+        assertArrayEquals(expected, SumOfEvenNumbersAfterQueries.sumEvenAfterQueries(nums, queries))
     }
 
     @Test
@@ -19,6 +19,6 @@ class SumOfEvenNumbersAfterQueriesTest {
         val queries = arrayOf(intArrayOf(4, 0))
         val expected = intArrayOf(0)
 
-        assertTrue(expected.contentEquals(SumOfEvenNumbersAfterQueries.sumEvenAfterQueries(nums, queries)))
+        assertArrayEquals(expected, SumOfEvenNumbersAfterQueries.sumEvenAfterQueries(nums, queries))
     }
 }

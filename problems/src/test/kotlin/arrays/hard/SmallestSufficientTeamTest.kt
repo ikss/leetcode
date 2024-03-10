@@ -1,5 +1,6 @@
 package arrays.hard
 
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
@@ -10,7 +11,7 @@ class SmallestSufficientTeamTest {
         val people = listOf(listOf("java"), listOf("nodejs"), listOf("nodejs", "reactjs"))
         val expected = intArrayOf(0, 2)
 
-        assertTrue(expected.contentEquals(SmallestSufficientTeam.smallestSufficientTeam(req_skills, people)))
+        assertArrayEquals(expected, SmallestSufficientTeam.smallestSufficientTeam(req_skills, people))
     }
 
     @Test
@@ -26,6 +27,6 @@ class SmallestSufficientTeamTest {
         )
         val expected = intArrayOf(1, 2)
 
-        assertTrue(expected.contentEquals(SmallestSufficientTeam.smallestSufficientTeam(req_skills, people)))
+        assertArrayEquals(expected, SmallestSufficientTeam.smallestSufficientTeam(req_skills, people))
     }
 }

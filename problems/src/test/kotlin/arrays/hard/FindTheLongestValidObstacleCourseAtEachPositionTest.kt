@@ -1,5 +1,6 @@
 package arrays.hard
 
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
@@ -11,7 +12,7 @@ class FindTheLongestValidObstacleCourseAtEachPositionTest {
         val expected = intArrayOf(1, 2, 3, 3)
 
         val actual = FindTheLongestValidObstacleCourseAtEachPosition.longestObstacleCourseAtEachPosition(obstacles)
-        assertTrue(expected.contentEquals(actual))
+        assertArrayEquals(expected, actual)
     }
 
     @Test
@@ -20,7 +21,7 @@ class FindTheLongestValidObstacleCourseAtEachPositionTest {
         val expected = intArrayOf(1, 2, 1)
 
         val actual = FindTheLongestValidObstacleCourseAtEachPosition.longestObstacleCourseAtEachPosition(obstacles)
-        assertTrue(expected.contentEquals(actual))
+        assertArrayEquals(expected, actual)
     }
 
     @Test
@@ -29,6 +30,6 @@ class FindTheLongestValidObstacleCourseAtEachPositionTest {
         val expected = intArrayOf(1, 1, 2, 3, 2, 2)
 
         val actual = FindTheLongestValidObstacleCourseAtEachPosition.longestObstacleCourseAtEachPosition(obstacles)
-        assertTrue(expected.contentEquals(actual))
+        assertArrayEquals(expected, actual)
     }
 }

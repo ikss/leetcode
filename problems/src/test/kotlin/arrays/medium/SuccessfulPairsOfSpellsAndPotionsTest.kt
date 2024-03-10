@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class SuccessfulPairsOfSpellsAndPotionsTest {
@@ -11,7 +11,7 @@ class SuccessfulPairsOfSpellsAndPotionsTest {
         val success = 7L
         val expected = intArrayOf(4, 0, 3)
 
-        assertTrue(expected.contentEquals(SuccessfulPairsOfSpellsAndPotions.successfulPairs(spells, potions, success)))
+        assertArrayEquals(expected, SuccessfulPairsOfSpellsAndPotions.successfulPairs(spells, potions, success))
     }
 
     @Test
@@ -21,7 +21,7 @@ class SuccessfulPairsOfSpellsAndPotionsTest {
         val success = 16L
         val expected = intArrayOf(2, 0, 2)
 
-        assertTrue(expected.contentEquals(SuccessfulPairsOfSpellsAndPotions.successfulPairs(spells, potions, success)))
+        assertArrayEquals(expected, SuccessfulPairsOfSpellsAndPotions.successfulPairs(spells, potions, success))
     }
 
     @Test
@@ -31,6 +31,6 @@ class SuccessfulPairsOfSpellsAndPotionsTest {
         val success = 328L
         val expected = intArrayOf(3, 0, 3)
 
-        assertTrue(expected.contentEquals(SuccessfulPairsOfSpellsAndPotions.successfulPairs(spells, potions, success)))
+        assertArrayEquals(expected, SuccessfulPairsOfSpellsAndPotions.successfulPairs(spells, potions, success))
     }
 }

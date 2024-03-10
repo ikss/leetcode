@@ -1,6 +1,6 @@
 package trees.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class NumberOfNodesInTheSubTreeWithTheSameLabelTest {
@@ -19,7 +19,7 @@ class NumberOfNodesInTheSubTreeWithTheSameLabelTest {
         val labels = "abaedcd"
         val expected = intArrayOf(2, 1, 1, 1, 1, 1, 1)
 
-        assertTrue(expected.contentEquals(NumberOfNodesInTheSubTreeWithTheSameLabel.countSubTrees(n, edges, labels)))
+        assertArrayEquals(expected, NumberOfNodesInTheSubTreeWithTheSameLabel.countSubTrees(n, edges, labels))
     }
 
     @Test
@@ -33,7 +33,7 @@ class NumberOfNodesInTheSubTreeWithTheSameLabelTest {
         val labels = "bbbb"
         val expected = intArrayOf(4, 2, 1, 1)
 
-        assertTrue(expected.contentEquals(NumberOfNodesInTheSubTreeWithTheSameLabel.countSubTrees(n, edges, labels)))
+        assertArrayEquals(expected, NumberOfNodesInTheSubTreeWithTheSameLabel.countSubTrees(n, edges, labels))
     }
 
     @Test
@@ -48,6 +48,6 @@ class NumberOfNodesInTheSubTreeWithTheSameLabelTest {
         val labels = "aabab"
         val expected = intArrayOf(3, 2, 1, 1, 1)
 
-        assertTrue(expected.contentEquals(NumberOfNodesInTheSubTreeWithTheSameLabel.countSubTrees(n, edges, labels)))
+        assertArrayEquals(expected, NumberOfNodesInTheSubTreeWithTheSameLabel.countSubTrees(n, edges, labels))
     }
 }

@@ -1,7 +1,7 @@
 package strings.easy
 
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class ReverseVowelsOfStringTest {
@@ -20,7 +20,7 @@ class ReverseVowelsOfStringTest {
         val expected = "GaLF".toCharArray()
         ReverseString.reverseString(s)
 
-        assertTrue(expected.contentEquals(s))
+        assertArrayEquals(expected, s)
     }
 
     @Test
@@ -29,6 +29,6 @@ class ReverseVowelsOfStringTest {
         val expected = "A".toCharArray()
         ReverseString.reverseString(s)
 
-        assertTrue(expected.contentEquals(s))
+        assertArrayEquals(expected, s)
     }
 }

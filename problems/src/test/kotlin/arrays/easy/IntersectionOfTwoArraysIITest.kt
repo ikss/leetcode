@@ -1,6 +1,6 @@
 package arrays.easy
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class IntersectionOfTwoArraysIITest {
@@ -11,7 +11,7 @@ class IntersectionOfTwoArraysIITest {
         val expected = intArrayOf(2, 2)
         val result = IntersectionOfTwoArraysII.intersect(nums1, nums2)
 
-        assertTrue(expected.contentEquals(result))
+        assertArrayEquals(expected, result)
     }
 
     @Test
@@ -21,6 +21,6 @@ class IntersectionOfTwoArraysIITest {
         val expected = intArrayOf(4, 9)
         val result = IntersectionOfTwoArraysII.intersect(nums1, nums2)
 
-        assertTrue(expected.contentEquals(result))
+        assertArrayEquals(expected, result)
     }
 }

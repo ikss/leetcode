@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class `2SumSortedTest` {
@@ -10,7 +10,7 @@ class `2SumSortedTest` {
         val target = 9
         val expected = intArrayOf(1, 2)
 
-        assertTrue(expected.contentEquals(`2SumSorted`.twoSum(nums, target)))
+        assertArrayEquals(expected, `2SumSorted`.twoSum(nums, target))
     }
 
     @Test
@@ -19,7 +19,7 @@ class `2SumSortedTest` {
         val target = 6
         val expected = intArrayOf(1, 3)
 
-        assertTrue(expected.contentEquals(`2SumSorted`.twoSum(nums, target)))
+        assertArrayEquals(expected, `2SumSorted`.twoSum(nums, target))
     }
 
     @Test
@@ -28,6 +28,6 @@ class `2SumSortedTest` {
         val target = -1
         val expected = intArrayOf(1, 2)
 
-        assertTrue(expected.contentEquals(`2SumSorted`.twoSum(nums, target)))
+        assertArrayEquals(expected, `2SumSorted`.twoSum(nums, target))
     }
 }

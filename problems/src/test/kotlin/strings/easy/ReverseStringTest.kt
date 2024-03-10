@@ -1,6 +1,6 @@
 package strings.easy
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class ReverseStringTest {
@@ -11,7 +11,7 @@ class ReverseStringTest {
         val expected = "ASU".toCharArray()
         ReverseString.reverseString(s)
 
-        assertTrue(expected.contentEquals(s))
+        assertArrayEquals(expected, s)
     }
 
     @Test
@@ -20,7 +20,7 @@ class ReverseStringTest {
         val expected = "GaLF".toCharArray()
         ReverseString.reverseString(s)
 
-        assertTrue(expected.contentEquals(s))
+        assertArrayEquals(expected, s)
     }
 
     @Test
@@ -29,7 +29,7 @@ class ReverseStringTest {
         val expected = "A".toCharArray()
         ReverseString.reverseString(s)
 
-        assertTrue(expected.contentEquals(s))
+        assertArrayEquals(expected, s)
     }
 
     @Test
@@ -38,6 +38,6 @@ class ReverseStringTest {
         val expected = "".toCharArray()
         ReverseString.reverseString(s)
 
-        assertTrue(expected.contentEquals(s))
+        assertArrayEquals(expected, s)
     }
 }

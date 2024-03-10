@@ -1,6 +1,6 @@
 package strings.medium
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class PlatesBetweenCandlesTest {
@@ -11,7 +11,7 @@ class PlatesBetweenCandlesTest {
         val queries = arrayOf(intArrayOf(2, 5), intArrayOf(5, 9))
         val expected = intArrayOf(2, 3)
 
-        assertTrue(expected.contentEquals(PlatesBetweenCandles.platesBetweenCandles(s, queries)))
+        assertArrayEquals(expected, PlatesBetweenCandles.platesBetweenCandles(s, queries))
     }
 
     @Test
@@ -22,6 +22,6 @@ class PlatesBetweenCandlesTest {
         )
         val expected = intArrayOf(9, 0, 0, 0, 0)
 
-        assertTrue(expected.contentEquals(PlatesBetweenCandles.platesBetweenCandles(s, queries)))
+        assertArrayEquals(expected, PlatesBetweenCandles.platesBetweenCandles(s, queries))
     }
 }
