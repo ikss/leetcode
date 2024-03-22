@@ -8,23 +8,23 @@ import data_structures.ListNode
  * [URL](https://leetcode.com/problems/palindrome-linked-list/)
  */
 object PalindromeLinkedList {
-    private var cur: ListNode? = null
+    private var forward: ListNode? = null
 
     fun isPalindrome(head: ListNode?): Boolean {
         if (head == null) return false
         if (head.next == null) return true
 
-        cur = head
+        forward = head
         return traverse(head)
     }
 
-    private fun traverse(head: ListNode): Boolean {
-        val next = head.next
-            ?: return cur!!.`val` == head.`val`
-        if (!traverse(next)) {
+    private fun traverse(curr: ListNode?): Boolean {
+        if (curr == null) return true
+        val next = curr.next
+        if (!traverse(next) || curr.`val` != forward!!.`val`) {
             return false
         }
-        cur = cur!!.next
-        return head.`val` == cur!!.`val`
+        forward = forward!!.next
+        return true
     }
 }
