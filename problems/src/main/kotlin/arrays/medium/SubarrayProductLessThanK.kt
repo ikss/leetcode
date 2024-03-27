@@ -7,7 +7,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/subarray-product-less-than-k/)
  */
 object SubarrayProductLessThanK {
-    fun numSubarrayProductLessThanK(nums: IntArray, k: Int): Int {
+    fun numSubarrayProductLessThanKBruteForce(nums: IntArray, k: Int): Int {
         var result = 0
         for (i in nums.indices) {
             result += recursive(nums, k, i, nums[i])
@@ -27,4 +27,25 @@ object SubarrayProductLessThanK {
         return result
     }
 
+    fun numSubarrayProductLessThanKSlidingWindow(nums: IntArray, k: Int): Int {
+        if (k <= 1) return 0
+
+        var result = 0
+        var product = 1
+
+        var left = 0
+        var right = 0
+        while (right < nums.size) {
+            product *= nums[right]
+
+            while (product >= k) {
+                product /= nums[left++]
+            }
+
+            result += right - left + 1
+            right++
+        }
+
+        return result
+    }
 }
