@@ -21,8 +21,7 @@ object WordSearch {
 
     private fun dfs(i: Int, j: Int, index: Int, word: String, board: Array<CharArray>): Boolean {
         if (index == word.length) return true
-        if (i < 0 || i >= board.size || j < 0 || j >= board[0].size) return false
-        if (board[i][j] != word[index]) return false
+        if (i !in board.indices || j !in board[0].indices || board[i][j] != word[index]) return false
 
         board[i][j] = '-'
         val newIndex = index + 1
@@ -32,8 +31,9 @@ object WordSearch {
             dfs(i + 1, j, newIndex, word, board) ||
             dfs(i, j + 1, newIndex, word, board)
         ) return true
-        board[i][j] = word[index]
-        return false
 
+        board[i][j] = word[index]
+        
+        return false
     }
 }
