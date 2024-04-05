@@ -52,4 +52,17 @@ object MakeTheStringGreat {
 
         return s.toString()
     }
+
+    fun makeGoodBuilder(s: String): String {
+        val sb = StringBuilder()
+        for (c in s) {
+            if (sb.isEmpty() || Math.abs(sb.last() - c) != 32) {
+                sb.append(c)
+            } else {
+                sb.setLength(sb.length - 1)
+            }
+        }
+
+        return sb.toString()
+    }
 }

@@ -67,4 +67,36 @@ class MakeTheStringGreatTest {
 
         assertEquals(expected, MakeTheStringGreat.makeGoodStack(s))
     }
+
+    @Test
+    fun test1builder() {
+        val s = "leEeetcode"
+        val expected = "leetcode"
+
+        assertEquals(expected, MakeTheStringGreat.makeGoodBuilder(s))
+    }
+
+    @Test
+    fun test2builder() {
+        val s = "s"
+        val expected = "s"
+
+        assertEquals(expected, MakeTheStringGreat.makeGoodBuilder(s))
+    }
+
+    @Test
+    fun test3builder() {
+        val s = ""
+        val expected = ""
+
+        assertEquals(expected, MakeTheStringGreat.makeGoodBuilder(s))
+    }
+
+    @Test
+    fun test4builder() {
+        val s = "abBAcC"
+        val expected = ""
+
+        assertEquals(expected, MakeTheStringGreat.makeGoodBuilder(s))
+    }
 }
