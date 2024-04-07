@@ -14,7 +14,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/valid-parenthesis-string/)
  */
 object ValidParenthesisString {
-    fun checkValidString(s: String): Boolean {
+    fun checkValidStringTwoStacks(s: String): Boolean {
         val openBrackets = Stack<Int>()
         val asterisks = Stack<Int>()
 
@@ -46,5 +46,31 @@ object ValidParenthesisString {
         }
 
         return openBrackets.isEmpty()
+    }
+
+    fun checkValidStringTwoPointers(s: String): Boolean {
+        var openCount = 0
+        var closeCount = 0
+        val length = s.length - 1
+
+        for (i in 0..length) {
+            if (s[i] == ')') {
+                openCount--
+            } else {
+                openCount++
+            }
+
+            if (s[length - i] == '(') {
+                closeCount--
+            } else {
+                closeCount++
+            }
+
+            if (openCount < 0 || closeCount < 0) {
+                return false
+            }
+        }
+
+        return true
     }
 }
