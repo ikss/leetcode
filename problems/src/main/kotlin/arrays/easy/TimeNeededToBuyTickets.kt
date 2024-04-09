@@ -16,7 +16,7 @@ package arrays.easy
  * [URL](https://leetcode.com/problems/time-needed-to-buy-tickets/)
  */
 object TimeNeededToBuyTickets {
-    fun timeRequiredToBuy(tickets: IntArray, k: Int): Int {
+    fun timeRequiredToBuySimulation(tickets: IntArray, k: Int): Int {
         var needed = tickets[k]
         var result = 0
 
@@ -27,6 +27,19 @@ object TimeNeededToBuyTickets {
                     tickets[i]--
                 }
                 if (i == k && --needed == 0) break
+            }
+        }
+        return result
+    }
+
+    fun timeRequiredToBuySinglePass(tickets: IntArray, k: Int): Int {
+        var result = 0
+
+        for (i in tickets.indices) {
+            if (i <= k) {
+                result += minOf(tickets[i], tickets[k])
+            } else {
+                result += minOf(tickets[i], tickets[k] - 1)
             }
         }
         return result
