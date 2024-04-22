@@ -21,26 +21,26 @@ import java.util.*
 object OpenTheLock {
     fun openLock(deadends: Array<String>, target: String): Int {
         val deads = deadends.toSet()
+        var result = 0
 
-        val queue = PriorityQueue<Pair<Int, String>> { e1, e2 -> e1.first.compareTo(e2.first) }
+        val queue = ArrayDeque<String>()
         val visited = HashSet<String>()
-        queue.offer(0 to "0000")
+        queue.offer("0000")
 
         while (queue.isNotEmpty()) {
-            val (steps, s) = queue.poll()
-            if (s == target) return steps
-            if (s in deads || s in visited) continue
+            val size = queue.size
+            for (rep in 0 until size) {
+                val s = queue.poll()
+                if (s == target) return result
+                if (s in deads || !visited.add(s)) continue
 
-            for (i in s.indices) {
-                val next = buildString(s, s[i] - '0' + 1, i)
-                if (next !in deads && next !in visited) {
-                    queue.offer(steps + 1 to next)
-                }
-                val prev = buildString(s, s[i] - '0' - 1, i)
-                if (prev !in deads && prev !in visited) {
-                    queue.offer(steps + 1 to prev)
+                for (i in s.indices) {
+                    val c = s[i] - '0'
+                    queue.offer(buildString(s, c + 1, i))
+                    queue.offer(buildString(s, c - 1, i))
                 }
             }
+            result++
         }
         return -1
     }
