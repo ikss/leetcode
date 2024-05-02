@@ -21,4 +21,25 @@ object LargestPositiveIntegerThatExistsWithItsNegative {
 
         return found
     }
+
+    fun findMaxKTwoPointers(nums: IntArray): Int {
+        nums.sort()
+        var left = 0
+        var right = nums.size - 1
+        
+        while (left < right) {
+            if (nums[left] > 0 || nums[right] < 0) {
+                break
+            }
+            val sum = nums[left] + nums[right]
+            if (sum == 0) {
+                return nums[right]
+            } else if (sum < 0) {
+                left++
+            } else {
+                right--
+            }
+        }
+        return -1
+    }
 }
