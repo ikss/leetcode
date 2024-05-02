@@ -7,7 +7,7 @@ class NumberOfWonderfulSubstringsTest {
     @Test
     fun test1() {
         val s = "aba"
-        val expected = 4
+        val expected = 4L
 
         assertEquals(expected, NumberOfWonderfulSubstrings.wonderfulSubstrings(s))
     }
@@ -15,7 +15,7 @@ class NumberOfWonderfulSubstringsTest {
     @Test
     fun test2() {
         val s = "aabb"
-        val expected = 9
+        val expected = 9L
 
         assertEquals(expected, NumberOfWonderfulSubstrings.wonderfulSubstrings(s))
     }
@@ -23,7 +23,7 @@ class NumberOfWonderfulSubstringsTest {
     @Test
     fun test3() {
         val s = "he"
-        val expected = 2
+        val expected = 2L
 
         assertEquals(expected, NumberOfWonderfulSubstrings.wonderfulSubstrings(s))
     }
