@@ -19,13 +19,13 @@ package strings.hard
  * which also counts as one step. After the pressing, you could begin to spell the next character in the key
  * (next stage). Otherwise, you have finished all the spelling.
  *
- * [URL](https://leetcode.com/problems/freedom-trail/description/)
+ * [URL](https://leetcode.com/problems/freedom-trail/)
  */
 object FreedomTrail {
     fun findRotateStepsTopDownDp(ring: String, key: String): Int {
         val result = key.length
 
-        return result + rotate(0, 0, ring, key, HashMap<Pair<Int, Int>, Int>())
+        return result + rotate(0, 0, ring, key, HashMap())
     }
 
     private fun rotate(currChar: Int, currI: Int, ring: String, key: String, memo: HashMap<Pair<Int, Int>, Int>): Int {
@@ -33,7 +33,7 @@ object FreedomTrail {
 
         memo[currChar to currI]?.let { return(it) }
 
-        var result = if (ring[currI] == key[currChar]) {
+        val result = if (ring[currI] == key[currChar]) {
             rotate(currChar + 1, currI, ring, key, memo)
         } else {
             val left = findLeft(currI, ring, key[currChar])
