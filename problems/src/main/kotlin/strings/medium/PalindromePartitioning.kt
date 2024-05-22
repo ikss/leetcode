@@ -19,22 +19,20 @@ object PalindromePartitioning {
             return
         }
         for (i in start + 1..s.length) {
+            if (!isPalindrome(s, start, i)) continue
             val str = s.substring(start, i)
-            if (isPalindrome(str)) {
-                curr.add(str)
-                traverse(i, s, curr, result)
-                curr.removeAt(curr.size - 1)
-            }
+            curr.add(str)
+            traverse(i, s, curr, result)
+            curr.removeAt(curr.size - 1)
         }
     }
 
-    private fun isPalindrome(s: String): Boolean {
-        for (i in 0 until s.length / 2) {
-            if (s[i] != s[s.length - i - 1]) {
-                return false
-            }
+    fun isPalindrome(s: String, start: Int, end: Int): Boolean {
+        var start = start
+        var end = end - 1
+        while (start < end) {
+            if (s[start++] != s[end--]) return false
         }
-
         return true
     }
 }
