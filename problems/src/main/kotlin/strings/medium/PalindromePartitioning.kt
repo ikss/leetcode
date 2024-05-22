@@ -8,12 +8,12 @@ package strings.medium
  */
 object PalindromePartitioning {
     fun partition(s: String): List<List<String>> {
-        val result = mutableListOf<MutableList<String>>()
-        traverse(0, s, mutableListOf(), result)
+        val result = ArrayList<List<String>>()
+        traverse(0, s, ArrayList(), result)
         return result
     }
 
-    private fun traverse(start: Int, s: String, curr: MutableList<String>, result: MutableList<MutableList<String>>) {
+    private fun traverse(start: Int, s: String, curr: ArrayList<String>, result: ArrayList<List<String>>) {
         if (start == s.length) {
             result.add(ArrayList(curr))
             return
