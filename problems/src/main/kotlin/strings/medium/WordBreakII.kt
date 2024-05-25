@@ -9,19 +9,25 @@ package strings.medium
  * [URL](https://leetcode.com/problems/word-break-ii/)
  */
 object WordBreakII {
-    fun wordBreak(s: String, wordDict: List<String>): List<String> {
+    fun wordBreakBacktrack(s: String, wordDict: List<String>): List<String> {
         val result = ArrayList<String>()
         backtrack(s, wordDict.toSet(), 0, ArrayList(), result)
         return result
     }
 
-    private fun backtrack(s: String, wordDict: Set<String>, curr: Int, currList: ArrayList<String>, result: ArrayList<String>) {
+    private fun backtrack(
+        s: String,
+        wordDict: Set<String>,
+        curr: Int,
+        currList: ArrayList<String>,
+        result: ArrayList<String>,
+    ) {
         if (curr == s.length) {
             result.add(currList.joinToString(" "))
             return
         }
 
-        for (i in curr + 1 .. s.length) {
+        for (i in curr + 1..s.length) {
             val str = s.substring(curr, i)
             if (str !in wordDict) continue
 
@@ -30,8 +36,24 @@ object WordBreakII {
             currList.removeLast()
         }
     }
-}
 
-fun main() {
-    println(WordBreakII.wordBreak("catsanddog", listOf("cat", "cats", "and", "sand", "dog"))) // [cats and dog, cat sand dog]
+    fun wordBreakDp(s: String, wordDict: List<String>): List<String> {
+        val dp = Array<ArrayList<String>>(s.length + 1) { ArrayList() }
+        dp[0] = arrayListOf("")
+        for (i in s.indices) {
+            for (word in wordDict) {
+                if (i < word.length - 1) {
+                    continue
+                }
+                if (dp[i - word.length + 1].isEmpty() && i - word.length > 0) continue
+
+                if (s.substring(i - word.length + 1, i + 1) == word) {
+                    val prev = dp[i - word.length + 1]
+                    val list = prev.map { if (it.isEmpty()) word else "$it $word" }
+                    dp[i + 1].addAll(list)
+                }
+            }
+        }
+        return dp[s.length]
+    }
 }
