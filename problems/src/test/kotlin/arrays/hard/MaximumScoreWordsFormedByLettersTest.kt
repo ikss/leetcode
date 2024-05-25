@@ -18,8 +18,8 @@ class MaximumScoreWordsFormedByLettersTest {
     fun test2() {
         val words = arrayOf("xxxz", "ax", "bx", "cx")
         val letters = charArrayOf('z', 'a', 'b', 'c', 'x', 'x', 'x')
-        val score = intArrayOf(4, 11, 12, 13, 18, 18, 18, 18)
-        val expected = 40
+        val score = intArrayOf(4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 10)
+        val expected = 27
 
         assertEquals(expected, MaximumScoreWordsFormedByLetters.maxScoreWords(words, letters, score))
     }
