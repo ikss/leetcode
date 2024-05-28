@@ -12,7 +12,7 @@ package arrays.easy
  * [URL](https://leetcode.com/problems/special-array-with-x-elements-greater-than-or-equal-x/)
  */
 object SpecialArrayWithXElementsGreaterThanOrEqualX {
-    fun specialArray(nums: IntArray): Int {
+    fun specialArrayFreq(nums: IntArray): Int {
         val n = nums.size
         val freq = IntArray(n + 1)
 
@@ -30,6 +30,18 @@ object SpecialArrayWithXElementsGreaterThanOrEqualX {
             }
         }
 
+        return -1
+    }
+
+    fun specialArraySimplified(nums: IntArray): Int {
+        val n = nums.size
+        nums.sort()
+        for (x in 1..n) {
+            if (nums[n - x] < x) continue
+            if (n == x || nums[n - x - 1] < x) {
+                return x
+            }
+        }
         return -1
     }
 }
