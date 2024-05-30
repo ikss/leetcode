@@ -39,7 +39,7 @@ class FindTheKthLuckyNumberTest {
     @Test
     fun test2bitManipulation() {
         val k = 10
-        val expected = "100"
+        val expected = "477"
 
         assertEquals(expected, FindTheKthLuckyNumber.kthLuckyNumberBitManipulation(k))
     }
