@@ -15,7 +15,7 @@ class FindTheKthLuckyNumberTest {
     @Test
     fun test2generate() {
         val k = 10
-        val expected = "100"
+        val expected = "477"
 
         assertEquals(expected, FindTheKthLuckyNumber.kthLuckyNumberGenerate(k))
     }
