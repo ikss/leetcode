@@ -1,7 +1,6 @@
-package arrays.hard
+package arrays.medium
 
 import java.util.*
-
 
 /**
  * Given an array of meeting time intervals intervals where `intervals[i] = [starti, endi]`,

@@ -1,4 +1,4 @@
-package arrays.hard
+package arrays.medium
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
