@@ -7,16 +7,16 @@ class FlipGameTest {
     @Test
     fun test1() {
         val input = "++++"
-        val output = listOf("--++", "+--+", "++--")
+        val expected = listOf("--++", "+--+", "++--")
 
-        assertEquals(output, FlipGame.generatePossibleNextMoves(input))
+        assertEquals(expected, FlipGame.generatePossibleNextMoves(input))
     }
 
     @Test
     fun test2() {
         val input = "+"
-        val output = emptyList<String>()
+        val expected = emptyList<String>()
 
-        assertEquals(output, FlipGame.generatePossibleNextMoves(input))
+        assertEquals(expected, FlipGame.generatePossibleNextMoves(input))
     }
 }

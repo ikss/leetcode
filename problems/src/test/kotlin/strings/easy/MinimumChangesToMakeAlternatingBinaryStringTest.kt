@@ -7,28 +7,28 @@ class MinimumChangesToMakeAlternatingBinaryStringTest {
     @Test
     fun test1() {
         val s = "0100"
-        val output = 1
-        assertEquals(output, MinimumChangesToMakeAlternatingBinaryString.minOperations(s))
+        val expected = 1
+        assertEquals(expected, MinimumChangesToMakeAlternatingBinaryString.minOperations(s))
     }
 
     @Test
     fun test2() {
         val s = "10"
-        val output = 0
-        assertEquals(output, MinimumChangesToMakeAlternatingBinaryString.minOperations(s))
+        val expected = 0
+        assertEquals(expected, MinimumChangesToMakeAlternatingBinaryString.minOperations(s))
     }
 
     @Test
     fun test3() {
         val s = "1111"
-        val output = 2
-        assertEquals(output, MinimumChangesToMakeAlternatingBinaryString.minOperations(s))
+        val expected = 2
+        assertEquals(expected, MinimumChangesToMakeAlternatingBinaryString.minOperations(s))
     }
 
     @Test
     fun test4() {
         val s = "110010"
-        val output = 2
-        assertEquals(output, MinimumChangesToMakeAlternatingBinaryString.minOperations(s))
+        val expected = 2
+        assertEquals(expected, MinimumChangesToMakeAlternatingBinaryString.minOperations(s))
     }
 }
