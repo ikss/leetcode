@@ -6,7 +6,7 @@
 
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "1.9.23"
+    id("org.jetbrains.kotlin.jvm") version "2.0.0"
 }
 
 allprojects {
@@ -26,7 +26,7 @@ allprojects {
     }
 
     tasks.withType(Test::class).configureEach {
-        maxParallelForks = (Runtime.getRuntime().availableProcessors() / 2).takeIf { it > 0 } ?: 1
+        maxParallelForks = maxOf(Runtime.getRuntime().availableProcessors() / 2, 1)
     }
 
 }
