@@ -15,7 +15,7 @@ package arrays.easy
  * [URL](https://leetcode.com/problems/minimum-number-of-moves-to-seat-everyone/)
  */
 object MinimumNumberOfMovesToSeatEveryone {
-    fun minMovesToSeat(seats: IntArray, students: IntArray): Int {
+    fun minMovesToSeatSort(seats: IntArray, students: IntArray): Int {
         seats.sort()
         students.sort()
 
@@ -25,6 +25,34 @@ object MinimumNumberOfMovesToSeatEveryone {
             result += Math.abs(seats[i] - students[i])
         }
 
+        return result
+    }
+
+    fun minMovesToSeatCountSort(seats: IntArray, students: IntArray): Int {
+        val maxPosition = findMax(seats, students)
+
+        val differences = IntArray(maxPosition)
+
+        for (i in seats.indices) {
+            differences[seats[i] - 1]++
+            differences[students[i] - 1]--
+        }
+
+        var moves = 0
+        var unmatched = 0
+        for (difference in differences) {
+            moves += Math.abs(unmatched)
+            unmatched += difference
+        }
+
+        return moves
+    }
+
+    private fun findMax(seats: IntArray, students: IntArray): Int {
+        var result = 0
+        for (i in seats.indices) {
+            result = maxOf(result, seats[i], students[i])
+        }
         return result
     }
 }
