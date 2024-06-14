@@ -36,7 +36,3 @@ object TheNumberOfBeautifulSubsets {
         return true
     }
 }
-
-fun main() {
-    println(TheNumberOfBeautifulSubsets.beautifulSubsets(intArrayOf(2, 4, 6), 2)) // 4
-}

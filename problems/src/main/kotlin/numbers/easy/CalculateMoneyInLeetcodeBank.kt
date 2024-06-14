@@ -25,7 +25,3 @@ object CalculateMoneyInLeetcodeBank {
         return result
     }
 }
-
-fun main() {
-    println(CalculateMoneyInLeetcodeBank.totalMoney(10))
-}

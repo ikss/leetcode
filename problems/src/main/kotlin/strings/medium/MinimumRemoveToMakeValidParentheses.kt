@@ -41,10 +41,3 @@ object MinimumRemoveToMakeValidParentheses {
         return result.toString()
     }
 }
-
-fun main() {
-    println(MinimumRemoveToMakeValidParentheses.minRemoveToMakeValid("lee(t(c)o)de)")) // leetcode
-    println(MinimumRemoveToMakeValidParentheses.minRemoveToMakeValid("a)b(c)d")) // ab(c)d
-    println(MinimumRemoveToMakeValidParentheses.minRemoveToMakeValid("))((")) // ""
-    println(MinimumRemoveToMakeValidParentheses.minRemoveToMakeValid("(a(b(c)d)")) // a(b(c)d)
-}

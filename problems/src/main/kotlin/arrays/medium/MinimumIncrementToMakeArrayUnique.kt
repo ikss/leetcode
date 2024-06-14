@@ -34,7 +34,3 @@ object MinimumIncrementToMakeArrayUnique {
         return result
     }
 }
-
-fun main() {
-    println(MinimumIncrementToMakeArrayUnique.minIncrementForUnique(intArrayOf(3,2,1,2,1,7)) == 6)
-}

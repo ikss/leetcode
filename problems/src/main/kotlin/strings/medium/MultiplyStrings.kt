@@ -34,7 +34,3 @@ object MultiplyStrings {
         return result.toString()
     }
 }
-
-fun main() {
-    println(MultiplyStrings.multiply("123", "456"))
-}

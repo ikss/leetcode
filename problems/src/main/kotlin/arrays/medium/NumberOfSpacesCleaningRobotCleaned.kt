@@ -44,12 +44,3 @@ object NumberOfSpacesCleaningRobotCleaned {
     }
 
 }
-
-fun main() {
-    val room = arrayOf(
-        intArrayOf(0, 0, 0),
-        intArrayOf(1, 1, 0),
-        intArrayOf(0, 0, 0),
-    )
-    println(NumberOfSpacesCleaningRobotCleaned.numberOfCleanRooms(room))
-}
