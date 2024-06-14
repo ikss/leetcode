@@ -13,7 +13,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/minimum-increment-to-make-array-unique/)
  */
 object MinimumIncrementToMakeArrayUnique {
-    fun minIncrementForUnique(nums: IntArray): Int {
+    fun minIncrementForUniqueTreeMap(nums: IntArray): Int {
         val counts = TreeMap<Int, Int>()
 
         for (n in nums) {
@@ -21,7 +21,7 @@ object MinimumIncrementToMakeArrayUnique {
         }
 
         var result = 0
-        while (counts.isNotEmpty()){
+        while (counts.isNotEmpty()) {
             var (k, v) = counts.firstEntry()
             var move = 1
             while (v-- > 1) {
@@ -29,6 +29,32 @@ object MinimumIncrementToMakeArrayUnique {
                 result += move++
             }
             counts.remove(k)
+        }
+
+        return result
+    }
+
+    fun minIncrementForUniqueCounting(nums: IntArray): Int {
+        var max = 0
+        var result = 0
+
+        for (n in nums) {
+            max = maxOf(max, n)
+        }
+
+        val frequencyCount = IntArray(nums.size + max)
+
+        for (n in nums) {
+            frequencyCount[n]++
+        }
+
+        for (i in frequencyCount.indices) {
+            if (frequencyCount[i] <= 1) continue
+
+            val duplicates = frequencyCount[i] - 1
+            frequencyCount[i + 1] += duplicates
+            frequencyCount[i] = 1
+            result += duplicates
         }
 
         return result
