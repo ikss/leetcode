@@ -17,20 +17,20 @@ import java.util.*
  */
 object MaximumTotalImportanceOfRoads {
     fun maximumImportance(n: Int, roads: Array<IntArray>): Long {
-        val indirection = IntArray(n)
+        val degree = IntArray(n)
 
         for ((s, e) in roads) {
-            indirection[s]++
-            indirection[e]++
+            degree[s]++
+            degree[e]++
         }
-        val map = indirection.withIndex().sortedBy { it.value }
-            .withIndex()
-            .associate { it.value.index to it.index + 1 }
+        degree.sort()
 
         var result = 0L
+        var value = 1L
 
-        for ((s, e) in roads) {
-            result += map[s]!! + map[e]!!
+        for (d in degree) {
+            result += value * d
+            value++
         }
 
         return result
