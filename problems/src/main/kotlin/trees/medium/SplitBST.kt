@@ -12,7 +12,7 @@ import data_structures.TreeNode
  *
  * Return an array of the two roots of the two subtrees in order.
  *
- * [URL](https://leetcode.com/problems/all-possible-full-binary-trees/)
+ * [URL](https://leetcode.com/problems/split-bst/)
  */
 object SplitBST {
 
