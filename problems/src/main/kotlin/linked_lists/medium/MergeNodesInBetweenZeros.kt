@@ -15,23 +15,22 @@ import data_structures.ListNode
  */
 object MergeNodesInBetweenZeros {
     fun mergeNodes(head: ListNode?): ListNode? {
-        if (head?.next == null) return head
-        var head: ListNode = head.next!!
+        if (head == null) return head
 
-        val dummyHead = ListNode(0)
-        var curr = dummyHead
+        var curr = head.next
+        var next = curr
 
-        while (head.next != null) {
-            if (head.`val` == 0) {
-                curr.next = ListNode(0)
-                curr = curr.next!!
-            } else {
-                curr.`val` += head.`val`
+        while (next != null) {
+            var sum = 0
+            while (next!!.`val` != 0) {
+                sum += next.`val`
+                next = next.next
             }
-
-            head = head.next!!
+            curr!!.`val` = sum
+            next = next.next
+            curr.next = next
+            curr = next
         }
-
-        return dummyHead
+        return head.next
     }
 }
