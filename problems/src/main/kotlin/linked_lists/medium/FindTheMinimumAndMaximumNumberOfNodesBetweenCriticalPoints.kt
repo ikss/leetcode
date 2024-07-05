@@ -23,18 +23,17 @@ object FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints {
         val result = intArrayOf(-1, -1)
         if (head?.next?.next == null) return intArrayOf(-1, -1)
 
-        var prev = head!!
+        var prev: ListNode = head
         var curr = head.next!!
-        var next = head.next!!.next
 
         var firstCrit = -1
         var lastCrit = -1
         var prevCrit = -1
         var count = 1
 
-        while (next != null) {
-            if ((prev.`val` > curr.`val` && next.`val` > curr.`val`) ||
-                (prev.`val` < curr.`val` && next.`val` < curr.`val`)) {
+        while (curr.next != null) {
+            if ((prev.`val` > curr.`val` && curr.next!!.`val` > curr.`val`) ||
+                (prev.`val` < curr.`val` && curr.next!!.`val` < curr.`val`)) {
                 if (firstCrit == -1) {
                     firstCrit = count
                 } else {
@@ -49,8 +48,7 @@ object FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints {
             }
             count++
             prev = curr
-            curr = next
-            next = next.next
+            curr = curr.next!!
         }
         return result
     }
