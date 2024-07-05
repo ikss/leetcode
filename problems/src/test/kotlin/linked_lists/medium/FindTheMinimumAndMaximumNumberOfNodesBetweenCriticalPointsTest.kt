@@ -8,7 +8,7 @@ class FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPointsTest {
     @Test
     fun test1() {
         val head = ListBuilder.build(3, 1)
-        val expected = intArrayOf(1, 1)
+        val expected = intArrayOf(-1, -1)
         val actual = FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints.nodesBetweenCriticalPoints(head)
 
         assertArrayEquals(expected, actual)
