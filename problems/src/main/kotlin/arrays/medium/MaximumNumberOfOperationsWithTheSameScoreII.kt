@@ -22,8 +22,8 @@ object MaximumNumberOfOperationsWithTheSameScoreII {
         val cache = Array(size) { IntArray(nums.size) { -1 } }
         return 1 + maxOf(
             traverse(nums, 2, size - 1, nums[0] + nums[1], cache),
-            traverse(nums, 1, size - 2, nums[0] + nums[size - 1], cache.onEach { it.fill(-1) }),
-            traverse(nums, 0, size - 3, nums[size - 1] + nums[size - 2], cache.onEach { it.fill(-1) }),
+            traverse(nums, 1, size - 2, nums[0] + nums[size - 1], cache),
+            traverse(nums, 0, size - 3, nums[size - 1] + nums[size - 2], cache),
         )
     }
 
