@@ -30,4 +30,13 @@ class RegularExpressionMatchingTest {
 
         assertEquals(expected, RegularExpressionMatching.isMatch(s, p))
     }
+
+    @Test
+    fun test4() {
+        val s = "ab"
+        val p = "x*ab"
+        val expected = true
+
+        assertEquals(expected, RegularExpressionMatching.isMatch(s, p))
+    }
 }

@@ -23,7 +23,10 @@ object RegularExpressionMatching {
             val firstMatch = si < s.length && (s[si] == p[pi] || p[pi] == '.')
 
             if (pi + 1 < p.length && p[pi + 1] == '*') {
-                dp(si, pi + 2, s, p, memo) || (firstMatch && dp(si + 1, pi, s, p, memo))
+                // if it matches zero characters we just skip the pattern
+                dp(si, pi + 2, s, p, memo)
+                // if it matches one or more characters we move to the next character in the string
+                || (firstMatch && dp(si + 1, pi, s, p, memo))
             } else {
                 firstMatch && dp(si + 1, pi + 1, s, p, memo)
             }
