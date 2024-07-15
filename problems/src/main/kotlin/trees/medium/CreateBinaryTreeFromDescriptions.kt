@@ -17,15 +17,12 @@ import data_structures.TreeNode
 object CreateBinaryTreeFromDescriptions {
     fun createBinaryTree(descriptions: Array<IntArray>): TreeNode? {
         val map = HashMap<Int, TreeNode>()
-        val hasParentMap = HashMap<Int, Boolean>()
+        val hasParent = HashSet<Int>()
 
         for ((parent, child, isLeft) in descriptions) {
-            val parentNode = map.getOrPut(parent) { TreeNode(parent) }
-            val childNode = map.getOrPut(child) { TreeNode(child) }
-            if (!hasParentMap.contains(parent)) {
-                hasParentMap[parent] = false
-            }
-            hasParentMap[child] = true
+            val parentNode = map.computeIfAbsent(parent) { TreeNode(parent) }
+            val childNode = map.computeIfAbsent(child) { TreeNode(child) }
+            hasParent.add(child)
             if (isLeft == 1) {
                 parentNode.left = childNode
             } else {
@@ -33,7 +30,7 @@ object CreateBinaryTreeFromDescriptions {
             }
         }
         for ((k, v) in map) {
-            if (hasParentMap[k] == false) {
+            if (!hasParent.contains(k)) {
                 return v
             }
         }
