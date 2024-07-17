@@ -38,7 +38,7 @@ class CheckIfWordCanBePlacedInCrosswordTest {
             charArrayOf(' ', '#', 'a'),
         )
         val word = "ac"
-        val expected = true
+        val expected = false
 
         assertEquals(expected, CheckIfWordCanBePlacedInCrossword.placeWordInCrossword(board, word))
     }
