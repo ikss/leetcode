@@ -15,7 +15,7 @@ class ReverseSubstringsBetweenEachPairOfParenthesesTest {
     @Test
     fun test2() {
         val s = "(u(love)i)"
-        val expected = "Iloveu"
+        val expected = "iloveu"
 
         assertEquals(expected, ReverseSubstringsBetweenEachPairOfParentheses.reverseParentheses(s))
     }
