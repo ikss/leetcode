@@ -36,8 +36,8 @@ object NumberOfGoodLeafNodesPairs {
                 val size = bfsQueue.size
                 for (j in 0 until size) {
                     // If current node is a new leaf node, add the found pair to our count
-                    val currNode = bfsQueue.remove()
-                    if (leafNodes.contains(currNode) && currNode !== leaf) {
+                    val currNode = bfsQueue.poll()
+                    if (leafNodes.contains(currNode) && currNode != leaf) {
                         result++
                     }
                     for (neighbor in graph[currNode] ?: continue) {
