@@ -5,7 +5,7 @@ package arrays.medium
  * For each index i from 0 to n - 1, you must determine the size of the minimum sized non-empty subarray of nums
  * starting at i (inclusive) that has the maximum possible bitwise OR.
  *
- * In other words, let Bij be the bitwise OR of the subarray `nums[i...j]`.
+ * In other words, let Bij be the bitwise OR of the subarray `nums[i .. j]`.
  * You need to find the smallest subarray starting at i, such that bitwise OR of this subarray is equal to max(Bik)
  * where i <= k <= n - 1.
  * The bitwise OR of an array is the bitwise OR of all the numbers in it.
