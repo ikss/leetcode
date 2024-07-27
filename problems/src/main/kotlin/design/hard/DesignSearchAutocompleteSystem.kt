@@ -103,36 +103,3 @@ object DesignSearchAutocompleteSystem {
         }
     }
 }
-
-fun main() {
-    val sentences = arrayOf("i love you", "island", "ironman", "i love leetcode")
-    val times = intArrayOf(5, 3, 2, 2)
-    val obj = DesignSearchAutocompleteSystem.AutocompleteSystem(sentences, times)
-    println(obj.input('i')) // ["i love you", "island", "i love leetcode"]
-    println(obj.input(' ')) // ["i love you", "i love leetcode"]
-    println(obj.input('a')) // []
-    println(obj.input('#')) // []
-    println(obj.input('i')) // ["i love you", "island", "i love leetcode"]
-    println(obj.input(' ')) // ["i love you", "i love leetcode", "i a"]
-    println(obj.input('a')) // ["i a"]
-    println(obj.input('#')) // []
-    println(obj.input('i')) // ["i love you", "island", "i a"]
-    println(obj.input(' ')) // ["i love you", "i a", "i love leetcode"]
-    println(obj.input('a')) // ["i a"]
-    println(obj.input('#')) // []
-    println(obj.input('i')) // ["i love you", "island", "i a"]
-    println(obj.input(' ')) // ["i love you", "i a", "i love leetcode"]
-    println(obj.input('a')) // ["i a"]
-    println(obj.input('#')) // []
-    println(obj.input('i')) // ["i love you", "island", "i a"]
-    println(obj.input(' ')) // ["i love you", "i a", "i love leetcode"]
-    println(obj.input('a')) // ["i a"]
-    println(obj.input('#')) // []
-    println(obj.input('i')) // ["i love you", "island", "i a"]
-    println(obj.input(' ')) // ["i love you", "i a", "i love leetcode"]
-    println(obj.input('a')) // ["i a"]
-    println(obj.input('#')) // []
-    println(obj.input('i')) // ["i love you", "island", "i a"]
-    println(obj.input(' ')) // ["i love you", "i a", "i love leetcode"]
-    println(obj.input('a')) // ["i a"]
-}

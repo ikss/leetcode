@@ -64,7 +64,3 @@ object MinimumCostToConvertStringI {
         return -1
     }
 }
-
-fun main() {
-   
-}
