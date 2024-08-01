@@ -6,7 +6,22 @@ package strings.medium
  * [URL](https://leetcode.com/problems/longest-repeating-substring/)
  */
 object LongestRepeatingSubstring {
-    fun longestRepeatingSubstring(s: String): Int {
+    fun longestRepeatingSubstringDp(s: String): Int {
+        val n = s.length
+        val dp = Array(n + 1) { IntArray(s.length + 1) }
+        var result = 0
+        for (i in 1..n) {
+            for (j in i + 1..n) {
+                if (s[i - 1] == s[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1
+                    result = maxOf(result, dp[i][j])
+                }
+            }
+        }
+        return result
+    }
+
+    fun longestRepeatingSubstringBinarySearch(s: String): Int {
         var min = 1
         var max = s.length - 1
 
