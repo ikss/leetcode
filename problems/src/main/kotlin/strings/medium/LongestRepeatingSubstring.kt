@@ -7,16 +7,19 @@ package strings.medium
  */
 object LongestRepeatingSubstring {
     fun longestRepeatingSubstring(s: String): Int {
-        var maxLength = s.length - 1
+        var min = 1
+        var max = s.length - 1
 
-        while (maxLength > 0) {
-            if (contains(s, maxLength)) {
-                return maxLength
+        while (min <= max) {
+            val mid = min + (max - min) / 2
+            if (contains(s, mid)) {
+                min = mid + 1
+            } else {
+                max = mid - 1
             }
-            maxLength--
         }
 
-        return 0
+        return min - 1
     }
 
     private fun contains(s: String, maxLength: Int): Boolean {
