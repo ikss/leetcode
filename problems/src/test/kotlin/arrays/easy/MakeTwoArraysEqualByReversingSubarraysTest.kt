@@ -26,7 +26,7 @@ class MakeTwoArraysEqualByReversingSubarraysTest {
     fun test3() {
         val target = intArrayOf(3, 7, 9)
         val arr = intArrayOf(3, 7, 11)
-        val expected = true
+        val expected = false
 
         assertEquals(expected, MakeTwoArraysEqualByReversingSubarrays.canBeEqual(target, arr))
     }
