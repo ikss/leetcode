@@ -3,6 +3,8 @@
  *
  * This generated file contains a sample Kotlin application project to get you started.
  */
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin.
@@ -17,12 +19,14 @@ allprojects {
     }
 
     tasks.withType(JavaCompile::class).all {
-        sourceCompatibility = "21"
-        targetCompatibility = "21"
+        sourceCompatibility = "22"
+        targetCompatibility = "22"
     }
 
-    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
-        kotlinOptions.jvmTarget = "21"
+    tasks.withType(KotlinCompile::class).all {
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_22)
+        }
     }
 
     tasks.withType(Test::class).configureEach {
