@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test
 class KthDistinctStringInArrayTest {
     @Test
     fun test1() {
-        val words = arrayOf("a", "b", "c", "a", "b", "c")
+        val words = arrayOf("d", "b", "c", "b", "c", "a")
         val k = 2
-        val expected = "b"
+        val expected = "a"
 
         assertEquals(expected, KthDistinctStringInArray.kthDistinct(words, k))
     }
