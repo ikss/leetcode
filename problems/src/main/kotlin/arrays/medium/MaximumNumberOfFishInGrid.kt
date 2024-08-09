@@ -1,5 +1,7 @@
 package arrays.medium
 
+import data_structures.GridCell
+
 /**
  * You are given a 0-indexed 2D matrix grid of size m x n, where (r, c) represents:
  * * A land cell if `grid[r][c] = 0`, or
@@ -16,8 +18,6 @@ package arrays.medium
  *
  * [URL](https://leetcode.com/problems/maximum-number-of-fish-in-a-grid/)
  */
-typealias Cell = Pair<Int, Int>
-
 object MaximumNumberOfFishInGrid {
 
     private val directions = listOf(1 to 0, -1 to 0, 0 to 1, 0 to -1)
@@ -38,7 +38,7 @@ object MaximumNumberOfFishInGrid {
     private fun bfs(startr: Int, startc: Int, grid: Array<IntArray>): Int {
         var result = 0
 
-        val queue = java.util.ArrayDeque<Cell>()
+        val queue = java.util.ArrayDeque<GridCell>()
         queue.offer(startr to startc)
 
         while (queue.isNotEmpty()) {
