@@ -1,6 +1,7 @@
 package arrays.hard
 
 import data_structures.GridCell
+import java.util.*
 
 /**
  * You are given an m x n integer matrix grid and an array queries of size k.
@@ -57,6 +58,36 @@ object MaximumNumberOfPointsFromGridQueries {
                 result++
                 queue.offer(newRow to newCol)
             }
+        }
+
+        return result
+    }
+
+    fun maxPointsPriorityQueue(grid: Array<IntArray>, queries: IntArray): IntArray {
+        val result = IntArray(queries.size)
+        val sortedQueries = queries.withIndex().sortedBy { it.value }
+
+        val pq = PriorityQueue<Pair<Int, GridCell>> { g1, g2 -> g1.first - g2.first }
+        pq.offer(grid[0][0] to (0 to 0))
+        var sum = 0
+
+        for (sq in sortedQueries) {
+            while (pq.isNotEmpty() && pq.peek().first < sq.value) {
+                val cell = pq.poll().second
+                if (grid[cell.first][cell.second] == Int.MAX_VALUE) continue
+                grid[cell.first][cell.second] = Int.MAX_VALUE
+                sum++
+
+                for ((dr, dc) in directions) {
+                    val newRow = cell.first + dr
+                    val newCol = cell.second + dc
+                    if (newRow !in grid.indices || newCol !in grid[0].indices || grid[newRow][newCol] == Int.MAX_VALUE) {
+                        continue
+                    }
+                    pq.offer(grid[newRow][newCol] to (newRow to newCol))
+                }
+            }
+            result[sq.index] = sum
         }
 
         return result

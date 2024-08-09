@@ -28,4 +28,30 @@ class MaximumNumberOfPointsFromGridQueriesTest {
 
         assertArrayEquals(expected, MaximumNumberOfPointsFromGridQueries.maxPointsSimpleDfs(grid, queries))
     }
+
+    @Test
+    fun test1PriorityQueue() {
+        val grid = arrayOf(
+            intArrayOf(1, 2, 3),
+            intArrayOf(2, 5, 7),
+            intArrayOf(3, 5, 1),
+        )
+        val queries = intArrayOf(5, 6, 2)
+        val expected = intArrayOf(5, 8, 1)
+
+        assertArrayEquals(expected, MaximumNumberOfPointsFromGridQueries.maxPointsPriorityQueue(grid, queries))
+    }
+
+    @Test
+    fun test2PriorityQueue() {
+        val grid = arrayOf(
+            intArrayOf(5, 2, 1),
+            intArrayOf(1, 1, 2),
+            intArrayOf(3, 5, 1),
+        )
+        val queries = intArrayOf(5, 6, 2)
+        val expected = intArrayOf(5, 8, 1)
+
+        assertArrayEquals(expected, MaximumNumberOfPointsFromGridQueries.maxPointsPriorityQueue(grid, queries))
+    }
 }
