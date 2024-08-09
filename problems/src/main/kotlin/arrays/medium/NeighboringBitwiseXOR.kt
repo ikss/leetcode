@@ -17,18 +17,16 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/neighboring-bitwise-xor/)
  */
 object NeighboringBitwiseXOR {
-    fun doesValidArrayExist(derived: IntArray): Boolean {
-        return isValid(0, derived) || isValid(1, derived)
-    }
-
-    private fun isValid(endWith: Int, derived: IntArray): Boolean {
+    fun doesValidArrayExistCheckExistence(derived: IntArray): Boolean {
         val n = derived.size
         val arr = IntArray(n) { derived[it] }
-
         for (i in n - 2 downTo 0) {
             arr[i] = arr[i] xor arr[i + 1]
         }
+        return derived[n - 1] == arr[n - 1] xor arr[0]
+    }
 
-        return derived[n-1] == arr[n-1] xor arr[0]
+    fun doesValidArrayExistFlipCount(derived: IntArray): Boolean {
+        return derived.sum() % 2 == 0
     }
 }
