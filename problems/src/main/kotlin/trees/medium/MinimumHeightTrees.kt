@@ -17,7 +17,7 @@ package trees.medium
  * [URL](https://leetcode.com/problems/minimum-height-trees/)
  */
 object MinimumHeightTrees {
-    fun findMinHeightTrees(n: Int, edges: Array<IntArray>): List<Int> {
+    fun findMinHeightTreesList(n: Int, edges: Array<IntArray>): List<Int> {
         val result = ArrayList<Int>()
         if (n < 3) {
             for (node in 0 until n) {
@@ -58,5 +58,44 @@ object MinimumHeightTrees {
             leaves = newLeaves
         }
         return leaves
+    }
+
+    fun findMinHeightTreesQueue(n: Int, edges: Array<IntArray>): List<Int> {
+        if (n < 3) {
+            return listOf(0, 1)
+        }
+
+        val graph = Array(n) { HashSet<Int>() }
+
+        for ((s, e) in edges) {
+            graph[s].add(e)
+            graph[e].add(s)
+        }
+
+        val leaves = java.util.ArrayDeque<Int>()
+
+        for (i in graph.indices) {
+            val set = graph[i]
+            if (set.size == 1) {
+                leaves.offer(i)
+            }
+        }
+        var n = n
+
+        while (n > 2) {
+            repeat(leaves.size) {
+                val l = leaves.poll()
+
+                for (neigh in graph[l]) {
+                    graph[neigh].remove(l)
+                    if (graph[neigh].size == 1) {
+                        leaves.offer(neigh)
+                    }
+                }
+                n--
+            }
+        }
+
+        return leaves.toList()
     }
 }
