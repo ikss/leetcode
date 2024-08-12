@@ -11,7 +11,7 @@ package numbers
  * [URL](https://leetcode.com/problems/valid-perfect-square/)
  */
 object ValidPerfectSquare {
-    fun isPerfectSquare(num: Int): Boolean {
+    fun isPerfectSquareBinarySearch(num: Int): Boolean {
         var min = 1
         var max = num
         while (min <= max) {
@@ -26,5 +26,14 @@ object ValidPerfectSquare {
             }
         }
         return false
+    }
+    fun isPerfectSquareNewtonAlgorithm(num: Int): Boolean {
+        if (num < 2) return true
+
+        var x = (num / 2).toLong()
+        while (x * x > num) {
+            x = (x + num / x) / 2
+        }
+        return x * x == num.toLong()
     }
 }
