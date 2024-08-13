@@ -13,7 +13,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/combination-sum-ii/)
  */
 object CombinationSumII {
-    fun combinationSum2(candidates: IntArray, target: Int): List<List<Int>> {
+    fun combinationSum2TreeMap(candidates: IntArray, target: Int): List<List<Int>> {
         val map = TreeMap<Int, Int>()
         for (c in candidates) {
             map.merge(c, 1, Integer::sum)
@@ -45,6 +45,31 @@ object CombinationSumII {
             backtrack(map, result, target, curr + elem, elem, comb)
 
             map[elem] = counter
+            comb.removeAt(comb.size - 1)
+        }
+    }
+    
+    fun combinationSum2ArrayList(candidates: IntArray, target: Int): List<List<Int>> {
+        val result = ArrayList<List<Int>>()
+        candidates.sort()
+        backtrack(candidates, result, target, 0, 0, ArrayList())
+        return result
+    }
+
+    private fun backtrack(candidates: IntArray, result: ArrayList<List<Int>>, target: Int, sum: Int, prevIndex: Int, comb: ArrayList<Int>) {
+        if (sum == target) {
+            result.add(comb.toList())
+            return
+        }
+
+        for (i in prevIndex until candidates.size) {
+            if (i > prevIndex && candidates[i] == candidates[i - 1]) continue
+            val n = candidates[i]
+            if (sum + n > target) break
+            comb.add(n)
+
+            backtrack(candidates, result, target, sum + n, i + 1, comb)
+
             comb.removeAt(comb.size - 1)
         }
     }
