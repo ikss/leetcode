@@ -1,4 +1,4 @@
-package numbers
+package numbers.easy
 
 /**
  * Given a positive integer num, return true if num is a perfect square or false otherwise.
