@@ -47,10 +47,9 @@ class MaximumNumberOfPointsFromGridQueriesTest {
         val grid = arrayOf(
             intArrayOf(5, 2, 1),
             intArrayOf(1, 1, 2),
-            intArrayOf(3, 5, 1),
         )
-        val queries = intArrayOf(5, 6, 2)
-        val expected = intArrayOf(5, 8, 1)
+        val queries = intArrayOf(3)
+        val expected = intArrayOf(0)
 
         assertArrayEquals(expected, MaximumNumberOfPointsFromGridQueries.maxPointsPriorityQueue(grid, queries))
     }

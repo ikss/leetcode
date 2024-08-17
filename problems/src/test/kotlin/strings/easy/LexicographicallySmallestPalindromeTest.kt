@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test
 class LexicographicallySmallestPalindromeTest {
     @Test
     fun test1() {
-        val input = "ab"
-        val expected = "aba"
+        val input = "egcfe"
+        val expected = "efcfe"
 
         assertEquals(expected, LexicographicallySmallestPalindrome.makeSmallestPalindrome(input))
     }
