@@ -12,7 +12,7 @@ package design.easy
 object MovingAverageFromDataStream {
     class MovingAverage(val size: Int) {
         private val queue = java.util.ArrayDeque<Int>(size)
-        private var sum = 0
+        private var sum = 0.0
 
         fun next(`val`: Int): Double {
             if (queue.size == size) {
@@ -20,7 +20,25 @@ object MovingAverageFromDataStream {
             }
             queue.offer(`val`)
             sum += `val`
-            return sum.toDouble() / queue.size
+            return sum / queue.size
+        }
+    }
+
+    class MovingAverageWithoutOverflow(val size: Int) {
+        private val queue = java.util.ArrayDeque<Int>(size)
+        private var avg = 0.0
+
+        fun next(`val`: Int): Double {
+            val prevSize = queue.size
+            val prev = if (queue.size == size) {
+                queue.poll()
+            } else {
+                0
+            }
+            queue.offer(`val`)
+            val newSize = queue.size.toDouble()
+            avg = avg * (prevSize / newSize) + `val` / newSize - prev / newSize
+            return avg
         }
     }
 }
