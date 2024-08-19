@@ -10,7 +10,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/2-keys-keyboard/)
  */
 object `2KeysKeyboard` {
-    fun minSteps(n: Int): Int {
+    fun minStepsDp(n: Int): Int {
         val dp = IntArray(n + 1)
         dp[1] = 0
 
@@ -24,5 +24,23 @@ object `2KeysKeyboard` {
         }
 
         return dp[n]
+    }
+
+    fun minStepsPrime(n: Int): Int {
+        var result = 0
+        
+        var n = n
+        var divisor = 2
+        
+        while (n > 1) {
+            while (n % divisor == 0) {
+                result += divisor
+                n /= divisor
+            }
+            
+            divisor++
+        }
+        
+        return result
     }
 }
