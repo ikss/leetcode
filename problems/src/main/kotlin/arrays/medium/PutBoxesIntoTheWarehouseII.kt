@@ -64,4 +64,27 @@ object PutBoxesIntoTheWarehouseII {
 
         return result
     }
+
+    fun maxBoxesInWarehouseTwoPointers(boxes: IntArray, warehouse: IntArray): Int {
+        boxes.sort()
+
+        var left = 0
+        var right = warehouse.size - 1
+
+        var result = 0
+
+        for (i in boxes.size - 1 downTo 0) {
+            val box = boxes[i]
+            if (warehouse[left] >= box) {
+                result++
+                left++
+            } else if (warehouse[right] >= box) {
+                result++
+                right--
+            }
+            if (left > right) break
+        }
+
+        return result
+    }
 }
