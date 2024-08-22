@@ -24,4 +24,20 @@ object NumberComplement {
 
         return result
     }
+
+    fun findComplementHighestOneBit(num: Int): Int {
+        return (Integer.highestOneBit(num) shl 1) - 1 - num
+    }
+
+    fun findComplementHackerDelight(num: Int): Int {
+        // bitmask has the same length as num and contains only ones 1...1
+        var bitmask = num
+        bitmask = bitmask or (bitmask shr 1)
+        bitmask = bitmask or (bitmask shr 2)
+        bitmask = bitmask or (bitmask shr 4)
+        bitmask = bitmask or (bitmask shr 8)
+        bitmask = bitmask or (bitmask shr 16)
+        // flip all bits 
+        return bitmask xor num
+    }
 }
