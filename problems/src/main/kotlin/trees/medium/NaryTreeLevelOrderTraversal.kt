@@ -14,18 +14,21 @@ import java.util.*
 object NaryTreeLevelOrderTraversal {
     fun levelOrder(root: NaryTreeNode?): List<List<Int>> {
         if (root == null) return emptyList()
-        val result = mutableListOf<List<Int>>()
-        val queue = LinkedList<NaryTreeNode>()
+
+        val result = LinkedList<List<Int>>()
+        val queue = ArrayDeque<NaryTreeNode>()
         queue.offer(root)
+
         while (queue.isNotEmpty()) {
-            val levelSize = queue.size
-            val level = mutableListOf<Int>()
-            repeat(levelSize) {
+            val size = queue.size
+            val level = ArrayList<Int>(size)
+
+            for (i in 0 until size) {
                 val node = queue.poll()
                 level.add(node.`val`)
 
-                node.children.forEach {
-                    if (it != null) queue.offer(it)
+                for (child in node.children) {
+                    child?.let(queue::offer)
                 }
             }
             result.add(level)
