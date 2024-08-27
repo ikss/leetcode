@@ -1,7 +1,5 @@
 package graphs.medium
 
-import java.util.*
-
 /**
  * You are given an undirected weighted graph of n nodes (0-indexed), represented by an edge list where
  * `edges[i] = [a, b]` is an undirected edge connecting the nodes a and b with a probability of success of traversing
@@ -18,18 +16,18 @@ import java.util.*
 object PathWithMaximumProbability {
     fun maxProbability(n: Int, edges: Array<IntArray>, succProb: DoubleArray, start: Int, end: Int): Double {
         val graph = HashMap<Int, ArrayList<Pair<Int, Double>>>()
-        val maxProb = DoubleArray(n)
 
         for (i in edges.indices) {
-            val (from, toe) = edges[i]
+            val (from, to) = edges[i]
             val succ = succProb[i]
 
-            graph.computeIfAbsent(from) { ArrayList() }.add(toe to succ)
-            graph.computeIfAbsent(toe) { ArrayList() }.add(from to succ)
+            graph.computeIfAbsent(from) { ArrayList() }.add(to to succ)
+            graph.computeIfAbsent(to) { ArrayList() }.add(from to succ)
         }
 
-        val queue = ArrayDeque<Pair<Int, Double>>()
+        val queue = java.util.ArrayDeque<Pair<Int, Double>>()
         queue.offer(start to 1.0)
+        val maxProb = DoubleArray(n)
 
         while (queue.isNotEmpty()) {
             val (from, succ) = queue.poll()
@@ -37,8 +35,8 @@ object PathWithMaximumProbability {
             if (maxProb[from] >= succ || succ <= maxProb[end]) continue
             maxProb[from] = succ
 
-            for ((toe, stepSucc) in graph[from] ?: continue) {
-                queue.offer(toe to succ * stepSucc)
+            for ((to, stepSucc) in graph[from] ?: continue) {
+                queue.offer(to to succ * stepSucc)
             }
         }
 
