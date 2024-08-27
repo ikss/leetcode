@@ -1,5 +1,7 @@
 package graphs.medium
 
+import java.util.PriorityQueue
+
 /**
  * You are given an undirected weighted graph of n nodes (0-indexed), represented by an edge list where
  * `edges[i] = [a, b]` is an undirected edge connecting the nodes a and b with a probability of success of traversing
@@ -25,18 +27,21 @@ object PathWithMaximumProbability {
             graph.computeIfAbsent(to) { ArrayList() }.add(from to succ)
         }
 
-        val queue = java.util.ArrayDeque<Pair<Int, Double>>()
+        val queue = PriorityQueue<Pair<Int, Double>>(compareBy { -it.second })
         queue.offer(start to 1.0)
         val maxProb = DoubleArray(n)
+        maxProb[start] = 1.0
 
         while (queue.isNotEmpty()) {
             val (from, succ) = queue.poll()
-
-            if (maxProb[from] >= succ || succ <= maxProb[end]) continue
-            maxProb[from] = succ
+            if (from == end) return succ
 
             for ((to, stepSucc) in graph[from] ?: continue) {
-                queue.offer(to to succ * stepSucc)
+                val nextSucc = succ * stepSucc
+                if (nextSucc > maxProb[to]) {
+                    maxProb[to] = nextSucc
+                    queue.offer(to to nextSucc)
+                }
             }
         }
 
