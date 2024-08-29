@@ -27,7 +27,7 @@ object MostStonesRemovedWithSameRowOrColumn {
             if (set.add(newCol)) {
                 components++
             }
-            if (uf.union(row, col + MAX_VALUE) == 1) {
+            if (uf.union(row, col + MAX_VALUE)) {
                 components--
             }
         }

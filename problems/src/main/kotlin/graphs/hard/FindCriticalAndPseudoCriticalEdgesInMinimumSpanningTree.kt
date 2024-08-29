@@ -36,7 +36,7 @@ object FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree {
         val ufStd = UnionFind(n)
         var stdWeight = 0
         for (edge in newEdges) {
-            if (ufStd.union(edge[0], edge[1]) == 1) {
+            if (ufStd.union(edge[0], edge[1])) {
                 stdWeight += edge[2]
             }
         }
@@ -51,7 +51,7 @@ object FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree {
             val ufIgnore = UnionFind(n)
             var ignoreWeight = 0
             for (j in 0 until m) {
-                if (i != j && ufIgnore.union(newEdges[j][0], newEdges[j][1]) == 1) {
+                if (i != j && ufIgnore.union(newEdges[j][0], newEdges[j][1])) {
                     ignoreWeight += newEdges[j][2]
                 }
             }
@@ -65,7 +65,7 @@ object FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree {
                 ufForce.union(newEdges[i][0], newEdges[i][1])
                 var forceWeight = newEdges[i][2]
                 for (j in 0 until m) {
-                    if (i != j && ufForce.union(newEdges[j][0], newEdges[j][1]) == 1) {
+                    if (i != j && ufForce.union(newEdges[j][0], newEdges[j][1])) {
                         forceWeight += newEdges[j][2]
                     }
                 }

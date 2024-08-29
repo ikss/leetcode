@@ -49,7 +49,7 @@ object RedundantConnection {
     fun findRedundantConnectionDsu(edges: Array<IntArray>): IntArray {
         val dsu = UnionFind(MAX_EDGE_VAL + 1)
         for (edge in edges) {
-            if (dsu.union(edge[0], edge[1]) == 0) return edge
+            if (!dsu.union(edge[0], edge[1])) return edge
         }
         throw AssertionError()
     }

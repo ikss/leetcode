@@ -27,16 +27,16 @@ object RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable {
         // Perform union for edges of type = 3, for both Alice and Bob.
         for (edge in edges) {
             if (edge[0] == 3) {
-                edgesRequired += alice.union(edge[1], edge[2]) or bob.union(edge[1], edge[2])
+                edgesRequired += if (alice.union(edge[1], edge[2]) or bob.union(edge[1], edge[2])) 1 else 0
             }
         }
 
         // Perform union for Alice if type = 1 and for Bob if type = 2.
         for (edge in edges) {
             if (edge[0] == 1) {
-                edgesRequired += alice.union(edge[1], edge[2])
+                edgesRequired += if (alice.union(edge[1], edge[2])) 1 else 0
             } else if (edge[0] == 2) {
-                edgesRequired += bob.union(edge[1], edge[2])
+                edgesRequired += if (bob.union(edge[1], edge[2])) 1 else 0
             }
         }
 

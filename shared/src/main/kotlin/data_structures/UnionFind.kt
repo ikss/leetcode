@@ -12,10 +12,10 @@ class UnionFind(n: Int, var components: Int = n) {
         return root[x]
     }
 
-    fun union(x: Int, y: Int): Int {
+    fun union(x: Int, y: Int): Boolean {
         var rootX = find(x)
         var rootY = find(y)
-        if (rootX == rootY) return 0
+        if (rootX == rootY) return false
         if (rank[rootX] > rank[rootY]) {
             val tmp = rootX
             rootX = rootY
@@ -27,7 +27,7 @@ class UnionFind(n: Int, var components: Int = n) {
         root[rootX] = rootY
         rank[rootY] += rank[rootX]
         maxRank = maxOf(maxRank, rank[rootY])
-        return 1
+        return true
     }
 
     fun areConnected(node1: Int, node2: Int): Boolean {
