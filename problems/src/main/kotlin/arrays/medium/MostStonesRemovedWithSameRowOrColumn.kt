@@ -1,5 +1,7 @@
 package arrays.medium
 
+import data_structures.UnionFind
+
 /**
  * On a 2D plane, we place n stones at some integer coordinate points. Each coordinate point may have at most one stone.
  *
@@ -11,34 +13,24 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)
  */
 object MostStonesRemovedWithSameRowOrColumn {
-    private var f = mutableMapOf<Int, Int?>()
-    private var islands = 0
+    private const val MAX_VALUE = 10001
 
     fun removeStones(stones: Array<IntArray>): Int {
-        f.clear()
-        islands = 0
-        for (i in stones.indices) {
-            union(stones[i][0], stones[i][1].inv())
+        val set = HashSet<Int>()
+        val uf = UnionFind(MAX_VALUE * 2)
+        var components = 0
+        for ((row, col) in stones) {
+            if (set.add(row)) {
+                components++
+            }
+            val newCol = col + MAX_VALUE
+            if (set.add(newCol)) {
+                components++
+            }
+            if (uf.union(row, col + MAX_VALUE) == 1) {
+                components--
+            }
         }
-        return stones.size - islands
-    }
-
-    private fun find(x: Int): Int {
-        if (f.putIfAbsent(x, x) == null) {
-            islands++
-        }
-        if (x != f[x]) {
-            f[x] = find(f[x]!!)
-        }
-        return f[x]!!
-    }
-
-    private fun union(x: Int, y: Int) {
-        val x = find(x)
-        val y = find(y)
-        if (x != y) {
-            f[x] = y
-            islands--
-        }
+        return stones.size - components
     }
 }
