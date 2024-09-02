@@ -16,18 +16,15 @@ package arrays.medium
  */
 object FindTheStudentThatWillReplaceTheChalk {
     fun chalkReplacer(chalk: IntArray, k: Int): Int {
-        val n = chalk.size
         val sum = chalk.sumOf { it.toLong() }
 
-        var curr = 0
         var k = k % sum
 
-        while (k > 0) {
-            k -= chalk[curr % n]
-            if (k < 0) break
-            curr++
+        for (i in chalk.indices) {
+            if (k < chalk[i]) return i
+            k -= chalk[i]
         }
 
-        return curr % n
+        return 0
     }
 }
