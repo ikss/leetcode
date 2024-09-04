@@ -9,7 +9,7 @@ package arrays.medium
  *
  * Return the number of nice pairs of indices. Since that number can be too large, return it modulo 109 + 7.
  *
- * [URL](https://leetcode.com/problems/count-nice-pairs-in-an-array)
+ * [URL](https://leetcode.com/problems/count-nice-pairs-in-an-array/)
  */
 object CountNicePairsInArray {
     fun countNicePairs(nums: IntArray): Int {

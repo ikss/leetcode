@@ -18,7 +18,7 @@ package strings.medium
  * * If version1 > version2, return 1.
  * * Otherwise, return 0.
  *
- * [URL](https://leetcode.com/problems/compare-version-numbers)
+ * [URL](https://leetcode.com/problems/compare-version-numbers/)
  */
 object CompareVersionNumbers {
     fun compareVersion(version1: String, version2: String): Int {

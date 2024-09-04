@@ -18,7 +18,7 @@ package arrays.hard
  *
  * Return any matrix that satisfies the conditions. If no answer exists, return an empty matrix.
  *
- * [URL](https://leetcode.com/problems/build-a-matrix-with-conditions)
+ * [URL](https://leetcode.com/problems/build-a-matrix-with-conditions/)
  */
 object BuildMatrixWithConditions {
     fun buildMatrix(k: Int, rowConditions: Array<IntArray>, colConditions: Array<IntArray>): Array<IntArray> {

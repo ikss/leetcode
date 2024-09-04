@@ -6,7 +6,7 @@ package arrays.medium
  * A subsequence is a sequence that can be derived from another sequence by removing zero or more elements without
  * changing the order of the remaining elements.
  *
- * [URL](https://leetcode.com/problems/bitwise-or-of-all-subsequence-sums)
+ * [URL](https://leetcode.com/problems/bitwise-or-of-all-subsequence-sums/)
  */
 object BitwiseOROfAllSubsequenceSums {
     fun subsequenceSumOr(nums: IntArray): Long {

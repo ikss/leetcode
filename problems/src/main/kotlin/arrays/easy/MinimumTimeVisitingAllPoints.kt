@@ -29,7 +29,6 @@ object MinimumTimeVisitingAllPoints {
     }
 
     private fun calcDiff(prev: IntArray, next: IntArray): Int {
-        var result = 0
         val (x1, y1) = prev
         val (x2, y2) = next
 

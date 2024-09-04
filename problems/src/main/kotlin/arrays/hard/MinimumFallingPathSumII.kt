@@ -6,7 +6,7 @@ package arrays.hard
  * A falling path with non-zero shifts is a choice of exactly one element from each row of grid
  * such that no two elements chosen in adjacent rows are in the same column.
  *
- * [URL](https://leetcode.com/problems/minimum-falling-path-sum-ii)
+ * [URL](https://leetcode.com/problems/minimum-falling-path-sum-ii/)
  */
 object MinimumFallingPathSumII {
     fun minFallingPathSum(matrix: Array<IntArray>): Int {

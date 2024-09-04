@@ -17,7 +17,7 @@ import kotlin.math.max
  *
  * Note: The test cases are generated such that it is possible to complete every course (i.e., the graph is a directed acyclic graph).
  *
- * [URL](https://leetcode.com/problems/parallel-courses-iii)
+ * [URL](https://leetcode.com/problems/parallel-courses-iii/)
  */
 object ParallelCoursesIII {
     fun minimumTimeKahn(n: Int, relations: Array<IntArray>, time: IntArray): Int {

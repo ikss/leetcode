@@ -11,7 +11,7 @@ import java.util.*
  *
  * Return the minimum cost of connecting all the given sticks into one stick in this way.
  *
- * [URL](https://leetcode.com/problems/minimum-cost-to-connect-sticks)
+ * [URL](https://leetcode.com/problems/minimum-cost-to-connect-sticks/)
  */
 object MinimumCostToConnectSticks {
     fun connectSticks(sticks: IntArray): Int {
