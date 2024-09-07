@@ -1,4 +1,4 @@
-package linked_lists
+package linked_lists.medium
 
 import data_structures.ListBuilder
 import org.junit.jupiter.api.Assertions.assertEquals
