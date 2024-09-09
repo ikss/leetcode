@@ -30,7 +30,7 @@ object SpiralMatrixIV {
             val newRow = currRow + directions[currDir].first
             val newCol = currCol + directions[currDir].second
 
-            if (minOf(newRow, newCol) < 0 || newRow >= m || newCol >= n || result[newRow][newCol] != -1) {
+            if (newRow !in 0 until m || newCol !in 0 until n || result[newRow][newCol] != -1) {
                 currDir = (currDir + 1) % 4
             }
             currRow += directions[currDir].first
