@@ -12,7 +12,7 @@ package numbers.easy
  * [URL](https://leetcode.com/problems/minimum-bit-flips-to-convert-number/)
  */
 object MinimumBitFlipsToConvertNumber {
-    fun minBitFlips(start: Int, goal: Int): Int {
+    fun minBitFlipsSimulation(start: Int, goal: Int): Int {
         var result = 0
         var start = start
         var goal = goal
@@ -23,6 +23,30 @@ object MinimumBitFlipsToConvertNumber {
             }
             start /= 2
             goal /= 2
+        }
+        return result
+    }
+
+    fun minBitFlipsXor(start: Int, goal: Int): Int {
+        var xor = start xor goal
+        var result = 0
+
+        while (xor > 0) {
+            if (xor % 2 == 1) {
+                result++
+            }
+            xor /= 2
+        }
+        return result
+    }
+
+    fun minBitFlipsKernighan(start: Int, goal: Int): Int {
+        var xor = start xor goal
+        var result = 0
+
+        while (xor != 0) {
+            xor = xor and (xor - 1) // Clear the lowest set bit
+            result++
         }
         return result
     }
