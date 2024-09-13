@@ -1,4 +1,4 @@
-package arrays.easy
+package strings.easy
 
 /**
  * You are given a string array words and a binary array groups both of length n,

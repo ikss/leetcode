@@ -1,4 +1,4 @@
-package arrays.easy
+package strings.easy
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
