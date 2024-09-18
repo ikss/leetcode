@@ -15,12 +15,7 @@ object NaryTreePostorderTraversal {
         if (root == null) return emptyList()
 
         val result = ArrayList<Int>()
-
-        for (c in root.children) {
-            traverse(c, result)
-        }
-        result.add(root.`val`)
-
+        traverse(root, result)
         return result
     }
 
