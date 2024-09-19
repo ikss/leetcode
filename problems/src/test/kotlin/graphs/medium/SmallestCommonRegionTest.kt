@@ -31,7 +31,7 @@ class SmallestCommonRegionTest {
         )
         val region1 = "Canada"
         val region2 = "South America"
-        val expected = "Earth®"
+        val expected = "Earth"
 
         assertEquals(expected, SmallestCommonRegion.findSmallestRegion(regions, region1, region2))
     }

@@ -8,7 +8,7 @@ class UncommonWordsFromTwoSentencesTest {
     fun test1() {
         val s1 = "this apple is sweet"
         val s2 = "this apple is sour"
-        val expected = arrayOf("sweet", "sour")
+        val expected = arrayOf("sour", "sweet")
         
         assertArrayEquals(expected, UncommonWordsFromTwoSentences.uncommonFromSentences(s1, s2))
     }
