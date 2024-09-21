@@ -8,7 +8,27 @@ package numbers.medium
  * [URL](https://leetcode.com/problems/lexicographical-numbers/)
  */
 object LexicographicalNumbers {
-    fun lexicalOrder(n: Int): List<Int> {
+    fun lexicalOrderIterative(n: Int): List<Int> {
+        val result = ArrayList<Int>(n)
+
+        var curr = 1
+        for (i in 0 until n) {
+            result.add(curr)
+            if (curr * 10 <= n) {
+                curr *= 10
+                continue
+            }
+
+            while (curr % 10 == 9 || curr >= n) {
+                curr /= 10
+            }
+            curr++
+        }
+
+        return result
+    }
+
+    fun lexicalOrderRecursive(n: Int): List<Int> {
         val result = ArrayList<Int>(n)
 
         for (i in 1..9) {
