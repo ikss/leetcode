@@ -17,10 +17,10 @@ object ExtraCharactersInString {
 
         for (start in n - 1 downTo 0) {
             dp[start] = dp[start + 1] + 1
-            for (end in start until n) {
-                val curr = s.substring(start, end + 1)
+            for (end in start + 1..n) {
+                val curr = s.substring(start, end)
                 if (set.contains(curr)) {
-                    dp[start] = minOf(dp[start], dp[end + 1])
+                    dp[start] = minOf(dp[start], dp[end])
                 }
             }
         }
