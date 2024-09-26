@@ -23,8 +23,8 @@ class MyCalendarI {
     private val calendar = TreeSet<Pair<Int, Int>> { a, b -> a.first - b.first }
 
     fun book(start: Int, end: Int): Boolean {
+        val pair = start to end
         if (calendar.isNotEmpty()) {
-            val pair = start to end
             val floor = calendar.floor(pair)
             if (floor != null && floor.second > start) {
                 return false
@@ -34,7 +34,7 @@ class MyCalendarI {
                 return false
             }
         }
-        calendar.add(start to end)
+        calendar.add(pair)
         return true
     }
 }
