@@ -18,7 +18,7 @@ package strings.medium
  * Given two sentences sentence1 and sentence2, return true if sentence1 and sentence2 are similar.
  * Otherwise, return false.
  *
- * [URL](https://leetcode.com/problems/group-anagrams/)
+ * [URL](https://leetcode.com/problems/sentence-similarity-iii/)
  */
 object SentenceSimilarityIII {
     fun areSentencesSimilar(sentence1: String, sentence2: String): Boolean {
