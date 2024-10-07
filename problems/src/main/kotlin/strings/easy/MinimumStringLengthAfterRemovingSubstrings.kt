@@ -1,5 +1,7 @@
 package strings.easy
 
+import java.util.*
+
 /**
  * You are given a string s consisting only of uppercase English letters.
  *
@@ -13,7 +15,7 @@ package strings.easy
  * [URL](https://leetcode.com/problems/minimum-string-length-after-removing-substrings/)
  */
 object MinimumStringLengthAfterRemovingSubstrings {
-    fun minLength(s: String): Int {
+    fun minLengthStringBuilder(s: String): Int {
         val str = StringBuilder(s)
         var i = 0
 
@@ -29,5 +31,21 @@ object MinimumStringLengthAfterRemovingSubstrings {
         }
 
         return str.length
+    }
+
+    fun minLengthStack(s: String): Int {
+        val stack = Stack<Char>()
+
+        for (c in s) {
+            if (!stack.isEmpty()) {
+                if ((c == 'B' && stack.peek() == 'A') || (c == 'D' && stack.peek() == 'C')) {
+                    stack.pop()
+                    continue
+                }
+            }
+            stack.push(c)
+        }
+
+        return stack.size
     }
 }
