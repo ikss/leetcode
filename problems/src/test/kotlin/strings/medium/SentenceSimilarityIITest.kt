@@ -24,9 +24,9 @@ class SentenceSimilarityIITest {
         val words2 = arrayOf("I", "love", "onepiece")
         val pairs = listOf(
             listOf("manga", "onepiece"),
-            listOf("leetcode", "code"),
+            listOf("platform", "anime"),
+            listOf("leetcode", "platform"),
             listOf("anime", "manga"),
-            listOf("love", "like"),
         )
         val expected = true
 
