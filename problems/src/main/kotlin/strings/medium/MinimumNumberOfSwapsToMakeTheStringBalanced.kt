@@ -18,7 +18,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/)
  */
 object MinimumNumberOfSwapsToMakeTheStringBalanced {
-    fun minSwaps(s: String): Int {
+    fun minSwapsStack(s: String): Int {
         val stack = Stack<Char>()
         var unbalanced = 0
 
@@ -32,6 +32,19 @@ object MinimumNumberOfSwapsToMakeTheStringBalanced {
                 continue
             }
             unbalanced++
+        }
+        return (unbalanced + 1) / 2
+    }
+
+    fun minSwapsCount(s: String): Int {
+        var unbalanced = 0
+
+        for (c in s) {
+            if (c == '[') {
+                unbalanced++
+            } else if (unbalanced > 0) {
+                unbalanced--
+            }
         }
         return (unbalanced + 1) / 2
     }
