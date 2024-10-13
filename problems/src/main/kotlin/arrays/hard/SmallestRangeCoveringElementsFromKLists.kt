@@ -1,8 +1,6 @@
 package arrays.hard
 
 import java.util.*
-import kotlin.math.max
-
 
 /**
  * You have k lists of sorted integers in non-decreasing order. Find the smallest range that includes at least one
