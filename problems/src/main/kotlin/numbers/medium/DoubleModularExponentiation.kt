@@ -7,14 +7,14 @@ import java.math.BigDecimal
  *
  * An index i is good if the following formula holds:
  * * 0 <= i < variables.length
- * * ((aibi % 10)ci) % mi == target
+ * * ((ai^bi % 10)^ci) % mi == target
  *
  * Return an array consisting of good indices in any order.
  *
  * [URL](https://leetcode.com/problems/double-modular-exponentiation/)
  */
 object DoubleModularExponentiation {
-    fun getGoodIndices(variables: Array<IntArray>, target: Int): List<Int> {
+    fun getGoodIndicesBigDecimal(variables: Array<IntArray>, target: Int): List<Int> {
         val result = ArrayList<Int>()
 
         for (i in variables.indices) {
@@ -29,5 +29,36 @@ object DoubleModularExponentiation {
     private fun isGood(arr: IntArray, target: Int): Boolean {
         val (a, b, c, m) = arr
         return BigDecimal(a).pow(b).rem(BigDecimal(10)).pow(c).rem(BigDecimal(m)) == BigDecimal(target)
+    }
+
+    fun getGoodIndicesSimulation(variables: Array<IntArray>, target: Int): List<Int> {
+        val result = ArrayList<Int>()
+
+        for (i in variables.indices) {
+            if (isGoodSimulation(variables[i], target)) {
+                result.add(i)
+            }
+        }
+
+        return result
+    }
+
+    private fun isGoodSimulation(arr: IntArray, target: Int): Boolean {
+        var (a, b, c, m) = arr
+        var rem = a % 10
+
+        var result = rem
+
+        while (--b > 0) {
+            result = (result * rem) % 10
+        }
+        result %= m
+        rem = result
+
+        while (--c > 0) {
+            result = (result * rem) % m
+        }
+
+        return result == target
     }
 }
