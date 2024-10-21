@@ -1,8 +1,5 @@
 package strings.medium
 
-import jdk.internal.org.jline.utils.Colors
-
-
 /**
  * Given a string s and an integer k, return the total number of substrings of s where at least one character appears
  * at least k times.
