@@ -10,14 +10,14 @@ package arrays.easy
 object MoveZeroes {
     fun moveZeroes(nums: IntArray) {
         var realIndex = 0
+        
         for (i in nums.indices) {
-            if (nums[i] != 0) {
-                if (i != realIndex) {
-                    nums[realIndex] = nums[i]
-                    nums[i] = 0
-                }
-                realIndex++
+            if (nums[i] == 0) continue
+            if (i != realIndex) {
+                nums[realIndex] = nums[i]
+                nums[i] = 0
             }
+            realIndex++
         }
     }
 }
