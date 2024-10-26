@@ -24,7 +24,7 @@ object HeightOfBinaryTreeAfterSubtreeRemovalQueries {
         val excluded = queries.withIndex().groupBy({ it.value }, { it.index })
 
         val result = IntArray(queries.size)
-        calculateTreeHeight(root, excluded, HashSet(), result, 0)
+        calculateTreeHeight(root, excluded, result, 0)
 
         return result
     }
@@ -32,29 +32,23 @@ object HeightOfBinaryTreeAfterSubtreeRemovalQueries {
     private fun calculateTreeHeight(
         node: TreeNode?,
         excluded: Map<Int, List<Int>>,
-        dontCount: HashSet<Int>,
         result: IntArray,
         curr: Int,
     ) {
         if (node == null) return
-
-        excluded[node.`val`]?.let {
-            dontCount.addAll(it)
-            for (i in it) {
-                result[i] = maxOf(result[i], curr - 1)
-            }
-        }
-        calculateTreeHeight(node.left, excluded, dontCount, result, curr + 1)
-        calculateTreeHeight(node.right, excluded, dontCount, result, curr + 1)
+        
+        val prevval = excluded[node.`val`].orEmpty().map { it to result[it] }
+        
+        calculateTreeHeight(node.left, excluded, result, curr + 1)
+        calculateTreeHeight(node.right, excluded, result, curr + 1)
+        
         if (node.left == null && node.right == null) {
             for (i in result.indices) {
-                if (i in dontCount) continue
                 result[i] = maxOf(result[i], curr)
             }
         }
-
-        excluded[node.`val`]?.let {
-            dontCount.removeAll(it)
+        for ((i, v) in prevval) {
+            result[i] = maxOf(v, curr - 1)
         }
     }
 }
