@@ -13,7 +13,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/maximum-number-of-moves-in-a-grid/)
  */
 object MaximumNumberOfMovesInGrid {
-    private val moves = listOf(-1 to 1, 0 to 1, 1 to 1)
+    private val moves = intArrayOf(-1, 0, 1)
 
     fun maxMoves(grid: Array<IntArray>): Int {
         var result = 0
@@ -30,9 +30,9 @@ object MaximumNumberOfMovesInGrid {
         map[row to col]?.let { return it }
 
         var result = 0
-        for ((dr, dc) in moves) {
+        for (dr in moves) {
             val newr = row + dr
-            val newc = col + dc
+            val newc = col + 1
 
             if (newr in grid.indices && newc in grid[0].indices && grid[newr][newc] > grid[row][col]) {
                 result = maxOf(result, dfs(newr, newc, grid, map) + 1)
