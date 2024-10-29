@@ -19,18 +19,37 @@ object PaintHousesII {
 
         val dp = Array(n) { IntArray(k) { Int.MAX_VALUE } }
 
+        var minColor = Int.MAX_VALUE
+        var secondMinColor = Int.MAX_VALUE
+        
         for (i in 0 until k) {
             dp[0][i] = costs[0][i]
+            if (dp[0][i] < minColor) {
+                secondMinColor = minColor
+                minColor = dp[0][i]
+            } else if (dp[0][i] < secondMinColor) {
+                secondMinColor = dp[0][i]
+            }
         }
 
         for (house in 1 until n) {
+            var curMinColor = Int.MAX_VALUE
+            var secondCurMinColor = Int.MAX_VALUE
             for (paint in 0 until k) {
-                for (prevPaint in 0 until k) {
-                    if (paint == prevPaint) continue
-
-                    dp[house][paint] = minOf(dp[house][paint], dp[house - 1][prevPaint] + costs[house][paint])
+                if (dp[house - 1][paint] == minColor) {
+                    dp[house][paint] = costs[house][paint] + secondMinColor
+                } else {
+                    dp[house][paint] = costs[house][paint] + minColor
+                }
+                if (dp[house][paint] < curMinColor) {
+                    secondCurMinColor = curMinColor
+                    curMinColor = dp[house][paint]
+                } else if (dp[house][paint] < secondCurMinColor) {
+                    secondCurMinColor = dp[house][paint]
                 }
             }
+            minColor = curMinColor
+            secondMinColor = secondCurMinColor
         }
         var result = Int.MAX_VALUE
         for (paint in costs[0].indices) {
