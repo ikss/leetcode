@@ -17,43 +17,45 @@ object PaintHousesII {
         val n = costs.size
         val k = costs[0].size
 
-        val dp = Array(n) { IntArray(k) { Int.MAX_VALUE } }
+        var dp = IntArray(k) { Int.MAX_VALUE }
 
         var minColor = Int.MAX_VALUE
         var secondMinColor = Int.MAX_VALUE
-        
+
         for (i in 0 until k) {
-            dp[0][i] = costs[0][i]
-            if (dp[0][i] < minColor) {
+            dp[i] = costs[0][i]
+            if (dp[i] < minColor) {
                 secondMinColor = minColor
-                minColor = dp[0][i]
-            } else if (dp[0][i] < secondMinColor) {
-                secondMinColor = dp[0][i]
+                minColor = dp[i]
+            } else if (dp[i] < secondMinColor) {
+                secondMinColor = dp[i]
             }
         }
 
         for (house in 1 until n) {
             var curMinColor = Int.MAX_VALUE
             var secondCurMinColor = Int.MAX_VALUE
+            val newDp = IntArray(k) { Int.MAX_VALUE }
             for (paint in 0 until k) {
-                if (dp[house - 1][paint] == minColor) {
-                    dp[house][paint] = costs[house][paint] + secondMinColor
+                if (dp[paint] == minColor) {
+                    newDp[paint] = costs[house][paint] + secondMinColor
                 } else {
-                    dp[house][paint] = costs[house][paint] + minColor
+                    newDp[paint] = costs[house][paint] + minColor
                 }
-                if (dp[house][paint] < curMinColor) {
+                if (newDp[paint] < curMinColor) {
                     secondCurMinColor = curMinColor
-                    curMinColor = dp[house][paint]
-                } else if (dp[house][paint] < secondCurMinColor) {
-                    secondCurMinColor = dp[house][paint]
+                    curMinColor = newDp[paint]
+                } else if (newDp[paint] < secondCurMinColor) {
+                    secondCurMinColor = newDp[paint]
                 }
             }
             minColor = curMinColor
             secondMinColor = secondCurMinColor
+            dp = newDp
         }
         var result = Int.MAX_VALUE
         for (paint in costs[0].indices) {
-            result = minOf(result, dp[n - 1][paint])
+            result = minOf(result, dp[paint])
         }
 
         return result
