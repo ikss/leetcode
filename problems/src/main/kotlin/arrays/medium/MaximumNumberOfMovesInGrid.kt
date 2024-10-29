@@ -17,17 +17,19 @@ object MaximumNumberOfMovesInGrid {
 
     fun maxMoves(grid: Array<IntArray>): Int {
         var result = 0
-        val map = HashMap<Pair<Int, Int>, Int>()
+        val dp = Array(grid.size) { IntArray(grid[0].size) { -1 } }
 
         for (i in grid.indices) {
-            result = maxOf(result, dfs(i, 0, grid, map))
+            result = maxOf(result, dfs(i, 0, grid, dp))
         }
 
         return result
     }
 
-    private fun dfs(row: Int, col: Int, grid: Array<IntArray>, map: HashMap<Pair<Int, Int>, Int>): Int {
-        map[row to col]?.let { return it }
+    private fun dfs(row: Int, col: Int, grid: Array<IntArray>, dp: Array<IntArray>): Int {
+        if (dp[row][col] != -1) {
+            return dp[row][col]
+        }
 
         var result = 0
         for (dr in moves) {
@@ -35,10 +37,10 @@ object MaximumNumberOfMovesInGrid {
             val newc = col + 1
 
             if (newr in grid.indices && newc in grid[0].indices && grid[newr][newc] > grid[row][col]) {
-                result = maxOf(result, dfs(newr, newc, grid, map) + 1)
+                result = maxOf(result, dfs(newr, newc, grid, dp) + 1)
             }
         }
-        map[row to col] = result
+        dp[row][col] = result
 
         return result
     }
