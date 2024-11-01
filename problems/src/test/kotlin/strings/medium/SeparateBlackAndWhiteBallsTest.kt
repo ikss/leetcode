@@ -7,7 +7,7 @@ class SeparateBlackAndWhiteBallsTest {
     @Test
     fun test1() {
         val s = "101"
-        val expected = 1
+        val expected = 1L
 
         assertEquals(expected, SeparateBlackAndWhiteBalls.minimumSteps(s))
     }
@@ -15,7 +15,7 @@ class SeparateBlackAndWhiteBallsTest {
     @Test
     fun test2() {
         val s = "100"
-        val expected = 2
+        val expected = 2L
 
         assertEquals(expected, SeparateBlackAndWhiteBalls.minimumSteps(s))
     }
@@ -23,7 +23,7 @@ class SeparateBlackAndWhiteBallsTest {
     @Test
     fun test3() {
         val s = "0111"
-        val expected = 0
+        val expected = 0L
 
         assertEquals(expected, SeparateBlackAndWhiteBalls.minimumSteps(s))
     }
