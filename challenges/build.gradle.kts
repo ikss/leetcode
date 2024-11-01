@@ -13,7 +13,7 @@ dependencies {
     implementation(project(":shared"))
 
     // Tests
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.11.3")
     testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
