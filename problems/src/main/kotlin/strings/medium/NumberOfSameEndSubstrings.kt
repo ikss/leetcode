@@ -4,7 +4,7 @@ import java.util.*
 
 /**
  * You are given a 0-indexed string s, and a 2D array of integers queries, where `queries[i] = [li, ri]`
- * indicates a substring of s starting from the index li and ending at the index ri (both inclusive), i.e. `s[li..ri]`.
+ * indicates a substring of s starting from the index li and ending at the index ri (both inclusive), i.e. `s[li ..ri]`.
  *
  * Return an array ans where `ans[i]` is the number of same-end substrings of `queries[i]`.
  *
