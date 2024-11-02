@@ -1,7 +1,6 @@
 package linked_lists.medium
 
 import data_structures.ListNode
-import data_structures.ListNodeCycled
 
 /**
  * A critical point in a linked list is defined as either a local maxima or a local minima.

@@ -1,7 +1,5 @@
 package arrays.medium
 
-import java.util.*
-
 /**
  * You are given an array nums consisting of positive integers.
  *

@@ -1,7 +1,6 @@
 package trees.medium
 
 import data_structures.TreeNode
-import java.util.*
 
 /**
  * Given a binary tree root and an integer target, delete all the leaf nodes with value target.

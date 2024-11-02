@@ -1,7 +1,6 @@
 package trees.medium
 
 import data_structures.NaryTreeBuilder
-import data_structures.NaryTreeNode
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

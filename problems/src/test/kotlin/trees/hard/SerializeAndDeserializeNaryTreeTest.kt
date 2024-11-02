@@ -1,7 +1,7 @@
 package trees.hard
 
 import data_structures.NaryTreeBuilder
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class SerializeAndDeserializeNaryTreeTest {

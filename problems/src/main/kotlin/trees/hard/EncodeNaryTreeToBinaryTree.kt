@@ -2,9 +2,6 @@ package trees.hard
 
 import data_structures.NaryTreeNode
 import data_structures.TreeNode
-import java.util.*
-import kotlin.collections.ArrayList
-
 
 /**
  * Design an algorithm to encode an N-ary tree into a binary tree and decode the binary tree to get the original

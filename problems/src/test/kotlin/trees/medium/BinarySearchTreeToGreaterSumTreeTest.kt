@@ -1,7 +1,7 @@
 package trees.medium
 
 import data_structures.TreeBuilder
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class BinarySearchTreeToGreaterSumTreeTest {

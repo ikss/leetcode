@@ -1,7 +1,5 @@
 package arrays.medium
 
-import java.util.*
-
 /**
  * A room is represented by a 0-indexed 2D binary matrix room where a 0 represents an empty space and a 1 represents
  * a space with an object. The top left corner of the room will be empty in all test cases.

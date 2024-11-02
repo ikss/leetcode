@@ -1,7 +1,7 @@
 package trees.medium
 
 import data_structures.TreeNode
-import java.util.IdentityHashMap
+import java.util.*
 
 /**
  * Given the root of a binary tree, replace the value of each node in the tree with the sum of all its cousins' values.
@@ -18,7 +18,7 @@ object CousinsInBinaryTreeII {
     fun replaceValueInTree(root: TreeNode?): TreeNode? {
         if (root == null) return null
 
-        val queue = java.util.ArrayDeque<Pair<TreeNode, TreeNode>>()
+        val queue = ArrayDeque<Pair<TreeNode, TreeNode>>()
         queue.offer(root to root)
 
         val sumByRoot = IdentityHashMap<TreeNode, Int>()

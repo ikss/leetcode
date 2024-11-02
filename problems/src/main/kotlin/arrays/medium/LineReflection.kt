@@ -1,9 +1,5 @@
 package arrays.medium
 
-import kotlin.math.max
-import kotlin.math.min
-
-
 /**
  * Given n points on a 2D plane, find if there is such a line parallel to the y-axis that reflects the given points
  * symmetrically.

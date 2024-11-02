@@ -1,7 +1,6 @@
 package arrays.easy
 
 import java.util.*
-import kotlin.collections.HashMap
 
 /**
  * he next greater element of some element x in an array is the first greater element that is to the right of x

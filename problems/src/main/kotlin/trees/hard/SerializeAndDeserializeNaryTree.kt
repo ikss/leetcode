@@ -1,9 +1,7 @@
 package trees.hard
 
 import data_structures.NaryTreeNode
-import data_structures.TreeNode
 import java.util.*
-import kotlin.collections.ArrayList
 
 /**
  * Serialization is the process of converting a data structure or object into a sequence of bits so that it can be

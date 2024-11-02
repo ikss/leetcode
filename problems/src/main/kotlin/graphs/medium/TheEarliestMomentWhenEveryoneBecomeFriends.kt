@@ -1,7 +1,5 @@
 package graphs.medium
 
-import data_structures.GraphNode
-
 /**
  * There are n people in a social group labeled from 0 to n - 1. You are given an array logs where
  * `logs[i] = [timestampi, xi, yi]` indicates that xi and yi will be friends at the time timestampi.
