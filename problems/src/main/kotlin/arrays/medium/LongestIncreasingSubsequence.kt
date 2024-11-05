@@ -44,7 +44,6 @@ object LongestIncreasingSubsequence {
             piles.add(n)
         }
 
-
         return piles.size
     }
 }

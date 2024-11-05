@@ -1,6 +1,5 @@
 package arrays.medium
 
-
 /**
  * Given an array of integers arr.
  *

@@ -1,6 +1,5 @@
 package strings.medium
 
-
 /**
  * A wonderful string is a string where at most one letter appears an odd number of times.
  *

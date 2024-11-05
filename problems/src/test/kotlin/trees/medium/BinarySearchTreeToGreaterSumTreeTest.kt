@@ -21,5 +21,4 @@ class BinarySearchTreeToGreaterSumTreeTest {
         assertEquals(expected, BinarySearchTreeToGreaterSumTree.bstToGst(tree))
     }
 
-
 }

@@ -2,7 +2,6 @@ package arrays.medium
 
 import java.util.*
 
-
 /**
  * You are given a 2D integer array intervals where `intervals[i] = [lefti, righti]` represents the inclusive interval
  * `[lefti, righti]`.

@@ -1,6 +1,5 @@
 package strings.medium
 
-
 /**
  * You are given a 0-indexed binary string s having an even length.
  *

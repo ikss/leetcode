@@ -1,8 +1,6 @@
 package numbers.hard
 
 import java.util.*
-import kotlin.math.min
-
 
 /**
  * A positive integer is magical if it is divisible by either a or b.
@@ -41,7 +39,7 @@ object NthMagicalNumber {
         val l = a / gcd(a, b) * b
 
         var lo: Long = 0
-        var hi = (n.toLong() * min(a.toDouble(), b.toDouble())).toLong()
+        var hi = n.toLong() * minOf(a, b)
         while (lo < hi) {
             val mi = lo + (hi - lo) / 2
             // If there are not enough magic numbers below mi...

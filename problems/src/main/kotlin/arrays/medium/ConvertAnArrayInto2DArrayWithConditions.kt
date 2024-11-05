@@ -1,6 +1,5 @@
 package arrays.medium
 
-
 /**
  * You are given an integer array nums. You need to create a 2D array from nums satisfying the following conditions:
  *

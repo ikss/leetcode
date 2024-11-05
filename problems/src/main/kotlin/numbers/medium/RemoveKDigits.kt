@@ -28,7 +28,6 @@ object RemoveKDigits {
 
         val result = StringBuilder(stack.size)
 
-
         for (c in stack) {
             if (result.isEmpty() && c == 0) continue
             result.append('0' + c)

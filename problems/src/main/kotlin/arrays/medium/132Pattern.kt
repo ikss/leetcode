@@ -1,7 +1,5 @@
 package arrays.medium
 
-import kotlin.math.min
-
 /**
  * Given an array of n integers nums, a 132 pattern is a subsequence of three integers `nums[i]`,`nums[j]` and `nums[k]`
  * such that i < j < k and `nums[i] < nums[k] < nums[j]`.
@@ -17,7 +15,7 @@ object `132Pattern` {
         val min = IntArray(nums.size)
         min[0] = nums[0]
         for (i in 1 until nums.size) {
-            min[i] = min(min[i - 1], nums[i])
+            min[i] = minOf(min[i - 1], nums[i])
         }
         var j = nums.size - 1
         var k = nums.size

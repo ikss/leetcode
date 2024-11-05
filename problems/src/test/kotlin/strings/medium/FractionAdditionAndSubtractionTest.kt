@@ -28,7 +28,6 @@ class FractionAdditionAndSubtractionTest {
         assertEquals(expected, FractionAdditionAndSubtraction.fractionAddition(expression))
     }
 
-
     @Test
     fun test4() {
         val expression = "1/3-5/4+3/10"

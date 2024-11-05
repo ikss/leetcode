@@ -2,7 +2,6 @@ package arrays.hard
 
 import java.util.*
 
-
 /**
  * You are given an integer n. There are n rooms numbered from 0 to n - 1.
  *

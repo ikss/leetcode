@@ -28,7 +28,6 @@ object TheEarliestMomentWhenEveryoneBecomeFriends {
         private val rank = IntArray(n + 1) { 1 }
         private var components = n
 
-
         fun find(x: Int): Int {
             if (x != root[x]) {
                 root[x] = find(root[x])

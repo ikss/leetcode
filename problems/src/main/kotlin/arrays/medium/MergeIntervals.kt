@@ -13,7 +13,6 @@ object MergeIntervals {
         intervals.sortBy { it[0] }
         val merged = TreeMap<Int, Int>()
 
-
         for ((start, end) in intervals) {
             val overlappedEnd = merged.floorEntry(end)
             if (overlappedEnd != null && overlappedEnd.value >= start) {

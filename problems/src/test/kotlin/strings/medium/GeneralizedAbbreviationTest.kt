@@ -12,7 +12,6 @@ class GeneralizedAbbreviationTest {
         assertEquals(expected, GeneralizedAbbreviation.generateAbbreviations(word))
     }
 
-
     @Test
     fun test2() {
         val word = "a"

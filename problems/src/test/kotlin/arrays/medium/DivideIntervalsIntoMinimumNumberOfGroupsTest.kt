@@ -48,5 +48,4 @@ class DivideIntervalsIntoMinimumNumberOfGroupsTest {
         assertEquals(expected, DivideIntervalsIntoMinimumNumberOfGroups.minGroups(intervals))
     }
 
-
 }

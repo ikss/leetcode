@@ -1,6 +1,5 @@
 package arrays.hard
 
-
 /**
  * Given an m x n binary grid _grid_ where each 1 marks the home of one friend, return the minimal total travel distance.
  *

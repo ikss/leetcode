@@ -1,6 +1,5 @@
 package arrays.easy
 
-
 /**
  * Given an m x n matrix of distinct numbers, return all lucky numbers in the matrix in any order.
  *

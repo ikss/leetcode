@@ -24,7 +24,6 @@ object ImplementTrieII {
 
         private val head = TrieNode()
 
-
         fun insert(word: String) {
             var node = head
 

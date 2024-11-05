@@ -32,7 +32,6 @@ object CheckIfArrayPairsAreDivisibleByK {
             if (count != inv) return false
         }
 
-
         return true
     }
 }

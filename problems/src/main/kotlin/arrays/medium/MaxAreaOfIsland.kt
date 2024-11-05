@@ -36,7 +36,6 @@ object MaxAreaOfIsland {
         return (1 + down + up + left + right)
     }
 
-
     fun maxAreaOfIslandBfs(grid: Array<IntArray>): Int {
         val m = grid.size
         val n = grid[0].size

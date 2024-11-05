@@ -29,7 +29,6 @@ object FlipEquivalentBinaryTrees {
         val nonFlipped = dfs(node1.left, node2.left) && dfs(node1.right, node2.right)
         if (nonFlipped) return true
 
-
         // check flipped
         val flipped = dfs(node1.left, node2.right) && dfs(node1.right, node2.left)
         return flipped

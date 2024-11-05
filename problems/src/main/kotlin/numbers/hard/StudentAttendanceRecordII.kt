@@ -22,7 +22,6 @@ object StudentAttendanceRecordII {
     fun checkRecord(n: Int): Int {
         var state = longArrayOf(1L, 1L, 0L, 1L, 0L, 0L)
 
-
         for (i in 1 until n) {
             val newState = LongArray(6)
             var lval = state[0] + state[1] + state[2]

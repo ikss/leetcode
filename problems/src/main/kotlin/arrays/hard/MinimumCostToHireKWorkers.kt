@@ -2,7 +2,6 @@ package arrays.hard
 
 import java.util.*
 
-
 /**
  * There are n workers. You are given two integer arrays quality and wage where `quality[i]` is the quality of the ith
  * worker and `wage[i]` is the minimum wage expectation for the ith worker.

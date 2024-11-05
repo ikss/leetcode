@@ -26,7 +26,6 @@ object TheNumberOfTheSmallestUnoccupiedChair {
         var currChair = 0
         val ends = PriorityQueue<Pair<Int, Int>> { p1, p2 -> p1.first - p2.first }
 
-
         val sorted = times.withIndex().sortedBy { it.value[0] }
         for (i in sorted.indices) {
             val sortedFriend = sorted[i].index
@@ -45,7 +44,6 @@ object TheNumberOfTheSmallestUnoccupiedChair {
             if (sortedFriend == targetFriend) {
                 return chair
             }
-
 
             ends.offer(end to chair)
         }

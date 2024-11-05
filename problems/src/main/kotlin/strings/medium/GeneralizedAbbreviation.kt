@@ -1,6 +1,5 @@
 package strings.medium
 
-
 /**
  * A word's generalized abbreviation can be constructed by taking any number of non-overlapping and non-adjacent
  * substrings and replacing them with their respective lengths.

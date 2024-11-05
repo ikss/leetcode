@@ -28,7 +28,6 @@ object WordPatternII {
         if (pstart == pattern.length && sstart == s.length) return true
         if (pstart >= pattern.length || sstart >= s.length) return false
 
-
         val c = pattern[pstart]
         if (c in symbolMap) {
             val mapping = symbolMap[c]!!

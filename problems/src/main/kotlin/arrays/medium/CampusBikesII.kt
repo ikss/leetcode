@@ -2,7 +2,6 @@ package arrays.medium
 
 import java.util.*
 
-
 /**
  * On a campus represented as a 2D grid, there are n workers and m bikes, with n <= m.
  * Each worker and bike is a 2D coordinate on this grid.

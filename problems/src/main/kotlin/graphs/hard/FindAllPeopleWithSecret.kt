@@ -3,7 +3,6 @@ package graphs.hard
 import data_structures.UnionFind
 import java.util.*
 
-
 /**
  * You are given an integer n indicating there are n people numbered from 0 to n - 1.
  * You are also given a 0-indexed 2D integer array meetings where` meetings[i] = [xi, yi, timei]` indicates that person
