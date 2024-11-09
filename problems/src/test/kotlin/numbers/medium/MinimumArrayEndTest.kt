@@ -8,7 +8,7 @@ class MinimumArrayEndTest {
     fun test1() {
         val n = 3
         val x = 4
-        val expected = 6
+        val expected = 6L
 
         assertEquals(expected, MinimumArrayEnd.minEnd(n, x))
     }
@@ -17,7 +17,7 @@ class MinimumArrayEndTest {
     fun test2() {
         val n = 2
         val x = 7
-        val expected = 15
+        val expected = 15L
 
         assertEquals(expected, MinimumArrayEnd.minEnd(n, x))
     }
