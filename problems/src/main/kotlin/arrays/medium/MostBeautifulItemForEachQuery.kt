@@ -16,25 +16,26 @@ import java.util.*
  */
 object MostBeautifulItemForEachQuery {
     fun maximumBeauty(items: Array<IntArray>, queries: IntArray): IntArray {
-        items.sortBy { it[1] }
+        items.sortBy { it[0] }
         val map = TreeMap<Int, Int>()
 
         for ((price, beauty) in items) {
-            val existing = map[price] ?: 0
-            map[price] = maxOf(existing, beauty)
-            val next = price + 1
-            var ceiling = map.ceilingEntry(next)
-            while (ceiling != null && ceiling.value <= beauty) {
-                map.remove(ceiling.key)
-                ceiling = map.ceilingEntry(ceiling.key)
+            val floor = map.floorEntry(price)
+            if (floor == null) {
+                map[price] = beauty
+                continue
             }
+            if (floor.value > beauty) continue
+
+            map[price] = beauty
         }
 
         val result = IntArray(queries.size)
 
         for (i in queries.indices) {
             val query = queries[i]
-            result[i] = map.floorEntry(query)?.value ?: 0
+            val entry = map.floorEntry(query) ?: continue
+            result[i] = entry.value
         }
 
         return result
