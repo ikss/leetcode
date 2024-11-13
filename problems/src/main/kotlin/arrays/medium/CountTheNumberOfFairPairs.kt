@@ -12,7 +12,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/count-the-number-of-fair-pairs/)
  */
 object CountTheNumberOfFairPairs {
-    fun countFairPairs(nums: IntArray, lower: Int, upper: Int): Long {
+    fun countFairPairsTreeMap(nums: IntArray, lower: Int, upper: Int): Long {
         nums.sort()
         val map = TreeMap<Int, Int>()
         var curr = 1
@@ -35,5 +35,28 @@ object CountTheNumberOfFairPairs {
         }
 
         return result / 2
+    }
+
+    fun countFairPairsTwoPointers(nums: IntArray, lower: Int, upper: Int): Long {
+        nums.sort()
+        return lowerBound(nums, upper + 1) - lowerBound(nums, lower)
+    }
+
+    private fun lowerBound(nums: IntArray, value: Int): Long {
+        var left = 0
+        var right = nums.size - 1
+        var result = 0L
+        
+        while (left < right) {
+            val sum = nums[left] + nums[right]
+            if (sum < value) {
+                result += right - left
+                left++
+            } else {
+                right--
+            }
+        }
+
+        return result
     }
 }
