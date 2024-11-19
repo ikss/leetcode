@@ -10,32 +10,23 @@ package arrays.easy
 object DuplicateZeros {
     fun duplicateZeros(arr: IntArray) {
         var possibleDups = 0
-        var length_ = arr.size - 1
+        var len = arr.size - 1
 
-        // Find the number of zeros to be duplicated
-        // Stopping when left points beyond the last element in the original array
-        // which would be part of the modified array
-        for (left in 0..length_ - possibleDups) {
-
-            // Count the zeros
+        var left = 0
+        while (left <= len - possibleDups) {
             if (arr[left] == 0) {
-                // Edge case: This zero can't be duplicated. We have no more space,
-                // as left is pointing to the last element which could be included  
-                if (left == length_ - possibleDups) {
-                    // For this zero we just copy it without duplication.
-                    arr[length_] = 0
-                    length_ -= 1
+                if (left == len - possibleDups) {
+                    arr[len] = 0
+                    len -= 1
                     break
                 }
                 possibleDups++
             }
-            if (left >= length_ - possibleDups) break
+            left++
         }
 
-        // Start backwards from the last element which would be part of new array.
-        val last = length_ - possibleDups
+        val last = len - possibleDups
 
-        // Copy zero twice, and non zero once.
         for (i in last downTo 0) {
             arr[i + possibleDups] = arr[i]
             if (arr[i] == 0) {
