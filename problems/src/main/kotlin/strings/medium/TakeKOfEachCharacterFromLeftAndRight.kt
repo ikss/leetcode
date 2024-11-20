@@ -12,7 +12,6 @@ package strings.medium
 object TakeKOfEachCharacterFromLeftAndRight {
     fun takeCharacters(s: String, k: Int): Int {
         val count = IntArray(3)
-        val n = s.length
 
         for (c in s.toCharArray()) {
             count[c - 'a']++
@@ -26,7 +25,7 @@ object TakeKOfEachCharacterFromLeftAndRight {
         var left = 0
         var maxWindow = 0
 
-        for (right in 0..<n) {
+        for (right in s.indices) {
             window[s[right] - 'a']++
 
             while (left <= right && (count[0] - window[0] < k || count[1] - window[1] < k || count[2] - window[2] < k)) {
@@ -37,6 +36,6 @@ object TakeKOfEachCharacterFromLeftAndRight {
             maxWindow = maxOf(maxWindow, right - left + 1)
         }
 
-        return n - maxWindow
+        return s.length - maxWindow
     }
 }
