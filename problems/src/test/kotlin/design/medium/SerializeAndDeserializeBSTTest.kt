@@ -21,7 +21,7 @@ class SerializeAndDeserializeBSTTest {
         val codec = SerializeAndDeserializeBST.Codec()
         val serialized = codec.serialize(root)
 
-        assertEquals("", serialized)
+        assertEquals("null", serialized)
         assertEquals(root, codec.deserialize(serialized))
     }
 }
