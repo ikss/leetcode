@@ -22,7 +22,7 @@ object ConstructStringWithRepeatLimit {
         for (c in s) {
             map[c] = map.getOrDefault(c, 0) + 1
         }
-        
+
         while (map.isNotEmpty()) {
             val last = map.lastEntry()
             var removed = false
@@ -48,5 +48,49 @@ object ConstructStringWithRepeatLimit {
         }
 
         return result.toString()
+    }
+
+    fun repeatLimitedStringArray(s: String, repeatLimit: Int): String {
+        val array = IntArray(26)
+        val result = StringBuilder()
+
+        var last = -1
+        for (c in s) {
+            val index = c - 'a'
+            array[index]++
+            last = maxOf(last, index)
+        }
+
+        while (true) {
+            for (i in 0 until minOf(repeatLimit, array[last])) {
+                result.append('a' + last)
+                array[last]--
+            }
+            if (array[last] > 0) {
+                val prev = getPrevious(array, last)
+                if (prev == last) {
+                    break
+                }
+                result.append('a' + prev)
+                array[prev]--
+            } else {
+                val prev = getPrevious(array, last)
+                if (prev == last) {
+                    break
+                }
+                last = prev
+            }
+        }
+
+        return result.toString()
+    }
+    
+    private fun getPrevious(array: IntArray, last: Int): Int {
+        for (i in last - 1 downTo 0) {
+            if (array[i] > 0) {
+                return i
+            }
+        }
+        return last
     }
 }

@@ -21,4 +21,22 @@ class ConstructStringWithRepeatLimitTest {
 
         assertEquals(expected, ConstructStringWithRepeatLimit.repeatLimitedStringTreeMap(s, repeatLimit))
     }
+
+    @Test
+    fun test1Array() {
+        val s = "cczazcc"
+        val repeatLimit = 3
+        val expected = "zzcccac"
+
+        assertEquals(expected, ConstructStringWithRepeatLimit.repeatLimitedStringArray(s, repeatLimit))
+    }
+
+    @Test
+    fun test2Array() {
+        val s = "aababab"
+        val repeatLimit = 2
+        val expected = "bbabaa"
+
+        assertEquals(expected, ConstructStringWithRepeatLimit.repeatLimitedStringArray(s, repeatLimit))
+    }
 }
