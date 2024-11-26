@@ -1,7 +1,6 @@
 package arrays.hard
 
 import java.util.*
-import kotlin.collections.HashMap
 
 /**
  * You are given an m x n integer matrix grid containing distinct positive integers.
@@ -26,8 +25,8 @@ object MinimizeMaximumValueInGrid {
     fun minScore(grid: Array<IntArray>): Array<IntArray> {
         val queue = PriorityQueue<IntArray> { a1, a2 -> a1[0] - a2[0] }
 
-        val rowMap = HashMap<Int, Int>()
-        val colMap = HashMap<Int, Int>()
+        val rowMap = IntArray(grid.size)
+        val colMap = IntArray(grid[0].size)
 
         for (r in grid.indices) {
             for (c in grid[0].indices) {
@@ -38,7 +37,7 @@ object MinimizeMaximumValueInGrid {
         while (queue.isNotEmpty()) {
             val (_, r, c) = queue.poll()
 
-            val next = maxOf(rowMap.getOrDefault(r, 0), colMap.getOrDefault(c, 0)) + 1
+            val next = maxOf(rowMap[r], colMap[c]) + 1
             grid[r][c] = next
             rowMap[r] = next
             colMap[c] = next
