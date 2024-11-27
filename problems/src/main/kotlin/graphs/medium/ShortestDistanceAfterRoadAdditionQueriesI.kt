@@ -16,7 +16,7 @@ import java.util.*
  *
  * [URL](https://leetcode.com/problems/shortest-distance-after-road-addition-queries-i/)
  */
-object ShortestDistanceAfterRoadAdditionQueriesII {
+object ShortestDistanceAfterRoadAdditionQueriesI {
     fun shortestDistanceAfterQueries(n: Int, queries: Array<IntArray>): IntArray {
         val graph = Array(n) { HashSet<Int>() }
 
