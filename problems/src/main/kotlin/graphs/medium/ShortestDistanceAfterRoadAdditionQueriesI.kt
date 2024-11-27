@@ -3,7 +3,7 @@ package graphs.medium
 import java.util.*
 
 /**
- *You are given an integer n and a 2D integer array queries.
+ * You are given an integer n and a 2D integer array queries.
  *
  * There are n cities numbered from 0 to n - 1. Initially, there is a unidirectional
  * road from city i to city i + 1 for all 0 <= i < n - 1.
