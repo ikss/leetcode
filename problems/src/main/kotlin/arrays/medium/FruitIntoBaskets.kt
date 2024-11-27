@@ -17,19 +17,14 @@ package arrays.medium
  */
 object FruitIntoBaskets {
     fun totalFruitSlidingWindow(fruits: IntArray): Int {
-        // We use a hash map 'basket' to store the number of each type of fruit.
-        val basket = hashMapOf<Int, Int>()
+        val basket = HashMap<Int, Int>()
         var left = 0
-        var maxPicked = 0
+        var result = 0
 
-        // Add fruit from the right index (right) of the window.
         for (right in fruits.indices) {
             val fruitRight = fruits[right]
             basket[fruitRight] = basket.getOrDefault(fruitRight, 0) + 1
 
-            // If the current window has more than 2 types of fruit,
-            // we remove fruit from the left index (left) of the window,
-            // until the window has only 2 types of fruit.
             while (basket.size > 2) {
                 val fruitLeft = fruits[left]
                 basket[fruitLeft] = basket[fruitLeft]!! - 1
@@ -39,12 +34,10 @@ object FruitIntoBaskets {
                 left++
             }
 
-            // Update maxPicked.
-            maxPicked = maxOf(maxPicked, right - left + 1)
+            result = maxOf(result, right - left + 1)
         }
 
-        // Return maxPicked as the maximum number of fruits we can collect.
-        return maxPicked
+        return result
     }
 
     fun totalFruitNaive(fruits: IntArray): Int {
