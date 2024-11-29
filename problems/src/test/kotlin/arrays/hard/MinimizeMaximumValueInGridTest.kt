@@ -1,6 +1,6 @@
 package arrays.hard
 
-import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class MinimizeMaximumValueInGridTest {
@@ -14,10 +14,10 @@ class MinimizeMaximumValueInGridTest {
             intArrayOf(2, 1),
             intArrayOf(1, 2),
         )
-        
-        assertEquals(expected, MinimizeMaximumValueInGrid.minScore(grid))
+
+        assertArrayEquals(expected, MinimizeMaximumValueInGrid.minScore(grid))
     }
-    
+
     @Test
     fun test2() {
         val grid = arrayOf(
@@ -26,7 +26,7 @@ class MinimizeMaximumValueInGridTest {
         val expected = arrayOf(
             intArrayOf(1),
         )
-        
-        assertEquals(expected, MinimizeMaximumValueInGrid.minScore(grid))
+
+        assertArrayEquals(expected, MinimizeMaximumValueInGrid.minScore(grid))
     }
 }
