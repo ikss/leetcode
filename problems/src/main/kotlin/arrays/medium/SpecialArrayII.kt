@@ -11,7 +11,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/special-array-ii/)
  */
 object SpecialArrayII {
-    fun isArraySpecial(nums: IntArray, queries: Array<IntArray>): BooleanArray {
+    fun isArraySpecialNaive(nums: IntArray, queries: Array<IntArray>): BooleanArray {
         val wrongIndex = ArrayList<Int>()
 
         for (i in 0 until nums.size - 1) {
@@ -36,6 +36,23 @@ object SpecialArrayII {
             if (valid) {
                 result[i] = true
             }
+        }
+        return result
+    }
+
+    fun isArraySpecialPrefixSum(nums: IntArray, queries: Array<IntArray>): BooleanArray {
+        val wrongIndexCount = IntArray(nums.size)
+
+        for (i in 1 until nums.size) {
+            val first = nums[i - 1] % 2
+            val second = nums[i] % 2
+            val wrong = if (first == second) 1 else 0
+            wrongIndexCount[i] = wrongIndexCount[i - 1] + wrong
+        }
+        val result = BooleanArray(queries.size)
+        for (i in queries.indices) {
+            val (start, end) = queries[i]
+            result[i] = wrongIndexCount[end] == wrongIndexCount[start]
         }
         return result
     }
