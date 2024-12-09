@@ -12,23 +12,23 @@ package arrays.medium
  */
 object SpecialArrayII {
     fun isArraySpecial(nums: IntArray, queries: Array<IntArray>): BooleanArray {
-        val pairs = ArrayList<Pair<Int, Int>>()
+        val wrongIndex = ArrayList<Int>()
 
         for (i in 0 until nums.size - 1) {
             val first = nums[i] % 2
             val second = nums[i + 1] % 2
             if (first == second) {
-                pairs.add(i to i + 1)
+                wrongIndex.add(i)
             }
         }
         val result = BooleanArray(queries.size)
         for (i in queries.indices) {
             val (start, end) = queries[i]
             var valid = true
-            for ((l, r) in pairs) {
-                if (l < start) continue
-                if (r > end) break
-                if (l < end && r > start) {
+            for (wrong in wrongIndex) {
+                if (wrong < start) continue
+                if (wrong > end) break
+                if (wrong < end) {
                     valid = false
                     break
                 }
