@@ -23,7 +23,7 @@ object LicenseKeyFormatting {
             if (count > 0 && count % k == 0) {
                 result.append('-')
             }
-            result.append(c.toUpperCase())
+            result.append(c.uppercase())
             count++
         }
         return result.reversed().toString()
