@@ -19,4 +19,20 @@ class ContinuousSubarraysTest {
 
         assertEquals(expected, ContinuousSubarrays.continuousSubarrays(nums))
     }
+
+    @Test
+    fun test1TwoPointers() {
+        val nums = intArrayOf(5, 4, 2, 4)
+        val expected = 8L
+
+        assertEquals(expected, ContinuousSubarrays.continuousSubarraysTwoPointers(nums))
+    }
+
+    @Test
+    fun test2TwoPointers() {
+        val nums = intArrayOf(1, 2, 3)
+        val expected = 6L
+
+        assertEquals(expected, ContinuousSubarrays.continuousSubarraysTwoPointers(nums))
+    }
 }
