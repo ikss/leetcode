@@ -21,7 +21,6 @@ object MaximumNumberOfKDivisibleComponents {
     fun maxKDivisibleComponents(n: Int, edges: Array<IntArray>, values: IntArray, k: Int): Int {
         if (n < 2) return 1
 
-        var componentCount = 0
         val graph = Array(n) { ArrayList<Int>() }
         val inDegree = IntArray(n)
 
@@ -32,18 +31,16 @@ object MaximumNumberOfKDivisibleComponents {
             inDegree[node2]++
         }
 
-        val longValues = LongArray(n)
-        for (i in 0..<n) {
-            longValues[i] = values[i].toLong()
-        }
+        val longValues = LongArray(n) { values[it].toLong() }
 
         val queue = ArrayDeque<Int>()
-        for (node in 0..<n) {
+        for (node in 0 until n) {
             if (inDegree[node] == 1) {
                 queue.offer(node)
             }
         }
 
+        var result = 0
         while (!queue.isEmpty()) {
             val currentNode = queue.poll()
             inDegree[currentNode]--
@@ -51,7 +48,7 @@ object MaximumNumberOfKDivisibleComponents {
             var addValue = 0L
 
             if (longValues[currentNode] % k == 0L) {
-                componentCount++
+                result++
             } else {
                 addValue = longValues[currentNode] % k
             }
@@ -61,15 +58,14 @@ object MaximumNumberOfKDivisibleComponents {
                     continue
                 }
 
-                inDegree[neighborNode]--
                 longValues[neighborNode] += addValue
 
-                if (inDegree[neighborNode] == 1) {
+                if (--inDegree[neighborNode] == 1) {
                     queue.offer(neighborNode)
                 }
             }
         }
 
-        return componentCount
+        return result
     }
 }
