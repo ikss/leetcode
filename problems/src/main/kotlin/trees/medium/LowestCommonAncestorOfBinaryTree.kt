@@ -5,10 +5,13 @@ import java.util.*
 import kotlin.collections.set
 
 /**
- * Given the root of a binary tree, return the level order traversal of its nodes' values.
- * (i.e., from left to right, level by level).
+ * Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
  *
- * [URL](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+ * According to the definition of LCA on Wikipedia:
+ * “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as
+ * descendants (where we allow a node to be a descendant of itself).”
+ *
+ * [URL](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
  */
 object LowestCommonAncestorOfBinaryTree {
 
@@ -56,12 +59,12 @@ object LowestCommonAncestorOfBinaryTree {
         return second
     }
 
-    private var ans: TreeNode? = null
+    private var res: TreeNode? = null
 
     fun lowestCommonAncestorRecursive(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? {
-        ans = null
+        res = null
         recurseTree(root, p, q)
-        return ans
+        return res
     }
 
     private fun recurseTree(curr: TreeNode?, p: TreeNode?, q: TreeNode?): Boolean {
@@ -73,7 +76,7 @@ object LowestCommonAncestorOfBinaryTree {
         val mid = if (curr == p || curr == q) 1 else 0
 
         if (left + right + mid >= 2) {
-            ans = curr
+            res = curr
         }
         return (left + right + mid > 0)
     }
