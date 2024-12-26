@@ -32,7 +32,7 @@ class TargetSumTest {
     }
 
     @Test
-    fun test1dp() {
+    fun test1Dp() {
         val nums = intArrayOf(1, 1, 1, 1, 1)
         val target = 3
         val expected = 5
@@ -41,7 +41,7 @@ class TargetSumTest {
     }
 
     @Test
-    fun test2dp() {
+    fun test2Dp() {
         val nums = intArrayOf(1)
         val target = 1
         val expected = 1
