@@ -26,4 +26,15 @@ class CountWaysToBuildGoodStringsTest {
 
         assertEquals(expected, CountWaysToBuildGoodStrings.countGoodStrings(low, high, zero, one))
     }
+
+    @Test
+    fun test3() {
+        val low = 200
+        val high = 200
+        val zero = 10
+        val one = 1
+        val expected = 764262396
+
+        assertEquals(expected, CountWaysToBuildGoodStrings.countGoodStrings(low, high, zero, one))
+    }
 }
