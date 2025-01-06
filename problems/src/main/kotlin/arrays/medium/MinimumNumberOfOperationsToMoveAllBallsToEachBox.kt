@@ -15,7 +15,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/)
  */
 object MinimumNumberOfOperationsToMoveAllBallsToEachBox {
-    fun minOperations(boxes: String): IntArray {
+    fun minOperationsTwoPasses(boxes: String): IntArray {
         val n = boxes.length
         val result = IntArray(n)
 
@@ -36,6 +36,32 @@ object MinimumNumberOfOperationsToMoveAllBallsToEachBox {
             result[i] += currMoves
             if (boxes[i] == '1') {
                 currBalls++
+            }
+        }
+
+        return result
+    }
+
+    fun minOperationsOnePass(boxes: String): IntArray {
+        val n = boxes.length
+        val result = IntArray(n)
+
+        var currBallsLeft = 0
+        var currMovesLeft = 0
+        var currBallsRight = 0
+        var currMovesRight = 0
+        for (i in 0 until n) {
+            currMovesLeft += currBallsLeft
+            result[i] += currMovesLeft
+            if (boxes[i] == '1') {
+                currBallsLeft++
+            }
+            
+            val j = n - 1 - i
+            currMovesRight += currBallsRight
+            result[j] += currMovesRight
+            if (boxes[j] == '1') {
+                currBallsRight++
             }
         }
 
