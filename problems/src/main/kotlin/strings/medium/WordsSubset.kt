@@ -14,7 +14,7 @@ package strings.medium
  * [URL](https://leetcode.com/problems/word-subsets/)
  */
 object WordsSubset {
-    fun wordSubsets(words1: Array<String>, words2: Array<String>): List<String> {
+    fun wordSubsetsMap(words1: Array<String>, words2: Array<String>): List<String> {
         val result = mutableListOf<String>()
         val secondHash = joinHashes(words2)
         for (w in words1) {
@@ -55,5 +55,39 @@ object WordsSubset {
             occurrencesMap[c] = count + 1
         }
         return occurrencesMap
+    }
+
+    fun wordSubsetsArray(words1: Array<String>, words2: Array<String>): List<String> {
+        val universalHash = IntArray(26)
+        for (w2 in words2) {
+            val w2hash = getHashArray(w2)
+            for (i in universalHash.indices) {
+                universalHash[i] = maxOf(universalHash[i], w2hash[i])
+            }
+        }
+
+        val result = ArrayList<String>()
+
+        for (w1 in words1) {
+            val w1hash = getHashArray(w1)
+            var fit = true
+            for (i in universalHash.indices) {
+                if (universalHash[i] > w1hash[i]) {
+                    fit = false
+                    break
+                }
+            }
+            if (fit) result.add(w1)
+        }
+
+        return result
+    }
+
+    private fun getHashArray(word: String): IntArray {
+        val hash = IntArray(26)
+        for (c in word) {
+            hash[c - 'a']++
+        }
+        return hash
     }
 }
