@@ -8,7 +8,7 @@ class CheckIfParenthesesStringCanBeValidTest {
     fun test1() {
         val s = "))()))"
         val locked = "010100"
-        val expected = false
+        val expected = true
 
         assertEquals(expected, CheckIfParenthesesStringCanBeValid.canBeValid(s, locked))
     }
