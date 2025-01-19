@@ -85,10 +85,10 @@ object TrappingRainWaterII {
     }
 
     private fun drainTrapped(blocks: Array<Array<IntArray>>): Int {
-        val visited = HashSet<Triple<Int, Int, Int>>()
+        val visited = Array(blocks.size) { Array(blocks[0].size + 2) { BooleanArray(blocks[0][0].size + 2) } }
         val queue = java.util.ArrayDeque<IntArray>()
-        queue.offer(intArrayOf(0, -1, -1))
-        visited.add(Triple(0, -1, -1))
+        queue.offer(intArrayOf(0, 0, 0))
+        visited[0][0][0] = true
         var count = 0
 
         while (queue.isNotEmpty()) {
@@ -106,23 +106,23 @@ object TrappingRainWaterII {
                 val newr = currr + dr
                 val newc = currc + dc
 
-                if (newz == -2) {
-                    continue
-                }
-                if (newz !in blocks.indices || newr !in -1..blocks[0].size || newc !in -1..blocks[0][0].size) {
+                if (newz !in visited.indices || newr !in visited[0].indices || newc !in visited[0][0].indices) {
                     continue
                 }
 
-                if (newr in blocks[newz].indices && newc in blocks[newz][newr].indices && blocks[newz][newr][newc] == 1) {
+                if (newr - 1 in blocks[0].indices && newc - 1 in blocks[0][0].indices) {
+                    if (blocks[newz][newr - 1][newc - 1] == 1) {
+                        continue
+                    }
+                    if (blocks[newz][newr - 1][newc - 1] == 2) {
+                        blocks[newz][newr - 1][newc - 1] = 0
+                        count++
+                    }
+                }
+                if (visited[newz][newr][newc]) {
                     continue
                 }
-                if (newr in blocks[newz].indices && newc in blocks[newz][newr].indices && blocks[newz][newr][newc] == 2) {
-                    blocks[newz][newr][newc] = 0
-                    count++
-                }
-                if (!visited.add(Triple(newz, newr, newc))) {
-                    continue
-                }
+                visited[newz][newr][newc] = true
                 queue.offer(intArrayOf(newz, newr, newc))
             }
         }
