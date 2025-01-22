@@ -10,7 +10,7 @@ class GridGameTest {
             intArrayOf(2, 5, 4),
             intArrayOf(1, 5, 1),
         )
-        val expected = 4
+        val expected = 4L
 
         assertEquals(expected, GridGame.gridGame(grid))
     }
@@ -21,7 +21,7 @@ class GridGameTest {
             intArrayOf(3, 3, 1),
             intArrayOf(8, 5, 2),
         )
-        val expected = 4
+        val expected = 4L
 
         assertEquals(expected, GridGame.gridGame(grid))
     }
@@ -32,7 +32,7 @@ class GridGameTest {
             intArrayOf(1, 3, 1, 15),
             intArrayOf(1, 3, 3, 1),
         )
-        val expected = 7
+        val expected = 7L
 
         assertEquals(expected, GridGame.gridGame(grid))
     }
