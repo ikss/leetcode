@@ -11,14 +11,14 @@ package arrays.medium
  */
 object CountServersThatCommunicate {
     fun countServers(grid: Array<IntArray>): Int {
-        val cols = HashMap<Int, Int>()
-        val rows = HashMap<Int, Int>()
+        var rows = IntArray(grid.size)
+        var cols = IntArray(grid[0].size)
 
         for (r in grid.indices) {
             for (c in grid[0].indices) {
                 if (grid[r][c] == 1) {
-                    cols.merge(c, 1, Int::plus)
-                    rows.merge(r, 1, Int::plus)
+                    cols[c]++
+                    rows[r]++
                 }
             }
         }
@@ -29,7 +29,7 @@ object CountServersThatCommunicate {
         for (r in grid.indices) {
             for (c in grid[0].indices) {
                 if (grid[r][c] == 1) {
-                    if (cols.getOrDefault(c, 0) > 1 || rows.getOrDefault(r, 0) > 1) {
+                    if (cols[c] > 1 || rows[r] > 1) {
                         result++
                     }
                 }
