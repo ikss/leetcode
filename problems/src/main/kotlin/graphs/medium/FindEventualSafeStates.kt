@@ -1,7 +1,5 @@
 package graphs.medium
 
-import java.util.*
-
 /**
  * There is a directed graph of n nodes with each node labeled from 0 to n - 1.
  * The graph is represented by a 0-indexed 2D integer array graph where `graph[i]` is an integer array of nodes adjacent
@@ -28,7 +26,7 @@ object FindEventualSafeStates {
                 indegree[i]++
             }
         }
-        val q = ArrayDeque<Int>()
+        val q = java.util.ArrayDeque<Int>()
         // Push all the nodes with indegree zero in the queue.
         for (i in 0 until n) {
             if (indegree[i] == 0) {
@@ -42,8 +40,7 @@ object FindEventualSafeStates {
             safe[node] = true
             for (neighbor in adj[node]) {
                 // Delete the edge "node -> neighbor".
-                indegree[neighbor]--
-                if (indegree[neighbor] == 0) {
+                if (--indegree[neighbor] == 0) {
                     q.add(neighbor)
                 }
             }

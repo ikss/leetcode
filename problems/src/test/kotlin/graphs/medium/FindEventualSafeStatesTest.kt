@@ -23,7 +23,13 @@ class FindEventualSafeStatesTest {
 
     @Test
     fun test2() {
-        val graph = arrayOf(intArrayOf(1, 2, 3, 4), intArrayOf(1, 2), intArrayOf(3, 4), intArrayOf(0, 4), intArrayOf())
+        val graph = arrayOf(
+            intArrayOf(1, 2, 3, 4),
+            intArrayOf(1, 2),
+            intArrayOf(3, 4),
+            intArrayOf(0, 4),
+            intArrayOf(),
+        )
         val expected = listOf(4)
 
         assertEquals(expected, FindEventualSafeStates.eventualSafeNodes(graph))
