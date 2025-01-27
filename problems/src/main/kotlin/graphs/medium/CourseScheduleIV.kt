@@ -1,5 +1,6 @@
 package graphs.medium
 
+
 /**
  * There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1.
  * You are given an array prerequisites where `prerequisites[i] = [ai, bi]` indicates that you must take course ai
@@ -17,7 +18,11 @@ package graphs.medium
  * [URL](https://leetcode.com/problems/course-schedule-iv/)
  */
 object CourseScheduleIV {
-    fun checkIfPrerequisite(numCourses: Int, prerequisites: Array<IntArray>, queries: Array<IntArray>): List<Boolean> {
+    fun checkIfPrerequisiteBfs(
+        numCourses: Int,
+        prerequisites: Array<IntArray>,
+        queries: Array<IntArray>,
+    ): List<Boolean> {
         val graph = Array<HashSet<Int>>(numCourses) { HashSet() }
 
         for ((first, second) in prerequisites) {
@@ -58,5 +63,33 @@ object CourseScheduleIV {
         }
 
         return false
+    }
+
+    fun checkIfPrerequisiteFloydWarshall(
+        numCourses: Int,
+        prerequisites: Array<IntArray>,
+        queries: Array<IntArray>,
+    ): List<Boolean> {
+        val isPrerequisite = Array(numCourses) { BooleanArray(numCourses) }
+
+        for (edge in prerequisites) {
+            isPrerequisite[edge[0]][edge[1]] = true
+        }
+
+        for (interm in 0..<numCourses) {
+            for (src in 0..<numCourses) {
+                for (target in 0..<numCourses) {
+                    isPrerequisite[src][target] =
+                        isPrerequisite[src][target] || (isPrerequisite[src][interm] && isPrerequisite[interm][target])
+                }
+            }
+        }
+
+        val answer = ArrayList<Boolean>(queries.size)
+        for ((from, to) in queries) {
+            answer.add(isPrerequisite[from][to])
+        }
+
+        return answer
     }
 }
