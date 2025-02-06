@@ -9,7 +9,7 @@ package arrays.medium
  *
  * Return an array answer where `answer[i]` is the answer to the ith query.
  *
- * [URL](https://eetcode.com/problems/android-unlock-patterns/)
+ * [URL](https://leetcode.com/problems/xor-queries-of-a-subarray/)
  */
 object XORQueriesOfSubarray {
     fun xorQueries(arr: IntArray, queries: Array<IntArray>): IntArray {

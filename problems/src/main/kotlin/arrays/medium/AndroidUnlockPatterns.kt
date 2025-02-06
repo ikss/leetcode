@@ -12,7 +12,7 @@ package arrays.medium
  * * * However, connecting dots 1 and 3 without dot 2 appearing beforehand is invalid because the line from dot 1 to dot
  * 3 passes through the center of dot 2.
  *
- * [URL](https://eetcode.com/problems/android-unlock-patterns/)
+ * [URL](https://leetcode.com/problems/android-unlock-patterns/)
  */
 object AndroidUnlockPatterns {
     private val jump = Array(10) { IntArray(10) }
