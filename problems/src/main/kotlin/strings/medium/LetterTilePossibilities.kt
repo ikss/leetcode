@@ -16,7 +16,7 @@ object LetterTilePossibilities {
         }
     }
 
-    fun numTilePossibilities(tiles: String): Int {
+    fun numTilePossibilitiesCombinatorics(tiles: String): Int {
         val counts = IntArray(26)
 
         for (n in tiles) {
@@ -46,4 +46,26 @@ object LetterTilePossibilities {
         return result
     }
 
+    fun numTilePossibilitiesDfs(tiles: String): Int {
+        val counts = IntArray(26)
+
+        for (n in tiles) {
+            counts[n - 'A']++
+        }
+
+        return countDfs(counts)
+    }
+
+    private fun countDfs(counts: IntArray): Int {
+        var result = 0
+
+        for (i in counts.indices) {
+            if (counts[i] == 0) continue
+            counts[i]--
+            result += 1 + countDfs(counts)
+            counts[i]++
+        }
+        return result
+    }
+    
 }
