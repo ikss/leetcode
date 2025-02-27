@@ -1,5 +1,7 @@
 package arrays.medium
 
+import kotlin.math.max
+
 /**
  * A sequence x1, x2, ..., xn is Fibonacci-like if:
  *
@@ -15,7 +17,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/)
  */
 object LengthOfLongestFibonacciSubsequence {
-    fun lenLongestFibSubseq(arr: IntArray): Int {
+    fun lenLongestFibSubseqBruteForce(arr: IntArray): Int {
         if (arr.size < 3) return arr.size
         val set = arr.toSet()
         var result = 0
@@ -43,5 +45,37 @@ object LengthOfLongestFibonacciSubsequence {
         }
 
         return result
+    }
+
+    fun lenLongestFibSubseqDp(arr: IntArray): Int {
+        val n = arr.size
+
+        val dp = Array(n) { IntArray(n) }
+        var maxLen = 0
+
+        for (curr in 2..<n) {
+            // Use two pointers to find pairs that sum to arr[curr]
+            var start = 0
+            var end = curr - 1
+
+            while (start < end) {
+                val pairSum = arr[start] + arr[end]
+
+                if (pairSum > arr[curr]) {
+                    end--
+                } else if (pairSum < arr[curr]) {
+                    start++
+                } else {
+                    // Found a valid pair, update dp
+                    dp[end][curr] = dp[start][end] + 1
+                    maxLen = maxOf(dp[end][curr], maxLen)
+                    end--
+                    start++
+                }
+            }
+        }
+
+        // Add 2 to include first two numbers, or return 0 if no sequence found
+        return if (maxLen == 0) 0 else maxLen + 2
     }
 }
