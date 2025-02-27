@@ -31,6 +31,7 @@ allprojects {
 
     tasks.withType(Test::class).configureEach {
         maxParallelForks = maxOf(Runtime.getRuntime().availableProcessors() / 2, 1)
+        useJUnitPlatform()
     }
 
 }
