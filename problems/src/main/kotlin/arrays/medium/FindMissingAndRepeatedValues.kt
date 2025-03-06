@@ -30,7 +30,7 @@ object FindMissingAndRepeatedValues {
         var sum = 0L
         var sqrSum = 0L
         val n = grid.size
-        val total = n * n
+        val total = n.toLong() * n
 
         for (row in 0..<n) {
             for (col in 0..<n) {
