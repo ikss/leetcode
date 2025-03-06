@@ -10,7 +10,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/find-missing-and-repeated-values/)
  */
 object FindMissingAndRepeatedValues {
-    fun findMissingAndRepeatedValues(grid: Array<IntArray>): IntArray {
+    fun findMissingAndRepeatedValuesArray(grid: Array<IntArray>): IntArray {
         val arr = BooleanArray(grid.size * grid.size)
         var dup = 0
 
@@ -24,5 +24,32 @@ object FindMissingAndRepeatedValues {
         }
 
         return intArrayOf(dup, arr.indexOfFirst { !it } + 1)
+    }
+
+    fun findMissingAndRepeatedValuesMath(grid: Array<IntArray>): IntArray {
+        var sum = 0L
+        var sqrSum = 0L
+        val n = grid.size
+        val total = n * n
+
+        for (row in 0..<n) {
+            for (col in 0..<n) {
+                sum += grid[row][col]
+                sqrSum += grid[row][col].toLong() * grid[row][col]
+            }
+        }
+
+        // Calculate differences from expected sums
+        // Expected sum: n(n+1)/2, Expected square sum: n(n+1)(2n+1)/6
+        val sumDiff = sum - (total * (total + 1)) / 2
+        val sqrDiff = sqrSum - (total * (total + 1) * (2 * total + 1)) / 6
+
+        // Using math: If x is repeated and y is missing
+        // sumDiff = x - y
+        // sqrDiff = x² - y²
+        val repeat = (sqrDiff / sumDiff + sumDiff) / 2
+        val missing = (sqrDiff / sumDiff - sumDiff) / 2
+
+        return intArrayOf(repeat.toInt(), missing.toInt())
     }
 }
