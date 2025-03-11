@@ -33,6 +33,7 @@ object MostProfitablePathInTree {
     fun mostProfitablePath(edges: Array<IntArray>, bob: Int, amount: IntArray): Int {
         val n = amount.size
         tree = ArrayList()
+        maxIncome = Int.MIN_VALUE
         val visited = BooleanArray(n)
         for (i in 0..<n) {
             tree.add(ArrayList())

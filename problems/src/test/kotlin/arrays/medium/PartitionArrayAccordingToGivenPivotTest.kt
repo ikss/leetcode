@@ -1,6 +1,6 @@
 package arrays.medium
 
-import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
 class PartitionArrayAccordingToGivenPivotTest {
@@ -10,7 +10,7 @@ class PartitionArrayAccordingToGivenPivotTest {
         val pivot = 10
         val expected = intArrayOf(9, 5, 3, 10, 10, 12, 14)
 
-        assertEquals(expected, PartitionArrayAccordingToGivenPivot.pivotArray(nums, pivot))
+        assertArrayEquals(expected, PartitionArrayAccordingToGivenPivot.pivotArray(nums, pivot))
     }
 
     @Test
@@ -19,6 +19,6 @@ class PartitionArrayAccordingToGivenPivotTest {
         val pivot = 2
         val expected = intArrayOf(-3, 2, 4, 3)
 
-        assertEquals(expected, PartitionArrayAccordingToGivenPivot.pivotArray(nums, pivot))
+        assertArrayEquals(expected, PartitionArrayAccordingToGivenPivot.pivotArray(nums, pivot))
     }
 }
