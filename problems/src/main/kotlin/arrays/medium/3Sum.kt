@@ -9,33 +9,31 @@ package arrays.medium
  */
 object `3Sum` {
     fun threeSum(nums: IntArray): List<List<Int>> {
-        if (nums.size < 3) return emptyList()
         nums.sort()
-        val distinctTriplets = mutableSetOf<List<Int>>()
 
-        var i = 0
+        val triplets = HashSet<List<Int>>()
         val n = nums.size
 
-        while (i < n - 2) {
-            var j = i + 1
-            var k = n - 1
-            if (nums[i] > 0) break
+        for (left in 0 until n - 2) {
+            if (nums[left] > 0) break
 
-            while (j < k) {
-                val sum = nums[i] + nums[j] + nums[k]
+            var mid = left + 1
+            var right = n - 1
+
+            while (mid < right) {
+                val sum = nums[left] + nums[mid] + nums[right]
                 if (sum < 0) {
-                    j++
+                    mid++
                 } else if (sum == 0) {
-                    distinctTriplets.add(listOf(nums[i], nums[j], nums[k]))
-                    j++
-                    k--
+                    triplets.add(listOf(nums[left], nums[mid], nums[right]))
+                    mid++
+                    right--
                 } else {
-                    k--
+                    right--
                 }
             }
-            i++
         }
 
-        return distinctTriplets.toList()
+        return triplets.toList()
     }
 }
