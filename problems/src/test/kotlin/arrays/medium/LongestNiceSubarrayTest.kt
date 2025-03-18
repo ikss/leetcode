@@ -15,7 +15,7 @@ class LongestNiceSubarrayTest {
     @Test
     fun test2BitCount() {
         val nums = intArrayOf(3, 1, 5, 11, 13)
-        val expected = 8
+        val expected = 1
 
         assertEquals(expected, LongestNiceSubarray.longestNiceSubarrayBitCount(nums))
     }
@@ -31,7 +31,7 @@ class LongestNiceSubarrayTest {
     @Test
     fun test2Xor() {
         val nums = intArrayOf(3, 1, 5, 11, 13)
-        val expected = 8
+        val expected = 1
 
         assertEquals(expected, LongestNiceSubarray.longestNiceSubarrayXor(nums))
     }

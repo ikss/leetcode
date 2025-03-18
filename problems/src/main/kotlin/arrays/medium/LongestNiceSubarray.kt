@@ -48,18 +48,15 @@ object LongestNiceSubarray {
         var runningOr = 0
         var currCount = 0
         var result = 0
-        var i = 0
 
-        while (i < nums.size) {
-            if (runningOr and nums[i] == 0) {
-                runningOr = runningOr or nums[i]
-                currCount++
-                i++
-                result = maxOf(result, currCount)
-            } else {
+        for (i in nums.indices) {
+            while (runningOr and nums[i] != 0) {
                 runningOr = runningOr xor nums[i - currCount]
                 currCount--
             }
+            runningOr = runningOr or nums[i]
+            currCount++
+            result = maxOf(result, currCount)
         }
 
         return result
