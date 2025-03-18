@@ -15,7 +15,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/longest-nice-subarray/)
  */
 object LongestNiceSubarray {
-    fun longestNiceSubarray(nums: IntArray): Int {
+    fun longestNiceSubarrayBitCount(nums: IntArray): Int {
         var runningOr = 0
         var currCount = 0
         var result = 0
@@ -42,5 +42,26 @@ object LongestNiceSubarray {
             running = running or nums[i]
         }
         return running
+    }
+
+    fun longestNiceSubarrayXor(nums: IntArray): Int {
+        var runningOr = 0
+        var currCount = 0
+        var result = 0
+        var i = 0
+
+        while (i < nums.size) {
+            if (runningOr and nums[i] == 0) {
+                runningOr = runningOr or nums[i]
+                currCount++
+                i++
+                result = maxOf(result, currCount)
+            } else {
+                runningOr = runningOr xor nums[i - currCount]
+                currCount--
+            }
+        }
+
+        return result
     }
 }
