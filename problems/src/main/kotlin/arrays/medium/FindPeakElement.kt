@@ -13,12 +13,27 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/find-peak-element/)
  */
 object FindPeakElement {
-    fun findPeakElement(nums: IntArray): Int {
+    fun findPeakElementLinearScan(nums: IntArray): Int {
         for (i in 0 until nums.size - 1) {
             if (nums[i] > nums[i + 1]) {
                 return i
             }
         }
         return nums.size - 1
+    }
+
+    fun findPeakElementBinarySearch(nums: IntArray): Int {
+        var left = 0
+        var right = nums.size - 1
+
+        while (left < right) {
+            val mid = (right - left) / 2 + left
+            if (nums[mid] > nums[mid + 1]) {
+                right = mid
+            } else {
+                left = mid + 1
+            }
+        }
+        return left
     }
 }
