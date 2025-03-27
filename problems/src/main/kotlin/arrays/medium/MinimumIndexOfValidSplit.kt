@@ -9,7 +9,7 @@ package arrays.medium
  * but the split is only valid if:
  * * 0 <= i < n - 1
  * * nums[0, ..., i], and nums[i + 1, ..., n - 1] have the same dominant element.
- * 
+ *
  * Here, nums[i, ..., j] denotes the subarray of nums starting at index i and ending at index j,
  * both ends being inclusive. Particularly, if j < i then nums[i, ..., j] denotes an empty subarray.
  *
@@ -44,6 +44,14 @@ object MinimumIndexOfValidSplit {
     }
 
     private fun findDominant(nums: List<Int>): Int {
-        return nums.sorted()[nums.size / 2]
+        val count = HashMap<Int, Int>()
+        val dominantCount = nums.size / 2
+        for (num in nums) {
+            count[num] = count.getOrDefault(num, 0) + 1
+            if (count[num]!! > dominantCount) {
+                return num
+            }
+        }
+        return -1
     }
 }
