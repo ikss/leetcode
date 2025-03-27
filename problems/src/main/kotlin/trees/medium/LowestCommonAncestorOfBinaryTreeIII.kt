@@ -28,19 +28,18 @@ object LowestCommonAncestorOfBinaryTreeIII {
     fun lowestCommonAncestor(p: Node?, q: Node?): Node? {
         if (p == null || q == null) return null
 
-        val parents1 = getParents(p)
-        val parents2 = getParents(q)
+        val parents = getParents(p)
 
-        var i = 0
-        while (i < parents1.size && i < parents2.size && parents1[i] == parents2[i]) {
-            i++
+        var node = q
+        while (node !in parents) {
+            node = node!!.parent!!
         }
 
-        return parents1[i - 1]
+        return node
     }
 
-    private fun getParents(node: Node): List<Node> {
-        val result = ArrayList<Node>()
+    private fun getParents(node: Node): Set<Node> {
+        val result = HashSet<Node>()
         result.add(node)
 
         var node = node
@@ -49,6 +48,6 @@ object LowestCommonAncestorOfBinaryTreeIII {
             node = node.parent!!
         }
 
-        return result.reversed()
+        return result
     }
 }
