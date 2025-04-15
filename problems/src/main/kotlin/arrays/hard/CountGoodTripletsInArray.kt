@@ -19,24 +19,26 @@ object CountGoodTripletsInArray {
 
     fun goodTriplets(nums1: IntArray, nums2: IntArray): Long {
         val n = nums1.size
-        val pos2 = IntArray(n)
 
-        val reversedIndexMapping = IntArray(n)
+        val pos2 = IntArray(n)
         for (i in 0..<n) {
             pos2[nums2[i]] = i
         }
 
+        val reversedIndexMapping = IntArray(n)
         for (i in 0..<n) {
             reversedIndexMapping[pos2[nums1[i]]] = i
         }
 
         val tree = FenwickTree(n)
         var result = 0L
-        
+
         for (value in 0..<n) {
             val pos = reversedIndexMapping[value]
+            
             val left = tree.query(pos)
             tree.update(pos, 1)
+
             val right = (n - 1 - pos) - (value - left)
             result += left.toLong() * right
         }
