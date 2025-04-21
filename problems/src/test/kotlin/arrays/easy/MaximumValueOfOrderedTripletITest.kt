@@ -7,7 +7,7 @@ class MaximumValueOfOrderedTripletITest {
     @Test
     fun test1() {
         val nums = intArrayOf(12, 6, 1, 2, 7)
-        val expected = 77
+        val expected = 77L
 
         assertEquals(expected, MaximumValueOfOrderedTripletI.maximumTripletValue(nums))
     }
@@ -15,7 +15,7 @@ class MaximumValueOfOrderedTripletITest {
     @Test
     fun test2() {
         val nums = intArrayOf(1, 10, 3, 4, 19)
-        val expected = 133
+        val expected = 133L
 
         assertEquals(expected, MaximumValueOfOrderedTripletI.maximumTripletValue(nums))
     }
@@ -23,7 +23,7 @@ class MaximumValueOfOrderedTripletITest {
     @Test
     fun test3() {
         val nums = intArrayOf(1, 2, 3)
-        val expected = 0
+        val expected = 0L
 
         assertEquals(expected, MaximumValueOfOrderedTripletI.maximumTripletValue(nums))
     }
