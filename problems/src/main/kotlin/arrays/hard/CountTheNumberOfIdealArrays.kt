@@ -49,7 +49,7 @@ object CountTheNumberOfIdealArrays {
 
     fun idealArraysCombinatorics(n: Int, maxValue: Int): Int {
         val MOD = 1e9.toInt() + 7
-        val MAX_N = 10010
+        val MAX_N = 10001
         val MAX_P = 15 // There are up to 15 prime factors
         val c = Array(MAX_N + MAX_P) { IntArray(MAX_P + 1) }
         val sieve = IntArray(MAX_N) // Minimum prime factor
