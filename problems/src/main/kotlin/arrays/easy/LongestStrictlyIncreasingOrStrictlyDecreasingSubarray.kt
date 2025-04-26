@@ -27,7 +27,6 @@ object LongestStrictlyIncreasingOrStrictlyDecreasingSubarray {
         }
 
 
-
         return result
     }
 }

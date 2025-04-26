@@ -58,7 +58,6 @@ object MostProfitablePathInTree {
     private var tree: ArrayList<ArrayList<Int>> = ArrayList()
     private var maxIncome = Int.MIN_VALUE
 
-
     // Depth First Search to find Alice's optimal path
     private fun findAlicePath(
         sourceNode: Int,

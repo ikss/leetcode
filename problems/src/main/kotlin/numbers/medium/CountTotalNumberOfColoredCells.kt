@@ -19,7 +19,6 @@ object CountTotalNumberOfColoredCells {
         return res
     }
 
-
     fun coloredCellsNumeric(n: Int): Long {
         val result = 2L * n * (n - 1) + 1
         return result

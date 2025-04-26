@@ -2,7 +2,6 @@ package strings.medium
 
 import java.util.*
 
-
 /**
  * A parentheses string is a non-empty string consisting only of '(' and ')'.
  * It is valid if any of the following conditions is true:

@@ -1,6 +1,5 @@
 package arrays.medium
 
-
 /**
  * You are given a 0-indexed integer array nums, an integer modulo, and an integer k.
  *

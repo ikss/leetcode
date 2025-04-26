@@ -1,6 +1,5 @@
 package strings.medium
 
-
 /**
  * Given a string s consisting only of characters a, b and c.
  *

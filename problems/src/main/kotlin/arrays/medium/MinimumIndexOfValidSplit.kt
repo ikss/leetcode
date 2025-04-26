@@ -29,11 +29,9 @@ object MinimumIndexOfValidSplit {
             runningCount[i] = prev + if (num == dominant) 1 else 0
         }
 
-
         for (i in 0 until nums.size - 1) {
             val prev = runningCount[i]
             val post = runningCount[nums.size - 1] - runningCount[i]
-
 
             if (prev > (i + 1) / 2 && post > (nums.size - i - 1) / 2) {
                 return i

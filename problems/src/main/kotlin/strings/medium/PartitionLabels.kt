@@ -19,7 +19,6 @@ object PartitionLabels {
             maxIndex[s[i] - 'a'] = i
         }
 
-
         val result = ArrayList<Int>()
         var curr = 0
 

@@ -59,7 +59,6 @@ object ShortestPathToGetFood {
         return -1
     }
 
-
     private fun findStart(grid: Array<CharArray>): Pair<Int, Int> {
         for (r in grid.indices) {
             for (c in grid[r].indices) {

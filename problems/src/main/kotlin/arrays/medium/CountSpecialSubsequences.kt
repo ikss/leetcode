@@ -1,6 +1,5 @@
 package arrays.medium
 
-
 /**
  * You are given an array nums consisting of positive integers.
  *

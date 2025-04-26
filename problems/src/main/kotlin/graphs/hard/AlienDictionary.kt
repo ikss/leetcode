@@ -2,7 +2,6 @@ package graphs.hard
 
 import java.util.*
 
-
 /**
  * There is a new alien language that uses the English alphabet. However, the order of the letters is unknown to you.
  *

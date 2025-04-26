@@ -35,7 +35,6 @@ object MinimumCostToMakeAtLeastOneValidPathInGrid {
         val queue = PriorityQueue<Pair<Point, Int>>(compareBy { it.second })
         queue.offer(start to 0)
 
-
         while (queue.isNotEmpty()) {
             val (curr, currCost) = queue.poll()
             val (currRow, currCol) = curr

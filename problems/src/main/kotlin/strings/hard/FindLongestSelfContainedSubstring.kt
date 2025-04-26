@@ -1,6 +1,5 @@
 package strings.hard
 
-
 /**
  * Given a string s, your task is to find the length of the longest self-contained substring of s.
  *

@@ -3,7 +3,6 @@ package numbers.hard
 import java.util.*
 import kotlin.math.pow
 
-
 /**
  * You are given two positive integers n and k.
  *

@@ -1,6 +1,5 @@
 package strings.medium
 
-
 /**
  * You are given a string word and a non-negative integer k.
  *

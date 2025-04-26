@@ -46,7 +46,6 @@ object MinimizeXOR {
         return num
     }
 
-
     private fun removeBits(num1: Int, removeBits: Int): Int {
         var diff = removeBits
 

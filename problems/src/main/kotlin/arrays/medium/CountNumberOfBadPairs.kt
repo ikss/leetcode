@@ -2,7 +2,6 @@ package arrays.medium
 
 import java.util.*
 
-
 /**
  * You are given a 0-indexed integer array nums.
  * A pair of indices (i, j) is a bad pair if i < j and `j - i != nums[j] - nums[i]`.

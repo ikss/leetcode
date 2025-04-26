@@ -3,7 +3,6 @@ package trees.medium
 import data_structures.TreeNode
 import java.util.*
 
-
 /**
  * You are given the root of a binary tree with unique values.
  *

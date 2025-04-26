@@ -66,7 +66,6 @@ object SerializeAndDeserializeBST {
                 }
             }
 
-
             return head
         }
     }

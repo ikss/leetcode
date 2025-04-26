@@ -44,7 +44,6 @@ class TrappingRainWaterIITest {
         assertEquals(expected, TrappingRainWaterII.trapRainWaterBfs(heightMap))
     }
 
-
     @Test
     fun test1PriorityQueue() {
         val heightMap = arrayOf(

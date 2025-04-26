@@ -37,7 +37,6 @@ object FindKLengthSubstringsWithNoRepeatedCharacters {
             i++
         }
 
-
         return result
     }
 }

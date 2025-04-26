@@ -25,7 +25,6 @@ object CountServersThatCommunicate {
 
         var result = 0
 
-
         for (r in grid.indices) {
             for (c in grid[0].indices) {
                 if (grid[r][c] == 1) {
