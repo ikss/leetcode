@@ -18,18 +18,15 @@ object CountSubarraysWithScoreLessThanK {
         var sum = 0L
 
         var result = 0L
-        while (start < nums.size && end < nums.size) {
-            while (end < nums.size && (sum + nums[end]) * (end - start + 1) < k) {
-                result += end - start + 1
-                sum += nums[end++]
-            }
-            if (end > start) {
+        while (end < nums.size) {
+            sum += nums[end]
+            while (start <= end && sum * (end - start + 1) >= k) {
                 sum -= nums[start]
+                start++
             }
-            start++
-            end = maxOf(start, end)
+            result += end - start + 1
+            end++
         }
-
         return result
     }
 }
