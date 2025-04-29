@@ -22,10 +22,9 @@ object CountSubarraysWhereMaxElementAppearsAtLeastKTimes {
                 count++
             }
             while (count == k) {
-                if (nums[left] == max) {
+                if (nums[left++] == max) {
                     count--
                 }
-                left++
             }
             result += left
         }
