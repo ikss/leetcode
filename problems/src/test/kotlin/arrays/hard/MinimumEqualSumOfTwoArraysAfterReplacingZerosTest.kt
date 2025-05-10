@@ -8,7 +8,7 @@ class MinimumEqualSumOfTwoArraysAfterReplacingZerosTest {
     fun test1() {
         val nums1 = intArrayOf(3, 2, 0, 1, 0)
         val nums2 = intArrayOf(6, 5, 0)
-        val expected = 12
+        val expected = 12L
 
         assertEquals(expected, MinimumEqualSumOfTwoArraysAfterReplacingZeros.minSum(nums1, nums2))
     }
@@ -17,7 +17,7 @@ class MinimumEqualSumOfTwoArraysAfterReplacingZerosTest {
     fun test2() {
         val nums1 = intArrayOf(2, 0, 2, 0)
         val nums2 = intArrayOf(1, 2)
-        val expected = -1
+        val expected = -1L
 
         assertEquals(expected, MinimumEqualSumOfTwoArraysAfterReplacingZeros.minSum(nums1, nums2))
     }
