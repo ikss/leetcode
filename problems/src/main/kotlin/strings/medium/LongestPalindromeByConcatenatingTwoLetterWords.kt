@@ -14,7 +14,7 @@ package strings.medium
  * [URL](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/)
  */
 object LongestPalindromeByConcatenatingTwoLetterWords {
-    fun longestPalindrome(words: Array<String>): Int {
+    fun longestPalindromeOld(words: Array<String>): Int {
         val map = hashMapOf<String, Int>()
 
         var result = 0
@@ -36,6 +36,30 @@ object LongestPalindromeByConcatenatingTwoLetterWords {
                 result += 2
                 break
             }
+        }
+        return result
+    }
+
+    fun longestPalindromeSimpleMap(words: Array<String>): Int {
+        val wordsMap = HashMap<Pair<Char, Char>, Int>()
+
+        var result = 0
+        for (w in words) {
+            val pair = w[0] to w[1]
+            wordsMap[pair] = wordsMap.getOrDefault(pair, 0) + 1
+        }
+
+        var hasSame = false
+        for ((k, v) in wordsMap) {
+            var variable = v
+            if (v % 2 != 0 && k.first == k.second) {
+                hasSame = true
+                variable--
+            }
+            result += minOf(variable, wordsMap.getOrDefault(k.second to k.first, 0)) * 2
+        }
+        if (hasSame) {
+            result += 2
         }
         return result
     }
