@@ -18,7 +18,7 @@ class MaximizeTheNumberOfTargetNodesAfterConnectingTreesIITest {
         )
         val expected = intArrayOf(8, 7, 7, 8, 8)
 
-        assertArrayEquals(expected, MaximizeTheNumberOfTargetNodesAfterConnectingTreesII.maxTargetNodesDfsTLE(edges1, edges2))
+        assertArrayEquals(expected, MaximizeTheNumberOfTargetNodesAfterConnectingTreesII.maxTargetNodes(edges1, edges2))
     }
 
     @Test
@@ -31,6 +31,6 @@ class MaximizeTheNumberOfTargetNodesAfterConnectingTreesIITest {
         )
         val expected = intArrayOf(3, 6, 6, 6, 6)
 
-        assertArrayEquals(expected, MaximizeTheNumberOfTargetNodesAfterConnectingTreesII.maxTargetNodesDfsTLE(edges1, edges2))
+        assertArrayEquals(expected, MaximizeTheNumberOfTargetNodesAfterConnectingTreesII.maxTargetNodes(edges1, edges2))
     }
 }

@@ -1,5 +1,8 @@
 package trees.hard
 
+import kotlin.math.max
+
+
 /**
  * There exist two undirected trees with n and m nodes, labeled from `[0, n - 1]` and `[0, m - 1]`, respectively.
  *
@@ -19,45 +22,43 @@ package trees.hard
  * [URL](https://leetcode.com/problems/maximize-the-number-of-target-nodes-after-connecting-trees-ii/)
  */
 object MaximizeTheNumberOfTargetNodesAfterConnectingTreesII {
-    fun maxTargetNodesDfsTLE(edges1: Array<IntArray>, edges2: Array<IntArray>): IntArray {
+
+    fun maxTargetNodes(edges1: Array<IntArray>, edges2: Array<IntArray>): IntArray {
         val n = edges1.size + 1
-        val count1 = build(edges1, isEven = true)
-        val count2 = build(edges2, isEven = false)
-        var maxCount2 = 0
-        for (c in count2) {
-            if (c > maxCount2) {
-                maxCount2 = c
-            }
-        }
-        val result = IntArray(n)
+        val m = edges2.size + 1
+        val color1 = IntArray(n)
+        val color2 = IntArray(m)
+        val count1 = build(edges1, color1)
+        val count2 = build(edges2, color2)
+        val res = IntArray(n)
+        val max = max(count2[0], count2[1])
+
         for (i in 0..<n) {
-            result[i] = count1[i] + maxCount2
+            res[i] = count1[color1[i]] + max
         }
-        return result
+        return res
     }
 
-    private fun build(edges: Array<IntArray>, isEven: Boolean): IntArray {
+    private fun build(edges: Array<IntArray>, color: IntArray): IntArray {
         val n = edges.size + 1
         val children = Array<ArrayList<Int>>(n) { ArrayList() }
         for (edge in edges) {
             children[edge[0]].add(edge[1])
             children[edge[1]].add(edge[0])
         }
-        val res = IntArray(n)
-        for (i in 0..<n) {
-            res[i] = dfs(i, -1, children, isEven, 0)
-        }
-        return res
+        val res = dfs(0, -1, 0, children, color)
+        return intArrayOf(res, n - res)
     }
 
-    private fun dfs(node: Int, parent: Int, children: Array<ArrayList<Int>>, isEven: Boolean, index: Int): Int {
-        var result = if (isEven && index % 2 == 0) 1 else if (!isEven && index % 2 == 1) 1 else 0
+    private fun dfs(node: Int, parent: Int, depth: Int, children: Array<ArrayList<Int>>, color: IntArray): Int {
+        var res = 1 - (depth % 2)
+        color[node] = depth % 2
         for (child in children[node]) {
             if (child == parent) {
                 continue
             }
-            result += dfs(child, node, children, isEven, index + 1)
+            res += dfs(child, node, depth + 1, children, color)
         }
-        return result
+        return res
     }
 }
