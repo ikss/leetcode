@@ -27,29 +27,26 @@ package arrays.medium
  */
 object SnakesAndLadders {
     fun snakesAndLadders(board: Array<IntArray>): Int {
-        val size = board.size
-        val goal = size * size
-        val visited = HashSet<Int>()
-        val queue = java.util.ArrayDeque<Int>()
+        val n = board.size
+        val n2 = n * n
+
+        val queue = java.util.ArrayDeque<Int>(12)
         queue.offer(1)
+        val visited = BooleanArray(n2 + 1)
+        visited[1] = true
 
         var result = 1
-
         while (queue.isNotEmpty()) {
-            val queueSize = queue.size
+            val size = queue.size
 
-            for (i in 0 until queueSize) {
-                val curr = queue.poll()
+            for (i in 0 until size) {
+                val node = queue.poll()
+                for (step in 1 .. minOf(6, n2 - node)) {
+                    val next = getNextNode(node + step, visited, board)
+                    if (next == -1) continue
 
-                for (next in curr + 1..minOf(curr + 6, goal)) {
-                    if (!visited.add(next)) continue
-                    val cellValue = decodeValue(next, size, board)
-                    val dest = when (cellValue) {
-                        -1 -> next
-                        else -> cellValue
-                    }
-                    if (dest == goal) return result
-                    queue.offer(dest)
+                    if (next == n2) return result
+                    queue.offer(next)
                 }
             }
             result++
@@ -58,14 +55,23 @@ object SnakesAndLadders {
         return -1
     }
 
-    private fun decodeValue(num: Int, size: Int, board: Array<IntArray>): Int {
-        val row = (num - 1) / size
-
-        val column = when (row % 2 == 0) {
-            true -> num - row * size - 1
-            false -> size - (num - row * size)
+    private fun getNextNode(node: Int, visited: BooleanArray, board: Array<IntArray>): Int {
+        val row = (node - 1) / board.size
+        val col = when (row % 2 == 0) {
+            true -> node - row * board.size - 1
+            false -> board.size - (node - row * board.size)
+        }
+        val nextNode = if (board[board.size - row - 1][col] == -1) {
+            node
+        } else {
+            board[board.size - row - 1][col]
         }
 
-        return board[size - row - 1][column]
+        return if (visited[nextNode]) {
+            -1
+        } else {
+            visited[nextNode] = true
+            nextNode
+        }
     }
 }
