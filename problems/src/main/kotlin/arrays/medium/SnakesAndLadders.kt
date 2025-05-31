@@ -29,17 +29,18 @@ object SnakesAndLadders {
     fun snakesAndLadders(board: Array<IntArray>): Int {
         val size = board.size
         val goal = size * size
-        val visited = hashSetOf<Int>()
+        val visited = HashSet<Int>()
         val queue = java.util.ArrayDeque<Int>()
         queue.offer(1)
 
         var result = 1
 
-        while (!queue.isEmpty()) {
+        while (queue.isNotEmpty()) {
             val queueSize = queue.size
 
             for (i in 0 until queueSize) {
                 val curr = queue.poll()
+
                 for (next in curr + 1..minOf(curr + 6, goal)) {
                     if (!visited.add(next)) continue
                     val cellValue = decodeValue(next, size, board)
