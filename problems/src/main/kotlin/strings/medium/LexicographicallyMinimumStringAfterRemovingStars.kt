@@ -15,21 +15,18 @@ import java.util.TreeMap
  */
 object LexicographicallyMinimumStringAfterRemovingStars {
     fun clearStars(s: String): String {
-        val map = TreeMap<Char, ArrayList<Int>>()
+        val queues = Array(26) { java.util.ArrayDeque<Int>() }
         val result = StringBuilder(s)
 
         for (i in s.indices) {
             val c = s[i]
             if (c != '*') {
-                map.computeIfAbsent(c) { ArrayList() }.add(i)
+                queues[c - 'a'].offerFirst(i)
                 continue
             }
-            val firstEntry = map.firstEntry()
+            val firstQueue = queues.firstOrNull { it.isNotEmpty() }
                 ?: continue
-            result[firstEntry.value.removeLast()] = '*'
-            if (firstEntry.value.isEmpty()) {
-                map.remove(firstEntry.key)
-            }
+            result[firstQueue.poll()] = '*'
         }
 
         return result.filter { it != '*' }.toString()

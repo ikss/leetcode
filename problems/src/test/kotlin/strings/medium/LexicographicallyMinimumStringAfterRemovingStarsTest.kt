@@ -27,4 +27,12 @@ class LexicographicallyMinimumStringAfterRemovingStarsTest {
 
         assertEquals(expected, LexicographicallyMinimumStringAfterRemovingStars.clearStars(s))
     }
+
+    @Test
+    fun test4() {
+        val s = "d*o*"
+        val expected = ""
+
+        assertEquals(expected, LexicographicallyMinimumStringAfterRemovingStars.clearStars(s))
+    }
 }
