@@ -1,7 +1,5 @@
 package strings.medium
 
-import java.util.TreeMap
-
 /**
  * You are given a string s. It may contain any number of '*' characters. Your task is to remove all '*' characters.
  *
