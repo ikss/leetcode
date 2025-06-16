@@ -27,4 +27,12 @@ class MaximumDifferenceBetweenIncreasingElementsTest {
 
         assertEquals(expected, MaximumDifferenceBetweenIncreasingElements.maximumDifference(nums))
     }
+
+    @Test
+    fun test4() {
+        val nums = intArrayOf(1, 1, 1, 1)
+        val expected = -1
+
+        assertEquals(expected, MaximumDifferenceBetweenIncreasingElements.maximumDifference(nums))
+    }
 }
