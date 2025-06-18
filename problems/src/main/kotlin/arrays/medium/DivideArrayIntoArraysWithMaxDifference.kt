@@ -19,7 +19,9 @@ object DivideArrayIntoArraysWithMaxDifference {
 
         var i = 0
         while (i < nums.size) {
-            if (nums[i + 2] - nums[i] > k) return emptyArray()
+            if (nums[i + 2] - nums[i] > k) {
+                return emptyArray()
+            }
             result.add(intArrayOf(nums[i], nums[i + 1], nums[i + 2]))
             i += 3
         }
