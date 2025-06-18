@@ -1,7 +1,6 @@
 package trees.medium
 
 import data_structures.TreeNode
-import java.util.*
 
 /**
  * Given the root of a binary tree, return true if you can partition the tree into two trees
@@ -14,36 +13,36 @@ object EqualTreePartition {
         if (root == null) {
             return false
         }
-        val sums = IdentityHashMap<TreeNode, Long>()
-        val total = fillSums(root, sums)
 
-        return canPartition(root, sums, total)
+        val total = fillSums(root)
+
+        return canPartition(root, total)
     }
 
-    private fun fillSums(node: TreeNode, sums: IdentityHashMap<TreeNode, Long>): Long {
-        val left = node.left?.let { fillSums(it, sums) } ?: 0
-        val right = node.right?.let { fillSums(it, sums) } ?: 0
+    private fun fillSums(node: TreeNode): Int {
+        val left = node.left?.let { fillSums(it) } ?: 0
+        val right = node.right?.let { fillSums(it) } ?: 0
 
         val total = left + right + node.`val`
 
-        sums[node] = total
+        node.`val` = total
 
         return total
     }
 
-    private fun canPartition(node: TreeNode, sums: Map<TreeNode, Long>, total: Long): Boolean {
+    private fun canPartition(node: TreeNode, total: Int): Boolean {
         if (node.left == null && node.right == null) {
             return false
         }
-        val sumLeft = node.left?.let { sums[it] } ?: 0
-        val sumRight = node.right?.let { sums[it] } ?: 0
+        val sumLeft = node.left?.`val` ?: 0
+        val sumRight = node.right?.`val` ?: 0
 
         if (node.left != null && sumLeft == total - sumLeft || node.right != null && sumRight == total - sumRight) {
             return true
         }
 
-        val splitLeft = node.left?.let { canPartition(it, sums, total) } ?: false
-        val splitRight = node.right?.let { canPartition(it, sums, total) } ?: false
+        val splitLeft = node.left?.let { canPartition(it, total) } ?: false
+        val splitRight = node.right?.let { canPartition(it, total) } ?: false
 
         return splitLeft || splitRight
     }
