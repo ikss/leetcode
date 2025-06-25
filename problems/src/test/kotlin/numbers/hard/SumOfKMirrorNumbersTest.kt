@@ -31,4 +31,31 @@ class SumOfKMirrorNumbersTest {
 
         assertEquals(expected, SumOfKMirrorNumbers.kMirror(k, n))
     }
+
+    @Test
+    fun test1HardCoded() {
+        val k = 2
+        val n = 5
+        val expected = 25L
+
+        assertEquals(expected, SumOfKMirrorNumbers.kMirrorHardCoded(k, n))
+    }
+
+    @Test
+    fun test2HardCoded() {
+        val k = 3
+        val n = 7
+        val expected = 499L
+
+        assertEquals(expected, SumOfKMirrorNumbers.kMirrorHardCoded(k, n))
+    }
+
+    @Test
+    fun test3HardCoded() {
+        val k = 7
+        val n = 17
+        val expected = 20379000L
+
+        assertEquals(expected, SumOfKMirrorNumbers.kMirrorHardCoded(k, n))
+    }
 }
