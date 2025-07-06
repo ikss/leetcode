@@ -16,14 +16,10 @@ package design.medium
  */
 
 object FindingPairsWithCertainSum {
-    class FindSumPairs(nums1: IntArray, val nums2: IntArray) {
-        private val counts1 = HashMap<Int, Int>()
+    class FindSumPairs(val nums1: IntArray, val nums2: IntArray) {
         private val counts2 = HashMap<Int, Int>()
 
         init {
-            for (n in nums1) {
-                counts1[n] = counts1.getOrDefault(n, 0) + 1
-            }
             for (n in nums2) {
                 counts2[n] = counts2.getOrDefault(n, 0) + 1
             }
@@ -43,10 +39,8 @@ object FindingPairsWithCertainSum {
         fun count(tot: Int): Int {
             var result = 0
 
-            for ((num, count) in counts1) {
-                counts2[tot - num]?.let {
-                    result += count * it
-                }
+            for (num in nums1) {
+                result += counts2.getOrDefault(tot - num, 0)
             }
 
             return result
