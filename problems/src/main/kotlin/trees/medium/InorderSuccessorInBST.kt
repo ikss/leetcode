@@ -11,25 +11,20 @@ import data_structures.TreeNode
  * [URL](https://leetcode.com/problems/inorder-successor-in-bst/)
  */
 object InorderSuccessorInBST {
-    private val dummy = TreeNode(Int.MAX_VALUE)
-
     fun inorderSuccessor(root: TreeNode?, p: TreeNode?): TreeNode? {
         if (root == null || p == null) return null
-        val node = traverse(root, p.`val`)
-        return if (node === dummy) null else node
-    }
+        var curr = root
+        var successor: TreeNode? = null
 
-    private fun traverse(node: TreeNode?, p: Int): TreeNode? {
-        if (node == null) {
-            return null
+        while (curr != null) {
+            if (curr.`val` <= p.`val`) {
+                curr = curr.right
+            } else {
+                successor = curr
+                curr = curr.left
+            }
         }
-        if (node.`val` <= p) {
-            return traverse(node.right, p)
-        }
 
-        val left = traverse(node.left, p) ?: dummy
-        val right = traverse(node.right, p) ?: dummy
-
-        return listOf(node, left, right).sortedWith { n1, n2 -> n1.`val` - n2.`val` }.firstOrNull { it.`val` > p }
+        return successor
     }
 }
