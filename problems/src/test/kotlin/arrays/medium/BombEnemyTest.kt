@@ -8,9 +8,8 @@ class BombEnemyTest {
     fun test1() {
         val grid = arrayOf(
             charArrayOf('0', 'E', '0', '0'),
-            charArrayOf('0', '0', '0', '0'),
-            charArrayOf('0', '0', 'B', '0'),
-            charArrayOf('0', '0', '0', '0'),
+            charArrayOf('E', '0', 'W', 'E'),
+            charArrayOf('0', 'E', '0', '0'),
         )
         val expected = 3
 
