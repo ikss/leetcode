@@ -1,7 +1,5 @@
 package arrays.medium
 
-import kotlin.math.max
-
 /**
  * You are given an integer array nums and a positive integer k.
  * A subsequence sub of nums with length x is called valid if it satisfies:
@@ -14,15 +12,17 @@ import kotlin.math.max
 object FindTheMaximumLengthOfValidSubsequenceII {
     fun maximumLength(nums: IntArray, k: Int): Int {
         val dp = Array(k) { IntArray(k) }
-        var res = 0
+        var result = 0
+
         for (num in nums) {
             var num = num
             num %= k
             for (prev in 0..<k) {
-                dp[prev]!![num] = dp[num]!![prev] + 1
-                res = max(res, dp[prev]!![num])
+                dp[prev][num] = dp[num][prev] + 1
+
+                result = maxOf(result, dp[prev][num])
             }
         }
-        return res
+        return result
     }
 }
