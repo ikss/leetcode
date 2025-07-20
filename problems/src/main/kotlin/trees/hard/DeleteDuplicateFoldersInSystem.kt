@@ -45,8 +45,7 @@ object DeleteDuplicateFoldersInSystem {
         for (path in paths) {
             var cur = root
             for (node in path) {
-                cur.children.putIfAbsent(node, Trie())
-                cur = cur.children.get(node)!!
+                cur = cur.children.computeIfAbsent(node) { Trie() }
             }
         }
 
