@@ -24,4 +24,24 @@ object DeleteCharactersToMakeFancyString {
 
         return result.toString()
     }
+
+    fun makeFancyStringCount(s: String): String {
+        val result = StringBuilder()
+
+        var count = 0
+        var prev = '-'
+
+        for (c in s) {
+            if (c == prev && count == 2) continue
+            result.append(c)
+            if (c == prev) {
+                count++
+                continue
+            }
+            prev = c
+            count = 1
+        }
+
+        return result.toString()
+    }
 }
