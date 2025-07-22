@@ -1,7 +1,5 @@
 package strings.hard
 
-import java.util.*
-
 /**
  * The following are the rules for a string abbreviation:
  *
@@ -21,7 +19,7 @@ object WordAbbreviation {
     )
 
     fun wordsAbbreviation(words: List<String>): List<String> {
-        val abbreviationMap = HashMap<AbbreviationWrapper, ArrayList<Pair<String, Int>>>()
+        var map = HashMap<AbbreviationWrapper, ArrayList<Pair<String, Int>>>()
 
         for (i in words.indices) {
             val w = words[i]
@@ -29,37 +27,30 @@ object WordAbbreviation {
 
             val abbrWrapper = AbbreviationWrapper(abbreviation, 1)
 
-            abbreviationMap.computeIfAbsent(abbrWrapper) { ArrayList() }.add(w to i)
-        }
-
-        val pq = PriorityQueue<Pair<AbbreviationWrapper, List<Pair<String, Int>>>> { p1, p2 -> p2.second.size - p1.second.size }
-        for ((k, v) in abbreviationMap) {
-            pq.offer(k to v)
-        }
-
-        while (pq.peek()!!.second.size > 1) {
-            val (abbrWrapper, words) = pq.poll()!!
-            val (_, prefix) = abbrWrapper
-            val map = HashMap<AbbreviationWrapper, ArrayList<Pair<String, Int>>>()
-            for ((w, i) in words) {
-                val sizeleft = w.length - prefix - 2
-                val newAbbr = if (sizeleft <= 1) w else w.substring(0, prefix + 1) + sizeleft + w[w.length - 1]
-
-                val abbrWrapper = AbbreviationWrapper(newAbbr, prefix + 1)
-
-                map.computeIfAbsent(abbrWrapper) { ArrayList() }.add(w to i)
-            }
-            for ((k, v) in map) {
-                pq.offer(k to v)
-            }
+            map.computeIfAbsent(abbrWrapper) { ArrayList() }.add(w to i)
         }
 
         val result = ArrayList<Pair<Int, String>>()
+        do {
+            val newMap = HashMap<AbbreviationWrapper, ArrayList<Pair<String, Int>>>()
+            for ((k, v) in map) {
+                if (v.size == 1) {
+                    // If the abbreviation is unique, we can keep it as is
+                    result.add(v[0].second to k.abbreviation)
+                    continue
+                }
+                for ((w, i) in v) {
+                    val sizeleft = w.length - k.prefixSize - 2
+                    val newAbbr =
+                        if (sizeleft <= 1) w else w.substring(0, k.prefixSize + 1) + sizeleft + w[w.length - 1]
 
-        while (pq.isNotEmpty()) {
-            val (abbrWrapper, words) = pq.poll()!!
-            result.add(words[0].second to abbrWrapper.abbreviation)
-        }
+                    val abbrWrapper = AbbreviationWrapper(newAbbr, k.prefixSize + 1)
+
+                    newMap.computeIfAbsent(abbrWrapper) { ArrayList() }.add(w to i)
+                }
+            }
+            map = newMap
+        } while (map.isNotEmpty())
 
         return result.sortedBy { it.first }.map { it.second }
     }
