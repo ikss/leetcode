@@ -30,4 +30,30 @@ object MaximumErasureValue {
         max = maxOf(max, curr)
         return max
     }
+
+    fun maximumUniqueSubarrayMap(nums: IntArray): Int {
+        val subarr = HashMap<Int, Int>()
+
+        var result = 0
+        var currSum = 0
+
+        var start = 0
+        var end = 0
+
+        while (end < nums.size) {
+            val n = nums[end]
+            if (n in subarr) {
+                val prev = subarr[n]!!
+                while (start <= prev) {
+                    currSum -= nums[start++]
+                }
+            }
+            subarr[n] = end
+            currSum += n
+            result = maxOf(result, currSum)
+            end++
+        }
+
+        return result
+    }
 }
