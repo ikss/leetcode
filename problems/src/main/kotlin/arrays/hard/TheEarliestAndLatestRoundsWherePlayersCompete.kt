@@ -46,8 +46,8 @@ object TheEarliestAndLatestRoundsWherePlayersCompete {
             return intArrayOf(F[n][f][s], G[n][f][s])
         }
 
-        var earliest = Int.Companion.MAX_VALUE
-        var latest = Int.Companion.MIN_VALUE
+        var earliest = Int.MAX_VALUE
+        var latest = Int.MIN_VALUE
         val n_half = (n + 1) / 2
         if (s <= n_half) {
             // On the left or in the middle

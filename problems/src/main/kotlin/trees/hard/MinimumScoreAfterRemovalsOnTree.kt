@@ -20,10 +20,10 @@ package trees.hard
  * [URL](https://leetcode.com/problems/minimum-score-after-removals-on-a-tree/)
  */
 object MinimumScoreAfterRemovalsOnTree {
-    private var result: Int = Int.Companion.MAX_VALUE
+    private var result: Int = Int.MAX_VALUE
 
     fun minimumScore(nums: IntArray, edges: Array<IntArray>): Int {
-        result = Int.Companion.MAX_VALUE
+        result = Int.MAX_VALUE
 
         var sum = 0
         val e = ArrayList<ArrayList<Int>>()

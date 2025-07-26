@@ -24,7 +24,7 @@ object LargestBSTSubtree {
 
     private fun largestBSTSubtreeHelper(root: TreeNode?): NodeValue {
         if (root == null) {
-            return NodeValue(Int.Companion.MAX_VALUE, Int.Companion.MIN_VALUE, 0)
+            return NodeValue(Int.MAX_VALUE, Int.MIN_VALUE, 0)
         }
 
         val left = largestBSTSubtreeHelper(root.left)
@@ -39,7 +39,7 @@ object LargestBSTSubtree {
         }
 
         return NodeValue(
-            Int.Companion.MIN_VALUE, Int.Companion.MAX_VALUE,
+            Int.MIN_VALUE, Int.MAX_VALUE,
             max(left.maxSize, right.maxSize)
         )
     }
