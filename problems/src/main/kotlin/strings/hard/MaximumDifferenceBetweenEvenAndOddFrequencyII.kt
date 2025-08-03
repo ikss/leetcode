@@ -52,7 +52,7 @@ object MaximumDifferenceBetweenEvenAndOddFrequencyII {
                     }
 
                     val rightStatus = getStatus(cntA, cntB)
-                    if (best[rightStatus xor 2] != Int.Companion.MAX_VALUE) {
+                    if (best[rightStatus xor 2] != Int.MAX_VALUE) {
                         ans = max(
                             ans,
                             cntA - cntB - best[rightStatus xor 2]

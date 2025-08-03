@@ -27,4 +27,28 @@ class DeleteCharactersToMakeFancyStringTest {
 
         assertEquals(expected, DeleteCharactersToMakeFancyString.makeFancyString(s))
     }
+
+    @Test
+    fun test1Count() {
+        val s = "leeetcode"
+        val expected = "leetcode"
+
+        assertEquals(expected, DeleteCharactersToMakeFancyString.makeFancyStringCount(s))
+    }
+
+    @Test
+    fun test2Count() {
+        val s = "aaabaaaa"
+        val expected = "aabaa"
+
+        assertEquals(expected, DeleteCharactersToMakeFancyString.makeFancyStringCount(s))
+    }
+
+    @Test
+    fun test3Count() {
+        val s = "aab"
+        val expected = "aab"
+
+        assertEquals(expected, DeleteCharactersToMakeFancyString.makeFancyStringCount(s))
+    }
 }
