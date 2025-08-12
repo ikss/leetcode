@@ -10,7 +10,7 @@ package numbers.medium
  *
  * For example, if n = 160 and x = 3, one way to express n is n = 2^3 + 3^3 + 5^3.
  *
- * [URL](https://leetcode.com/problems/count-good-numbers/)
+ * [URL](https://leetcode.com/problems/ways-to-express-an-integer-as-sum-of-powers/)
  */
 object WaysToExpressIntegerAsSumOfPowers {
     fun numberOfWays(n: Int, x: Int): Int {
