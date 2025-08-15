@@ -4,7 +4,7 @@ package numbers.easy
  * Given an integer n, return true if it is a power of three. Otherwise, return false.
  * An integer n is a power of three, if there exists an integer x such that n == 3x.
  *
- * [URL](https://leetcode.com/problems/roman-to-integer/)
+ * [URL](https://leetcode.com/problems/power-of-three/)
  */
 object PowerOfThree {
     fun isPowerOfThreeLoop(n: Int): Boolean {
