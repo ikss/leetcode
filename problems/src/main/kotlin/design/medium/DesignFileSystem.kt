@@ -23,7 +23,6 @@ object DesignFileSystem {
 
 
         fun createPath(path: String, value: Int): Boolean {
-            if (path[0] != '/') return false
             var curr = parent
             val paths = path.split('/')
 
@@ -40,9 +39,7 @@ object DesignFileSystem {
         }
 
         fun get(path: String): Int {
-            if (path[0] != '/') return -1
             var curr = parent
-
             val paths = path.split('/')
 
             for (i in 1 until paths.size) {
