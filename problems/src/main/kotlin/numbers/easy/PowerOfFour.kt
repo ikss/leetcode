@@ -8,12 +8,16 @@ package numbers.easy
  * [URL](https://leetcode.com/problems/power-of-four/)
  */
 object PowerOfFour {
-    fun isPowerOfFour(n: Int): Boolean {
+    fun isPowerOfFourLoop(n: Int): Boolean {
         if (n <= 0) return false
         var i = n
         while (i % 4 == 0) {
             i /= 4
         }
         return i == 1
+    }
+
+    fun isPowerOfFourMath(num: Int): Boolean {
+        return (num > 0) && ((num and (num - 1)) == 0) && (num % 3 == 1)
     }
 }
