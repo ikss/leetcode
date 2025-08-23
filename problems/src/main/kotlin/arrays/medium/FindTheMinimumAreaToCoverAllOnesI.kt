@@ -10,13 +10,17 @@ package arrays.medium
  */
 object FindTheMinimumAreaToCoverAllOnesI {
     fun minimumArea(grid: Array<IntArray>): Int {
-        var left = Int.MAX_VALUE
-        var right = -1
-        var top = Int.MAX_VALUE
-        var bottom = -1
+        return minimumAreaOne(grid, 0, grid[0].size - 1, 0, grid.size - 1)
+    }
 
-        for (r in grid.indices) {
-            for (c in grid[r].indices) {
+    fun minimumAreaOne(grid: Array<IntArray>, minLeft: Int, maxRight: Int, minTop: Int, maxBottom: Int): Int {
+        var left = maxRight + 1
+        var right = minLeft - 1
+        var top = maxBottom + 1
+        var bottom = minTop - 1
+
+        for (r in minTop..maxBottom) {
+            for (c in minLeft..maxRight) {
                 if (grid[r][c] != 1) continue
 
                 left = minOf(left, c)
