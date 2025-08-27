@@ -8,9 +8,9 @@ package arrays.hard
  * * The segment starts with 1.
  * * The subsequent elements follow this infinite sequence: 2, 0, 2, 0, ....
  * * The segment:
- *      * Starts along a diagonal direction (top-left to bottom-right, bottom-right to top-left, top-right to bottom-left,
+ *     * Starts along a diagonal direction (top-left to bottom-right, bottom-right to top-left, top-right to bottom-left,
  * or bottom-left to top-right).
- *      * Continues the sequence in the same diagonal direction.
+ *     * Continues the sequence in the same diagonal direction.
  *
  * Makes at most one clockwise 90-degree turn to another diagonal direction while maintaining the sequence.
  *
@@ -59,7 +59,7 @@ object LengthOfLongestVShapedDiagonalSegment {
         val nx = cx + dirs[direction][0]
         val ny = cy + dirs[direction][1]
         /* If it goes beyond the boundary or the next node's value is not the target value, then return */
-        if (nx < 0 || ny < 0 || nx >= m || ny >= n || grid[nx][ny] != target) {
+        if (nx !in 0..m || ny !in 0..n || grid[nx][ny] != target) {
             return 0
         }
 
