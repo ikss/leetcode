@@ -59,7 +59,7 @@ object LengthOfLongestVShapedDiagonalSegment {
         val nx = cx + dirs[direction][0]
         val ny = cy + dirs[direction][1]
         /* If it goes beyond the boundary or the next node's value is not the target value, then return */
-        if (nx !in 0..m || ny !in 0..n || grid[nx][ny] != target) {
+        if (nx !in 0..<m || ny !in 0..<n || grid[nx][ny] != target) {
             return 0
         }
 
