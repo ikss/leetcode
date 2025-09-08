@@ -6,7 +6,7 @@ package arrays.easy
  * [URL](https://leetcode.com/problems/largest-unique-number/)
  */
 object LargestUniqueNumber {
-    fun largestUniqueNumber(nums: IntArray): Int {
+    fun largestUniqueNumberMap(nums: IntArray): Int {
         val frequencyMap = HashMap<Int, Int>()
 
         for (num in nums) {
@@ -22,5 +22,19 @@ object LargestUniqueNumber {
         }
 
         return largestUnique
+    }
+
+    fun largestUniqueNumberArray(nums: IntArray): Int {
+        val frequencyArr = IntArray(1001)
+
+        for (num in nums) {
+            frequencyArr[num]++
+        }
+
+        for (num in 1000 downTo 0) {
+            if (frequencyArr[num] == 1) return num
+        }
+
+        return -1
     }
 }
