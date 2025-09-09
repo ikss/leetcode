@@ -16,15 +16,15 @@ package arrays.medium
 object NumberOfPeopleAwareOfSecret {
     fun peopleAwareOfSecret(n: Int, delay: Int, forget: Int): Int {
         val dp = LongArray(n + 1)
+        val mod = 1_000_000_007
         dp[1] = 1
 
         var share = 0L
         for (i in 2 .. n) {
-            share += dp.getOrNull(i - delay) ?: 0
-            share -= dp.getOrNull(i - forget) ?: 0
+            share = (share + (dp.getOrNull(i - delay) ?: 0) + mod) % mod
+            share = (share - (dp.getOrNull(i - forget) ?: 0) + mod) % mod
             dp[i] = share
         }
-        println(dp.contentToString())
 
         var result = 0L
         for (i in n - forget + 1 .. n) {
