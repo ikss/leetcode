@@ -23,4 +23,14 @@ class NumberOfPeopleAwareOfSecretTest {
 
         assertEquals(expected, NumberOfPeopleAwareOfSecret.peopleAwareOfSecret(n, delay, forget))
     }
+
+    @Test
+    fun test3() {
+        val n = 684
+        val delay = 18
+        val forget = 496
+        val expected = 653668527
+
+        assertEquals(expected, NumberOfPeopleAwareOfSecret.peopleAwareOfSecret(n, delay, forget))
+    }
 }
