@@ -11,7 +11,11 @@ package strings.easy
 object MaximumNumberOfWordsYouCanType {
     fun canBeTypedWords(text: String, brokenLetters: String): Int {
         var result = 0
-        val brokenSet = brokenLetters.toSet()
+        val brokenSet = BooleanArray(26)
+
+        for (br in brokenLetters) {
+            brokenSet[br - 'a'] = true
+        }
 
         var hasWrongLetter = false
         for (c in text) {
@@ -20,7 +24,7 @@ object MaximumNumberOfWordsYouCanType {
                     result++
                 }
                 hasWrongLetter = false
-            } else if (c in brokenSet) {
+            } else if (brokenSet[c - 'a']) {
                 hasWrongLetter = true
             }
         }
