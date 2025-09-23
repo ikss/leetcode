@@ -29,49 +29,40 @@ package strings.medium
  * [URL](https://leetcode.com/problems/analyze-user-website-visit-pattern/)
  */
 object AnalyzeUserWebsiteVisitPattern {
-
-    private data class Entry(
-        val name: String,
-        val timestamp: Int,
-        val site: String,
-    )
-
     fun mostVisitedPattern(
         username: Array<String>,
         timestamp: IntArray,
         website: Array<String>,
     ): List<String> {
-        val entrys = ArrayList<Entry>()
-        for (i in username.indices) {
-            entrys.add(Entry(username[i], timestamp[i], website[i]))
+        val userVisits = HashMap<String, ArrayList<String>>()
+
+        for (twi in timestamp.withIndex().sortedBy { it.value }) {
+            val i = twi.index
+            userVisits.computeIfAbsent(username[i]) { ArrayList() }.add(website[i])
         }
-        entrys.sortWith(Comparator { a: Entry, b: Entry -> a.timestamp - b.timestamp })
-        val userVisits = HashMap<String, MutableList<Entry>>()
-        for (e in entrys) {
-            userVisits.computeIfAbsent(e.name) { ArrayList() }.add(e)
-        }
-        val route = HashMap<List<String>, Int>()
+
+        val routeCounts = HashMap<List<String>, Int>()
         for (visits in userVisits.values) {
             val tmp = HashSet<List<String>>()
             for (i in visits.indices) {
                 for (j in i + 1..<visits.size) {
                     for (k in j + 1..<visits.size) {
-                        val path = listOf(visits[i].site, visits[j].site, visits[k].site)
+                        val path = listOf(visits[i], visits[j], visits[k])
                         tmp.add(path)
                     }
                 }
             }
             for (path in tmp) {
-                route[path] = route.getOrDefault(path, 0) + 1
+                routeCounts[path] = routeCounts.getOrDefault(path, 0) + 1
             }
         }
 
         var result = emptyList<String>()
         var max = -1
-        for (entry in route.entries) {
-            if (entry.value > max || (entry.value == max && entry.key.toString() < result.toString())) {
-                max = entry.value
-                result = entry.key
+        for ((k, v) in routeCounts.entries) {
+            if (v > max || (v == max && k.toString() < result.toString())) {
+                max = v
+                result = k
             }
         }
         return result
