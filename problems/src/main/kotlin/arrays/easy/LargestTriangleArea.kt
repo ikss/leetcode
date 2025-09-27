@@ -49,4 +49,21 @@ object LargestTriangleArea {
 
         return Math.sqrt(p * (p - s1) * (p - s2) * (p - s3))
     }
+
+    fun largestTriangleAreaShoelace(points: Array<IntArray>): Double {
+        val n = points.size
+        var result = 0.0
+        for (i in 0..<n) {
+            for (j in i + 1..<n) {
+                for (k in j + 1..<n) {
+                    result = maxOf(result, area(points[i], points[j], points[k]))
+                }
+            }
+        }
+        return result
+    }
+
+    fun area(p1: IntArray, p2: IntArray, p3: IntArray): Double {
+        return 0.5 * Math.abs(p1[0] * p2[1] + p2[0] * p3[1] + p3[0] * p1[1] - p1[1] * p2[0] - p2[1] * p3[0] - p3[1] * p1[0])
+    }
 }
