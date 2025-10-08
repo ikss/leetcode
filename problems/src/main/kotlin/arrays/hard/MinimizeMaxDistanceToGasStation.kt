@@ -31,4 +31,31 @@ object MinimizeMaxDistanceToGasStation {
         val node = pq.poll()
         return node[0] / node[1]
     }
+
+    fun minmaxGasDistBinarySearch(stations: IntArray, k: Int): Double {
+        var max = 0.0
+        for (i in 0..<stations.size - 1) {
+            max = maxOf(max, stations[i + 1].toDouble() - stations[i])
+        }
+
+        var lo = 0.0
+        var hi = max
+        while (hi - lo > 1e-6) {
+            val mi = (hi - lo) / 2 + lo
+            if (possible(mi, stations, k)) {
+                hi = mi
+            } else {
+                lo = mi
+            }
+        }
+        return lo
+    }
+
+    fun possible(wantedDistance: Double, stations: IntArray, maxStations: Int): Boolean {
+        var used = 0
+        for (i in 0..<stations.size - 1) {
+            used += ((stations[i + 1] - stations[i]) / wantedDistance).toInt()
+        }
+        return used <= maxStations
+    }
 }
