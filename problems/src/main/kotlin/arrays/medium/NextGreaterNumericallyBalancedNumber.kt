@@ -10,23 +10,25 @@ package arrays.medium
  */
 object NextGreaterNumericallyBalancedNumber {
     fun nextBeautifulNumber(n: Int): Int {
-        for (i in n + 1..1224444) {
-            if (isBalance(i)) {
-                return i
+        for (num in n + 1..10000000) {
+            if (balanced(num)) {
+                return num
             }
         }
         return -1
     }
 
-    private fun isBalance(x: Int): Boolean {
-        var x = x
-        val count = IntArray(10)
-        while (x > 0) {
-            count[x % 10]++
-            x /= 10
+    private fun balanced(num: Int): Boolean {
+        var num = num
+        val counts = IntArray(6)
+        while (num > 0) {
+            val i = num % 10
+            if (i == 0 || i > 6) return false
+            counts[i - 1]++
+            num /= 10
         }
-        for (d in 0..9) {
-            if (count[d] > 0 && count[d] != d) {
+        for (d in 1..6) {
+            if (counts[d - 1] > 0 && counts[d - 1] != d) {
                 return false
             }
         }
