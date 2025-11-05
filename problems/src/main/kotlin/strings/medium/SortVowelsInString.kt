@@ -19,37 +19,38 @@ import java.util.*
  * [URL](https://leetcode.com/problems/break-a-palindrome/)
  */
 object SortVowelsInString {
-    // Returns true if the character is a vowel.
     private fun isVowel(c: Char): Boolean {
         return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U'
     }
 
     fun sortVowels(s: String): String {
-        val count = IntArray('u' - 'A' + 1)
+        val array = IntArray('u' - 'A' + 1)
+        var seenVowel = false
 
-        // Store the frequencies for each character.
         for (c in s) {
-            if (isVowel(c)) {
-                count[c - 'A']++
-            }
+            if (!isVowel(c)) continue
+            seenVowel = true
+            array[c - 'A']++
         }
 
-        // Sorted string having all the vowels.
-        val sortedVowel = "AEIOUaeiou"
-        val ans = StringBuilder(s.length)
-        var j = 0
+        if (!seenVowel) return s
+
+        val result = StringBuilder()
+
+        var currIndex = 0
         for (c in s) {
-            if (isVowel(c)) {
-                // Skip to the character which is having remaining count.
-                while (count[sortedVowel[j] - 'A'] == 0) {
-                    j++
-                }
-                ans.append(sortedVowel[j])
-                count[sortedVowel[j] - 'A']--
-            } else {
-                ans.append(c)
+            if (!isVowel(c)) {
+                result.append(c)
+                continue
             }
+
+            while (array[currIndex] == 0) {
+                currIndex++
+            }
+            result.append('A' + currIndex)
+            array[currIndex]--
         }
-        return ans.toString()
+
+        return result.toString()
     }
 }

@@ -22,7 +22,7 @@ object New21Game {
 
         for (i in 1..n) {
             for (j in 1..maxPts) {
-                if (i - j < 0 || i - j >= k) {
+                if (i - j !in 0..<k) {
                     continue
                 }
                 dp[i] += dp[i - j] / maxPts

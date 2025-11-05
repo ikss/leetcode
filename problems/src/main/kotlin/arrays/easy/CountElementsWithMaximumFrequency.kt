@@ -10,7 +10,7 @@ package arrays.easy
  * [URL](https://leetcode.com/problems/count-elements-with-maximum-frequency/)
  */
 object CountElementsWithMaximumFrequency {
-    fun maxFrequencyElements(nums: IntArray): Int {
+    fun maxFrequencyElementsMap(nums: IntArray): Int {
         val frequencies = HashMap<Int, Int>()
         var maxFreq = 0
         for (n in nums) {
@@ -20,6 +20,24 @@ object CountElementsWithMaximumFrequency {
 
         var result = 0
         for ((_, v) in frequencies) {
+            if (v == maxFreq) {
+                result += maxFreq
+            }
+        }
+        return result
+    }
+
+    fun maxFrequencyElementsArray(nums: IntArray): Int {
+        val frequencies = IntArray(101)
+        var maxFreq = 0
+        for (n in nums) {
+            frequencies[n]++
+            val newMax = frequencies[n]
+            maxFreq = maxOf(maxFreq, newMax!!)
+        }
+
+        var result = 0
+        for (v in frequencies) {
             if (v == maxFreq) {
                 result += maxFreq
             }
