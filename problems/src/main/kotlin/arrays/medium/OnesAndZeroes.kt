@@ -66,4 +66,19 @@ object OnesAndZeroes {
 
         return result
     }
+
+    fun findMaxFormDP(strs: Array<String>, m: Int, n: Int): Int {
+        val dp = Array(m + 1) { IntArray(n + 1) { 0 } }
+        for (str in strs) {
+            val countZeros = str.count { it == '0' }
+            val countOnes = str.length - countZeros
+            for (i in m downTo countZeros) {
+                for (j in n downTo countOnes) {
+                    dp[i][j] = maxOf(dp[i][j], 1 + dp[i - countZeros][j - countOnes])
+                }
+            }
+        }
+
+        return dp[m][n]
+    }
 }
