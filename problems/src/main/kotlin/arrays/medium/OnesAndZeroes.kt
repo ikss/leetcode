@@ -10,7 +10,7 @@ package arrays.medium
  * [URL](https://leetcode.com/problems/ones-and-zeroes/)
  */
 object OnesAndZeroes {
-    fun findMaxForm(strs: Array<String>, m: Int, n: Int): Int {
+    fun findMaxFormBacktrack(strs: Array<String>, m: Int, n: Int): Int {
         val counts = strs.map { str ->
             val countZeros = str.count { it == '0' }
             val countOnes = str.length - countZeros
@@ -33,6 +33,36 @@ object OnesAndZeroes {
                 1 + backtrack(strs, index + 1, m, n, zeroes + countZeros, ones + countOnes) // take
             )
         }
+
+        return result
+    }
+
+    fun findMaxFormBacktrackMemoized(strs: Array<String>, m: Int, n: Int): Int {
+        val counts = strs.map { str ->
+            val countZeros = str.count { it == '0' }
+            val countOnes = str.length - countZeros
+            countZeros to countOnes
+        }
+        val memo = Array(strs.size) { Array(m + 1) { IntArray(n + 1) { -1 } } }
+        return backtrack(counts, 0, m, n, 0, 0, memo)
+    }
+
+    private fun backtrack(strs: List<Pair<Int, Int>>, index: Int, m: Int, n: Int, zeroes: Int, ones: Int, memo: Array<Array<IntArray>>): Int {
+        if (index >= strs.size || zeroes > m || ones > n) return 0
+        if (memo[index][zeroes][ones] != -1) return memo[index][zeroes][ones]
+        var result = 0
+        val (countZeros, countOnes) = strs[index]
+        result = maxOf(
+            result, // prev
+            backtrack(strs, index + 1, m, n, zeroes, ones, memo), // skip
+        )
+        if (zeroes + countZeros <= m && ones + countOnes <= n) {
+            result = maxOf(
+                result,
+                1 + backtrack(strs, index + 1, m, n, zeroes + countZeros, ones + countOnes, memo) // take
+            )
+        }
+        memo[index][zeroes][ones] = result
 
         return result
     }
