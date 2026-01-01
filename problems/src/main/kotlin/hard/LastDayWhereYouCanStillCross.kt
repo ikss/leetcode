@@ -19,9 +19,8 @@ import data_structures.UnionFind
  * [URL](https://leetcode.com/problems/last-day-where-you-can-still-cross/)
  */
 object LastDayWhereYouCanStillCross {
-    private val directions = listOf(0 to 1, 0 to -1, 1 to 0, -1 to 0, 1 to 1, 1 to -1, -1 to 1, -1 to -1)
-
-    fun latestDayToCross(row: Int, col: Int, cells: Array<IntArray>): Int {
+    private val directionsFull = listOf(0 to 1, 0 to -1, 1 to 0, -1 to 0, 1 to 1, 1 to -1, -1 to 1, -1 to -1)
+    fun latestDayToCrossUFonWater(row: Int, col: Int, cells: Array<IntArray>): Int {
         val dsu = UnionFind(row * col + 2)
         val grid = Array(row) { IntArray(col) }
 
@@ -30,7 +29,7 @@ object LastDayWhereYouCanStillCross {
             val y = cells[i][1] - 1
             grid[x][y] = 1
             val index1 = x * col + y + 1
-            for ((dx, dy) in directions) {
+            for ((dx, dy) in directionsFull) {
                 val newX = x + dx
                 val newY = y + dy
                 val index2 = newX * col + newY + 1
@@ -48,6 +47,41 @@ object LastDayWhereYouCanStillCross {
                 return i
             }
         }
+        return -1
+    }
+
+    private val directionsFour = listOf(0 to 1, 0 to -1, -1 to 0, 1 to 0)
+    fun latestDayToCrossUFonLand(row: Int, col: Int, cells: Array<IntArray>): Int {
+        val n = row * col
+
+        val uf = UnionFind(n + 2)
+        val grid = Array(row) { IntArray(col) }
+
+        for (day in cells.size - 1 downTo 0) {
+            val r = cells[day][0] - 1
+            val c = cells[day][1] - 1
+            grid[r][c] = 1
+
+            if (r == 0) {
+                uf.union(0, c + 1)
+            } else if (r == row - 1) {
+                uf.union(n + 1, r * col + c + 1)
+            }
+
+            for ((dr, dc) in directionsFour) {
+                val newr = r + dr
+                val newc = c + dc
+
+                if (newr in 0..<row && newc in 0..<col && grid[newr][newc] == 1) {
+                    uf.union(newr * col + newc + 1, r * col + c + 1)
+                }
+            }
+
+            if (uf.find(0) == uf.find(row * col + 1)) {
+                return day
+            }
+        }
+
         return -1
     }
 }
