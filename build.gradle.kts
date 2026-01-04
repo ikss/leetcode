@@ -8,7 +8,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "2.2.21"
+    id("org.jetbrains.kotlin.jvm") version "2.3.0"
 }
 
 allprojects {
@@ -19,18 +19,18 @@ allprojects {
     }
 
     tasks.withType(JavaCompile::class).all {
-        sourceCompatibility = "23"
-        targetCompatibility = "23"
+        sourceCompatibility = "25"
+        targetCompatibility = "25"
     }
 
     tasks.withType(KotlinCompile::class).all {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_23)
+            jvmTarget.set(JvmTarget.JVM_25)
         }
     }
 
     tasks.withType(Test::class).configureEach {
-        maxParallelForks = maxOf(Runtime.getRuntime().availableProcessors() / 2, 1)
+        maxParallelForks = maxOf(Runtime.getRuntime().availableProcessors(), 1)
         useJUnitPlatform()
     }
 
