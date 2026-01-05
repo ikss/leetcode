@@ -14,23 +14,21 @@ package medium
 object MaximumMatrixSum {
     fun maxMatrixSum(matrix: Array<IntArray>): Long {
         var result = 0L
-        var minusCount = 0
+        var negCount = 0
         var min = Int.MAX_VALUE
-
-        for (r in matrix.indices) {
-            for (c in matrix[0].indices) {
-                val value = matrix[r][c]
-                if (value < 0) {
-                    minusCount++
+        for (r in matrix) {
+            for (n in r) {
+                if (n < 0) {
+                    negCount++
                 }
-                val mod = Math.abs(value)
-                min = minOf(min, mod)
-                result += mod
+                val abs = Math.abs(n)
+                min = minOf(abs, min)
+                result += abs
             }
         }
 
-        if (minusCount % 2 == 1) {
-            result -= 2 * min
+        if (negCount % 2 != 0) {
+            result -= min * 2
         }
 
         return result
