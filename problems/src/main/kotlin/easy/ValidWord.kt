@@ -14,7 +14,7 @@ package easy
  * 'a', 'e', 'i', 'o', 'u', and their uppercases are vowels.
  * A consonant is an English letter that is not a vowel.
  *
- * [URL](https://leetcode.com/problems/valid-word/description/)
+ * [URL](https://leetcode.com/problems/valid-word/)
  */
 object ValidWord {
     private val vowels = setOf('a', 'e', 'i', 'o', 'u')

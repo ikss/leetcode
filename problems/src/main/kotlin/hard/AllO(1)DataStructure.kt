@@ -15,7 +15,7 @@ package hard
  *
  * Note that each function must run in O(1) average time complexity.
  *
- * [URL](https://leetcode.com/problems/all-oone-data-structure/description/)
+ * [URL](https://leetcode.com/problems/all-oone-data-structure/)
  */
 object `AllO(1)DataStructure` {
     class AllOne {
