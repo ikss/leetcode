@@ -1,8 +1,5 @@
 package medium
 
-import data_structures.TreeNode
-import java.util.ArrayDeque
-
 /**
  * You are given an array nums consisting of n prime integers.
  *
@@ -16,7 +13,7 @@ import java.util.ArrayDeque
  * [URL](https://leetcode.com/problems/construct-the-minimum-bitwise-array-i/)
  */
 object ConstructTheMinimumBitwiseArrayI {
-    fun minBitwiseArray(nums: List<Int>): IntArray {
+    fun minBitwiseArrayNaive(nums: List<Int>): IntArray {
         val result = IntArray(nums.size)
         for (i in nums.indices) {
             val n = nums[i]
@@ -33,5 +30,21 @@ object ConstructTheMinimumBitwiseArrayI {
             }
         }
         return -1
+    }
+
+    fun minBitwiseArrayOptimized(nums: List<Int>): IntArray {
+        val n = nums.size
+        val result = IntArray(n)
+        for (i in 0..<n) {
+            val x = nums[i]
+            var res = -1
+            var d = 1
+            while ((x and d) != 0) {
+                res = x - d
+                d = d shl 1
+            }
+            result[i] = res
+        }
+        return result
     }
 }
