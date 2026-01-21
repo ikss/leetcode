@@ -1,4 +1,4 @@
-package medium
+package easy
 
 /**
  * You are given an array nums consisting of n prime integers.
