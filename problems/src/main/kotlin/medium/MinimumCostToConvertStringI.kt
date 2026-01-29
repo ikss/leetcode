@@ -19,48 +19,70 @@ import java.util.*
  * [URL](https://leetcode.com/problems/minimum-cost-to-convert-string-i/)
  */
 object MinimumCostToConvertStringI {
+
     fun minimumCost(source: String, target: String, original: CharArray, changed: CharArray, cost: IntArray): Long {
-        val graph = HashMap<Char, HashMap<Char, Int>>()
+        // Create a graph representation of character conversions
+        val adjacencyList = Array(26) { ArrayList<Pair<Int, Int>>() }
 
-        for (i in original.indices) {
-            val from = original[i]
-            val to = changed[i]
-
-            graph.computeIfAbsent(from) { HashMap() }.merge(to, cost[i], ::minOf)
+        // Populate the adjacency list with character conversions
+        val conversionCount = original.size
+        for (i in 0..<conversionCount) {
+            adjacencyList[original[i] - 'a'].add(changed[i] - 'a' to cost[i])
         }
 
-        var result = 0L
-
-        for (i in source.indices) {
-            val from = source[i]
-            val to = target[i]
-            if (from == to) continue
-            val charCost = findMinCostDijkstra(from, to, graph)
-            if (charCost == -1L) return -1L
-            result += charCost
+        // Calculate shortest paths for all possible character conversions
+        val minConversionCosts = Array(26) { LongArray(26) }
+        for (i in 0..25) {
+            minConversionCosts[i] = dijkstra(i, adjacencyList)
         }
 
-        return result
-
-    }
-
-    private fun findMinCostDijkstra(from: Char, to: Char, graph: HashMap<Char, HashMap<Char, Int>>): Long {
-        val queue = PriorityQueue<Pair<Char, Long>> { p1, p2 -> p1.second.compareTo(p2.second) }
-        queue.offer(from to 0L)
-
-        val visited = HashMap<Char, Long>()
-        visited[from] = 0L
-        while (queue.isNotEmpty()) {
-            val (curr, currCost) = queue.poll()
-            if (curr == to) return currCost
-
-            if (visited[curr] != null && visited[curr]!! < currCost) continue
-            visited[curr] = currCost
-
-            for ((k, v) in graph[curr] ?: continue) {
-                queue.offer(k to v + currCost)
+        // Calculate the total cost of converting source to target
+        var totalCost = 0L
+        val stringLength = source.length
+        for (i in 0..<stringLength) {
+            if (source[i] != target[i]) {
+                val charConversionCost = minConversionCosts[source[i] - 'a'][target[i] - 'a']
+                if (charConversionCost == -1L) {
+                    return -1L // Conversion not possible
+                }
+                totalCost += charConversionCost
             }
         }
-        return -1
+        return totalCost
+    }
+
+    // Find minimum conversion costs from a starting character to all other characters
+    private fun dijkstra(startChar: Int, adjacencyList: Array<ArrayList<Pair<Int, Int>>>): LongArray {
+        // Priority queue to store characters with their conversion cost, sorted by cost
+        val priorityQueue = PriorityQueue<Pair<Long, Int>>(compareBy { it.first })
+
+        // Initialize the starting character with cost 0
+        priorityQueue.add(Pair(0L, startChar))
+
+        // Array to store the minimum conversion cost to each character
+        // Initialize all costs to -1 (unreachable)
+        val minCosts = LongArray(26) { -1L }
+
+        while (priorityQueue.isNotEmpty()) {
+            val currentPair = priorityQueue.poll()
+            val (currentCost, currentChar) = currentPair
+
+            if (minCosts[currentChar] != -1L && minCosts[currentChar] < currentCost) continue
+
+            // Explore all possible conversions from the current character
+            for (conversion in adjacencyList[currentChar]) {
+                val (targetChar, conversionCost) = conversion
+                val newTotalCost = currentCost + conversionCost
+
+                // If we found a cheaper conversion, update its cost
+                if (minCosts[targetChar] == -1L || newTotalCost < minCosts[targetChar]) {
+                    minCosts[targetChar] = newTotalCost
+                    // Add the updated conversion to the queue for further exploration
+                    priorityQueue.add(Pair(newTotalCost, targetChar))
+                }
+            }
+        }
+        // Return the array of minimum conversion costs from the starting character to all others
+        return minCosts
     }
 }
