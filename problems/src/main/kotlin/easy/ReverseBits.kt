@@ -20,7 +20,7 @@ object ReverseBits {
             .toLong(2)
             .toInt()
 
-    fun reverseBits(n: Int): Int {
+    fun reverseBitsBitByBit(n: Int): Int {
         var n = n
         var result = 0
         for (i in 0..31) {
@@ -30,5 +30,15 @@ object ReverseBits {
                 result = result shl 1
         }
         return result
+    }
+
+    fun reverseBitsMaskAndShift(n: Int): Int {
+        var n = n
+        n = (n ushr 16) or (n shl 16)
+        n = ((n and -0xff0100) ushr 8) or ((n and 0xff00ff) shl 8)
+        n = ((n and -0xf0f0f10) ushr 4) or ((n and 0xf0f0f0f) shl 4)
+        n = ((n and -0x33333334) ushr 2) or ((n and 0x33333333) shl 2)
+        n = ((n and -0x55555556) ushr 1) or ((n and 0x55555555) shl 1)
+        return n
     }
 }
