@@ -9,7 +9,7 @@ package medium
  */
 object FindUniqueBinaryString {
     fun findDifferentBinaryString(nums: Array<String>): String {
-        val ans = StringBuilder()
+        val ans = StringBuilder(nums[0].length)
         for (i in nums.indices) {
             val curr = nums[i][i]
             ans.append(if (curr == '0') '1' else '0')
