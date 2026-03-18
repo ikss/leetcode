@@ -1,7 +1,5 @@
 package medium
 
-import data_structures.TreeNode
-
 /**
  * You are given a 0-indexed integer matrix grid and an integer k.
  *
@@ -11,7 +9,7 @@ import data_structures.TreeNode
  * [URL](https://leetcode.com/problems/count-submatrices-with-top-left-element-and-sum-less-than-k/)
  */
 object CountSubmatricesWithTopLeftElementAndSumLessThanK {
-    fun countSubmatrices(grid: Array<IntArray>, k: Int): Int {
+    fun countSubmatrices_2DSumPlusBinarySearch(grid: Array<IntArray>, k: Int): Int {
         val r = grid.size
         val c = grid[0].size
         val sums = Array(r) { IntArray(c) }
@@ -52,6 +50,26 @@ object CountSubmatricesWithTopLeftElementAndSumLessThanK {
                 result = mid
             } else {
                 right = mid - 1
+            }
+        }
+
+        return result
+    }
+
+    fun countSubmatrices_2DSum(grid: Array<IntArray>, k: Int): Int {
+        val n = grid.size
+        val m = grid[0].size
+        val cols = IntArray(m)
+        var result = 0
+
+        for (i in 0..<n) {
+            var rows = 0
+            for (j in 0..<m) {
+                cols[j] += grid[i][j]
+                rows += cols[j]
+                if (rows <= k) {
+                    result++
+                }
             }
         }
 
