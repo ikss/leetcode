@@ -26,6 +26,7 @@ object WalkingRobotSimulationII {
     class Robot(val w: Int, val h: Int) {
         private val width = w - 1
         private val height = h - 1
+        private val fullPath = 2 * (width + height)
 
         enum class Direction(val dx: Int, val dy: Int, val dir: String) {
             EAST(1, 0, "East"),
@@ -43,7 +44,8 @@ object WalkingRobotSimulationII {
         private var currentPosition = Position(0, 0, Direction.EAST)
 
         fun step(num: Int) {
-            var stepsLeft = num
+            var stepsLeft = num % fullPath
+            if (stepsLeft == 0) stepsLeft = fullPath
 
             while (stepsLeft > 0) {
                 val pos = currentPosition
