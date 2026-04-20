@@ -11,7 +11,7 @@ package easy
  * [URL](https://leetcode.com/problems/two-furthest-houses-with-different-colors/)
  */
 object TwoFurthestHousesWithDifferentColors {
-    fun maxDistance(colors: IntArray): Int {
+    fun maxDistanceSquared(colors: IntArray): Int {
         val map = HashMap<Int, Int>()
         var result = 0
         for (i in colors.indices) {
@@ -30,5 +30,15 @@ object TwoFurthestHousesWithDifferentColors {
         }
 
         return result
+    }
+
+    fun maxDistanceLinear(colors: IntArray): Int {
+        val n = colors.size
+        for (i in colors.indices) {
+            if (colors[i] != colors[n - 1] || colors[0] != colors[n - i - 1]) {
+                return n - i - 1
+            }
+        }
+        return 0
     }
 }
