@@ -21,4 +21,40 @@ class RotateStringTest {
 
         assertEquals(expected, RotateString.rotateString(s, goal))
     }
+
+    @Test
+    fun test3() {
+        val s = "defdefdefabcabc"
+        val goal = "defdefabcabcdef"
+        val expected = true
+
+        assertEquals(expected, RotateString.rotateString(s, goal))
+    }
+
+    @Test
+    fun test1Optimized() {
+        val s = "abcde"
+        val goal = "cdeab"
+        val expected = true
+
+        assertEquals(expected, RotateString.rotateStringOptimized(s, goal))
+    }
+
+    @Test
+    fun test2Optimized() {
+        val s = "abcde"
+        val goal = "abced"
+        val expected = false
+
+        assertEquals(expected, RotateString.rotateStringOptimized(s, goal))
+    }
+
+    @Test
+    fun test3Optimized() {
+        val s = "defdefdefabcabc"
+        val goal = "defdefabcabcdef"
+        val expected = true
+
+        assertEquals(expected, RotateString.rotateStringOptimized(s, goal))
+    }
 }

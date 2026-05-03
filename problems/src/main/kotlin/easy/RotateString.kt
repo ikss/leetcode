@@ -17,4 +17,25 @@ object RotateString {
 
         return double.contains(goal)
     }
+
+    fun rotateStringOptimized(s: String, goal: String): Boolean {
+        val n = s.length
+        if (n != goal.length) return false
+
+        var i1 = 0
+        var i2 = 0
+
+        while (i1 < n * 2) {
+            if (s[i1 % n] == goal[i2]) {
+                i2++
+                if (i2 == n) return true
+            } else {
+                i1 -= i2
+                i2 = 0
+            }
+            i1++
+        }
+        return false
+    }
+
 }
