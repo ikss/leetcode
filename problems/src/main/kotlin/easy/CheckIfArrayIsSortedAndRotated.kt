@@ -16,18 +16,21 @@ object CheckIfArrayIsSortedAndRotated {
         val n = nums.size
         if (n <= 1) return true
 
-        var inversionCount = 0
+        var cliffs = 0
+
+        if (nums[0] < nums[n - 1]) {
+            cliffs++
+        }
 
         for (i in 1..<n) {
             if (nums[i] < nums[i - 1]) {
-                ++inversionCount
+                if (cliffs > 0) {
+                    return false
+                }
+                cliffs++
             }
         }
 
-        if (nums[0] < nums[n - 1]) {
-            ++inversionCount
-        }
-
-        return inversionCount <= 1
+        return true
     }
 }
