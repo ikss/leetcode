@@ -25,7 +25,7 @@ object DestroyingAsteroids {
                 continue
             }
             mass += a
-            while (!pq.isEmpty() && mass >= pq.peek()) {
+            while (pq.isNotEmpty() && mass >= pq.peek()) {
                 mass += pq.poll()
             }
         }
