@@ -15,7 +15,7 @@ package medium
  * [URL](https://leetcode.com/problems/minimum-cost-of-buying-candies-with-discount/)
  */
 object MinimumCostOfBuyingCandiesWithDiscount {
-    fun minimumCost(cost: IntArray): Int {
+    fun minimumCostSortDescending(cost: IntArray): Int {
         cost.sort()
         val n = cost.size
         var result = 0
@@ -24,6 +24,27 @@ object MinimumCostOfBuyingCandiesWithDiscount {
                 result += cost[i]
             }
         }
+        return result
+    }
+
+    fun minimumCostCountingSort(cost: IntArray): Int {
+        val rem = cost.size % 3
+        val freq = IntArray(101)
+        var result = 0
+
+        for (c in cost) {
+            freq[c]++
+        }
+
+        var taken = 0
+        for (i in 1 until 101) {
+            for (f in 0 until freq[i]) {
+                if (taken++ % 3 != rem) {
+                    result += i
+                }
+            }
+        }
+
         return result
     }
 }
