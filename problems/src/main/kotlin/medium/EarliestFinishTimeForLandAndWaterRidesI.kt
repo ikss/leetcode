@@ -17,7 +17,7 @@ package medium
  *
  * Return the earliest possible time at which the tourist can finish both rides.
  *
- * [URL](https://leetcode.com/problems/minimize-maximum-of-array/)
+ * [URL](https://leetcode.com/problems/earliest-finish-time-for-land-and-water-rides/)
  */
 object EarliestFinishTimeForLandAndWaterRidesI {
     fun earliestFinishTime(landStartTime: IntArray, landDuration: IntArray, waterStartTime: IntArray, waterDuration: IntArray): Int {
