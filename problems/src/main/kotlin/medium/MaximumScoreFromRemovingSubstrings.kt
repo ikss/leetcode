@@ -10,7 +10,7 @@ package medium
  *
  * Return the maximum points you can gain after applying the above operations on s.
  *
- * [URL](https://leetcode.com/problems/count-number-of-homogenous-substrings/)
+ * [URL](https://leetcode.com/problems/maximum-score-from-removing-substrings/)
  */
 object MaximumScoreFromRemovingSubstrings {
     fun maximumGain(s: String, x: Int, y: Int): Int {

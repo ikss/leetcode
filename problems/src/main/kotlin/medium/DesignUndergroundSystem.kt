@@ -9,7 +9,7 @@ package medium
  * * bool search(word) Returns true if there is any string in the data structure that matches word or false otherwise.
  * word may contain dots '.' where dots can be matched with any letter.
  *
- * [URL](https://leetcode.com/problems/design-add-and-search-words-data-structure/)
+ * [URL](https://leetcode.com/problems/design-underground-system/)
  */
 object DesignUndergroundSystem {
     class UndergroundSystem {

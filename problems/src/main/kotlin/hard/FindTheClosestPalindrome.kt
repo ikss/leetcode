@@ -6,7 +6,7 @@ package hard
  *
  * The closest is defined as the absolute difference minimized between two integers.
  *
- * [URL](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)
+ * [URL](https://leetcode.com/problems/find-the-closest-palindrome/)
  */
 object FindTheClosestPalindrome {
 

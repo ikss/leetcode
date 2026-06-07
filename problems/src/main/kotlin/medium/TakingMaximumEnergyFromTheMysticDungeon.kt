@@ -14,7 +14,7 @@ package medium
  *
  * Note that when you are reach a magician, you must take energy from them, whether it is negative or positive energy.
  *
- * [URL](https://leetcode.com/problems/alice-and-bob-playing-flower-game/)
+ * [URL](https://leetcode.com/problems/taking-maximum-energy-from-the-mystic-dungeon/)
  */
 object TakingMaximumEnergyFromTheMysticDungeon {
     fun maximumEnergy(energy: IntArray, k: Int): Int {

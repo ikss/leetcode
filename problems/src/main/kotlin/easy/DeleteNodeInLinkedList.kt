@@ -7,7 +7,7 @@ import data_structures.ListNode
  * instead you will be given access to the node to be deleted directly.
  * It is guaranteed that the node to be deleted is not a tail node in the list.
  *
- * [URL](https://leetcode.com/problems/linked-list-cycle/)
+ * [URL](https://leetcode.com/problems/delete-node-in-a-linked-list/)
  */
 object DeleteNodeInLinkedList {
     fun deleteNode(node: ListNode?) {

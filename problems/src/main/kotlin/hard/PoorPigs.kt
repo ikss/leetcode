@@ -17,7 +17,7 @@ import kotlin.math.pow
  *
  * Given buckets, minutesToDie, and minutesToTest, return the minimum number of pigs needed to figure out which bucket is poisonous within the allotted time.
  *
- * [URL](https://leetcode.com/problems/divide-two-integers/)
+ * [URL](https://leetcode.com/problems/poor-pigs/)
  */
 object PoorPigs {
     fun poorPigs(buckets: Int, minutesToDie: Int, minutesToTest: Int): Int {

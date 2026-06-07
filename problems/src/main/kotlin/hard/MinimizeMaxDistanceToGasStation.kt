@@ -12,7 +12,7 @@ import java.util.*
  *
  * Return the smallest possible value of penalty(). Answers within 10-6 of the actual answer will be accepted.
  *
- * [URL](https://leetcode.com/problems/best-meeting-point/)
+ * [URL](https://leetcode.com/problems/minimize-max-distance-to-gas-station/)
  */
 object MinimizeMaxDistanceToGasStation {
     fun minmaxGasDistHeap(stations: IntArray, k: Int): Double {

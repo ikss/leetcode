@@ -15,7 +15,7 @@ import java.util.*
  *
  * The Manhattan Distance between two cells (xi, yi) and (xj, yj) is |xi - xj| + |yi - yj|.
  *
- * [URL](https://leetcode.com/problems/implement-stack-using-queues/)
+ * [URL](https://leetcode.com/problems/maximize-the-distance-between-points-on-a-square/)
  */
 object MaximizeTheDistanceBetweenPointsOnSquare {
     fun maxDistance(side: Int, points: Array<IntArray>, k: Int): Int {

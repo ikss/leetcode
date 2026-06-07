@@ -14,7 +14,7 @@ package medium
  *
  * Return true if such cuts can be made; otherwise, return false.
  *
- * [URL](https://leetcode.com/problems/average-waiting-time/)
+ * [URL](https://leetcode.com/problems/check-if-grid-can-be-cut-into-sections/)
  */
 object CheckIfGridCanBeCutIntoSections {
     fun checkValidCuts(n: Int, rectangles: Array<IntArray>): Boolean {

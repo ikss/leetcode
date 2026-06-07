@@ -8,7 +8,7 @@ package easy
  * * a < b
  * * b - a equals to the minimum absolute difference of any two elements in arr
  *
- * [URL](https://leetcode.com/problems/minimum-difference-between-highest-and-lowest-of-k-scores/)
+ * [URL](https://leetcode.com/problems/minimum-absolute-difference/)
  */
 object MinimumAbsoluteDifference {
     fun minimumAbsDifference(arr: IntArray): List<List<Int>> {

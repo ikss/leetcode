@@ -11,7 +11,7 @@ import java.util.*
  * Return the ordering of courses you should take to finish all courses. If there are many valid answers,
  * return any of them. If it is impossible to finish all courses, return an empty array.
  *
- * [URL](https://leetcode.com/problems/find-closest-node-to-given-two-nodes/)
+ * [URL](https://leetcode.com/problems/course-schedule-ii/)
  */
 object CourseScheduleII {
     fun findOrder(numCourses: Int, prerequisites: Array<IntArray>): IntArray {

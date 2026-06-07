@@ -11,7 +11,7 @@ package medium
  *
  * Return the minimum length of the final string s that you can achieve.
  *
- * [URL](https://leetcode.com/problems/break-a-palindrome/)
+ * [URL](https://leetcode.com/problems/minimum-length-of-string-after-operations/)
  */
 object MinimumLengthOfStringAfterOperations {
     fun minimumLength(s: String): Int {

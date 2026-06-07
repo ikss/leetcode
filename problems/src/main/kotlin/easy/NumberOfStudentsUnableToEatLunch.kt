@@ -15,7 +15,7 @@ package easy
  * in the stack (i = 0 is the top of the stack) and `students[j]` is the preference of the jth student in the initial
  * queue (j = 0 is the front of the queue). Return the number of students that are unable to eat.
  *
- * [URL](https://leetcode.com/problems/binary-search/)
+ * [URL](https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/)
  */
 object NumberOfStudentsUnableToEatLunch {
     fun countStudentsQueue(students: IntArray, sandwiches: IntArray): Int {

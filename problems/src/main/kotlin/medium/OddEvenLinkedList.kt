@@ -12,7 +12,7 @@ import data_structures.ListNode
  *
  * You must solve the problem in O(1) extra space complexity and O(n) time complexity.
  *
- * [URL](https://leetcode.com/problems/group-anagrams/)
+ * [URL](https://leetcode.com/problems/odd-even-linked-list/)
  */
 object OddEvenLinkedList {
     fun oddEvenList(head: ListNode?): ListNode? {

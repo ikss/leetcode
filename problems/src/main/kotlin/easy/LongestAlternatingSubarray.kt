@@ -10,7 +10,7 @@ package easy
  *
  * A subarray is a contiguous non-empty sequence of elements within an array.
  *
- * [URL](https://leetcode.com/problems/two-sum/)
+ * [URL](https://leetcode.com/problems/longest-alternating-subarray/)
  */
 object LongestAlternatingSubarray {
     fun alternatingSubarray(nums: IntArray): Int {

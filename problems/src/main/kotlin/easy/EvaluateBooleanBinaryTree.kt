@@ -10,7 +10,7 @@ import data_structures.TreeNode
  *
  * The length of a path between two nodes is represented by the number of edges between them.
  *
- * [URL](https://leetcode.com/problems/diameter-of-binary-tree/)
+ * [URL](https://leetcode.com/problems/evaluate-boolean-binary-tree/)
  */
 object EvaluateBooleanBinaryTree {
     fun evaluateTree(root: TreeNode): Boolean {

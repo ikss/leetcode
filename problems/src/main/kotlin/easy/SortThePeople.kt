@@ -8,7 +8,7 @@ package easy
  *
  * Return names sorted in descending order by the people's heights.
  *
- * [URL](https://leetcode.com/problems/build-array-from-permutation/)
+ * [URL](https://leetcode.com/problems/sort-the-people/)
  */
 object SortThePeople {
     fun sortPeople(names: Array<String>, heights: IntArray): Array<String> {

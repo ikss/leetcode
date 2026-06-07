@@ -11,7 +11,7 @@ package medium
  * each substring contains exactly one unique digit. Then for each substring, say the number of digits,
  * then say the digit. Finally, concatenate every said digit.
  *
- * [URL](https://leetcode.com/problems/group-anagrams/)
+ * [URL](https://leetcode.com/problems/decoded-string-at-index/)
  */
 object DecodedStringAtIndex {
     fun decodeAtIndex(s: String, k: Int): String {

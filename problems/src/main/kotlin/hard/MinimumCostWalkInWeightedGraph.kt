@@ -19,7 +19,7 @@ package hard
  *
  * Return the array answer, where `answer[i]` denotes the minimum cost of a walk for query i.
  *
- * [URL](https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/)
+ * [URL](https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph/)
  */
 object MinimumCostWalkInWeightedGraph {
     fun minimumCost(n: Int, edges: Array<IntArray>, query: Array<IntArray>): IntArray {

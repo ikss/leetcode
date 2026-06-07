@@ -31,7 +31,7 @@ package medium
  * Note that the initial direction of the robot will be facing up.
  * You can assume all four edges of the grid are all surrounded by a wall.
  *
- * [URL](https://leetcode.com/problems/maximum-number-of-operations-to-move-ones-to-the-end/)
+ * [URL](https://leetcode.com/problems/robot-room-cleaner/)
  */
 object RobotRoomCleaner {
     interface Robot {

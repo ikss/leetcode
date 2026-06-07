@@ -7,7 +7,7 @@ import data_structures.TreeNode
  *
  * Return the smallest level x such that the sum of all the values of nodes at level x is maximal.
  *
- * [URL](https://leetcode.com/problems/add-one-row-to-tree/)
+ * [URL](https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/)
  */
 object MaximumLevelSumOfBinaryTree {
     fun maxLevelSum(root: TreeNode?): Int {

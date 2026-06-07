@@ -7,7 +7,7 @@ package easy
  *
  * Return the number of groups that have the largest size.
  *
- * [URL](https://leetcode.com/problems/can-place-flowers/)
+ * [URL](https://leetcode.com/problems/count-largest-group/)
  */
 object CountLargestGroup {
     fun countLargestGroup(n: Int): Int {

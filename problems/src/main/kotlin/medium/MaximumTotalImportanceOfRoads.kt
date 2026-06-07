@@ -13,7 +13,7 @@ import java.util.*
  *
  * Return the maximum total importance of all roads possible after assigning the values optimally.
  *
- * [URL](https://leetcode.com/problems/asteroid-collision/)
+ * [URL](https://leetcode.com/problems/maximum-total-importance-of-roads/)
  */
 object MaximumTotalImportanceOfRoads {
     fun maximumImportance(n: Int, roads: Array<IntArray>): Long {

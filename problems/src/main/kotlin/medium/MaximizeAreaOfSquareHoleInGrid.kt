@@ -11,7 +11,7 @@ package medium
  * Return an integer denoting the maximum area of a square-shaped hole in the grid,
  * after removing some bars (possibly none).
  *
- * [URL](https://leetcode.com/problems/alternating-groups-ii/)
+ * [URL](https://leetcode.com/problems/maximize-area-of-square-hole-in-grid/)
  */
 object MaximizeAreaOfSquareHoleInGrid {
     fun maximizeSquareHoleArea(n: Int, m: Int, hBars: IntArray, vBars: IntArray): Int {

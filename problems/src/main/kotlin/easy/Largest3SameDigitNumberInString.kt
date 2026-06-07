@@ -11,7 +11,7 @@ package easy
  * * A substring is a contiguous sequence of characters within a string.
  * * There may be leading zeroes in num or a good integer.
  *
- * [URL](https://leetcode.com/problems/check-if-the-sentence-is-pangram/)
+ * [URL](https://leetcode.com/problems/largest-3-same-digit-number-in-string/)
  */
 object Largest3SameDigitNumberInString {
     fun largestGoodInteger(num: String): String {

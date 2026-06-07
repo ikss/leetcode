@@ -12,7 +12,7 @@ package medium
  * 32-bit signed integer range: [−2^31, 2^31 − 1]. For this problem, if the quotient is strictly greater than 2^31 - 1,
  * then return 2^31 - 1, and if the quotient is strictly less than -2^31, then return -2^31.
  *
- * [URL](https://leetcode.com/problems/divide-two-integers/)
+ * [URL](https://leetcode.com/problems/factorial-trailing-zeroes/)
  */
 object FactorialTrailingZeroes {
     fun trailingZeroesOptimal(n: Int): Int {

@@ -16,7 +16,7 @@ import java.util.*
  * The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in lowercase or uppercase.
  * Consonants comprise all letters that are not vowels.
  *
- * [URL](https://leetcode.com/problems/break-a-palindrome/)
+ * [URL](https://leetcode.com/problems/sort-vowels-in-a-string/)
  */
 object SortVowelsInString {
     private fun isVowel(c: Char): Boolean {

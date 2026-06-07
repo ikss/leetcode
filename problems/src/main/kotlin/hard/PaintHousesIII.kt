@@ -16,7 +16,7 @@ package hard
  * Return the minimum cost of painting all the remaining houses in such a way that there are exactly
  * target neighborhoods. If it is not possible, return -1.
  *
- * [URL](https://leetcode.com/problems/paint-house-iii/)
+ * [URL](https://leetcode.com/problems/paint-houses-iii/)
  */
 object PaintHousesIII {
     // Maximum cost possible plus 1

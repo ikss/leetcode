@@ -5,7 +5,7 @@ package easy
  *
  * You are given an array of integers nums. Return true if nums is a special array, otherwise, return false.
  *
- * [URL](https://leetcode.com/problems/can-place-flowers/)
+ * [URL](https://leetcode.com/problems/special-array-i/)
  */
 object SpecialArrayI {
     fun isArraySpecial(nums: IntArray): Boolean {

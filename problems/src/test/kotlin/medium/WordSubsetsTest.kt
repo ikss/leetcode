@@ -11,7 +11,7 @@ class WordSubsetsTest {
         val words2 = arrayOf("e", "o")
         val expected = listOf("facebook", "google", "leetcode")
 
-        assertEquals(expected, WordsSubset.wordSubsetsMap(words1, words2))
+        assertEquals(expected, WordSubset.wordSubsetsMap(words1, words2))
     }
 
     @Test
@@ -20,7 +20,7 @@ class WordSubsetsTest {
         val words2 = arrayOf("e", "l")
         val expected = listOf("apple", "google", "leetcode")
 
-        assertEquals(expected, WordsSubset.wordSubsetsMap(words1, words2))
+        assertEquals(expected, WordSubset.wordSubsetsMap(words1, words2))
     }
 
     @Test
@@ -29,7 +29,7 @@ class WordSubsetsTest {
         val words2 = arrayOf("e", "o")
         val expected = listOf("facebook", "google", "leetcode")
 
-        assertEquals(expected, WordsSubset.wordSubsetsArray(words1, words2))
+        assertEquals(expected, WordSubset.wordSubsetsArray(words1, words2))
     }
 
     @Test
@@ -38,7 +38,7 @@ class WordSubsetsTest {
         val words2 = arrayOf("e", "l")
         val expected = listOf("apple", "google", "leetcode")
 
-        assertEquals(expected, WordsSubset.wordSubsetsArray(words1, words2))
+        assertEquals(expected, WordSubset.wordSubsetsArray(words1, words2))
     }
 
 }

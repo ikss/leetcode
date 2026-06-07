@@ -15,7 +15,7 @@ package medium
  *
  * Return true if any cycle of the same value exists in grid, otherwise, return false.
  *
- * [URL](https://leetcode.com/problems/add-two-numbers/)
+ * [URL](https://leetcode.com/problems/detect-cycles-in-2d-grid/)
  */
 object DetectCyclesIn2DGrid {
     fun containsCycle(grid: Array<CharArray>): Boolean {

@@ -16,7 +16,7 @@ import java.util.*
  * Return the minimum time until you can reach the bottom right square (n - 1, n - 1)
  * if you start at the top left square (0, 0).
  *
- * [URL](https://leetcode.com/problems/construct-target-array-with-multiple-sums/)
+ * [URL](https://leetcode.com/problems/swim-in-rising-water/)
  */
 object SwimInRisingWater {
     private val directions = listOf(-1 to 0, 1 to 0, 0 to -1, 0 to 1)

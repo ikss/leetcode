@@ -11,7 +11,7 @@ import data_structures.TreeNode
  *
  * The level of a node is the number of edges along the path between it and the root node.
  *
- * [URL](https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/)
+ * [URL](https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/)
  */
 object MinimumNumberOfOperationsToSortBinaryTreeByLevel {
     fun minimumOperations(root: TreeNode?): Int {

@@ -7,7 +7,7 @@ package hard
  *
  * An island is a 4-directionally connected group of 1s.
  *
- * [URL](https://leetcode.com/problems/best-meeting-point/)
+ * [URL](https://leetcode.com/problems/making-a-large-island/)
  */
 object MakingLargeIsland {
     private val dirRow = intArrayOf(-1, 1, 0, 0)

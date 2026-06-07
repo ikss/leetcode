@@ -15,7 +15,7 @@ package easy
  *
  * Return the selected subsequence. If there are multiple answers, return any of them.
  *
- * [URL](https://leetcode.com/problems/binary-search/)
+ * [URL](https://leetcode.com/problems/longest-unequal-adjacent-groups-subsequence-i/)
  */
 object LongestUnequalAdjacentGroupsSubsequenceI {
     fun getLongestSubsequence(words: Array<String>, groups: IntArray): List<String> {

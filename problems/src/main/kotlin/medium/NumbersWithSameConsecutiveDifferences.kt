@@ -8,7 +8,7 @@ package medium
  *
  * You may return the answer in any order.
  *
- * [URL](https://leetcode.com/problems/integer-to-roman/)
+ * [URL](https://leetcode.com/problems/numbers-with-same-consecutive-differences/)
  */
 object NumbersWithSameConsecutiveDifferences {
     fun numsSameConsecDiffRecursive(n: Int, k: Int): IntArray {

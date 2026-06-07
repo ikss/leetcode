@@ -14,7 +14,7 @@ package easy
  *
  * Note that the return values are case-sensitive.
  *
- * [URL](https://leetcode.com/problems/buy-two-chocolates/)
+ * [URL](https://leetcode.com/problems/best-poker-hand/)
  */
 object BestPokerHand {
     fun bestHand(ranks: IntArray, suits: CharArray): String {

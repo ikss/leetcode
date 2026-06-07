@@ -14,7 +14,7 @@ package hard
  *
  * Return the number of different ranges that are balanced. Since the answer may be very large, return it modulo 10^9 + 7.
  *
- * [URL](https://leetcode.com/problems/closest-subsequence-sum/)
+ * [URL](https://leetcode.com/problems/choose-numbers-from-two-arrays-in-range/)
  */
 object ChooseNumbersFromTwoArraysInRange {
     fun countSubranges(nums1: IntArray, nums2: IntArray): Int {

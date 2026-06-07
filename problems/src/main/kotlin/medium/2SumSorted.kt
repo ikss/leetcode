@@ -11,7 +11,7 @@ package medium
  *
  * Your solution must use only constant extra space.
  *
- * [URL](https://leetcode.com/problems/3sum-closest/)
+ * [URL](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
  */
 object `2SumSorted` {
     fun twoSum(numbers: IntArray, target: Int): IntArray {

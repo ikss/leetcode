@@ -3,7 +3,7 @@ package easy
 /**
  * Given a string s, return true if a permutation of the string could form a palindrome and false otherwise.
  *
- * [URL](https://leetcode.com/problems/buddy-strings/)
+ * [URL](https://leetcode.com/problems/palindrome-permutation/)
  */
 object PalindromePermutation {
     fun canPermutePalindrome(s: String): Boolean {

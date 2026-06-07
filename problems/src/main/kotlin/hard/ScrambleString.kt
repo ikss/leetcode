@@ -13,7 +13,7 @@ package hard
  *
  * Given two strings s1 and s2 of the same length, return true if s2 is a scrambled string of s1, otherwise, return false.
  *
- * [URL](https://leetcode.com/problems/arithmetic-slices-ii-subsequence/)
+ * [URL](https://leetcode.com/problems/scramble-string/)
  */
 object ScrambleString {
     fun isScramble(s1: String, s2: String): Boolean {

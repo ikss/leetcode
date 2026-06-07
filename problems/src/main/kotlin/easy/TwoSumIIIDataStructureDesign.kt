@@ -9,10 +9,10 @@ package easy
  * * boolean find(int value) Returns true if there exists any pair of numbers whose sum is equal to value,
  * otherwise, it returns false.
  *
- * [URL](https://leetcode.com/problems/design-parking-system/)
+ * [URL](https://leetcode.com/problems/two-sum-iii-data-structure-design/)
  */
 object TwoSumIIIDataStructureDesign {
-    class TwoSum() {
+    class TwoSum {
         private val map = HashMap<Int, Boolean>()
 
         fun add(number: Int) {

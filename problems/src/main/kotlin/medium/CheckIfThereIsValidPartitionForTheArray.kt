@@ -11,7 +11,7 @@ package medium
  *
  * Return true if the array has at least one valid partition. Otherwise, return false.
  *
- * [URL](https://leetcode.com/problems/best-team-with-no-conflicts/)
+ * [URL](https://leetcode.com/problems/check-if-there-is-a-valid-partition-for-the-array/)
  */
 object CheckIfThereIsValidPartitionForTheArray {
     fun validPartition(nums: IntArray): Boolean {

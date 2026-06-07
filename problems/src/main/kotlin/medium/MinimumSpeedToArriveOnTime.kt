@@ -16,7 +16,7 @@ import kotlin.math.ceil
  *
  * Tests are generated such that the answer will not exceed 107 and hour will have at most two digits after the decimal point.
  *
- * [URL](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
+ * [URL](https://leetcode.com/problems/minimum-speed-to-arrive-on-time/)
  */
 object MinimumSpeedToArriveOnTime {
     fun minSpeedOnTime(dist: IntArray, hour: Double): Int {

@@ -10,7 +10,7 @@ package hard
  * with color 2, and so on...
  * Return the minimum cost to paint all houses.
  *
- * [URL](https://leetcode.com/problems/paint-house-ii/)
+ * [URL](https://leetcode.com/problems/paint-houses-ii/)
  */
 object PaintHousesII {
     fun minCostII(costs: Array<IntArray>): Int {

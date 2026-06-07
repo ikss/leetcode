@@ -10,7 +10,7 @@ package medium
  *
  * Given an array of words, return the length of the shortest reference string s possible of any valid encoding of words.
  *
- * [URL](https://leetcode.com/problems/decode-ways/)
+ * [URL](https://leetcode.com/problems/short-encoding-of-words/)
  */
 object ShortEncodingOfWords {
     class TrieNode {

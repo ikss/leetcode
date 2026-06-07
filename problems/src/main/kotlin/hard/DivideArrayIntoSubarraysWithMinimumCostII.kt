@@ -16,7 +16,7 @@ import java.util.*
  *
  * Return the minimum possible sum of the cost of these subarrays.
  *
- * [URL](https://leetcode.com/problems/adding-spaces-to-a-string/)
+ * [URL](https://leetcode.com/problems/divide-an-array-into-subarrays-with-minimum-cost-ii/)
  */
 object DivideArrayIntoSubarraysWithMinimumCostII {
     fun minimumCostMaxHeap(nums: IntArray, k: Int, dist: Int): Long {

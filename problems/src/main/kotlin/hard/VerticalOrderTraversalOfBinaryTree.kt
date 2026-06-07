@@ -15,7 +15,7 @@ import java.util.*
  *
  * Return the vertical order traversal of the binary tree.
  *
- * [URL](https://leetcode.com/problems/reaching-points/)
+ * [URL](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/)
  */
 object VerticalOrderTraversalOfBinaryTree {
     fun verticalTraversal(root: TreeNode?): List<List<Int>> {

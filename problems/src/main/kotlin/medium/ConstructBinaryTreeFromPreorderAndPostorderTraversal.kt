@@ -8,7 +8,7 @@ import data_structures.TreeNode
  *
  * If there exist multiple answers, you can return any of them.
  *
- * [URL](https://leetcode.com/problems/all-possible-full-binary-trees/)
+ * [URL](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)
  */
 object ConstructBinaryTreeFromPreorderAndPostorderTraversal {
     private var preIndex = 0

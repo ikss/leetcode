@@ -13,7 +13,7 @@ package hard
  *
  * Return the minimum amount of time required for the potions to be brewed properly.
  *
- * [URL](https://leetcode.com/problems/count-the-number-of-ideal-arrays/)
+ * [URL](https://leetcode.com/problems/find-the-minimum-amount-of-time-to-brew-potions/)
  */
 object FindTheMinimumAmountOfTimeToBrewPotions {
     fun minTime(skill: IntArray, mana: IntArray): Long {

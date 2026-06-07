@@ -13,7 +13,7 @@ import java.util.*
  * You just need to ensure that an N-ary tree can be serialized to a string and this string can be deserialized to the
  * original tree structure.
  *
- * [URL](https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/)
+ * [URL](https://leetcode.com/problems/serialize-and-deserialize-nary-tree/)
  */
 object SerializeAndDeserializeNaryTree {
     // Encodes a tree to a single string.

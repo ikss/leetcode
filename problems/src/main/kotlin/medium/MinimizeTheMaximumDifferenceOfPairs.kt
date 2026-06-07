@@ -10,7 +10,7 @@ package medium
  *
  * Return the minimum maximum difference among all p pairs. We define the maximum of an empty set to be zero.
  *
- * [URL](https://leetcode.com/problems/bag-of-tokens/)
+ * [URL](https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/)
  */
 object MinimizeTheMaximumDifferenceOfPairs {
     fun minimizeMax(nums: IntArray, p: Int): Int {

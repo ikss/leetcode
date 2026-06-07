@@ -8,7 +8,7 @@ package medium
  * The distance used in this problem is the Manhattan distance: the distance between two cells (x0, y0) and (x1, y1)
  * is |x0 - x1| + |y0 - y1|.
  *
- * [URL](https://leetcode.com/problems/as-far-from-land-as-possible/)
+ * [URL](https://leetcode.com/problems/maximize-happiness-of-selected-children/)
  */
 object MaximizeHappinessOfSelectedChildren {
     fun maximumHappinessSum(happiness: IntArray, k: Int): Long {

@@ -11,7 +11,7 @@ package easy
  * Given an integer array bills where `bills[i]` is the bill the ith customer pays, return true if you can provide every
  * customer with the correct change, or false otherwise.
  *
- * [URL](https://leetcode.com/problems/binary-search/)
+ * [URL](https://leetcode.com/problems/lemonade-change/)
  */
 object LemonadeChange {
     fun lemonadeChange(bills: IntArray): Boolean {

@@ -14,7 +14,7 @@ package easy
  *
  * Return the label of the town judge if the town judge exists and can be identified, or return -1 otherwise.
  *
- * [URL](https://leetcode.com/problems/two-sum/)
+ * [URL](https://leetcode.com/problems/find-the-town-judge/)
  */
 object FindTheTownJudge {
     fun findJudge(n: Int, trust: Array<IntArray>): Int {

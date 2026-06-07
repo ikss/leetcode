@@ -5,7 +5,7 @@ package easy
  *
  * Given an n x n integer matrix matrix, return true if the matrix is valid. Otherwise, return false.
  *
- * [URL](https://leetcode.com/problems/buy-two-chocolates/)
+ * [URL](https://leetcode.com/problems/check-if-every-row-and-column-contains-all-numbers/)
  */
 object CheckIfEveryRowAndColumnContainsAllNumbers {
     fun checkValid(matrix: Array<IntArray>): Boolean {

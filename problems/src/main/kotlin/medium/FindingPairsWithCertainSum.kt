@@ -12,7 +12,7 @@ package medium
  * * void add(int index, int val) Adds val to `nums2[index]`, i.e., apply `nums2[index] += val`.
  * * int count(int tot) Returns the number of pairs (i, j) such that `nums1[i] + nums2[j] == tot`.
  *
- * [URL](https://leetcode.com/problems/design-a-food-rating-system/)
+ * [URL](https://leetcode.com/problems/finding-pairs-with-a-certain-sum/)
  */
 
 object FindingPairsWithCertainSum {

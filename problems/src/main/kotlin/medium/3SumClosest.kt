@@ -5,7 +5,7 @@ package medium
  * such that i != j, i != k, and j != k, and `nums[i] + nums[j] + nums[k] == 0`.
  * Notice that the solution set must not contain duplicate triplets.
  *
- * [URL](https://leetcode.com/problems/3sum/)
+ * [URL](https://leetcode.com/problems/3sum-closest/)
  */
 object `3SumClosest` {
     fun threeSumClosest(nums: IntArray, target: Int): Int {

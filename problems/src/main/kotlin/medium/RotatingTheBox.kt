@@ -16,7 +16,7 @@ package medium
  *
  * Return an n x m matrix representing the box after the rotation described above.
  *
- * [URL](https://leetcode.com/problems/arithmetic-subarrays/)
+ * [URL](https://leetcode.com/problems/rotating-the-box/)
  */
 object RotatingTheBox {
     fun rotateTheBox(box: Array<CharArray>): Array<CharArray> {

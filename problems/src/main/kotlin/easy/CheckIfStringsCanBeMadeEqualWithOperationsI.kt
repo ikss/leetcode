@@ -8,7 +8,7 @@ package easy
  *
  * Return true if you can make the strings s1 and s2 equal, and false otherwise.
  *
- * [URL](https://leetcode.com/problems/apply-operations-to-an-array/)
+ * [URL](https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-i/)
  */
 object CheckIfStringsCanBeMadeEqualWithOperationsI {
     fun canBeEqual(s1: String, s2: String): Boolean {

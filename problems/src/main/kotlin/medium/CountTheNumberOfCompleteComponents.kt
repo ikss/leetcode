@@ -12,7 +12,7 @@ package medium
  *
  * A connected component is said to be complete if there exists an edge between every pair of its vertices.
  *
- * [URL](https://leetcode.com/problems/find-closest-node-to-given-two-nodes/)
+ * [URL](https://leetcode.com/problems/count-the-number-of-complete-components/)
  */
 object CountTheNumberOfCompleteComponents {
     fun countCompleteComponents(n: Int, edges: Array<IntArray>): Int {

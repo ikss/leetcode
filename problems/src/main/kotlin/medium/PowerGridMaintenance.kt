@@ -24,7 +24,7 @@ import java.util.*
  * Note: The power grid preserves its structure; an offline (non‑operational) node remains part of its grid and taking
  * it offline does not alter connectivity.
  *
- * [URL](https://leetcode.com/problems/alternating-groups-ii/)
+ * [URL](https://leetcode.com/problems/power-grid-maintenance/)
  */
 object PowerGridMaintenance {
     private class UnionFind(val maxStations: Int) {

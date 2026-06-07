@@ -9,7 +9,7 @@ package hard
  *
  * A substring is a contiguous sequence of characters within a string.
  *
- * [URL](https://leetcode.com/problems/basic-calculator/)
+ * [URL](https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations/)
  */
 object CheckIfStringIsTransformableWithSubstringSortOperations {
     fun isTransformable(s: String, t: String): Boolean {

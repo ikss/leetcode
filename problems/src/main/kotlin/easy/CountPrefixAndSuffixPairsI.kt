@@ -12,7 +12,7 @@ package easy
  * Return an integer denoting the number of index pairs (i, j) such that i < j,
  * and `isPrefixAndSuffix(words[i], words[j])` is true.
  *
- * [URL](https://leetcode.com/problems/check-if-the-sentence-is-pangram/)
+ * [URL](https://leetcode.com/problems/count-prefix-and-suffix-pairs-i/)
  */
 object CountPrefixAndSuffixPairsI {
     fun countPrefixSuffixPairs(words: Array<String>): Int {

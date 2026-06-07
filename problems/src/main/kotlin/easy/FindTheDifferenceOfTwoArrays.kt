@@ -7,7 +7,7 @@ package easy
  *
  * Note that the integers in the lists may be returned in any order.
  *
- * [URL](https://leetcode.com/problems/two-sum/)
+ * [URL](https://leetcode.com/problems/find-the-difference-of-two-arrays/)
  */
 object FindTheDifferenceOfTwoArrays {
     fun findDifference(nums1: IntArray, nums2: IntArray): List<List<Int>> {

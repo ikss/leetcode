@@ -13,7 +13,7 @@ package easy
  * * "a->b" if a != b
  * * "a" if a == b
  *
- * [URL](https://leetcode.com/problems/two-sum/)
+ * [URL](https://leetcode.com/problems/summary-ranges/)
  */
 object SummaryRanges {
     fun summaryRanges(nums: IntArray): List<String> {

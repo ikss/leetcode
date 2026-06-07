@@ -7,7 +7,7 @@ import data_structures.UnionFind
  * instead you will be given access to the node to be deleted directly.
  * It is guaranteed that the node to be deleted is not a tail node in the list.
  *
- * [URL](https://leetcode.com/problems/linked-list-cycle/)
+ * [URL](https://leetcode.com/problems/find-if-path-exists-in-graph/)
  */
 object FindIfPathExistsInGraph {
     fun validPathUnionFind(n: Int, edges: Array<IntArray>, source: Int, destination: Int): Boolean {

@@ -16,7 +16,7 @@ package easy
  *
  * Given a string sentence, return true if it is circular. Otherwise, return false.
  *
- * [URL](https://leetcode.com/problems/detect-capital/)
+ * [URL](https://leetcode.com/problems/circular-sentence/)
  */
 object CircularSentence {
     fun isCircularSentence(sentence: String): Boolean {

@@ -12,7 +12,7 @@ import data_structures.TreeNode
  *
  * The test cases will be generated such that the binary tree is valid.
  *
- * [URL](https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/)
+ * [URL](https://leetcode.com/problems/create-binary-tree-from-descriptions/)
  */
 object CreateBinaryTreeFromDescriptions {
     fun createBinaryTree(descriptions: Array<IntArray>): TreeNode? {

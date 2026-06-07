@@ -10,7 +10,7 @@ package hard
  * * For example, the word sequence `["ball","area","lead","lady"]` forms a word square because each word reads the
  * same both horizontally and vertically.
  *
- * [URL](https://leetcode.com/problems/concatenated-words/)
+ * [URL](https://leetcode.com/problems/word-squares/)
  */
 object WordSquares {
     fun wordSquares(words: Array<String>): List<List<String>> {

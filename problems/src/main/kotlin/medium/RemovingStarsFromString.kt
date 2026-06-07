@@ -12,7 +12,7 @@ package medium
  * * The input will be generated such that the operation is always possible.
  * * It can be shown that the resulting string will always be unique.
  *
- * [URL](https://leetcode.com/problems/break-a-palindrome/)
+ * [URL](https://leetcode.com/problems/removing-stars-from-a-string/)
  */
 object RemovingStarsFromString {
     fun removeStars(s: String): String {

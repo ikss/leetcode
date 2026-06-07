@@ -13,7 +13,7 @@ package hard
  * For example, `[2, 5, 10]` is a subsequence of `[1, 2, 1, 2, 4, 1, 5, 10]`.
  * The test cases are generated so that the answer fits in 32-bit integer.
  *
- * [URL](https://leetcode.com/problems/arithmetic-slices-ii-subsequence/)
+ * [URL](https://leetcode.com/problems/unique-paths-iii/)
  */
 object UniquePathsIII {
     fun uniquePathsIII(grid: Array<IntArray>): Int {

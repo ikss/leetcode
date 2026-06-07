@@ -4,7 +4,7 @@ package easy
  * Given a positive integer, check whether it has alternating bits: namely,
  * if two adjacent bits will always have different values.
  *
- * [URL](https://leetcode.com/problems/climbing-stairs/)
+ * [URL](https://leetcode.com/problems/binary-number-with-alternating-bits/)
  */
 object BinaryNumberWithAlternatingBits {
     fun hasAlternatingBitsBinaryString(n: Int): Boolean {
