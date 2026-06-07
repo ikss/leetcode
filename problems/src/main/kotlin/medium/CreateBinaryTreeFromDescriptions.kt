@@ -30,7 +30,7 @@ object CreateBinaryTreeFromDescriptions {
             }
         }
         for ((k, v) in map) {
-            if (!hasParent.contains(k)) {
+            if (k !in hasParent) {
                 return v
             }
         }
