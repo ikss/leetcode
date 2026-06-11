@@ -29,17 +29,26 @@ object NumberOfWaysToAssignEdgeWeightsI {
 
         val height = findTreeHeight(tree)
 
-        var result = 1
-        for (i in 0 until height - 1) {
-            result *= 2
-            result %= 1_000_000_007
+        return qpow(2, height - 1)
+    }
+
+    private fun qpow(x: Int, y: Int): Int {
+        var y = y
+        var res: Long = 1
+        var base = x.toLong()
+        while (y > 0) {
+            if ((y and 1) == 1) {
+                res = (res * base) % 1_000_000_007
+            }
+            base = (base * base) % 1_000_000_007
+            y = y shr 1
         }
-        return result
+        return res.toInt()
     }
 
     private fun findTreeHeight(tree: Map<Int, Set<Int>>): Int {
         var height = 0
-        var queue = java.util.ArrayDeque<Int>()
+        val queue = java.util.ArrayDeque<Int>()
         queue.offer(1)
 
         val visited = HashSet<Int>()
