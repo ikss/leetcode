@@ -17,17 +17,6 @@ object NumberOfStringsThatAppearAsSubstringsInWord {
         return patterns.count { check(it, word) }
     }
 
-
-    fun numOfStrings(patterns: Array<String>, word: String): Int {
-        var res = 0
-        for (pattern in patterns) {
-            if (check(pattern, word)) {
-                res++
-            }
-        }
-        return res
-    }
-
     private fun check(pattern: String, word: String): Boolean {
         val m = pattern.length
         val n = word.length
