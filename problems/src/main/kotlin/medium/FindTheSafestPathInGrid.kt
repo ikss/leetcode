@@ -46,7 +46,7 @@ object FindTheSafestPathInGrid {
         }
 
         // Calculate safeness factor for each cell using BFS
-        while (!multiSourceQueue.isEmpty()) {
+        while (multiSourceQueue.isNotEmpty()) {
             var size = multiSourceQueue.size
             while (size-- > 0) {
                 val curr = multiSourceQueue.poll()
@@ -66,13 +66,13 @@ object FindTheSafestPathInGrid {
         }
 
         // Priority queue to prioritize cells with higher safeness factor
-        val pq = PriorityQueue { a: IntArray, b: IntArray -> b[2] - a[2] }
+        val pq = PriorityQueue<IntArray> { a, b -> b[2] - a[2] }
         // Push starting cell to the priority queue
         pq.add(intArrayOf(0, 0, mat[0][0])) // [x-coordinate, y-coordinate, maximum_safeness_till_now]
         mat[0][0] = -1 // Mark the source cell as visited
 
         // BFS to find the path with maximum safeness factor
-        while (!pq.isEmpty()) {
+        while (pq.isNotEmpty()) {
             val curr = pq.poll()
             // If reached the destination, return safeness factor
             if (curr[0] == n - 1 && curr[1] == n - 1) {
