@@ -57,4 +57,48 @@ object FindASafeWalkThroughAGrid {
 
         return false
     }
+
+    fun findSafeWalk01Queue(grid: List<List<Int>>, health: Int): Boolean {
+        val rows = grid.size
+        val cols = grid[0].size
+
+        val seen = Array(rows) { IntArray(cols) { -1 } }
+        val startHealth = if (grid[0][0] == 1) health - 1 else health
+        if (startHealth <= 0) return false
+        seen[0][0] = startHealth
+
+        val queue = java.util.ArrayDeque<IntArray>()
+        queue.offer(intArrayOf(0, 0, startHealth))
+
+        while (queue.isNotEmpty()) {
+            val (currr, currc, currh) = queue.poll()
+
+            if (currr == rows - 1 && currc == cols - 1) {
+                return true
+            }
+
+            for ((dr, dc) in directions) {
+                val newr = currr + dr
+                val newc = currc + dc
+
+                if (newr !in 0 until rows || newc !in 0 until cols) {
+                    continue
+                }
+                val seenHealth = seen[newr][newc]
+                val hasThief = grid[newr][newc] == 1
+                val newHealth = currh - (if (hasThief) 1 else 0)
+                if (seenHealth >= newHealth) continue
+
+                if (newHealth == 0) continue
+                seen[newr][newc] = newHealth
+                if (hasThief) {
+                    queue.offerLast(intArrayOf(newr, newc, newHealth))
+                } else {
+                    queue.offerFirst(intArrayOf(newr, newc, newHealth))
+                }
+            }
+        }
+
+        return false
+    }
 }
