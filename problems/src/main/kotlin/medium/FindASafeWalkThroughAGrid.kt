@@ -1,5 +1,7 @@
 package medium
 
+import java.util.*
+
 /**
  * You are given an m x n binary matrix grid and an integer health.
  *
@@ -16,7 +18,7 @@ package medium
 object FindASafeWalkThroughAGrid {
     private val directions = listOf(-1 to 0, 1 to 0, 0 to -1, 0 to 1)
 
-    fun findSafeWalk(grid: List<List<Int>>, health: Int): Boolean {
+    fun findSafeWalkDijkstra(grid: List<List<Int>>, health: Int): Boolean {
         val rows = grid.size
         val cols = grid[0].size
 
@@ -25,7 +27,7 @@ object FindASafeWalkThroughAGrid {
         if (startHealth <= 0) return false
         seen[0][0] = startHealth
 
-        val queue = java.util.ArrayDeque<IntArray>()
+        val queue = PriorityQueue<IntArray> { o1, o2 -> o2[2] - o1[2] }
         queue.offer(intArrayOf(0, 0, startHealth))
 
         while (queue.isNotEmpty()) {

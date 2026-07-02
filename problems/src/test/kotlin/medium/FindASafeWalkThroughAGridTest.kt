@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 
 class FindASafeWalkThroughAGridTest {
     @Test
-    fun test1() {
+    fun test1Dijkstra() {
         val grid = listOf(
             listOf(0, 1, 0, 0, 0),
             listOf(0, 1, 0, 1, 0),
@@ -14,11 +14,11 @@ class FindASafeWalkThroughAGridTest {
         val health = 1
         val expected = true
 
-        assertEquals(expected, FindASafeWalkThroughAGrid.findSafeWalk(grid, health))
+        assertEquals(expected, FindASafeWalkThroughAGrid.findSafeWalkDijkstra(grid, health))
     }
 
     @Test
-    fun test2() {
+    fun test2Dijkstra() {
         val grid = listOf(
             listOf(0, 1, 1, 0, 0, 0),
             listOf(1, 0, 1, 0, 0, 0),
@@ -28,11 +28,11 @@ class FindASafeWalkThroughAGridTest {
         val health = 3
         val expected = false
 
-        assertEquals(expected, FindASafeWalkThroughAGrid.findSafeWalk(grid, health))
+        assertEquals(expected, FindASafeWalkThroughAGrid.findSafeWalkDijkstra(grid, health))
     }
 
     @Test
-    fun test3() {
+    fun test3Dijkstra() {
         val grid = listOf(
             listOf(1, 1, 1),
             listOf(1, 0, 1),
@@ -41,22 +41,22 @@ class FindASafeWalkThroughAGridTest {
         val health = 5
         val expected = true
 
-        assertEquals(expected, FindASafeWalkThroughAGrid.findSafeWalk(grid, health))
+        assertEquals(expected, FindASafeWalkThroughAGrid.findSafeWalkDijkstra(grid, health))
     }
 
     @Test
-    fun test4() {
+    fun test4Dijkstra() {
         val grid = listOf(
             listOf(1, 1, 1, 1),
         )
         val health = 4
         val expected = false
 
-        assertEquals(expected, FindASafeWalkThroughAGrid.findSafeWalk(grid, health))
+        assertEquals(expected, FindASafeWalkThroughAGrid.findSafeWalkDijkstra(grid, health))
     }
 
     @Test
-    fun test5() {
+    fun test5Dijkstra() {
         val grid = listOf(
             listOf(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
             listOf(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
@@ -112,6 +112,6 @@ class FindASafeWalkThroughAGridTest {
         val health = 99
         val expected = false
 
-        assertEquals(expected, FindASafeWalkThroughAGrid.findSafeWalk(grid, health))
+        assertEquals(expected, FindASafeWalkThroughAGrid.findSafeWalkDijkstra(grid, health))
     }
 }
