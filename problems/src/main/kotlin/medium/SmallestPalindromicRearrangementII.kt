@@ -1,7 +1,5 @@
 package medium
 
-import kotlin.math.min
-
 /**
  * You are given a palindromic string s and an integer k.
  *
@@ -13,7 +11,7 @@ import kotlin.math.min
  * [URL](https://leetcode.com/problems/smallest-palindromic-rearrangement-ii/)
  */
 object SmallestPalindromicRearrangementII {
-    fun smallestPalindrome(s: String, k: Long): String {
+    fun smallestPalindrome(s: String, k: Int): String {
         val half = s.length / 2
         val counts = IntArray(26)
 
@@ -58,7 +56,7 @@ object SmallestPalindromicRearrangementII {
         return left.toString()
     }
 
-    private fun permutations(rem: Int, bucket: IntArray, k: Long): Long {
+    private fun permutations(rem: Int, bucket: IntArray, k: Int): Long {
         var rem = rem
         var ways = 1L
         for (i in 0..25) {
@@ -66,7 +64,7 @@ object SmallestPalindromicRearrangementII {
                 continue
             }
 
-            ways *= comb(rem.toLong(), bucket[i].toLong(), k)
+            ways *= comb(rem, bucket[i], k)
             if (ways > k) {
                 break
             }
@@ -75,14 +73,14 @@ object SmallestPalindromicRearrangementII {
         return ways
     }
 
-    private fun comb(n: Long, m: Long, k: Long): Long {
+    private fun comb(n: Int, m: Int, k: Int): Long {
         val m = minOf(m, n - m)
         var res = 1L
 
         for (i in 1..m) {
             res = (res * (n - i + 1)) / i
             if (res > k) {
-                return k + 1
+                return k + 1L
             }
         }
         return res
