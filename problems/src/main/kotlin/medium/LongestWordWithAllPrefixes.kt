@@ -10,7 +10,7 @@ package medium
  * [URL](https://leetcode.com/problems/longest-word-with-all-prefixes/)
  */
 object LongestWordWithAllPrefixes {
-    fun longestWord(words: Array<String>): String {
+    fun longestWordSet(words: Array<String>): String {
         val set = HashSet<String>()
 
         for (w in words) {
@@ -35,5 +35,58 @@ object LongestWordWithAllPrefixes {
             if (found) return w
         }
         return ""
+    }
+
+    private class Trie {
+        private class TrieNode(val c: Char) {
+            val children = arrayOfNulls<TrieNode>(26)
+            var isWord = false
+        }
+
+        val root = TrieNode('-')
+
+        fun add(word: String) {
+            var curr = root
+            for (c in word) {
+                var node = curr.children[c - 'a']
+                if (node == null) {
+                    node = TrieNode(c)
+                    curr.children[c - 'a'] = node
+                }
+                curr = node
+            }
+            curr.isWord = true
+        }
+
+        fun hasAllPrefixes(word: String): Boolean {
+            var curr = root
+            for (c in word) {
+                val node = curr.children[c - 'a']
+                if (node == null || !node.isWord) {
+                    return false
+                }
+                curr = node
+            }
+            return true
+        }
+    }
+
+    fun longestWordTrie(words: Array<String>): String {
+        val trie = Trie()
+
+        for (w in words) {
+            trie.add(w)
+        }
+
+        var result = ""
+        for (w in words) {
+            if (trie.hasAllPrefixes(w)) {
+                if (w.length > result.length || (w.length == result.length && w < result)) {
+                    result = w
+                }
+            }
+        }
+
+        return result
     }
 }
