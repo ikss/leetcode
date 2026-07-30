@@ -1,7 +1,5 @@
 package easy
 
-import java.util.*
-
 /**
  * You are given a string word containing distinct lowercase English letters.
  *
@@ -21,7 +19,7 @@ import java.util.*
  * [URL](https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-i/)
  */
 object MinimumNumberOfPushesToTypeWordI {
-    fun minimumPushes(word: String): Int {
+    fun minimumPushesSimulation(word: String): Int {
         var left = word.length
 
         var result = 0
@@ -32,5 +30,14 @@ object MinimumNumberOfPushesToTypeWordI {
             currPress++
         }
         return result + left * currPress
+    }
+
+    fun minimumPushesMath(word: String): Int {
+        val n = word.length
+
+        val covered = n / 8
+        val total = covered * (covered + 1) / 2
+
+        return 8 * total + (n % 8) * (covered + 1)
     }
 }
