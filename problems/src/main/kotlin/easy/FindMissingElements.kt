@@ -13,7 +13,7 @@ package easy
  * [URL](https://leetcode.com/problems/find-missing-elements/)
  */
 object FindMissingElements {
-    fun findMissingElements(nums: IntArray): List<Int> {
+    fun findMissingElementsArray(nums: IntArray): List<Int> {
         val seen = BooleanArray(101)
         var min = 101
         var max = 0
@@ -34,6 +34,31 @@ object FindMissingElements {
             if (!seen[i]) {
                 result.add(i)
             }
+        }
+
+        return result
+    }
+
+    fun findMissingElementsSortingTwoPointers(nums: IntArray): List<Int> {
+        nums.sort()
+
+        val len = nums.last() - nums.first() + 1
+
+        if (len == nums.size) {
+            return emptyList()
+        }
+
+        val result = ArrayList<Int>()
+
+        var wanted = nums.first()
+        for (i in 0 until nums.size) {
+            val curr = nums[i]
+
+            while (wanted != curr) {
+                result.add(wanted)
+                wanted++
+            }
+            wanted++
         }
 
         return result
