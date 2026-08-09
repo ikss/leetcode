@@ -17,7 +17,7 @@ package medium
  * [URL](https://leetcode.com/problems/stone-game-ii/)
  */
 object StoneGameII {
-    fun stoneGameII(piles: IntArray): Int {
+    fun stoneGameIIRecursive(piles: IntArray): Int {
         val suffixSum = piles.copyOf()
         for (i in suffixSum.size - 2 downTo 0) {
             suffixSum[i] += suffixSum[i + 1]
@@ -39,5 +39,32 @@ object StoneGameII {
         }
         memo[pile][m] = result
         return result
+    }
+
+    fun stoneGameIIdp(piles: IntArray): Int {
+        val n = piles.size
+
+        val suffixSum = IntArray(n + 1)
+        for (i in n - 1 downTo 0) {
+            suffixSum[i] = suffixSum[i + 1] + piles[i]
+        }
+
+        val dp = Array(n + 1) { IntArray(n + 1) }
+
+        for (i in 0..n) {
+            dp[i][n] = suffixSum[i]
+        }
+
+        for (i in n - 1 downTo 0) {
+            for (m in n - 1 downTo 1) {
+                for (x in 1..2 * m) {
+                    if (i + x > n) break
+
+                    dp[i][m] = maxOf(dp[i][m], suffixSum[i] - dp[i + x][maxOf(m, x)])
+                }
+            }
+        }
+
+        return dp[0][1]
     }
 }
