@@ -14,7 +14,7 @@ package hard
  * [URL](https://leetcode.com/problems/stone-game-iv/)
  */
 object StoneGameIV {
-    fun winnerSquareGame(n: Int): Boolean {
+    fun winnerSquareGameRecursive(n: Int): Boolean {
         val memo = IntArray(n + 1)
         memo[0] = -1
 
@@ -52,5 +52,22 @@ object StoneGameIV {
         memo[num] = if (result) 1 else -1
 
         return result
+    }
+
+    fun winnerSquareGameDp(n: Int): Boolean {
+        val dp = BooleanArray(n + 1)
+
+        for (i in 1..n) {
+            var j = 1
+
+            while (j * j <= i) {
+                if (!dp[i - j * j]) {
+                    dp[i] = true
+                }
+                j++
+            }
+        }
+
+        return dp[n]
     }
 }
