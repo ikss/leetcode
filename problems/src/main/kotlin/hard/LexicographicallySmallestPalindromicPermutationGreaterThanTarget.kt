@@ -92,11 +92,33 @@ object LexicographicallySmallestPalindromicPermutationGreaterThanTarget {
             }
         }
 
-        val palindrome =
-            left.toString() +
-                    oddChar +
-                    StringBuilder(left).reverse().toString()
+        var curri = 0
 
-        return palindrome > target
+        for (i in 0 until left.length) {
+            if (target[i] < left[i]) {
+                return true
+            } else if (target[i] > left[i]) {
+                return false
+            }
+            curri++
+        }
+        if (oddChar.isNotEmpty()) {
+            if (target[curri] < oddChar[0]) {
+                return true
+            } else if (target[curri] > oddChar[0]) {
+                return false
+            }
+            curri++
+        }
+
+
+        for (i in 0 until left.length) {
+            if (target[curri + i] < left[left.length - i - 1]) {
+                return true
+            } else if (target[curri + i] > left[left.length - i - 1]) {
+                return false
+            }
+        }
+        return false
     }
 }
