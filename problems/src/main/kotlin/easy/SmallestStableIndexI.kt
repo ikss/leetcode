@@ -23,18 +23,15 @@ object SmallestStableIndexI {
         val n = nums.size
         val min = IntArray(n)
         min[n - 1] = nums[n - 1]
-        val max = IntArray(n)
-        max[0] = nums[0]
 
-        for (i in 1 until n) {
-            max[i] = maxOf(max[i - 1], nums[i])
-        }
         for (i in n - 2 downTo 0) {
             min[i] = minOf(min[i + 1], nums[i])
         }
 
+        var max = 0
         for (i in 0 until n) {
-            val stability = max[i] - min[i]
+            max = maxOf(max, nums[i])
+            val stability = max - min[i]
             if (stability <= k) {
                 return i
             }
