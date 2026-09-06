@@ -8,7 +8,7 @@ package hard
  * [URL](https://leetcode.com/problems/distinct-subsequences/)
  */
 object DistinctSubsequences {
-    fun numDistinct(s: String, t: String): Int {
+    fun numDistinctDp(s: String, t: String): Int {
         val slen = s.length
         val tlen = t.length
 
@@ -39,5 +39,28 @@ object DistinctSubsequences {
         }
 
         return dp[0][0]
+    }
+
+    fun numDistinctDpSpaceOptimized(s: String, t: String): Int {
+        val slen = s.length
+        val tlen = t.length
+
+        var dp = IntArray(tlen + 1)
+
+        for (c in 0..slen) {
+            dp[tlen] = 1
+        }
+
+        for (i in slen - 1 downTo 0) {
+            val newDp = IntArray(tlen + 1) { dp[it] }
+            for (j in tlen - 1 downTo 0) {
+                if (s[i] == t[j]) {
+                    newDp[j] += dp[j + 1]
+                }
+            }
+            dp = newDp
+        }
+
+        return dp[0]
     }
 }
