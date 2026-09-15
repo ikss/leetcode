@@ -1,6 +1,6 @@
 package medium
 
-import java.util.Stack
+import java.util.*
 
 /**
  * There are n buildings in a line. You are given an integer array heights of size n
@@ -14,7 +14,7 @@ import java.util.Stack
  * [URL](https://leetcode.com/problems/buildings-with-an-ocean-view/)
  */
 object BuildingsWithAnOceanView {
-    fun findBuildings(heights: IntArray): IntArray {
+    fun findBuildingsStack(heights: IntArray): IntArray {
         val stack = Stack<Int>()
 
         for (i in heights.indices) {
@@ -34,6 +34,25 @@ object BuildingsWithAnOceanView {
             result[n - i++ - 1] = stack.pop()
         }
 
+        return result
+    }
+
+    fun findBuildingsGreedy(heights: IntArray): IntArray {
+        val n = heights.size
+        val temp = IntArray(n)
+
+        var curri = n - 1
+        temp[curri] = n - 1
+
+        for (i in heights.indices.reversed()) {
+            val currh = heights[i]
+            if (heights[temp[curri]] < currh) {
+                temp[--curri] = i
+            }
+        }
+
+        val result = IntArray(n - curri)
+        System.arraycopy(temp, curri, result, 0, n - curri)
         return result
     }
 }
