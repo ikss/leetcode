@@ -63,6 +63,7 @@ object EvaluateTheBracketPairsOfAString {
 
         var openBracket = -1
 
+        val kb = StringBuilder()
         for (i in s.indices) {
             val c = s[i]
 
@@ -71,11 +72,13 @@ object EvaluateTheBracketPairsOfAString {
                 continue
             }
             if (c == ')') {
-                result.append(keys.getOrDefault(s.substring(openBracket + 1, i), "?"))
+                result.append(keys.getOrDefault(kb.toString(), "?"))
+                kb.setLength(0)
                 openBracket = -1
                 continue
             }
             if (openBracket != -1) {
+                kb.append(c)
                 continue
             }
             result.append(c)
