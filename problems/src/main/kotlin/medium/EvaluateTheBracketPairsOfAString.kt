@@ -1,6 +1,6 @@
 package medium
 
-import java.util.Stack
+import java.util.*
 
 /**
  * You are given a string s that contains some bracket pairs, with each pair containing a non-empty key.
@@ -21,7 +21,7 @@ import java.util.Stack
  * [URL](https://leetcode.com/problems/evaluate-the-bracket-pairs-of-a-string/)
  */
 object EvaluateTheBracketPairsOfAString {
-    fun evaluate(s: String, knowledge: List<List<String>>): String {
+    fun evaluateStack(s: String, knowledge: List<List<String>>): String {
         val keys = HashMap<String, String>(knowledge.size)
 
         for ((k, v) in knowledge) {
@@ -54,5 +54,33 @@ object EvaluateTheBracketPairsOfAString {
             result.append(chars.pop())
         }
         return result.reversed().toString()
+    }
+
+    fun evaluateOnePass(s: String, knowledge: List<List<String>>): String {
+        val keys = knowledge.associateBy({ it[0] }, { it[1] })
+
+        val result = StringBuilder(s.length)
+
+        var openBracket = -1
+
+        for (i in s.indices) {
+            val c = s[i]
+
+            if (c == '(') {
+                openBracket = i
+                continue
+            }
+            if (c == ')') {
+                result.append(keys.getOrDefault(s.substring(openBracket + 1, i), "?"))
+                openBracket = -1
+                continue
+            }
+            if (openBracket != -1) {
+                continue
+            }
+            result.append(c)
+        }
+
+        return result.toString()
     }
 }
