@@ -21,10 +21,10 @@ jobs:
         uses: actions/checkout@v7
         with:
           fetch-depth: 1
-      - name: Set up JDK 26
+      - name: Set up JDK 27
         uses: actions/setup-java@v6
         with:
-          java-version: '26'
+          java-version: '27'
           distribution: 'corretto'
           cache: 'gradle'
       - name: Setup Gradle
