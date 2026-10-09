@@ -15,7 +15,7 @@ class MinimumInsertionsToBalanceAParenthesesStringTest {
     @Test
     fun test2() {
         val s = "())"
-        val expected = 3
+        val expected = 0
 
         assertEquals(expected, MinimumInsertionsToBalanceAParenthesesString.minInsertions(s))
     }

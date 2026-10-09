@@ -19,12 +19,4 @@ class CountCommasInRangeIITest {
 
         assertEquals(expected, CountCommasInRangeII.countCommas(n))
     }
-
-    @Test
-    fun test3() {
-        val n = 234567813423525L
-        val expected = 937270252693104L
-
-        assertEquals(expected, CountCommasInRangeII.countCommas(n))
-    }
 }

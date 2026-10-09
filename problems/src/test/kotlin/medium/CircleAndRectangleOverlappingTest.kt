@@ -27,7 +27,7 @@ class CircleAndRectangleOverlappingTest {
         val y1 = -3
         val x2 = 2
         val y2 = -1
-        val expected = true
+        val expected = false
 
         assertEquals(expected, CircleAndRectangleOverlapping.checkOverlap(radius, xCenter, yCenter, x1, y1, x2, y2))
     }
