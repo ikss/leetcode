@@ -16,7 +16,6 @@ object EqualSumGridPartitionI {
         val rows = grid.size
         val cols = grid[0].size
 
-
         val rowsSums = LongArray(rows)
         val colsSums = LongArray(cols)
         var totalSum = 0L

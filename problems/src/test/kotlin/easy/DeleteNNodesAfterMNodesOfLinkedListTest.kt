@@ -12,7 +12,6 @@ class DeleteNNodesAfterMNodesOfLinkedListTest {
         val n = 3
         val expected = ListBuilder.build(1, 2, 6, 7, 11, 12)
 
-
         assertEquals(expected, DeleteNNodesAfterMNodesOfLinkedList.deleteNodes(head, m, n))
     }
 

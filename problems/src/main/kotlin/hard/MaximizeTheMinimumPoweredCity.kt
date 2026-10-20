@@ -1,6 +1,5 @@
 package hard
 
-
 /**
  * You are given a 0-indexed integer array stations of length n,
  * where `stations[i]` represents the number of power stations in the ith city.

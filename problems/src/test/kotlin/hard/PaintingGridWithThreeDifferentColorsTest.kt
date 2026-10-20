@@ -13,7 +13,6 @@ class PaintingGridWithThreeDifferentColorsTest {
         assertEquals(expected, PaintingGridWithThreeDifferentColors.colorTheGrid(m, n))
     }
 
-
     @Test
     fun test2() {
         val m = 1

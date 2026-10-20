@@ -2,7 +2,6 @@ package medium
 
 import java.util.*
 
-
 /**
  * You are given two strings s and target, both having length n, consisting of lowercase English letters.
  *

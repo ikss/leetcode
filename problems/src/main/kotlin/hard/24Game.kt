@@ -2,7 +2,6 @@ package hard
 
 import kotlin.math.abs
 
-
 /**
  * You are given an integer array cards of length 4. You have four cards, each containing a number in the range `[1, 9]`.
  * You should arrange the numbers on these cards in a mathematical expression using the operators `['+', '-', '*', '/']`
@@ -22,7 +21,7 @@ import kotlin.math.abs
  */
 object `24Game` {
     private fun generatePossibleResults(a: Double, b: Double): MutableList<Double> {
-        val res: MutableList<Double> = ArrayList<Double>()
+        val res = ArrayList<Double>()
         res.add(a + b)
         res.add(a - b)
         res.add(b - a)
@@ -52,7 +51,6 @@ object `24Game` {
                         newList.add(list[k])
                     }
                 }
-
 
                 // For any two numbers in our list,
                 // we perform every operation one by one.

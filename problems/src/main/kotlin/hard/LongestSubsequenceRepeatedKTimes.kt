@@ -2,7 +2,6 @@ package hard
 
 import java.util.*
 
-
 /**
  * You are given a string s of length n, and an integer k.
  * You are tasked to find the longest subsequence repeated k times in string s.

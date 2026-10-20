@@ -31,7 +31,6 @@ class MaximumFruitsHarvestedAfterAtMostKStepsTest {
         assertEquals(expected, MaximumFruitsHarvestedAfterAtMostKSteps.maxTotalFruits(fruits, startPos, k))
     }
 
-
     @Test
     fun test3() {
         val fruits = arrayOf(intArrayOf(0, 3), intArrayOf(6, 4), intArrayOf(8, 5))

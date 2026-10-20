@@ -22,7 +22,6 @@ object FindAllKDistantIndicesInArray {
             }
         }
 
-
         return result.toList()
     }
 }

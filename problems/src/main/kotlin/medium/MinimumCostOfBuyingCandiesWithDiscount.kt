@@ -1,6 +1,5 @@
 package medium
 
-
 /**
  * A shop is selling candies at a discount. For every two candies sold, the shop gives a third candy for free.
  *

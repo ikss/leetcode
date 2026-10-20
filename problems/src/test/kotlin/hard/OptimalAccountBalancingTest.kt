@@ -25,5 +25,4 @@ class OptimalAccountBalancingTest {
         assertEquals(expected, OptimalAccountBalancing.minTransfers(transactions))
     }
 
-
 }

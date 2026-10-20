@@ -27,7 +27,6 @@ object LongestCommonSuffixQueries {
         return result
     }
 
-
     private class ReverseTrie {
         private data class TrieNode(
             var index: Int,

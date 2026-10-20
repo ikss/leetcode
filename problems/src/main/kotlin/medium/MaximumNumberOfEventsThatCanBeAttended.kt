@@ -3,7 +3,6 @@ package medium
 import java.util.*
 import kotlin.math.max
 
-
 /**
  * You are given an array of events where `events[i] = [startDayi, endDayi]`.
  * Every event i starts at startDayi and ends at endDayi.

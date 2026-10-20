@@ -45,7 +45,6 @@ object LargestMagicSquare {
             if (neededSum != currSum) return false
         }
 
-
         // check columns
         for (col in startCol until startCol + size) {
             var currSum = 0L
@@ -64,7 +63,6 @@ object LargestMagicSquare {
             diag1 += grid[startRow + i][startCol + i]
             diag2 += grid[startRow + i][startCol + size - i - 1]
         }
-
 
         return neededSum == diag1 && neededSum == diag2
     }

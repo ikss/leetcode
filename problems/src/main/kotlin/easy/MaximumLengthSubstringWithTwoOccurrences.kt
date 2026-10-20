@@ -37,7 +37,6 @@ object MaximumLengthSubstringWithTwoOccurrences {
             result = maxOf(result, end - start + 1)
         }
 
-
         return result
     }
 }

@@ -64,7 +64,6 @@ class OnesAndZeroesTest {
         assertEquals(expected, OnesAndZeroes.findMaxFormBacktrackMemoized(strs, m, n))
     }
 
-
     @Test
     fun test1DP() {
         val strs = arrayOf("10", "0001", "111001", "1", "0")

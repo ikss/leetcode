@@ -87,7 +87,6 @@ object MaximizeSpanningTreeStabilityWithUpgrades {
         return result
     }
 
-
     private class DSU(originalParent: IntArray) {
         val parent = originalParent.clone()
 

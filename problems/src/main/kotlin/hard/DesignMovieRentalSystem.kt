@@ -2,7 +2,6 @@ package hard
 
 import java.util.*
 
-
 /**
  * You have a movie renting company consisting of n shops.
  * You want to implement a renting system that supports searching for, booking, and returning movies.

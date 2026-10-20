@@ -34,7 +34,6 @@ object CountMentionsPerUser {
         val online = BooleanArray(numberOfUsers) { true }
         val mentions = IntArray(numberOfUsers)
 
-
         for ((type, timestr, usersstr) in eventsSorted) {
             val time = timestr.toInt()
 

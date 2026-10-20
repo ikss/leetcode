@@ -2,7 +2,6 @@ package hard
 
 import java.util.*
 
-
 /**
  * You are given a 0-indexed string s. You are also given a 0-indexed string queryCharacters of length k and
  * a 0-indexed array of integer indices queryIndices of length k, both of which are used to describe k queries.

@@ -111,7 +111,6 @@ object LexicographicallySmallestPalindromicPermutationGreaterThanTarget {
             curri++
         }
 
-
         for (i in 0 until left.length) {
             if (target[curri + i] < left[left.length - i - 1]) {
                 return true

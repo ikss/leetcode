@@ -1,6 +1,5 @@
 package medium
 
-
 /**
  * Given the edges of a directed graph where `edges[i] = [ai, bi]` indicates there is an edge between nodes ai and bi,
  * and two nodes source and destination of this graph, determine whether or not all paths starting from source

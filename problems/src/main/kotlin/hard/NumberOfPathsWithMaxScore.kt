@@ -40,7 +40,6 @@ object NumberOfPathsWithMaxScore {
         return if (sums[0][0] === unvisited) intArrayOf(0, 0) else sums[0][0]
     }
 
-
     private fun calcNew(r: Int, c: Int, sums: Array<Array<IntArray>>, num: Int): IntArray {
         val bottom = sums[r + 1][c]
         val right = sums[r][c + 1]

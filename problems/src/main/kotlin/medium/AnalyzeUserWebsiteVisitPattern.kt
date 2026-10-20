@@ -1,6 +1,5 @@
 package medium
 
-
 /**
  * You are given two string arrays username and website and an integer array timestamp.
  * All the given arrays are of the same length and the tuple `[username[i], website[i], timestamp[i]]` indicates that

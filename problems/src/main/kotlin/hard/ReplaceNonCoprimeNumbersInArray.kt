@@ -2,7 +2,6 @@ package hard
 
 import java.util.*
 
-
 /**
  * You are given an array of integers nums. Perform the following steps:
  *

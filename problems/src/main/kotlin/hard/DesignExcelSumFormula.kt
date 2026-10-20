@@ -2,7 +2,6 @@ package hard
 
 import java.util.*
 
-
 /**
  * Design the basic function of Excel and implement the function of the sum formula.
  *

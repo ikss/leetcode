@@ -31,5 +31,4 @@ class ConcatenateNonZeroDigitsAndMultiplyBySumIITest {
         assertArrayEquals(expected, ConcatenateNonZeroDigitsAndMultiplyBySumII.sumAndMultiply(s, queries))
     }
 
-
 }

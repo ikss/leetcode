@@ -3,7 +3,6 @@ package hard
 import java.util.*
 import kotlin.math.max
 
-
 /**
  * There exists an infinite number line, with its origin at 0 and extending towards the positive x-axis.
  *

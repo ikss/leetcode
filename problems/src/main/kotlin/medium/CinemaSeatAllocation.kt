@@ -1,6 +1,5 @@
 package medium
 
-
 /**
  * A cinema has n rows of seats, numbered from 1 to n. Each row has 10 seats, numbered from 1 to 10.
  *

@@ -1,6 +1,5 @@
 package medium
 
-
 /**
  * Given a positive integer n, there exists a 0-indexed array called powers, composed of the minimum number of
  * powers of 2 that sum to n. The array is sorted in non-decreasing order, and there is only one way to form the array.

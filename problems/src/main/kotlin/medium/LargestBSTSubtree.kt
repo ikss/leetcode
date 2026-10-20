@@ -30,7 +30,6 @@ object LargestBSTSubtree {
         val left = largestBSTSubtreeHelper(root.left)
         val right = largestBSTSubtreeHelper(root.right)
 
-
         if (left.maxNode < root.`val` && root.`val` < right.minNode) {
             return NodeValue(
                 minOf(root.`val`, left.minNode), maxOf(root.`val`, right.maxNode),

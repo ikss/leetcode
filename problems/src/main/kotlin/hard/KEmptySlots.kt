@@ -29,7 +29,6 @@ object KEmptySlots {
                 -1
             }
 
-
             val prev = map.floorEntry(b)
             val toPrev = if (prev != null) {
                 val fromPrev = b - prev.key - 1

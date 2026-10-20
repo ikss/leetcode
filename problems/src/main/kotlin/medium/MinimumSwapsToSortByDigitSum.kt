@@ -2,7 +2,6 @@ package medium
 
 import java.util.*
 
-
 /**
  * You are given an array nums of distinct positive integers.
  * You need to sort the array in increasing order based on the sum of the digits of each number.

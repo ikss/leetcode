@@ -2,7 +2,6 @@ package hard
 
 import java.util.*
 
-
 /**
  * You are given a 2D integer array points where `points[i] = [xi, yi]`
  * represents the coordinates of the ith point on the Cartesian plane.

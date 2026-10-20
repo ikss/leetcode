@@ -1,6 +1,5 @@
 package medium
 
-
 /**
  * You are given an integer array nums of length n.
  *

@@ -1,6 +1,5 @@
 package hard
 
-
 /**
  * There is an undirected tree with n nodes labeled from 1 to n, rooted at node 1.
  * The tree is represented by a 2D integer array edges of length n - 1,

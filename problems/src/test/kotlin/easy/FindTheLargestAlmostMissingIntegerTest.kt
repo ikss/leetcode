@@ -40,5 +40,4 @@ class FindTheLargestAlmostMissingIntegerTest {
         assertEquals(expected, FindTheLargestAlmostMissingInteger.largestInteger(nums, k))
     }
 
-
 }

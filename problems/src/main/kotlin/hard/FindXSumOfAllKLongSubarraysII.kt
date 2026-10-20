@@ -2,7 +2,6 @@ package hard
 
 import java.util.*
 
-
 /**
  * You are given an array nums of n integers and two integers k and x.
  *

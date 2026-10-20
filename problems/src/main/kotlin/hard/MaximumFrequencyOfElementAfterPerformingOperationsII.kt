@@ -59,7 +59,6 @@ object MaximumFrequencyOfElementAfterPerformingOperationsII {
         return result
     }
 
-
     private fun leftBound(value: Int, nums: IntArray): Int {
         var left = 0
         var right = nums.size - 1

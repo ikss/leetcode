@@ -32,7 +32,6 @@ object VowelSpellchecker {
         val caseSensitive = HashSet<String>()
         val caseInsensitiveWithoutVowels = HashMap<String, String>()
 
-
         for (i in wordlist.size - 1 downTo 0) {
             val w = wordlist[i]
             caseSensitive.add(w)

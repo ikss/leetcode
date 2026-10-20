@@ -1,6 +1,5 @@
 package medium
 
-
 /**
  * You are given an m x n grid classroom where a student volunteer is tasked with cleaning up litter
  * scattered around the room. Each cell in the grid is one of the following:
@@ -55,7 +54,6 @@ object MinimumMovesToCleanTheClassroom {
         val bestEnergy = Array(maxRows) { Array(maxCols) { IntArray(full) { -1 } } }
 
         bestEnergy[start.first][start.second][0] = energy
-
 
         val queue = java.util.ArrayDeque<State>()
         queue.offer(State(start.first, start.second, 0, energy, 0))

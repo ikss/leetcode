@@ -1,6 +1,5 @@
 package hard
 
-
 /**
  * You want to build n new buildings in a city. The new buildings will be built in a line and are labeled from 1 to n.
  *

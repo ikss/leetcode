@@ -2,7 +2,6 @@ package hard
 
 import java.util.*
 
-
 /**
  * You are given a 0-indexed array of integers nums of length n, and two positive integers k and dist.
  *

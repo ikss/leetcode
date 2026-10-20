@@ -2,7 +2,6 @@ package hard
 
 import java.util.*
 
-
 /**
  * You are given an array of positive integers nums and a positive integer k. You are also given a 2D array queries,
  * where `queries[i] = [indexi, valuei, starti, xi]`.

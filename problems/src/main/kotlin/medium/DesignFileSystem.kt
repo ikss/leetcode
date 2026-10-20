@@ -21,7 +21,6 @@ object DesignFileSystem {
 
         private val parent = PathNode(-1)
 
-
         fun createPath(path: String, value: Int): Boolean {
             var curr = parent
             val paths = path.split('/')

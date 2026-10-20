@@ -2,7 +2,6 @@ package hard
 
 import java.util.*
 
-
 /**
  * You are given a 0-indexed integer array books of length n where `books[i]`
  * denotes the number of books on the ith shelf of a bookshelf.
@@ -38,7 +37,6 @@ object MaximumNumberOfBooksYouCanTake {
             // Push the current index onto the stack
             s.push(i)
         }
-
 
         // Return the maximum element in dp array
         return dp.max()

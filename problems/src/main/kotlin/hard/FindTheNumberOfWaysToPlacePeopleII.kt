@@ -1,6 +1,5 @@
 package hard
 
-
 /**
  * You are given a 2D array points of size n x 2 representing integer coordinates of some points on a 2D-plane,
  * where `points[i] = [xi, yi]`.

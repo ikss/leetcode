@@ -111,7 +111,6 @@ object PacificAtlanticWaterFlow {
         return result
     }
 
-
     private fun mark(heights: Array<IntArray>, marker: Array<IntArray>, queue: ArrayDeque<Pair<Int, Int>>, mark: Int) {
         while (queue.isNotEmpty()) {
             val (curRow, curCol) = queue.poll()

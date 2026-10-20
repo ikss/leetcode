@@ -1,6 +1,5 @@
 package hard
 
-
 /**
  * You are given an array of transactions transactions where `transactions[i] = [fromi, toi, amounti]` indicates that
  * the person with ID = fromi gave amounti $ to the person with ID = toi.
@@ -36,7 +35,6 @@ object OptimalAccountBalancing {
         }
         var balanceSum = 0
         var answer = 0
-
 
         // Remove one person at a time in total_mask
         for (i in creditList.indices) {

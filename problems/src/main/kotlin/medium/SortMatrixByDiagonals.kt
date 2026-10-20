@@ -53,7 +53,6 @@ object SortMatrixByDiagonals {
             }
         }
 
-
         return grid
     }
 }

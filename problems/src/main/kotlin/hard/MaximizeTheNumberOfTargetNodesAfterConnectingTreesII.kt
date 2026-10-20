@@ -2,7 +2,6 @@ package hard
 
 import kotlin.math.max
 
-
 /**
  * There exist two undirected trees with n and m nodes, labeled from `[0, n - 1]` and `[0, m - 1]`, respectively.
  *

@@ -28,7 +28,6 @@ object CountCommasInRange {
             nextMax *= 1000
         }
 
-
         return result
     }
 }

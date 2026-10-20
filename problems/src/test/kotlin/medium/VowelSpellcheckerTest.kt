@@ -22,5 +22,4 @@ class VowelSpellcheckerTest {
         assertArrayEquals(expected, VowelSpellchecker.spellchecker(wordlist, queries))
     }
 
-
 }

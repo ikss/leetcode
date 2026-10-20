@@ -26,7 +26,6 @@ object LongestStrictlyIncreasingOrStrictlyDecreasingSubarray {
             result = maxOf(result, curr)
         }
 
-
         return result
     }
 }

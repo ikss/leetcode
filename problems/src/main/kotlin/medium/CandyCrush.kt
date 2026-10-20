@@ -71,7 +71,6 @@ object CandyCrush {
             }
         }
 
-
         // crush down
         var bottom = r + 1
 

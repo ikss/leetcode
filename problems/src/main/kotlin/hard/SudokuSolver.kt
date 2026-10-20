@@ -32,7 +32,6 @@ object SudokuSolver {
         return false
     }
 
-
     fun isValidSudoku(board: Array<CharArray>): Boolean {
         return validRows(board)
                 && validColumns(board)

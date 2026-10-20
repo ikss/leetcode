@@ -1,6 +1,5 @@
 package medium
 
-
 /**
  * On a social network consisting of m users and some friendships between users, two users can communicate with each
  * other if they know a common language.
